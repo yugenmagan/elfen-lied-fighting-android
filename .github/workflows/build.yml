@@ -23,6 +23,7 @@ jobs:
           distribution: temurin
           java-version: '17'
       - name: Install pinned Android SDK components
-        run: "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "platforms;android-35" "build-tools;35.0.0"
+        run: >-
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "platforms;android-35" "build-tools;35.0.0"
       - name: Build debug and unsigned release APKs
         run: bash ./gradlew --no-daemon --stacktrace assembleDebug assembleRelease
