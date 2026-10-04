@@ -1,0 +1,26 @@
+name: Import verified RC1 checkpoint
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  import:
+    if: github.repository == 'yugenmagan/elfen-lied-fighting-android' && github.actor == 'yugenmagan' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore exact verified commit and annotated release tag
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(find . -maxdepth 1 -name 'repository.bundle.part*' -type f | wc -l)" -eq 17
+          cat repository.bundle.part??? > "${RUNNER_TEMP}/repository.bundle"
+          echo "af7e751b325227bce32f6e09ea6f24baf8cac56e6d9f9d7c0271e1894756c039  ${RUNNER_TEMP}/repository.bundle" | sha256sum -c -
+          git bundle verify "${RUNNER_TEMP}/repository.bundle"
+          git fetch "${RUNNER_TEMP}/repository.bundle" refs/heads/main:refs/remotes/checkpoint/main refs/tags/v1.0.0-rc1:refs/tags/v1.0.0-rc1
+          test "$(git rev-parse refs/remotes/checkpoint/main)" = "972986774890bc17b1a69233865fad827f42727f"
+          test "$(git rev-parse refs/tags/v1.0.0-rc1)" = "7c8dcd467f6d83563069aeee88e3d3ce2c2a9f43"
+          test -z "$(git ls-remote origin refs/heads/release-rc1 refs/tags/v1.0.0-rc1)"
+          git push --atomic origin refs/remotes/checkpoint/main:refs/heads/release-rc1 refs/tags/v1.0.0-rc1:refs/tags/v1.0.0-rc1
+          echo "Published new release-rc1 branch and annotated tag without overwriting any existing ref."
