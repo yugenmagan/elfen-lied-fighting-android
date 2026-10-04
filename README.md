@@ -20,16 +20,14 @@ All game data are included. Offline play needs no Windows, emulator, root, or co
 
 - Original characters, stages, music, sounds and story content.
 - Local Story and Versus modes.
-- Touch and multitouch controls, with gamepad support.
+- Touch and multitouch controls; experimental gamepad support.
 - English, Japanese and Russian text options.
 - Original combat HUD and character portraits.
 - Android 10 or newer.
 
 ## Controls
 
-Use the red arcade stick for movement, diagonals and special-move motions. The red **A**, yellow **B** and green **C** buttons are labelled underneath. Multiple buttons and directions can be held together. The white button opens Pause.
-
-Button presses use haptic feedback when supported. Control size, opacity, position and gamepad mappings can be adjusted in Settings.
+Touch controls support multitouch. Control size, opacity, position and gamepad mappings can be adjusted in Settings. The white button opens Pause.
 
 ## Screenshots
 
