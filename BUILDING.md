@@ -1,50 +1,190 @@
-# Building v1.0.0-rc1
+# Building
 
-Use JDK 17, Android SDK Platform 35 and Build Tools 35.0.0. The wrapper pins Gradle 8.9 (with distribution SHA-256); the build pins Android Gradle Plugin 8.7.3. Minimum Android API is 29; target and compile API are 35. No NDK is required. Runtime and network sources are shared Java modules compiled into the application.
+This document describes how to build **Elfen Lied Fighting for Android** from the current source tree.
 
-Open this directory in Android Studio, let it resolve the pinned components, or run:
+## Requirements
+
+- JDK 17
+- Android SDK Platform 35
+- Android Build Tools 35.0.0
+
+The project currently uses:
+
+- Gradle 8.9
+- Android Gradle Plugin 8.7.3
+- minSdk 29
+- targetSdk 35
+- compileSdk 35
+- Java 8 source/target compatibility
+
+No Android NDK is required.
+
+The runtime and networking code are shared Java sources compiled directly into the Android application.
+
+## Build with Gradle
+
+Gradle is the recommended build method for normal development.
+
+From the repository root:
 
 ```sh
 ./gradlew assembleDebug
-./gradlew assembleRelease
 ```
 
-Debug produces an installable APK with your local Android debug key. Release is unsigned unless all four environment variables below are provided. The private release key is deliberately absent from the repository, ZIP and Git history.
+The debug APK will be created under:
+
+```text
+app/build/outputs/apk/debug/
+```
+
+To build the release variant:
 
 ```sh
-export ELFEN_KEYSTORE=/private/path/release.p12
-export ELFEN_KEY_ALIAS=your_alias
-# Supply ELFEN_STORE_PASSWORD and ELFEN_KEY_PASSWORD privately in your
-# local environment or CI secret store; do not commit their values.
 ./gradlew assembleRelease
 ```
 
-Gradle outputs are under `app/build/outputs/apk/`. The public candidate uses the existing private checkpoint signing identity so it can update previous test builds. A build made with your own key cannot update those APKs without removing the old application.
+Release output will be created under:
 
-## Standalone SDK build
+```text
+app/build/outputs/apk/release/
+```
 
-The same source tree can also be built on Linux with Python 3 and JDK 17:
+Without the maintainer's signing credentials, the release APK is unsigned.
+
+## Android Studio
+
+The repository can also be opened directly in Android Studio.
+
+Use JDK 17 and make sure the following Android SDK components are installed:
+
+- Android SDK Platform 35
+- Android Build Tools 35.0.0
+
+Android Studio can then use the included Gradle wrapper to build the project normally.
+
+## Release signing
+
+Official release signing credentials are not stored in the repository or Git history.
+
+Local release signing can be configured with the following environment variables:
+
+```sh
+export ELFEN_KEYSTORE=/path/to/keystore
+export ELFEN_KEY_ALIAS=your_alias
+export ELFEN_STORE_PASSWORD=your_store_password
+export ELFEN_KEY_PASSWORD=your_key_password
+
+./gradlew assembleRelease
+```
+
+Do not commit keystores, passwords or signing configuration containing private credentials.
+
+A build signed with a different key cannot be installed as an update over the official release without first uninstalling the existing application.
+
+## Standalone build tool
+
+A separate release-oriented build script is also included:
 
 ```sh
 python3 tools/build_android.py
 ```
 
-This uses the pinned official SDK packages from `tools/bootstrap_android.py`, downloads missing packages, compiles the application and shared runtime, and packages all game data. Set `ANDROID_SDK_ROOT` to reuse an installed SDK. With the signing environment configured, output is `builds/elfen-fighting-v1.0.0-rc1.apk`; otherwise output is explicitly marked `-unsigned.apk`.
+This build path uses Python 3 and JDK 17 and can bootstrap the required official Android SDK components automatically.
 
-The distributed APK is made with this standalone recipe. Rebuilding an unpacked checkpoint with the same SDK, JDK and private signing identity is checked for byte-for-byte equality. Gradle packages the same source/assets but need not produce an identical ZIP hash.
+Set `ANDROID_SDK_ROOT` if you want the script to reuse an existing Android SDK installation.
 
-## Verification
+With release signing configured, the output is:
 
-```sh
-python3 tools/test_controls_rc1a.py
-python3 tools/check_touch_feedback_007c.py
-python3 tools/test_release_flow.py
-python3 tools/test_combat.py
-python3 tools/test_match.py
-python3 tools/test_localization_008.py
-python3 tools/check_apk.py
+```text
+builds/elfen-fighting-v1.0.0-rc1.apk
 ```
 
-The desktop-render tests use Java2D and Python Pillow; they are not Android execution. `check_apk.py` verifies the official candidate's package, version, assets, alignment and retained signing certificate; an independently signed build will intentionally fail the certificate assertion. Historical reverse-engineering tools may additionally require Capstone/Unicorn and the user's original private Windows files. Those tools are not needed to build or run the Android application.
+Without signing credentials, the output is explicitly marked as unsigned:
 
-`tools/android_smoke_host.py` can provision official Android 10 x86_64 emulator components for headless smoke checks. It uses software emulation when KVM is unavailable and does not measure real-device latency or sound. Real-device haptics, controller compatibility, audio focus, and performance still require hardware checks.
+```text
+builds/elfen-fighting-v1.0.0-rc1-unsigned.apk
+```
+
+The standalone build path is mainly used for release and reproducibility checks. Gradle remains the recommended method for ordinary development.
+
+## Game data
+
+Converted game data required by the Android runtime is already included in the repository.
+
+The original Windows executable is not required to build or run the Android application.
+
+The conversion pipeline can be invoked separately when working with the original source data, but normal Android builds do not require reconversion.
+
+## Testing
+
+The repository includes regression tests for areas such as:
+
+- combat and damage;
+- movement and command input;
+- AI behaviour;
+- round and match flow;
+- replay and deterministic state;
+- rollback simulation;
+- Story progression;
+- localization;
+- touch controls;
+- lifecycle and release flow.
+
+Individual test and verification scripts are located under:
+
+```text
+tools/
+```
+
+Current public verification results are documented in:
+
+[TEST_RESULTS_RC1A.md](TEST_RESULTS_RC1A.md)
+
+Some research and reverse-engineering tools require additional dependencies or original Windows files. They are not required to build or run the Android application.
+
+## APK verification
+
+The repository includes tools for checking APK metadata, resources, alignment and signing.
+
+Note that checks tied specifically to the official release certificate are expected to fail for independently signed builds.
+
+This does not mean that an independently signed build is otherwise invalid.
+
+## Android smoke testing
+
+The repository also includes:
+
+```text
+tools/android_smoke_host.py
+```
+
+This can provision an Android 10 / API 29 x86_64 emulator environment for automated smoke testing.
+
+Emulator testing is useful for installation, startup, navigation and basic gameplay checks, but it is not a substitute for testing latency, audio, haptics, controller behaviour and performance on physical Android devices.
+
+## Continuous integration
+
+GitHub Actions automatically builds the project on pushes and pull requests to `main`.
+
+The workflow builds:
+
+- the debug APK;
+- the unsigned release APK.
+
+The CI configuration is located at:
+
+```text
+.github/workflows/build.yml
+```
+
+The private release signing key is not available to GitHub Actions.
+
+## Release builds
+
+The current public release candidate is:
+
+**v1.0.0-rc1 · build 14**
+
+Official APKs are published through GitHub Releases rather than committed directly to the repository.
+
+See the project README for the current download link.
