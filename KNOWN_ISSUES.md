@@ -1,21 +1,21 @@
-# Известные проблемы — v1.0.0-rc1
+# Known issues — v1.0.0-rc1
 
-Это предварительная версия порта. Игра работает, но некоторые вещи ещё требуют проверки на разных реальных Android-устройствах.
+This is a release candidate. The game is playable, but some parts still need broader testing.
 
-- Поддержка геймпадов предусмотрена, но ещё не проверена на большом количестве реальных контроллеров.
-- В отдельных ситуациях поведение может немного отличаться от оригинальной Windows-версии — прежде всего взаимодействие со стенами и некоторые визуальные эффекты.
-- Часть визуальных эффектов оригинального движка пока воспроизводится не полностью.
-- В редких зеркальных боях, особенно Нана против Наны, AI может остановиться вне дистанции атаки.
-- На узких экранах игровое поле может немного уменьшаться, чтобы оставить место для сенсорного управления.
-- Continue работает только пока текущая сессия остаётся в памяти. Если Android полностью выгрузит приложение, продолжить текущий бой будет нельзя.
+- Gamepad mappings are included, but physical gamepad support has not been extensively tested across different controllers.
+- Exact frame-by-frame behaviour may differ slightly from the original Windows version in some edge cases, especially wall behaviour and a few visual effects.
+- Some visual effects from the original runtime are not fully reproduced yet.
+- In rare mirror matches, particularly Nana vs. Nana, the AI may stop outside attack range.
+- A few characters whose original data do not contain a combat portrait still have no portrait in the port.
+- On narrow screens, the game arena may be scaled down slightly to leave room for touch controls.
+- Continue only restores the current session while the app remains in memory. If Android terminates the process, the current fight cannot be resumed.
 
-Если ты встретил вылет, зависание, сломанный сюжетный маршрут, неработающую атаку, пропавший ресурс или поведение, которое явно отличается от оригинальной PC-версии, пожалуйста, создай Issue на GitHub.
+If you find a crash, softlock, broken story route, incorrect attack, missing asset, or behaviour that clearly differs from the original PC game, please open a GitHub issue.
 
-При сообщении об ошибке желательно указать:
-
-- модель телефона и версию Android;
-- персонажа и противника;
-- режим — Story или Versus;
-- что произошло;
-- что должно было произойти;
-- скриншот или видео, если это возможно.
+When reporting a bug, please include:
+- Android device and version
+- character / opponent
+- Story or Versus mode
+- what happened
+- what you expected to happen
+- screenshots or video if possible
