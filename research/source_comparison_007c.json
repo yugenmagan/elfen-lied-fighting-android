@@ -1,0 +1,16 @@
+{
+  "base_zip_sha256": "93b3b852aae8d365370e228746ff324fadd4dbdcff3abe1c83a787cc6d78a756",
+  "compared_file_counts": {
+    "assets": 2882,
+    "app_java": 6,
+    "resources": 14,
+    "network": 4,
+    "runtime": 34
+  },
+  "changed_game_source_files": [
+    "app/src/main/java/org/elfen/fighting/MainActivity.java"
+  ],
+  "runtime_network_assets_resources_unchanged": true,
+  "control_geometry_unchanged": true,
+  "new_permissions": []
+}

@@ -1,0 +1,37 @@
+{
+  "apk": "app-debug.apk",
+  "bytes": 68847173,
+  "sha256": "e38c3f3e462875a9a6f6d4ea1426e905acfadf0d17c640e6ca526e0a738d50e3",
+  "original_assets_unchanged": 2881,
+  "total_assets": 2884,
+  "new_assets": [
+    "assets/game/story-index.tsv",
+    "assets/localization/scenes.tsv",
+    "assets/localization/ui.tsv"
+  ],
+  "launcher_resources_unchanged": false,
+  "launcher_resource_paths_renamed": false,
+  "signature_matches_test003": true,
+  "application_id": "org.elfen.fighting.nativeport",
+  "version_code": 13,
+  "version_name": "1.0.0-rc1",
+  "min_sdk": 29,
+  "target_sdk": 35,
+  "permissions": [
+    "android.permission.INTERNET"
+  ],
+  "native_libraries": [],
+  "zip_crc_ok": true,
+  "android_execution_performed": false,
+  "launcher_png_reencoded": [
+    "res/drawable-nodpi-v4/launcher_foreground.png",
+    "res/mipmap-mdpi-v4/ic_launcher.png",
+    "res/mipmap-hdpi-v4/ic_launcher.png",
+    "res/mipmap-xhdpi-v4/ic_launcher.png",
+    "res/mipmap-xxhdpi-v4/ic_launcher.png",
+    "res/mipmap-xxhdpi-v4/ic_launcher_round.png",
+    "res/mipmap-xxxhdpi-v4/ic_launcher.png",
+    "res/mipmap-xxxhdpi-v4/ic_launcher_round.png"
+  ],
+  "launcher_pixels_unchanged": true
+}

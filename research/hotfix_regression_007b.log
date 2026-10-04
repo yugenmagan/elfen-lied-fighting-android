@@ -1,0 +1,22 @@
+
+PASS can command A right gap=70; first hit5HP; restore/replay2x739
+PASS can command B right gap=260; first hit5HP; restore/replay2x739
+PASS can command C right gap=260; first hit5HP; restore/replay2x739
+PASS can command A left gap=70; first hit5HP; restore/replay2x739
+PASS can command B left gap=260; first hit5HP; restore/replay2x739
+PASS can command C left gap=260; first hit5HP; restore/replay2x739
+PASS direct block0HP → original ON2 phase93 → four flames90; flame damage retained
+PASS Nana can 15156 assertions; original hitboxes/power/motion untouched
+
+PASS stick → InputFrame → command 0170 とび弱
+PASS stick → InputFrame → command 0104 ロケット弱
+PASS stick → InputFrame → command 0128 磯部くん
+PASS stick → InputFrame → command 0128 コマンド 1
+PASS stick → InputFrame → command 0128 ねこ座薬
+PASS stick → InputFrame → command 0104 のろい弱
+PASS stick → InputFrame → command 0104 呪い中
+PASS stick → InputFrame → command 0104 呪い大
+PASS arcade stick 7827 assertions; 7 viewports, 3 scales, 3 deadzones, mirror, multi-source and real commands
+
+PASS replay 3 x 2400 every-frame hashes=7200; history restore/resimulation 60 ticks; corruption rejected. bytes=72092 hash=d003c48f139f8adde9abe9504f34539d750babd98f0cb9c2d48257817ac93c2f
+

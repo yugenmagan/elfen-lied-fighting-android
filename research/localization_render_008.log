@@ -1,0 +1,1 @@
+PASS 66343 checks: 367 UI keys / three languages; 46 packs; 759 nonempty command-name lookups; 27 DEMO twin runs / 56700 ticks; 180 sprite renders / 190 translated regions; minimum font 15.0px. Desktop Java2D adapter, not Android execution.

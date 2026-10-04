@@ -1,0 +1,5 @@
+PASS delay=50ms / 3ticks confirmed=2997 resimulated=11988 final=80c4f41871bd4fc59bd7b54f4ba0cf9102834d465f86d2ede1fcced94b0281e7
+PASS delay=100ms / 6ticks confirmed=2994 resimulated=20958 final=80c4f41871bd4fc59bd7b54f4ba0cf9102834d465f86d2ede1fcced94b0281e7
+PASS delay=150ms / 9ticks confirmed=2991 resimulated=29910 final=80c4f41871bd4fc59bd7b54f4ba0cf9102834d465f86d2ede1fcced94b0281e7
+PASS delay=200ms / 12ticks confirmed=2988 resimulated=38844 final=80c4f41871bd4fc59bd7b54f4ba0cf9102834d465f86d2ede1fcced94b0281e7
+PASS independent twins=3000 every-frame hashes; no network transport used

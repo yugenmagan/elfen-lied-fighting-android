@@ -1,0 +1,8 @@
+PASS can command A right gap=70; first hit5HP; restore/replay2x739
+PASS can command B right gap=260; first hit5HP; restore/replay2x739
+PASS can command C right gap=260; first hit5HP; restore/replay2x739
+PASS can command A left gap=70; first hit5HP; restore/replay2x739
+PASS can command B left gap=260; first hit5HP; restore/replay2x739
+PASS can command C left gap=260; first hit5HP; restore/replay2x739
+PASS direct block0HP → original ON2 phase93 → four flames90; flame damage retained
+PASS Nana can 15156 assertions; original hitboxes/power/motion untouched

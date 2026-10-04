@@ -1,0 +1,28 @@
+{
+  "apk": "elfen-rc1.apk",
+  "bytes": 68708851,
+  "sha256": "c49a13b9176c1bdf6bfb42a5ea827c1319b0574449339e3cdfa547511b0a1b30",
+  "original_assets_unchanged": 2881,
+  "total_assets": 2884,
+  "new_assets": [
+    "assets/game/story-index.tsv",
+    "assets/localization/scenes.tsv",
+    "assets/localization/ui.tsv"
+  ],
+  "launcher_resources_unchanged": true,
+  "launcher_resource_paths_renamed": false,
+  "signature_matches_test003": true,
+  "application_id": "org.elfen.fighting.nativeport",
+  "version_code": 13,
+  "version_name": "1.0.0-rc1",
+  "min_sdk": 29,
+  "target_sdk": 35,
+  "permissions": [
+    "android.permission.INTERNET"
+  ],
+  "native_libraries": [],
+  "zip_crc_ok": true,
+  "android_execution_performed": false,
+  "launcher_png_reencoded": [],
+  "launcher_pixels_unchanged": true
+}

@@ -1,0 +1,12 @@
+{
+  "zip": "Elfen_Lied_Android_007a_project.zip",
+  "zip_bytes": 74726638,
+  "zip_sha256": "0003378d7d4e1ffb6fc3ec9ccf37111efc55a7eef3ee608654eaa2afb2f256c9",
+  "files": 3301,
+  "crc_all_entries_passed": true,
+  "unpacked_into_separate_directory": true,
+  "rebuilt_from_unpacked_sources": true,
+  "unpacked_apk_sha256": "20eb76c88ef73f76c474af1ef0085e8ec5b252b2232efde2eb9a3375a8dc7aa2",
+  "same_as_delivered_test007a_apk": true,
+  "android_execution_performed": false
+}

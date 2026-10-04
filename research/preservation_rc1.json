@@ -1,0 +1,16 @@
+{
+  "base_zip": "Elfen_Lied_Android_008_project.zip",
+  "base_sha256": "d07462d60e90015dbd552533349d4b969964815e1b1e6b5b87ffea15f6b972c9",
+  "unchanged_file_counts": {
+    "runtime/src": 37,
+    "network/src": 4,
+    "app/src/main/assets/game": 2882,
+    "app/src/main/res": 14
+  },
+  "audio_unchanged": true,
+  "combat_touch_branch_unchanged": true,
+  "controls_rendering_and_layout_unchanged": true,
+  "scene_translations_unchanged": true,
+  "game_logic_unchanged": true,
+  "note": "New title and lifecycle/dialog presentation only; original source assets untouched."
+}

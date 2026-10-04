@@ -1,0 +1,25 @@
+{
+  "apk": "elfen-fighting-007b-offline.apk",
+  "bytes": 68680031,
+  "sha256": "9f208d20646172890aa6075edf3f20b97d229bc6c657584c6ab6906a93549e8b",
+  "original_assets_unchanged": 2881,
+  "total_assets": 2882,
+  "new_assets": [
+    "assets/game/story-index.tsv"
+  ],
+  "launcher_resources_unchanged": true,
+  "launcher_resource_paths_renamed": false,
+  "signature_matches_test003": true,
+  "application_id": "org.elfen.fighting.nativeport",
+  "version_code": 9,
+  "min_sdk": 29,
+  "target_sdk": 35,
+  "permissions": [
+    "android.permission.INTERNET"
+  ],
+  "native_libraries": [],
+  "zip_crc_ok": true,
+  "android_execution_performed": false,
+  "launcher_png_reencoded": [],
+  "launcher_pixels_unchanged": true
+}

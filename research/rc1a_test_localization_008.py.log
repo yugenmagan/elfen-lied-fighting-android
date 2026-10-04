@@ -1,0 +1,14 @@
+Compiled 367 UI entries; 90 localized sprite images; 95 text regions
+
+
+PASS 66343 checks: 367 UI keys / three languages; 46 packs; 759 nonempty command-name lookups; 27 DEMO twin runs / 56700 ticks; 180 sprite renders / 190 translated regions; minimum font 15.0px. Desktop Java2D adapter, not Android execution.
+
+PASS 581 progression checks across 10 routes: final defeat/retry/repeated defeat/quit/victory/ending/credits; twins, replay, snapshot and 007d save migration. Forced outcome fixtures, not natural full playthroughs.
+
+PASS natural idle-Lucy loss to final boss after 17242 ticks, score 0:2 -> Continue at slot18; no HP, AI, damage or round overrides. Boss-event entry is a fixture; not a full route playthrough.
+
+PASS natural Young Lucy (0156) input-only boss victory, 19382 fight ticks, score 2:0 -> ending -> credits -> complete; 22734 recorded frames; three replay/restore runs; final hash ad0ae7d3c66961dcdf56ad9487cbd1a956b8caa6d3cb0fcb2a477a418761e1dc. Boss-event fixture, not a full route. No HP, AI, damage or round overrides.
+
+PASS 186 desktop scene frames from original DEMO VM; not Android screenshots
+
+PASS generated-data reproducibility, original text-image SHA256, all Activity translation keys, text fitting and boss transitions

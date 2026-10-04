@@ -1,0 +1,15 @@
+{
+  "apk": "elfen-fighting-004-match.apk",
+  "bytes": 68638998,
+  "sha256": "72f30c45c624c27de66292ec5ef27312338d435bd2ca73cccf416ec06b6ca446",
+  "original_assets_unchanged": 2881,
+  "launcher_resources_unchanged": true,
+  "signature_matches_test003": true,
+  "application_id": "org.elfen.fighting.nativeport",
+  "version_code": 4,
+  "min_sdk": 29,
+  "target_sdk": 35,
+  "native_libraries": [],
+  "zip_crc_ok": true,
+  "android_execution_performed": false
+}

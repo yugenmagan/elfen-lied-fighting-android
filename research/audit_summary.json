@@ -1,0 +1,63 @@
+{
+  "archive_sha256": "347016a345bf56377bfbf311534d2f48855ada091ee3677e68085196d91f9d68",
+  "zip_entries": 244,
+  "content_entries": 118,
+  "unique_payloads": 75,
+  "extension_counts": {
+    ".jpg": 15,
+    ".gif": 10,
+    ".htm": 1,
+    ".demo": 54,
+    ".stage": 8,
+    ".player": 24,
+    ".kgt": 2,
+    ".exe": 2,
+    ".ini": 1,
+    ".txt": 1
+  },
+  "unique_payloads_by_extension": {
+    ".jpg": 15,
+    ".gif": 10,
+    ".htm": 1,
+    ".demo": 27,
+    ".stage": 4,
+    ".player": 14,
+    ".kgt": 1,
+    ".exe": 1,
+    ".ini": 1,
+    ".txt": 1
+  },
+  "decode_failures": [],
+  "name_content_conflicts": {
+    "Fighting/g2サヴァイヴ/マリコ.player": [
+      {
+        "entry_index": 82,
+        "sha256": "f76ea3acc5adbe7ed32fa36f756529eb555de3b83d813cc17c68d684b212b5af",
+        "bytes": 3508329,
+        "stored_path": "source_original/entries/0082.player"
+      },
+      {
+        "entry_index": 128,
+        "sha256": "6138eea3061c63b41626fc4c5cb0776b1a1d35796d06c5072173c5a2a964fe86",
+        "bytes": 3508329,
+        "stored_path": "source_original/entries/0128.player"
+      }
+    ],
+    "Fighting/g2サヴァイヴ/クラフト.player": [
+      {
+        "entry_index": 142,
+        "sha256": "856adc56e4e0d7e819cdc2ddd6472aee070f7334b34ccef6604dfe07801093e4",
+        "bytes": 3213527,
+        "stored_path": "source_original/entries/0142.player"
+      },
+      {
+        "entry_index": 144,
+        "sha256": "53bf3361f6167297f719b7852f81eec8ef123bac5f8175224563fa24e450aae1",
+        "bytes": 3213559,
+        "stored_path": "source_original/entries/0144.player"
+      }
+    ]
+  },
+  "crc_test": "PASS",
+  "original_unchanged": true
+}

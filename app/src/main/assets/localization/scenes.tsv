@@ -1,0 +1,96 @@
+ELF-SCENES-1
+0060	2	overlay	32	165	238	215	38	ffff3366	mask:ff000008:142:165:132:41	center	ビクッ	Startle!	Вздрагивает!
+0060	3	overlay	69	45	193	282	33	ffffffff	ff000008	left	ふー。	Phew...	Фух...
+0060	4	overlay	42	54	180	295	31	ffffffff	ff000008	left	ゆめか。	A dream...	Всего лишь сон...
+0060	5	card	32	140	570	195	46	ff55eaa0	none	center	夢オチかよ	So it was all a dream?!	Так это был всего лишь сон?!
+0062	3	replace	1	1	466	88	32	ffffffff	none	left	ルーシー以外は殺しちゃってもいいんだよね？	I can kill anyone except Lucy, right?	Всех, кроме Люси, можно убивать, да?
+0062	4	replace	1	1	219	27	32	ffffffff	none	left	ふふふふ・・・	Heh heh heh...	Хи-хи-хи...
+0066	1	replace	1	1	541	393	32	ffffffff	none	left	さあ、どこいこっか・・\n私の行くところなんてないかもしれないけど・・それでも\n・・・それでも探そうね！！\nきっと・・みつかるよね・・\nきっと・・・	Well, where shall we go...?\nMaybe there's nowhere for me to go... Even so...\nEven so, let's keep looking!\nI'm sure we'll find somewhere...\nI'm sure we will...	Ну что, куда пойдём?..\nМожет, мне и некуда идти... И всё же...\nИ всё же давай искать!\nМы ведь обязательно найдём такое место?..\nОбязательно...
+0068	5	replace	1	1	355	30	32	ffffffff	none	left	ナナ・・待たせたな・・	Nana... I've kept you waiting...	Нана... Заставил я тебя ждать...
+0068	6	replace	1	1	321	88	32	ffffffff	none	left	パパ・・パパぁ・・\nパパぁ！！パパぁ！！	Papa... Papa...\nPapa! Papa!	Папа... Папочка...\nПапочка! Папочка!
+0068	7	replace	1	1	558	207	32	ffffffff	none	left	ナナの命はパパのために使うって\nずっと前から決めてるから・・\nナナはパパとずっと一緒にいるよ・・\nこの先なにがあっても・・ずっと・・	I decided long ago that my life would be for you, Papa...\nI'll always be with you...\nWhatever happens from now on... Always...	Я давно решила, что буду жить ради тебя, папа...\nЯ всегда буду рядом...\nЧто бы ни случилось... Всегда...
+0070	3	replace	1	1	366	89	32	ffffffff	none	left	ここはどこ？\nなんだろう、なつかしい・・・	Where am I?\nWhy does this feel so familiar...?	Где я?\nПочему здесь всё такое знакомое?..
+0070	4	replace	1	1	387	88	32	ffffffff	none	left	あなたは誰？この感じ・・\n同族だから？それとも・・	Who are you? This feeling...\nIs it because we're the same kind? Or...?	Кто ты? Это чувство...\nПотому что мы одного рода? Или?..
+0070	6	card	32	140	570	195	46	ff55eaa0	none	center	「許されざる未来」	An Unforgiven Future	Непрощённое будущее
+0070	8	replace	1	1	371	85	32	ffffffff	none	left	どうして・・・\n仲良くできないんですか？	Why...?\nWhy can't we get along?	Почему?..\nПочему мы не можем жить дружно?
+0072	0	replace	15	195	610	80	25	ffffffff	ff000008	center	CAN YOU SURVIVE?	CAN YOU SURVIVE?	ТЫ СМОЖЕШЬ ВЫЖИТЬ?
+0072	5	overlay	0	0	300	74	37	ffffffff	ff10101a	left	もう首しか残っていないぞ	Only your head...	Только голова...
+0072	5	overlay	164	106	446	66	33	ffffffff	ff10101a	left	もう首しか残っていないぞ	...is left now.	...вот всё, что осталось.
+0072	12	overlay	32	133	218	97	36	ffffffff	ff10101a	left	お前もその手紙を守ってくれ	You too...	И ты тоже...
+0072	12	overlay	0	310	613	110	37	ffffffff	ff10101a	left	お前もその手紙を守ってくれ	Keep that letter safe.	Сбереги это письмо.
+0072	15	replace	10	135	620	225	70	ff6b52ff	none	center	Ver. SURVIVE	Ver. SURVIVE	Версия SURVIVE
+0072	18	overlay	58	250	522	144	48	ffffffff	ff59ff33	center	エルフェンファイト G2\nSTORY / VS	ELFEN FIGHT\nG2	ELFEN FIGHT\nG2
+0072	18	overlay	425	103	132	96	30	ffffffff	ff59ff33	center	エルフェンファイト G2\nSTORY / VS	STORY\nVS	СЮЖЕТ\nVS
+0072	23	replace	1	1	2398	478	300	ffffffff	ff14ff0c	center	エルフェンファイト G2	ELFEN FIGHT G2	ELFEN FIGHT G2
+0074	11	overlay	58	250	522	144	48	ffffffff	ff59ff33	center	エルフェンファイト G2\nSTORY / VS	ELFEN FIGHT\nG2	ELFEN FIGHT\nG2
+0074	11	overlay	425	103	132	96	30	ffffffff	ff59ff33	center	エルフェンファイト G2\nSTORY / VS	STORY\nVS	СЮЖЕТ\nVS
+0076	3	replace	4	1	376	89	32	ffffffff	none	left	お父様・・アンナは\nアンナはお父様に従います	Father... Anna will...\nAnna will obey you, Father.	Отец... Анна...\nАнна будет слушаться тебя, отец.
+0076	4	card	32	140	570	195	46	ff55eaa0	none	center	「テノヒラ」	In the Palm of a Hand	На ладони
+0078	1	card	32	140	570	195	46	ff55eaa0	none	center	明日への希望	Hope for Tomorrow	Надежда на завтра
+0086	0	replace	1	0	417	62	52	fffbe037	none	center	コンティニュー\nする\nしない	CONTINUE?	ПРОДОЛЖИТЬ?
+0088	3	replace	1	1	366	88	32	ffffffff	none	left	にゅう！ にゅう！\nもみもみする！もみもみ！	Nyu! Nyu!\nSqueeze, squeeze! Squeeze!	Ню! Ню!\nБуду тискать! Тискать!
+0088	4	replace	4	1	374	30	32	ffffffff	none	left	にゅうもむのみんなもむの	Nyu will squeeze! Squeeze everyone!	Ню будет тискать! Всех тискать!
+0088	6	card	32	140	570	195	46	ff55eaa0	none	center	「捜しものはなんですか？」	What Are You Looking For?	Что ты ищешь?
+0092	1	replace	1	1	529	306	52	ff45f3a8	none	center	そして・・・\n「未来」へ・・・・	And then...\nInto the future...	И затем...\nНавстречу будущему...
+0092	3	replace	1	1	559	387	32	ffffffff	none	left	ふーさわやかな朝だぜ・・\n何言ってんだコラ・・\n誰かさんの真似ですよ。\nうふふふ\n彼女達がただひとつ望んだもの・・・\nそれはかけがえのなくそして儚い物\n妖精の歌は二人を包み奏で続ける・・・	"Ahh, what a fine morning..."\n"What the hell are you on about...?"\n"Just imitating a certain someone. Hee hee."\nThe one thing they wished for...\nSomething irreplaceable, yet so fleeting.\nThe elves' song enfolds the two of them and plays on...	«Фух, ну и славное утречко...»\n«Ты чего несёшь, а?..»\n«Кое-кого передразниваю. Хи-хи».\nЕдинственное, чего они желали...\nНечто незаменимое и такое хрупкое.\nЭльфийская песнь окутывает их обоих и продолжает звучать...
+0092	4	replace	1	1	390	208	32	ffffffff	none	left	ふーさわやかな朝だぜ・・\n何言ってんだコラ・・\n誰かさんの真似ですよ。\nうふふふ	"Ahh, what a fine morning..."\n"What the hell are you on about...?"\n"Just imitating a certain someone. Hee hee."	«Фух, ну и славное утречко...»\n«Ты чего несёшь, а?..»\n«Кое-кого передразниваю. Хи-хи».
+0092	5	replace	1	1	559	150	32	ffffffff	none	left	彼女達がただひとつ望んだもの・・・\nそれはかけがえのなくそして儚い物\n妖精の歌は二人を包み奏で続ける・・・	The one thing they wished for...\nSomething irreplaceable, yet so fleeting.\nThe elves' song enfolds the two of them and plays on...	Единственное, чего они желали...\nНечто незаменимое и такое хрупкое.\nЭльфийская песнь окутывает их обоих и продолжает звучать...
+0094	3	replace	1	1	319	30	32	ffffffff	none	left	ケンカしちゃダメ！	No fighting!	Не надо драться!
+0094	4	replace	1	1	315	88	32	ffffffff	none	left	悪いことする人には\nバチがあたりますよ。	People who do bad things\nget punished, you know.	Тех, кто поступает плохо,\nждёт наказание.
+0094	5	replace	1	1	229	29	32	ffffffff	none	left	ね、坂東さん♪	Isn't that right, Mr. Bando? ♪	Правда, господин Бандо? ♪
+0094	7	card	32	140	570	195	46	ff55eaa0	none	center	「Boy meets Girl」	Boy Meets Girl	Мальчик встречает девочку
+0096	5	replace	1	1	369	88	32	ffffffff	none	left	ちょっといいですか？\n人を探しているんですが	Excuse me...\nI'm looking for someone.	Можно вас на минутку?\nЯ кое-кого ищу.
+0096	6	replace	1	1	253	30	32	ffffffff	none	left	みゅう！みゅう！	Myu! Myu!	Мю! Мю!
+0096	8	card	32	140	570	195	46	ff55eaa0	none	center	「記憶の風景」	A Landscape of Memories	Пейзаж воспоминаний
+0098	3	replace	1	1	368	88	32	ffffffff	none	left	私はユウシュウじゃない\n私はデキソコナイ・・・	I'm not gifted.\nI'm a failure...	Я не одарённая.\nЯ неудавшаяся...
+0098	4	replace	1	1	252	88	32	ffffffff	none	left	でもアンナは・・\nアンナは・・	But Anna...\nAnna...	Но Анна...\nАнна...
+0098	5	replace	1	1	366	89	32	ffffffff	none	left	アンナはそれでも\nお父様が・・大好きです	Even so, Anna...\nAnna loves you, Father.	И всё же Анна...\nАнна очень любит тебя, отец.
+0098	6	replace	1	1	533	207	32	ffffffff	none	left	永劫ともいえる時の中で少女は歌う\n悲しき定めと知りつつも少女は唄う\nそれは妖精の歌・・\n少女の旋律はどこへ向かうのか・・・	Through an age that could be called eternity, the girl sings.\nKnowing her sorrowful fate, she still sings.\nIt is the elves' song...\nWhere will her melody lead...?	Среди времён, что кажутся вечностью, девочка поёт.\nЗная свою печальную участь, она всё же поёт.\nЭто эльфийская песнь...\nКуда же приведёт её мелодия?..
+0102	4	replace	1	1	593	326	32	ffffffff	none	left	少女は今、平穏な日常の中にいる\nそれはいつまで続くかはわからない\nだが、それはかつてもう一人の自分が\n望んだ未来・・・\n妖精の歌は未来への道標。\n奏でる未来はその詠い人のみぞ知る・・	The girl now lives a peaceful, ordinary life.\nNo one knows how long it will last.\nYet this is the future her other self once wished for...\nThe elves' song is a guide to the future.\nOnly its singer knows what future it will bring...	Теперь девочка живёт тихой, обычной жизнью.\nНикто не знает, долго ли это продлится.\nНо именно такого будущего когда-то желала другая её половина...\nЭльфийская песнь указывает путь в будущее.\nКаким оно станет — знает лишь та, что поёт...
+0112	3	replace	1	1	364	90	32	ffffffff	none	left	ディクロニウス？ははっ\n一緒にしないでくれる？	A Diclonius? Ha!\nDon't lump me in with them.	Диклониус? Ха!\nНе равняй меня с ними.
+0112	4	replace	1	1	348	89	32	ffffffff	none	left	私は狩るもの。そして\n・・・生き残るもの・・	I am the hunter.\nAnd... the survivor...	Я — та, что охотится.\nИ... та, что выживает...
+0112	6	card	32	140	570	195	46	ff55eaa0	none	center	「LOST NUMBER」	LOST NUMBER	ПОТЕРЯННЫЙ НОМЕР
+0118	3	replace	1	1	363	30	32	ffffffff	none	left	お前達は私が守ってやる	I'll protect you all.	Я вас всех защищу.
+0118	4	replace	1	1	322	89	32	ffffffff	none	left	私にも守るものが\nできたからな・・・・	Now I have something\nworth protecting, too...	Ведь теперь и у меня\nесть что защищать...
+0118	6	card	32	140	570	195	46	ff55eaa0	none	center	「こわれた天使」	Broken Angel	Сломленный ангел
+0124	0	overlay	0	0	76	480	44	ffffffff	clear	left	えへへへへ♪	Hee\nhee\nhee\nhee ♪	Хи\nхи\nхи\nхи ♪
+0124	1	replace	1	1	389	88	32	ffffffff	none	left	お父さん・・私も・・\n私もお父さんを愛してる！	Daddy... I do, too...\nI love you too, Daddy!	Папа... Я тоже...\nЯ тоже люблю тебя, папа!
+0124	2	replace	1	1	469	63	58	ffffffff	none	center	おとーさん・・	Daddy...	Па-апа...
+0124	3	replace	1	1	402	64	58	ffffffff	none	center	おとーさん！	Daddy!	Папа!
+0124	5	replace	1	1	529	306	52	ff45f3a8	none	center	そして・・・\n「未来」へ・・・・	And then...\nInto the future...	И затем...\nНавстречу будущему...
+0124	7	overlay	0	0	366	100	39	ffffffff	ff10101a	left	お父さん\n愛してる	Daddy...	Папа...
+0124	7	overlay	290	165	337	94	31	ffffffff	ff10101a	left	お父さん\n愛してる	I love you.	Я люблю тебя.
+0130	3	replace	1	1	366	88	32	ffffffff	none	left	誰？ 私とパパの邪魔を\nするのは・・・	Who is it...?\nWho's getting between Papa and me...?	Кто?..\nКто мешает нам с папой?..
+0130	4	replace	1	1	334	88	32	ffffffff	none	left	誰にも邪魔はさせない\n邪魔させないから・・	I won't let anyone interfere.\nI won't let them...	Никому не позволю нам помешать.\nНе позволю...
+0130	5	card	32	140	570	195	46	ff55eaa0	none	center	「記憶と銃声」	Memories and Gunshots	Память и выстрелы
+0132	1	replace	1	1	588	442	32	ffffffff	none	left	こんなに痛いのに、、、\nこんなに辛いのに、、、なぜ、、、\nなぜ、、、うれしいのかな、、、\nへ、、、へへへ、、、たのしい、、\nたのしいよお、、、血、、、\n血は、、、嫌い、、、\nだけど、、、綺麗な色、、、へへへ	It hurts so much...\nIt's so unbearable... So why...?\nWhy am I happy...?\nHeh... Heh heh... This is fun...\nSo much fun... Blood...\nI hate... blood...\nBut... such a beautiful colour... Heh heh...	Так больно...\nТак тяжело... Почему?..\nПочему же мне так радостно?..\nХе... Хе-хе... Весело...\nКак же весело... Кровь...\nЯ не люблю... кровь...\nНо... какой красивый цвет... Хе-хе...
+0146	3	replace	1	1	253	30	32	ffffffff	none	left	みゅう！みゅう！	Myu! Myu!	Мю! Мю!
+0146	4	replace	1	1	570	147	32	ffffffff	none	left	こんなことで今までの罪を償えるとは\n思わない・・せめて・・・\n・・・ごめんな・・・	I don't think this can atone for everything I've done...\nBut at least...\n...Forgive me...	Не думаю, что этим можно искупить всё, что я натворил...\nНо хотя бы...\n...Простите меня...
+0178	3	replace	1	1	332	89	32	ffffffff	none	left	お前のまわりの人間を\n皆殺しにしてやる・・	I'll kill every human\naround you...	Я убью всех людей,\nкоторые тебя окружают...
+0178	4	replace	20	1	374	89	32	ffffffff	none	left	私はずっと・・さびしくて\nなのに・・・・	I've always been... so lonely.\nAnd yet...	Мне всегда было... так одиноко.\nИ всё же...
+0178	6	card	32	140	570	195	46	ff55eaa0	none	center	「既に悲しき彼女のすべてについては語らぬために」	Lest I Tell All of Her Sorrow	Чтобы не поведать всей её печали
+0202	3	replace	1	1	360	90	32	ffffffff	none	left	私は・・それでも私は\n人間と一緒に生きていく	I... Even so, I will\nlive alongside humans.	Я... И всё же я буду\nжить вместе с людьми.
+0202	4	replace	1	1	601	208	32	ffffffff	none	left	悲劇は加速する・・望もうと望むまいと\n奏でられる旋律はとどまることもなく。\n少女は歌う・・運命の彩り、永劫の道\nそう、それは妖精の歌・・・	Tragedy gathers speed... whether wished for or not.\nThe melody never ceases.\nThe girl sings... of fate's colours, of an eternal road.\nYes... it is the elves' song...	Трагедия набирает ход... Желанна она или нет.\nМелодия не смолкает.\nДевочка поёт... О красках судьбы, о вечном пути.\nДа... Это эльфийская песнь...
+0222	0	replace	24	24	592	432	27	ffffffff	ff000008	center	製作 ねくぱっち\nhttp://www.ob2.aitai.ne.jp/~touhou/\n\nゲストキャラ設定\nミサキ・・・・ナナパパさん\nanesueizi factory\nhttp://www.geocities.jp/anesueizi/index.html\n\nロストナンバー・・・・背徳三昧\nねくぱっち	Created by Nekupatchi\nhttp://www.ob2.aitai.ne.jp/~touhou/\n\nGuest character concepts\nMisaki: Nanapapa\nanesueizi factory\nhttp://www.geocities.jp/anesueizi/index.html\n\nLost Number: Haitoku Zanmai\nNekupatchi	Автор: Некупатти\nhttp://www.ob2.aitai.ne.jp/~touhou/\n\nПриглашённые персонажи\nМисаки: Нанапапа\nanesueizi factory\nhttp://www.geocities.jp/anesueizi/index.html\n\nЛост Намбер: Хайтоку Дзаммай\nНекупатти
+0116	0	replace	1	1	130	35	33	ffff3030	none	center	にゅっ！	Nyu!	Ню!
+0116	1	replace	1	1	130	35	33	ffff3030	none	center	にゅっ！	Nyu!	Ню!
+0116	14	replace	1	1	294	53	51	ffffcf38	none	center	Round 1	Round 1	Раунд 1
+0116	15	replace	1	1	304	54	52	ffffcf38	none	center	Round 2	Round 2	Раунд 2
+0116	16	replace	1	1	301	54	52	ffffcf38	none	center	Round 3	Round 3	Раунд 3
+0116	17	replace	1	1	307	201	86	ffff3030	none	center	Ready\nFight!	Ready\nFight!	Готовы?\nБой!
+0116	18	replace	1	1	214	86	84	ffff3030	none	center	K.O.!	K.O.!	Нокаут!
+0116	21	replace	1	1	150	53	51	ffffffff	none	center	Win!	Win!	Победа!
+0116	22	replace	1	1	150	53	51	ffffffff	none	center	Win!	Win!	Победа!
+0116	23	replace	1	1	150	53	51	ffff3030	none	center	Win!	Win!	Победа!
+0116	24	replace	1	1	226	141	86	ffff3030	none	center	Double K.O.!	Double\nK.O.!	Двойной\nнокаут!
+0116	67	replace	1	1	143	56	54	ffffffff	none	center	Lose	Lose	Поражение
+0104	192	replace	1	1	151	39	37	ff90edc0	none	center	NANA	NANA	НАНА
+0108	2	replace	1	1	176	39	37	ff90edc0	none	center	CLONE	CLONE	КЛОН
+0110	235	replace	1	1	156	39	37	ff90edc0	none	center	MAYU	MAYU	МАЮ
+0114	144	replace	1	1	152	40	38	ff90edc0	none	center	ANNA	ANNA	АННА
+0122	256	replace	1	1	156	39	37	ff90edc0	none	center	NYUW	NYU	НЮ
+0128	145	replace	1	1	212	39	37	ff90edc0	none	center	MARIKO	MARIKO	МАРИКО
+0136	173	replace	1	1	377	39	37	ff90edc0	none	center	LOST-NUMBER	LOST-NUMBER	ЛОСТ НАМБЕР
+0156	130	replace	1	1	228	39	37	ff90edc0	none	center	LO-LUCY	YOUNG LUCY	МАЛЕНЬКАЯ ЛЮСИ
+0168	170	replace	1	1	179	39	37	ff90edc0	none	center	MISAKI	MISAKI	МИСАКИ
+0170	185	replace	1	1	141	39	37	ff90edc0	none	center	LUCY	LUCY	ЛЮСИ

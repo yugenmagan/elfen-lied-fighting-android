@@ -1,0 +1,26 @@
+{
+  "apk": "elfen-007d.apk",
+  "bytes": 68684127,
+  "sha256": "b0c84c7992c0c19cc708edaab2334368a2229fc8a4e1687527b4d975b8954dbe",
+  "original_assets_unchanged": 2881,
+  "total_assets": 2882,
+  "new_assets": [
+    "assets/game/story-index.tsv"
+  ],
+  "launcher_resources_unchanged": true,
+  "launcher_resource_paths_renamed": false,
+  "signature_matches_test003": true,
+  "application_id": "org.elfen.fighting.nativeport",
+  "version_code": 11,
+  "version_name": "0.0.7d-hud",
+  "min_sdk": 29,
+  "target_sdk": 35,
+  "permissions": [
+    "android.permission.INTERNET"
+  ],
+  "native_libraries": [],
+  "zip_crc_ok": true,
+  "android_execution_performed": false,
+  "launcher_png_reencoded": [],
+  "launcher_pixels_unchanged": true
+}

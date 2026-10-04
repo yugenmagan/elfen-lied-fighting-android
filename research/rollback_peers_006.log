@@ -1,0 +1,6 @@
+PASS paired rollback delayTicks=3 jitter=4 final=false frames=3000 schedulerTicks=3007 rollbacks=224:223 hash=341d226b24a1c04b9e5258ba750ce3e68e56bad0d7e35556ae89b1b64a255907
+PASS paired rollback delayTicks=6 jitter=4 final=false frames=3000 schedulerTicks=3017 rollbacks=222:228 hash=341d226b24a1c04b9e5258ba750ce3e68e56bad0d7e35556ae89b1b64a255907
+PASS paired rollback delayTicks=9 jitter=4 final=false frames=3000 schedulerTicks=3098 rollbacks=237:227 hash=341d226b24a1c04b9e5258ba750ce3e68e56bad0d7e35556ae89b1b64a255907
+PASS paired rollback delayTicks=12 jitter=4 final=false frames=3000 schedulerTicks=3212 rollbacks=232:233 hash=341d226b24a1c04b9e5258ba750ce3e68e56bad0d7e35556ae89b1b64a255907
+PASS paired rollback delayTicks=9 jitter=5 final=true frames=904 schedulerTicks=949 rollbacks=57:54 hash=b5e9a764e09fb41f6cf05e88b5f3f246aa0a6e991019d15936dffa53f78085b2
+PASS RollbackPeerTest checks=54088

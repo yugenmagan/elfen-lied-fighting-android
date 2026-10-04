@@ -1,0 +1,128 @@
+[
+  {
+    "character": "0104",
+    "exit": 0,
+    "seconds": 86.12,
+    "log": "research/story_route_0104_006.log",
+    "last_lines": [
+      "f=131977 slot=13 mode=1 wins=6 hp=400:400",
+      "f=138686 slot=13 mode=2 wins=6 hp=0:142",
+      "f=138747 slot=13 mode=1 wins=6 hp=400:400",
+      "f=147589 slot=14 mode=0 wins=7 hp=scene",
+      "f=149211 slot=15 mode=1 wins=7 hp=400:400",
+      "f=156783 slot=16 mode=0 wins=8 hp=scene"
+    ]
+  },
+  {
+    "character": "0108",
+    "exit": 0,
+    "seconds": 63.6,
+    "log": "research/story_route_0108_006.log",
+    "last_lines": [
+      "f=183674 slot=18 mode=1 wins=9 hp=400:1000",
+      "f=188983 slot=19 mode=0 wins=9 hp=scene",
+      "f=190605 slot=20 mode=0 wins=9 hp=scene",
+      "f=192227 slot=21 mode=3 wins=9 hp=scene",
+      "ROUTE with per-frame history snapshots, frames=192227 slot=21 mode=3 wins=9 fights=10 hash=d21eb0854139391edfa7e5c0d023b699a2921026bb6a5791716d450536b7e020",
+      "PASS full route replay 0 checkpoints=238 d21eb0854139391edfa7e5c0d023b699a2921026bb6a5791716d450536b7e020"
+    ]
+  },
+  {
+    "character": "0110",
+    "exit": 0,
+    "seconds": 29.78,
+    "log": "research/story_route_0110_006.log",
+    "last_lines": [
+      "f=90972 slot=18 mode=1 wins=9 hp=400:1000",
+      "f=95604 slot=19 mode=0 wins=9 hp=scene",
+      "f=97226 slot=20 mode=0 wins=9 hp=scene",
+      "f=98848 slot=21 mode=3 wins=9 hp=scene",
+      "ROUTE with per-frame history snapshots, frames=98848 slot=21 mode=3 wins=9 fights=10 hash=0cd440bbe22cb985dcf2443d9cb776006b8378c7bc85f62057d18d27c205358b",
+      "PASS full route replay 0 checkpoints=124 0cd440bbe22cb985dcf2443d9cb776006b8378c7bc85f62057d18d27c205358b"
+    ]
+  },
+  {
+    "character": "0114",
+    "exit": 0,
+    "seconds": 62.23,
+    "log": "research/story_route_0114_006.log",
+    "last_lines": [
+      "f=180620 slot=18 mode=1 wins=9 hp=400:1000",
+      "f=185730 slot=19 mode=0 wins=9 hp=scene",
+      "f=187352 slot=20 mode=0 wins=9 hp=scene",
+      "f=188974 slot=21 mode=3 wins=9 hp=scene",
+      "ROUTE with per-frame history snapshots, frames=188974 slot=21 mode=3 wins=9 fights=10 hash=4dd43fdb1a14c5882cc8c43eb6bc9b1c25551dfe7b4b307a34b7b7f1fffc7dde",
+      "PASS full route replay 0 checkpoints=230 4dd43fdb1a14c5882cc8c43eb6bc9b1c25551dfe7b4b307a34b7b7f1fffc7dde"
+    ]
+  },
+  {
+    "character": "0122",
+    "exit": 0,
+    "seconds": 36.99,
+    "log": "research/story_route_0122_006.log",
+    "last_lines": [
+      "f=106261 slot=18 mode=1 wins=9 hp=400:1000",
+      "f=112070 slot=19 mode=0 wins=9 hp=scene",
+      "f=113692 slot=20 mode=0 wins=9 hp=scene",
+      "f=115314 slot=21 mode=3 wins=9 hp=scene",
+      "ROUTE with per-frame history snapshots, frames=115314 slot=21 mode=3 wins=9 fights=10 hash=8d93a6284b97a1cf886d8ac227ed3e1a735ef2111755c3b2805446a30b14f68c",
+      "PASS full route replay 0 checkpoints=141 8d93a6284b97a1cf886d8ac227ed3e1a735ef2111755c3b2805446a30b14f68c"
+    ]
+  },
+  {
+    "character": "0128",
+    "exit": 1,
+    "seconds": 178.19,
+    "log": "research/story_route_0128_006.log",
+    "last_lines": [
+      "f=490604 slot=1 mode=1 wins=0 hp=400:400",
+      "f=498351 slot=1 mode=2 wins=0 hp=0:248",
+      "f=498412 slot=1 mode=1 wins=0 hp=400:400",
+      "ROUTE with per-frame history snapshots, frames=500000 slot=1 mode=1 wins=0 fights=1 hash=ed531a6f01891e34f1b2a2b1394cd37b7f57db5dc1877900de20864ad48f200a",
+      "Exception in thread \"main\" java.lang.AssertionError: Route frame bound",
+      "\tat org.elfen.engine.StoryPlayTest.main(StoryPlayTest.java:22)"
+    ]
+  },
+  {
+    "character": "0136",
+    "exit": 0,
+    "seconds": 32.49,
+    "log": "research/story_route_0136_006.log",
+    "last_lines": [
+      "f=98182 slot=18 mode=1 wins=9 hp=400:1000",
+      "f=102435 slot=19 mode=0 wins=9 hp=scene",
+      "f=104057 slot=20 mode=0 wins=9 hp=scene",
+      "f=105679 slot=21 mode=3 wins=9 hp=scene",
+      "ROUTE with per-frame history snapshots, frames=105679 slot=21 mode=3 wins=9 fights=10 hash=26edcb24af7dc824b6f8953296244ffcfd8893cb2f60e49c3e6c8fa7ac2516ec",
+      "PASS full route replay 0 checkpoints=131 26edcb24af7dc824b6f8953296244ffcfd8893cb2f60e49c3e6c8fa7ac2516ec"
+    ]
+  },
+  {
+    "character": "0156",
+    "exit": 0,
+    "seconds": 74.69,
+    "log": "research/story_route_0156_006.log",
+    "last_lines": [
+      "f=205256 slot=18 mode=1 wins=9 hp=400:1000",
+      "f=209031 slot=19 mode=0 wins=9 hp=scene",
+      "f=210653 slot=20 mode=0 wins=9 hp=scene",
+      "f=212275 slot=21 mode=3 wins=9 hp=scene",
+      "ROUTE with per-frame history snapshots, frames=212275 slot=21 mode=3 wins=9 fights=10 hash=91601d47ed671a2a3aa8c74c87d47dbfe38456372296c8ebe9d15e7d6968f5d9",
+      "PASS full route replay 0 checkpoints=262 91601d47ed671a2a3aa8c74c87d47dbfe38456372296c8ebe9d15e7d6968f5d9"
+    ]
+  },
+  {
+    "character": "0168",
+    "exit": 0,
+    "seconds": 49.13,
+    "log": "research/story_route_0168_006.log",
+    "last_lines": [
+      "f=138755 slot=18 mode=1 wins=9 hp=400:1000",
+      "f=146529 slot=19 mode=0 wins=9 hp=scene",
+      "f=148151 slot=20 mode=0 wins=9 hp=scene",
+      "f=149773 slot=21 mode=3 wins=9 hp=scene",
+      "ROUTE with per-frame history snapshots, frames=149773 slot=21 mode=3 wins=9 fights=10 hash=9674e8176b5f905fa4ba7bdd8407142ff28d461e28d271b71c2314aa393aea8e",
+      "PASS full route replay 0 checkpoints=185 9674e8176b5f905fa4ba7bdd8407142ff28d461e28d271b71c2314aa393aea8e"
+    ]
+  }
+]

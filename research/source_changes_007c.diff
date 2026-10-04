@@ -1,0 +1,99 @@
+--- 007b/app/src/main/java/org/elfen/fighting/MainActivity.java
++++ 007c/app/src/main/java/org/elfen/fighting/MainActivity.java
+@@ -63,7 +63,7 @@
+                 .setNeutralButton("Новый сюжет",(d,n)->new Handler().post(()->openSelection(true,true)))
+                 .setNegativeButton("Обычный VS",(d,n)->new Handler().post(()->openSelection(false,true))).create());return;
+         }
+-        AlertDialog d=new AlertDialog.Builder(this).setTitle("Elfen Fighting · TEST 007b")
++        AlertDialog d=new AlertDialog.Builder(this).setTitle("Elfen Fighting · TEST 007c")
+             .setMessage("Аркадный стик: веди палец по кругу, не отрывая от экрана. Размер и мёртвая зона — в настройках управления.\n\nНа экране выбора нажми на портрет, затем «Выбрать».\n\nВ VS сначала выбери своего бойца, затем противника.\n\nВ сюжетных сценах A — продолжить. Пауза → Приёмы — команды текущего бойца. Бои идут до двух побед.")
+             .setPositiveButton("Сюжет",(a,b)->new Handler().post(()->openSelection(true,true)))
+             .setNeutralButton("Онлайн",(a,b)->new Handler().post(this::onlineMenu))
+@@ -208,7 +208,7 @@
+         if(online!=null){onlineMenu();return;}
+         if(game.story!=null){storyMenu();return;}
+         String[] items={"Продолжить","Персонаж","Противник","Арена","Уровень AI","Настроить управление","Передвинуть элементы","Переназначить геймпад","Поделиться отчётом","Новый матч","Правила матча","Повторить запись","Сохранить состояние","Восстановить состояние","Сюжет","Онлайн"};
+-        AlertDialog d=new AlertDialog.Builder(this).setTitle("TEST 007b · VS").setItems(items,(a,i)->{
++        AlertDialog d=new AlertDialog.Builder(this).setTitle("TEST 007c · VS").setItems(items,(a,i)->{
+             new Handler().post(()->{switch(i){case 0:resumeBattle();break;case 1:choose(0);break;case 2:choose(1);break;case 3:choose(2);break;case 4:cpuMenu();break;case 5:settings();break;
+                 case 6:game.editing=!game.editing;break;case 7:remapMenu();break;case 8:shareReport();break;case 9:openSelection(false);break;case 10:matchRulesMenu();break;case 11:game.replay();break;case 12:game.saveSnapshot();break;case 13:game.restoreSnapshot();break;case 14:chooseStory();break;case 15:onlineMenu();break;}});
+         }).create();show(d);
+@@ -313,7 +313,7 @@
+     @Override protected void onDestroy(){leaveOnline();if(audio!=null)audio.release();super.onDestroy();}
+     @Override public void onWindowFocusChanged(boolean focused){super.onWindowFocusChanged(focused);if(focused)immersive();else clearInputs();}
+     private void shareReport(){
+-        String data="Elfen Fighting native test 007b\n"+Build.MANUFACTURER+" "+Build.MODEL+" / Android "+Build.VERSION.RELEASE+" SDK "+Build.VERSION.SDK_INT+"\nABIs "+Arrays.toString(Build.SUPPORTED_ABIS)+"\nScreen "+game.getWidth()+"x"+game.getHeight()+"\nCharacter "+selected+" Opponent "+opponent+" AI "+cpuLevel+" Stage "+selectedStage+"\nMax pointers "+maxPointers+"\nPause/resume "+pauseCount+"/"+resumeCount+"\nFrame count "+(game.story!=null?game.story.frame():game.session==null?0:game.session.frame())+"\nState hash "+(game.story!=null?game.story.stateHash():game.session==null?"":game.session.stateHash())+"\nReplay "+game.replayStatus+"\nSlow frames "+game.slowFrames+"\nSettings "+prefs.getAll()+"\nError "+lastError+"\n"+events;
++        String data="Elfen Fighting native test 007c\n"+Build.MANUFACTURER+" "+Build.MODEL+" / Android "+Build.VERSION.RELEASE+" SDK "+Build.VERSION.SDK_INT+"\nABIs "+Arrays.toString(Build.SUPPORTED_ABIS)+"\nScreen "+game.getWidth()+"x"+game.getHeight()+"\nCharacter "+selected+" Opponent "+opponent+" AI "+cpuLevel+" Stage "+selectedStage+"\nMax pointers "+maxPointers+"\nPause/resume "+pauseCount+"/"+resumeCount+"\nFrame count "+(game.story!=null?game.story.frame():game.session==null?0:game.session.frame())+"\nState hash "+(game.story!=null?game.story.stateHash():game.session==null?"":game.session.stateHash())+"\nReplay "+game.replayStatus+"\nSlow frames "+game.slowFrames+"\nSettings "+prefs.getAll()+"\nError "+lastError+"\n"+events;
+         if(game.story!=null)data+="\nStory slot "+game.story.slot()+" mode "+game.story.mode()+" fights "+game.story.fights()+" wins "+game.story.wins()+"\n";
+         if(online!=null){data+="\nOnline state "+online.state()+" message "+online.message()+"\n";if(online.rollback()!=null)data+="Confirmed "+online.rollback().confirmedFrame()+" rollback "+online.rollback().rollbackCount()+" resimulated "+online.rollback().resimulatedFrames()+"\n";}
+         File crash=new File(getFilesDir(),"last-crash.txt");
+@@ -510,9 +510,9 @@
+                 float top=story==null?0:getHeight()*.10f,scale=Math.min(getWidth()/640f,(getHeight()-top)/480f);dest.set((getWidth()-640*scale)/2,top+(getHeight()-top-480*scale)/2,(getWidth()+640*scale)/2,top+(getHeight()-top+480*scale)/2);paint.setAlpha(255);c.drawBitmap(scene,null,dest,paint);
+             }
+             paint.setAntiAlias(true);paint.setTextSize(Math.max(12,getHeight()*.025f));paint.setColor(0xdd101018);c.drawRect(0,0,getWidth(),getHeight()*.10f,paint);paint.setColor(Color.WHITE);
+-            c.drawText(online!=null?"TEST 007b · ONLINE · "+(online.rollback()==null?online.code():"P"+(online.rollback().localPlayer()+1)+" · rollback "+online.rollback().rollbackCount()):story==null?"TEST 007b · VS / таймер / повтор":"TEST 007b · сюжет · "+(story.scenePack()!=null?story.scenePack().name:"бой "+story.fights()),getWidth()*.018f,getHeight()*.037f,paint);
++            c.drawText(online!=null?"TEST 007c · ONLINE · "+(online.rollback()==null?online.code():"P"+(online.rollback().localPlayer()+1)+" · rollback "+online.rollback().rollbackCount()):story==null?"TEST 007c · VS / таймер / повтор":"TEST 007c · сюжет · "+(story.scenePack()!=null?story.scenePack().name:"бой "+story.fights()),getWidth()*.018f,getHeight()*.037f,paint);
+             if(session!=null)c.drawText(label(packs.get(selected))+"  "+(replayStatus.isEmpty()?lastCommand:replayStatus)+"   ["+String.format(Locale.ROOT,"%03X",input.mask())+"]",getWidth()*.018f,getHeight()*.075f,paint);
+-            selectionButton(c,new RectF(getWidth()*.84f,getHeight()*.01f,getWidth()*.99f,getHeight()*.09f),online==null?"Ⅱ Пауза":"Menu",0xff49323f);
++            drawStartButton(c);
+             if(editing){paint.setColor(0xfff2bf70);c.drawText("Передвигай левый и правый блок. Пауза → Меню → Передвинуть элементы — закончить.",getWidth()*.025f,getHeight()*.14f,paint);}
+             layoutControls();if(editing||!prefs.getBoolean("hidePad",true)||!hasGamepad())drawControls(c);
+             if(online!=null&&online.state()!=OnlineMatch.COMPLETE&&!online.canAdvance()){
+@@ -582,6 +582,13 @@
+         }
+         int activeButtons(){CommandGuide g=guides.get(selected);return g==null?Input.A:g.buttons;}
+         float buttonX(int i){return bx+(i%3-1)*buttonRadius*2.35f;}float buttonY(int i){return by+(i<3?.8f:-1.6f)*buttonRadius;}
++        void drawStartButton(Canvas c){
++            RectF r=new RectF(getWidth()*.84f,getHeight()*.01f,getWidth()*.99f,getHeight()*.09f);
++            paint.setColor(0xffdad9d5);c.drawRoundRect(r,getHeight()*.018f,getHeight()*.018f,paint);
++            // Pause symbol only: no letters on or beside the white Start button.
++            float unit=r.height()*.12f,top=r.centerY()-unit*1.7f,bottom=r.centerY()+unit*1.7f;
++            paint.setColor(0xff302f2e);c.drawRect(r.centerX()-unit*1.5f,top,r.centerX()-unit*.5f,bottom,paint);c.drawRect(r.centerX()+unit*.5f,top,r.centerX()+unit*1.5f,bottom,paint);
++        }
+         void drawControls(Canvas c){
+             int alpha=(int)(prefs.getFloat("opacity",.6f)*255),mask=input.mask();
+             // A recessed circular gate, eight marks and a moving thumb cap.
+@@ -599,12 +606,22 @@
+             float capX=dx+stick.offsetX(),capY=dy+stick.offsetY(),cap=radius*org.elfen.controls.ArcadeStick.CAP;
+             paint.setColor(Color.argb(alpha,13,12,20));c.drawCircle(capX,capY+radius*.045f,cap*1.08f,paint);
+             paint.setStrokeWidth(radius*.13f);paint.setColor(Color.argb(alpha,128,110,124));c.drawLine(dx,dy,capX,capY,paint);
+-            paint.setColor(stick.active()?Color.argb(alpha,156,61,84):Color.argb(alpha,93,71,92));c.drawCircle(capX,capY,cap,paint);
++            paint.setColor(stick.active()?Color.argb(alpha,232,52,56):Color.argb(alpha,199,27,32));c.drawCircle(capX,capY,cap,paint);
+             paint.setStyle(Paint.Style.STROKE);paint.setStrokeWidth(radius*.025f);
+-            paint.setColor(Color.argb(alpha,stick.active()?255:202,stick.active()?205:174,stick.active()?138:195));c.drawCircle(capX,capY,cap,paint);
++            paint.setColor(Color.argb(alpha,stick.active()?255:238,stick.active()?134:85,stick.active()?134:91));c.drawCircle(capX,capY,cap,paint);
+             paint.setStyle(Paint.Style.FILL);paint.setColor(Color.argb(alpha/3,255,244,232));c.drawCircle(capX-cap*.24f,capY-cap*.28f,cap*.24f,paint);
+-            paint.setTextAlign(Paint.Align.CENTER);
+-            for(int i=0;i<6;i++){if((activeButtons()&(16<<i))==0)continue;paint.setColor((mask&(16<<i))!=0?0xddce4661:Color.argb(alpha,45,49,65));c.drawCircle(buttonX(i),buttonY(i),buttonRadius,paint);paint.setColor(Color.argb(alpha,255,255,255));paint.setTextSize(buttonRadius*.85f);c.drawText(""+(char)('A'+i),buttonX(i),buttonY(i)+buttonRadius*.3f,paint);}paint.setTextAlign(Paint.Align.LEFT);
++            // Base colours sampled from the supplied arcade-controller photograph.
++            int[] colours={0xffc43438,0xffcab61b,0xff4bde60};
++            for(int i=0;i<6;i++){
++                if((activeButtons()&(16<<i))==0)continue;
++                boolean pressed=(mask&(16<<i))!=0;int colour;
++                if(i<3){
++                    colour=colours[i];int red=Color.red(colour),green=Color.green(colour),blue=Color.blue(colour);
++                    if(pressed){red+=(255-red)/5;green+=(255-green)/5;blue+=(255-blue)/5;}
++                    colour=Color.argb(pressed?221:alpha,red,green,blue);
++                }else colour=pressed?0xddce4661:Color.argb(alpha,45,49,65);
++                paint.setColor(colour);c.drawCircle(buttonX(i),buttonY(i),buttonRadius,paint);
++            }
+         }
+         @Override protected void onSizeChanged(int w,int h,int oldw,int oldh){
+             super.onSizeChanged(w,h,oldw,oldh);clearInputs();
+@@ -615,11 +632,14 @@
+             layoutControls();int action=e.getActionMasked(),index=e.getActionIndex();maxPointers=Math.max(maxPointers,e.getPointerCount());
+             if(action==MotionEvent.ACTION_CANCEL){clearInputs();pointerGroup.clear();return true;}
+             if(action==MotionEvent.ACTION_DOWN||action==MotionEvent.ACTION_POINTER_DOWN){int id=e.getPointerId(index);float x=e.getX(index),y=e.getY(index);
+-                if(x>getWidth()*.84f&&y<getHeight()*.12f){pauseMenu();return true;}
++                if(x>getWidth()*.84f&&y<getHeight()*.12f){performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);pauseMenu();return true;}
+                 if(pauseGate.blocked()&&!editing)return true;
+                 int group;
+                 if(stick.contains(x,y))group=editing||stick.begin(id,x,y)?1:0;
+-                else group=2;
++                else{
++                    group=2;
++                    if(!editing)for(int b=0;b<6;b++)if((activeButtons()&(16<<b))!=0&&Math.hypot(x-buttonX(b),y-buttonY(b))<buttonRadius*1.12f){performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);break;}
++                }
+                 pointerGroup.put(id,group);
+             }
+             boolean up=action==MotionEvent.ACTION_UP||action==MotionEvent.ACTION_POINTER_UP;

@@ -1,0 +1,71 @@
+import android.graphics.*;
+import org.elfen.controls.*;
+import org.elfen.engine.Input;
+import java.nio.file.*;
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+
+/** Executes the production control drawing methods through a Java2D adapter. */
+public final class ControlPreview {
+ static int checks, layouts;
+ static void check(boolean b,String s){checks++;if(!b)throw new AssertionError(s);}
+ static final class Prefs {float getFloat(String k,float d){return d;}}
+ final int w,h,active;final Prefs prefs=new Prefs();final Paint paint=new Paint();
+ final Input input=new Input();final ArcadeStick stick=new ArcadeStick();
+ final CombatLayout l;final float dx,dy,radius,buttonRadius;
+ ControlPreview(int w,int h,float size,boolean mirror,int active){
+  this.w=w;this.h=h;this.active=active;l=new CombatLayout(w,h,size,mirror,Float.NaN,Float.NaN,Float.NaN,Float.NaN);
+  dx=l.stickX;dy=l.stickY;radius=l.stickRadius;buttonRadius=l.buttonRadius;stick.configure(dx,dy,radius,.18f);
+ }
+ int getWidth(){return w;}int getHeight(){return h;}int activeButtons(){return active;}
+ float buttonX(int i){return l.buttonX(i);}float buttonY(int i){return l.buttonY(i);}
+ /*DRAW_METHODS*/
+ static void geometry(){
+  int[][] screens={{2048,945},{1280,720},{1920,1080},{2160,1080},{2400,1080},{2560,1080},{1024,768},{1280,800}};
+  float n=Float.NaN;float[][] prefs={{n,n,n,n},{.15f,.75f,.84f,.75f},{.06f,.2f,.06f,.2f},{.94f,.9f,.94f,.9f},{.5f,.5f,.5f,.5f}};
+  for(int[] s:screens)for(float size:new float[]{.65f,1,1.5f})for(boolean mirror:new boolean[]{false,true})for(float[] p:prefs){
+   CombatLayout l=new CombatLayout(s[0],s[1],size,mirror,p[0],p[1],p[2],p[3]);layouts++;
+   check(Math.abs((l.right-l.left)/(l.bottom-l.top)-4f/3)<.0001,"4:3");
+   check(l.left>=0&&l.right<=s[0]&&l.top>=0&&l.bottom<=s[1]+.01,"arena bounds");
+   check(l.buttonRadius>=s[1]*.035f,"button too small");
+   check(mirror?l.stickX-l.stickRadius>=l.right:l.stickX+l.stickRadius<=l.left,"stick overlap");
+   check(l.stickX-l.stickRadius>=0&&l.stickX+l.stickRadius<=s[0]&&l.stickY+l.stickRadius<=s[1],"stick edge");
+   for(int i=0;i<6;i++){
+    float x=l.buttonX(i),y=l.buttonY(i),r=l.buttonRadius*1.12f;
+    check(x-r>=0&&x+r<=s[0]&&y-r>=s[1]*.12f&&y+r<=s[1],"hit bounds");
+    check(mirror?x+r<=l.left:x-r>=l.right,"HUD hit overlap");
+    check(y+1.84f*l.buttonRadius<=s[1],"caption clipped");
+    for(int j=0;j<i;j++)check(Math.hypot(x-l.buttonX(j),y-l.buttonY(j))>2*r,"touch circles overlap");
+   }
+  }
+  CombatLayout wide=new CombatLayout(2048,945,1,false,n,n,n,n);
+  check(wide.left==457&&wide.top==94.5f,"wide viewport changed");
+ }
+ void render(Path scene,Path target)throws Exception{
+  Bitmap b=Bitmap.createBitmap(w,h,Bitmap.Config.ARGB_8888);drawControls(new Canvas(b));
+  for(int y=(int)Math.ceil(l.top);y<(int)l.bottom;y++)for(int x=(int)Math.ceil(l.left);x<(int)l.right;x++)
+   if((b.image.getRGB(x,y)>>>24)!=0)throw new AssertionError("paint overlaps arena");
+  int[] colours={0xc43438,0xcab61b,0x4bde60};
+  for(int i=0;i<3;i++){
+   int c=b.image.getRGB(Math.round(buttonX(i)),Math.round(buttonY(i)));
+   for(int shift:new int[]{0,8,16})check(Math.abs(((c>>shift)&255)-((colours[i]>>shift)&255))<=1,"button colour");
+   int pixels=0;
+   for(int y=(int)(buttonY(i)+buttonRadius*1.10f);y<(int)(buttonY(i)+buttonRadius*1.84f);y++)
+    for(int x=(int)(buttonX(i)-buttonRadius*.45f);x<(int)(buttonX(i)+buttonRadius*.45f);x++)if((b.image.getRGB(x,y)>>>24)>0)pixels++;
+   check(pixels>5,"A/B/C missing below corresponding button");
+  }
+  BufferedImage result=new BufferedImage(w,h,BufferedImage.TYPE_INT_RGB);java.awt.Graphics2D g=result.createGraphics();
+  g.setColor(java.awt.Color.BLACK);g.fillRect(0,0,w,h);
+  g.setRenderingHint(java.awt.RenderingHints.KEY_INTERPOLATION,java.awt.RenderingHints.VALUE_INTERPOLATION_NEAREST_NEIGHBOR);
+  g.drawImage(ImageIO.read(scene.toFile()),Math.round(l.left),Math.round(l.top),Math.round(l.right-l.left),Math.round(l.bottom-l.top),null);
+  drawStartButton(new Canvas(b));g.drawImage(b.image,0,0,null);g.dispose();ImageIO.write(result,"png",target.toFile());
+ }
+ public static void main(String[] args)throws Exception{
+  geometry();Path out=Path.of(args[1]);java.nio.file.Files.createDirectories(out);
+  new ControlPreview(2048,945,1,false,0x70).render(Path.of(args[0]),out.resolve("controls-wide.png"));
+  new ControlPreview(1280,720,1,false,0x70).render(Path.of(args[0]),out.resolve("controls-16x9.png"));
+  new ControlPreview(1280,720,1,true,0x70).render(Path.of(args[0]),out.resolve("controls-mirrored.png"));
+  new ControlPreview(1024,768,1.5f,false,0x3f0).render(Path.of(args[0]),out.resolve("controls-tablet-six.png"));
+  System.out.println("PASS "+layouts+" layouts, "+checks+" assertions; 4 production-rendered previews; no control pixels in arena; A/B/C colours and captions");
+ }
+}

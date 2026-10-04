@@ -1,0 +1,5 @@
+PASS guide recognition cases=1668
+PASS pause modal/lifecycle/state freeze
+PASS VS first-to-two, draws, state reset, cross-round restore
+PASS story first-to-two, draws, progression gating, save migration
+PASS assertions=26442

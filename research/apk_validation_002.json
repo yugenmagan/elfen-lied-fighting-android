@@ -1,0 +1,15 @@
+{
+  "scope": "static APK package validation, not device testing",
+  "passed": true,
+  "apk_bytes": 67773637,
+  "apk_sha256": "7e373b7ab451d988b7abc90f0661af3752ee5f4f30b65442576e250bfd7efbf4",
+  "assets_byte_matched": 2881,
+  "unique_packs": 46,
+  "filename_rows": 244,
+  "mapped_container_entries": 88,
+  "original_archive_sha256": "347016a345bf56377bfbf311534d2f48855ada091ee3677e68085196d91f9d68",
+  "png": 2567,
+  "wav": 208,
+  "mid": 12,
+  "device_installation_tested": false
+}

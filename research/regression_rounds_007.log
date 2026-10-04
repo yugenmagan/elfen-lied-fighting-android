@@ -1,0 +1,13 @@
+PASS match 0170 frames=7204 HP=141:72 score=1:0
+PASS match 0104 frames=7204 HP=251:1 score=1:0
+PASS match 0128 frames=7204 HP=225:155 score=1:0
+PASS match 0122 frames=7204 HP=108:198 score=0:1
+PASS match 0114 frames=7204 HP=62:181 score=0:1
+PASS match 0110 frames=6111 HP=158:0 score=1:0
+PASS match 0156 frames=7204 HP=75:163 score=0:1
+PASS match 0108 frames=7204 HP=40:223 score=0:1
+PASS match 0168 frames=7204 HP=10:220 score=0:1
+PASS match 0136 frames=6010 HP=0:179 score=0:1
+PASS match 0142 frames=6251 HP=707:0 score=1:0
+PASS match 0144 frames=6240 HP=656:0 score=1:0
+PASS natural KO matches=4; forced result branches: P1/P2 perfect, doubleKO, infinite clock, cross-round restore

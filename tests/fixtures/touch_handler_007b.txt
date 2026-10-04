@@ -1,0 +1,25 @@
+public boolean onTouchEvent(MotionEvent e){
+            if(dialog||!resumed)return true;
+            if(selection!=null)return selectionTouch(e);
+            layoutControls();int action=e.getActionMasked(),index=e.getActionIndex();maxPointers=Math.max(maxPointers,e.getPointerCount());
+            if(action==MotionEvent.ACTION_CANCEL){clearInputs();pointerGroup.clear();return true;}
+            if(action==MotionEvent.ACTION_DOWN||action==MotionEvent.ACTION_POINTER_DOWN){int id=e.getPointerId(index);float x=e.getX(index),y=e.getY(index);
+                if(x>getWidth()*.84f&&y<getHeight()*.12f){pauseMenu();return true;}
+                if(pauseGate.blocked()&&!editing)return true;
+                int group;
+                if(stick.contains(x,y))group=editing||stick.begin(id,x,y)?1:0;
+                else group=2;
+                pointerGroup.put(id,group);
+            }
+            boolean up=action==MotionEvent.ACTION_UP||action==MotionEvent.ACTION_POINTER_UP;
+            for(int history=0;history<=e.getHistorySize();history++)for(int i=0;i<e.getPointerCount();i++){
+                int id=e.getPointerId(i);
+                if(!pointerGroup.containsKey(id))continue;float x=history<e.getHistorySize()?e.getHistoricalX(i,history):e.getX(i),y=history<e.getHistorySize()?e.getHistoricalY(i,history):e.getY(i);
+                if(editing){if(i==0){boolean mirror=prefs.getBoolean("mirror",false);float nx=Math.max(.06f,Math.min(.94f,x/getWidth())),ny=Math.max(.2f,Math.min(.9f,y/getHeight()));if(mirror)nx=1-nx;String prefix=pointerGroup.get(id)==1?"d":"b";prefs.edit().putFloat(prefix+"x",nx).putFloat(prefix+"y",ny).apply();}input.set(id,0);continue;}
+                int mask=0;if(pointerGroup.get(id)==1){stick.move(id,x,y);mask=stick.mask();}
+                else if(pointerGroup.get(id)==2)for(int b=0;b<6;b++)if((activeButtons()&(16<<b))!=0&&Math.hypot(x-buttonX(b),y-buttonY(b))<buttonRadius*1.12f)mask|=16<<b;
+                input.set(id,mask);
+            }
+            if(up){int id=e.getPointerId(index);stick.end(id);input.set(id,0);pointerGroup.remove(id);}
+            invalidate();return true;
+        }

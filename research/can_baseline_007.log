@@ -1,0 +1,165 @@
+CASE button=16 gap=70
+  f=4 command id=0 value=16 hp=400
+  f=35 hit id=1 value=1 hp=395
+  f=60 command id=0 value=16 hp=395
+  object 3 f=60 skill=91 x=456 y=920 vx=0 FA=true flags=16
+  f=100 hit id=0 value=1 hp=390
+  object 3 f=120 skill=91 x=456 y=920 vx=0 FA=true flags=16
+  object 3 f=180 skill=91 x=456 y=920 vx=0 FA=true flags=16
+  object 3 f=240 skill=91 x=456 y=920 vx=0 FA=true flags=16
+  object 3 f=300 skill=91 x=456 y=920 vx=0 FA=true flags=16
+  object 3 f=360 skill=91 x=456 y=920 vx=0 FA=true flags=16
+  object 3 f=420 skill=91 x=456 y=920 vx=0 FA=true flags=16
+  object 3 f=480 skill=91 x=456 y=920 vx=0 FA=true flags=16
+CASE button=16 gap=160
+  f=4 command id=0 value=16 hp=400
+  f=60 command id=0 value=16 hp=400
+  object 3 f=60 skill=91 x=460 y=920 vx=0 FA=true flags=0
+  object 3 f=120 skill=91 x=460 y=920 vx=0 FA=true flags=0
+  object 3 f=180 skill=91 x=460 y=920 vx=0 FA=true flags=0
+  object 3 f=240 skill=91 x=460 y=920 vx=0 FA=true flags=0
+  object 3 f=300 skill=91 x=460 y=920 vx=0 FA=true flags=0
+  object 3 f=360 skill=91 x=460 y=920 vx=0 FA=true flags=0
+  object 3 f=420 skill=91 x=460 y=920 vx=0 FA=true flags=0
+  object 3 f=480 skill=91 x=460 y=920 vx=0 FA=true flags=0
+CASE button=16 gap=260
+  f=4 command id=0 value=16 hp=400
+  f=60 command id=0 value=16 hp=400
+  object 3 f=60 skill=91 x=460 y=920 vx=0 FA=true flags=0
+  object 3 f=120 skill=91 x=460 y=920 vx=0 FA=true flags=0
+  object 3 f=180 skill=91 x=460 y=920 vx=0 FA=true flags=0
+  object 3 f=240 skill=91 x=460 y=920 vx=0 FA=true flags=0
+  object 3 f=300 skill=91 x=460 y=920 vx=0 FA=true flags=0
+  object 3 f=360 skill=91 x=460 y=920 vx=0 FA=true flags=0
+  object 3 f=420 skill=91 x=460 y=920 vx=0 FA=true flags=0
+  object 3 f=480 skill=91 x=460 y=920 vx=0 FA=true flags=0
+CASE button=16 gap=400
+  f=4 command id=0 value=16 hp=400
+  f=60 command id=0 value=16 hp=400
+  object 3 f=60 skill=91 x=460 y=920 vx=0 FA=true flags=0
+  object 3 f=120 skill=91 x=460 y=920 vx=0 FA=true flags=0
+  object 3 f=180 skill=91 x=460 y=920 vx=0 FA=true flags=0
+  object 3 f=240 skill=91 x=460 y=920 vx=0 FA=true flags=0
+  object 3 f=300 skill=91 x=460 y=920 vx=0 FA=true flags=0
+  object 3 f=360 skill=91 x=460 y=920 vx=0 FA=true flags=0
+  object 3 f=420 skill=91 x=460 y=920 vx=0 FA=true flags=0
+  object 3 f=480 skill=91 x=460 y=920 vx=0 FA=true flags=0
+CASE button=32 gap=70
+  f=4 command id=0 value=15 hp=400
+  f=35 hit id=1 value=1 hp=395
+  f=60 command id=0 value=15 hp=395
+  object 3 f=60 skill=94 x=450 y=920 vx=32750 FA=true flags=16
+  f=100 hit id=0 value=1 hp=390
+  object 3 f=120 skill=94 x=480 y=920 vx=32750 FA=true flags=16
+  object 3 f=180 skill=94 x=510 y=920 vx=32750 FA=true flags=16
+  object 3 f=240 skill=94 x=540 y=920 vx=32750 FA=true flags=16
+  object 3 f=300 skill=94 x=570 y=920 vx=32750 FA=true flags=16
+  object 3 f=360 skill=94 x=600 y=920 vx=32750 FA=true flags=16
+  object 3 f=420 skill=94 x=630 y=920 vx=32750 FA=true flags=16
+  object 3 f=480 skill=94 x=660 y=920 vx=32750 FA=true flags=16
+  object 3 f=540 skill=94 x=690 y=920 vx=32750 FA=true flags=16
+  object 3 f=600 skill=94 x=720 y=920 vx=32750 FA=true flags=16
+  object 3 f=660 skill=94 x=750 y=920 vx=32750 FA=true flags=16
+  object 3 f=720 skill=94 x=780 y=920 vx=32750 FA=true flags=16
+  object 3 f=780 skill=94 x=810 y=920 vx=32750 FA=true flags=16
+CASE button=32 gap=160
+  f=4 command id=0 value=15 hp=400
+  f=60 command id=0 value=15 hp=400
+  object 3 f=60 skill=94 x=457 y=920 vx=32750 FA=true flags=0
+  f=116 hit id=1 value=1 hp=395
+  object 3 f=120 skill=94 x=485 y=920 vx=32750 FA=true flags=16
+  object 3 f=180 skill=94 x=514 y=920 vx=32750 FA=true flags=16
+  object 3 f=240 skill=94 x=544 y=920 vx=32750 FA=true flags=16
+  object 3 f=300 skill=94 x=574 y=920 vx=32750 FA=true flags=16
+  object 3 f=360 skill=94 x=604 y=920 vx=32750 FA=true flags=16
+  object 3 f=420 skill=94 x=634 y=920 vx=32750 FA=true flags=16
+  object 3 f=480 skill=94 x=664 y=920 vx=32750 FA=true flags=16
+  object 3 f=540 skill=94 x=694 y=920 vx=32750 FA=true flags=16
+  object 3 f=600 skill=94 x=724 y=920 vx=32750 FA=true flags=16
+  object 3 f=660 skill=94 x=754 y=920 vx=32750 FA=true flags=16
+  object 3 f=720 skill=94 x=784 y=920 vx=32750 FA=true flags=16
+  object 3 f=780 skill=94 x=814 y=920 vx=32750 FA=true flags=16
+CASE button=32 gap=260
+  f=4 command id=0 value=15 hp=400
+  f=60 command id=0 value=15 hp=400
+  object 3 f=60 skill=94 x=457 y=920 vx=32750 FA=true flags=0
+  object 3 f=120 skill=94 x=487 y=920 vx=32750 FA=true flags=0
+  object 3 f=180 skill=94 x=517 y=920 vx=32750 FA=true flags=0
+  object 3 f=240 skill=94 x=547 y=920 vx=32750 FA=true flags=0
+  object 3 f=300 skill=94 x=577 y=920 vx=32750 FA=true flags=0
+  f=316 hit id=1 value=1 hp=395
+  object 3 f=360 skill=94 x=604 y=920 vx=32750 FA=true flags=16
+  object 3 f=420 skill=94 x=634 y=920 vx=32750 FA=true flags=16
+  object 3 f=480 skill=94 x=664 y=920 vx=32750 FA=true flags=16
+  object 3 f=540 skill=94 x=694 y=920 vx=32750 FA=true flags=16
+  object 3 f=600 skill=94 x=724 y=920 vx=32750 FA=true flags=16
+  object 3 f=660 skill=94 x=754 y=920 vx=32750 FA=true flags=16
+  object 3 f=720 skill=94 x=784 y=920 vx=32750 FA=true flags=16
+  object 3 f=780 skill=94 x=814 y=920 vx=32750 FA=true flags=16
+CASE button=32 gap=400
+  f=4 command id=0 value=15 hp=400
+  f=60 command id=0 value=15 hp=400
+  object 3 f=60 skill=94 x=457 y=920 vx=32750 FA=true flags=0
+  object 3 f=120 skill=94 x=487 y=920 vx=32750 FA=true flags=0
+  object 3 f=180 skill=94 x=517 y=920 vx=32750 FA=true flags=0
+  object 3 f=240 skill=94 x=547 y=920 vx=32750 FA=true flags=0
+  object 3 f=300 skill=94 x=577 y=920 vx=32750 FA=true flags=0
+  object 3 f=360 skill=94 x=607 y=920 vx=32750 FA=true flags=0
+  object 3 f=420 skill=94 x=637 y=920 vx=32750 FA=true flags=0
+  object 3 f=480 skill=94 x=667 y=920 vx=32750 FA=true flags=0
+  object 3 f=540 skill=94 x=697 y=920 vx=32750 FA=true flags=0
+  f=596 hit id=1 value=1 hp=395
+  object 3 f=600 skill=94 x=725 y=920 vx=32750 FA=true flags=16
+  object 3 f=660 skill=94 x=754 y=920 vx=32750 FA=true flags=16
+  object 3 f=720 skill=94 x=784 y=920 vx=32750 FA=true flags=16
+  object 3 f=780 skill=94 x=814 y=920 vx=32750 FA=true flags=16
+CASE button=64 gap=70
+  f=4 command id=0 value=14 hp=400
+  f=60 command id=0 value=14 hp=400
+  object 3 f=60 skill=95 x=646 y=698 vx=0 FA=false flags=0
+  f=100 hit id=1 value=1 hp=395
+  object 3 f=120 skill=91 x=646 y=920 vx=0 FA=true flags=0
+  object 3 f=180 skill=91 x=646 y=920 vx=0 FA=true flags=0
+  object 3 f=240 skill=91 x=646 y=920 vx=0 FA=true flags=0
+  object 3 f=300 skill=91 x=646 y=920 vx=0 FA=true flags=0
+  object 3 f=360 skill=91 x=646 y=920 vx=0 FA=true flags=0
+  object 3 f=420 skill=91 x=646 y=920 vx=0 FA=true flags=0
+  object 3 f=480 skill=91 x=646 y=920 vx=0 FA=true flags=0
+  object 3 f=540 skill=91 x=646 y=920 vx=0 FA=true flags=0
+CASE button=64 gap=160
+  f=4 command id=0 value=14 hp=400
+  f=60 command id=0 value=14 hp=400
+  object 3 f=60 skill=95 x=650 y=698 vx=0 FA=false flags=0
+  object 3 f=120 skill=91 x=650 y=920 vx=0 FA=true flags=0
+  object 3 f=180 skill=91 x=650 y=920 vx=0 FA=true flags=0
+  object 3 f=240 skill=91 x=650 y=920 vx=0 FA=true flags=0
+  object 3 f=300 skill=91 x=650 y=920 vx=0 FA=true flags=0
+  object 3 f=360 skill=91 x=650 y=920 vx=0 FA=true flags=0
+  object 3 f=420 skill=91 x=650 y=920 vx=0 FA=true flags=0
+  object 3 f=480 skill=91 x=650 y=920 vx=0 FA=true flags=0
+  object 3 f=540 skill=91 x=650 y=920 vx=0 FA=true flags=0
+CASE button=64 gap=260
+  f=4 command id=0 value=14 hp=400
+  f=60 command id=0 value=14 hp=400
+  object 3 f=60 skill=95 x=650 y=698 vx=0 FA=false flags=0
+  f=79 hit id=1 value=1 hp=395
+  object 3 f=120 skill=91 x=650 y=920 vx=0 FA=true flags=16
+  object 3 f=180 skill=91 x=650 y=920 vx=0 FA=true flags=16
+  object 3 f=240 skill=91 x=650 y=920 vx=0 FA=true flags=16
+  object 3 f=300 skill=91 x=650 y=920 vx=0 FA=true flags=16
+  object 3 f=360 skill=91 x=650 y=920 vx=0 FA=true flags=16
+  object 3 f=420 skill=91 x=650 y=920 vx=0 FA=true flags=16
+  object 3 f=480 skill=91 x=650 y=920 vx=0 FA=true flags=16
+  object 3 f=540 skill=91 x=650 y=920 vx=0 FA=true flags=16
+CASE button=64 gap=400
+  f=4 command id=0 value=14 hp=400
+  f=60 command id=0 value=14 hp=400
+  object 3 f=60 skill=95 x=650 y=698 vx=0 FA=false flags=0
+  object 3 f=120 skill=91 x=650 y=920 vx=0 FA=true flags=0
+  object 3 f=180 skill=91 x=650 y=920 vx=0 FA=true flags=0
+  object 3 f=240 skill=91 x=650 y=920 vx=0 FA=true flags=0
+  object 3 f=300 skill=91 x=650 y=920 vx=0 FA=true flags=0
+  object 3 f=360 skill=91 x=650 y=920 vx=0 FA=true flags=0
+  object 3 f=420 skill=91 x=650 y=920 vx=0 FA=true flags=0
+  object 3 f=480 skill=91 x=650 y=920 vx=0 FA=true flags=0
+  object 3 f=540 skill=91 x=650 y=920 vx=0 FA=true flags=0

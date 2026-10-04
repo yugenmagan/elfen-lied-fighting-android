@@ -1,0 +1,6 @@
+{
+  "adb": null,
+  "emulator": null,
+  "kvm": false,
+  "java": "/usr/bin/java"
+}

@@ -1,0 +1,7 @@
+{
+  "adb": null,
+  "emulator": null,
+  "kvm": false,
+  "unix_socket": "[Errno 1] Operation not permitted",
+  "devices_tested": false
+}

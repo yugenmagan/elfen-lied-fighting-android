@@ -1,0 +1,1 @@
+Six desktop render checks written; not Android screenshots.

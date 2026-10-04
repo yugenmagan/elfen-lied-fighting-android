@@ -1,0 +1,107 @@
+package org.elfen.engine;
+import java.util.*;import java.io.*;import java.nio.file.*;import java.util.function.*;
+import org.elfen.controls.*;import org.elfen.presentation.*;
+/** Production methods inserted at test time, not rewritten in this fixture. */
+public final class ReleaseFlowHarness extends ReleaseFlowHarnessBase {
+ static final ArrayDeque<Runnable> queue=new ArrayDeque<>();static int checks;static Path assets;
+ static void check(boolean ok,String why){checks++;if(!ok)throw new AssertionError(why);}
+ static void flush(){int n=0;while(!queue.isEmpty()){if(n++>100)throw new AssertionError("Dialog loop");queue.remove().run();}}
+ static class DialogInterface {void dismiss(){}}
+ static final class AlertDialog extends DialogInterface {
+  static AlertDialog active;final ReleaseFlowHarness owner;Consumer<DialogInterface> dismissed;BiConsumer<DialogInterface,Integer> click;String[] labels;boolean closing,cancelable=true;
+  AlertDialog(ReleaseFlowHarness h){owner=h;}void setOnDismissListener(Consumer<DialogInterface> l){dismissed=l;}void setCanceledOnTouchOutside(boolean b){}void setCancelable(boolean b){cancelable=b;}
+  void show(){active=this;owner.onWindowFocusChanged(false);}void choose(int i){check(!closing,"Live dialog click");click.accept(this,i);dismiss();}void back(){check(cancelable,"Cancelable dialog");dismiss();}
+  @Override void dismiss(){if(closing)return;closing=true;queue.add(()->{if(active==this)active=null;owner.onWindowFocusChanged(true);dismissed.accept(this);});}
+  static final class Builder {
+   final AlertDialog dialog;Builder(ReleaseFlowHarness h){dialog=new AlertDialog(h);}Builder setTitle(String s){return this;}
+   Builder setItems(String[] s,BiConsumer<DialogInterface,Integer> a){dialog.labels=s;dialog.click=a;return this;}Builder setNegativeButton(String s,BiConsumer<DialogInterface,Integer> a){return this;}AlertDialog create(){return dialog;}
+  }
+ }
+ static final class LanguagePicker {static String checked;static AlertDialog create(ReleaseFlowHarness h,String current,Consumer<String> cb){checked=current;return new AlertDialog.Builder(h).setItems(LocaleCatalog.CODES,(d,n)->cb.accept(LocaleCatalog.CODES[n])).create();}}
+ static final class Preferences {final Map<String,Object> values=new HashMap<>();Preferences edit(){return this;}Preferences putString(String k,String v){values.put(k,v);return this;}Preferences putInt(String k,int v){values.put(k,v);return this;}Preferences putBoolean(String k,boolean v){values.put(k,v);return this;}void apply(){}}
+ static final class Audio {boolean active;int resumes,pauses;void pause(){active=false;pauses++;}void resume(){active=true;resumes++;}void stopMusic(){}void release(){active=false;}void music(Pack p,int bgm){}void preload(Pack p)throws IOException{}}
+ static final class Cache {void evictAll(){}}
+ static final class HapticFeedbackConstants {static final int VIRTUAL_KEY=1;}
+ static final class MotionEvent {
+  static final int ACTION_DOWN=0,ACTION_UP=1,ACTION_MOVE=2,ACTION_CANCEL=3,ACTION_POINTER_DOWN=5,ACTION_POINTER_UP=6;
+  final int action,index;final int[] ids;final float[] xy;MotionEvent(int a,int i,int[] ids,float...xy){action=a;index=i;this.ids=ids;this.xy=xy;}
+  int getActionMasked(){return action;}int getActionIndex(){return index;}int getPointerId(int n){return ids[n];}float getX(int n){return xy[n*2];}float getY(int n){return xy[n*2+1];}
+ }
+ final class Game {
+  CharacterSelect selection;SelectionControls selectionControls=new SelectionControls();MatchController session;StoryController story;BattleView picture;
+  MatchReplay recording,playback;MatchHistory history;StoryReplay storyRecording,storyPlayback;StoryHistory storyHistory;
+  byte[] savedSnapshot;boolean replayDone,editing,selectionFromModes,running;String replayStatus="",lastCommand="",selectionAudioKey="";
+  int titlePointer=-1,titlePressed=-1,selectionTouch=-1,haptics,screenWidth=1280,screenHeight=720;long lastFrame=999,accumulator=123;
+  Map<Integer,Integer> pointerGroup=new HashMap<>();ArcadeStick stick=new ArcadeStick();FrameInput frameInput=new FrameInput();final Cache bitmaps=new Cache();
+  void invalidate(){}void start(){running=true;}void stop(){running=false;}void selectionAudio()throws IOException{}void storyAudio()throws IOException{}
+  int getWidth(){return screenWidth;}int getHeight(){return screenHeight;}boolean performHapticFeedback(int effect){haptics++;return true;}
+  /*TITLE_TOUCH*/
+  void tick(){if(/*FRAME_GUARD*/){if(story!=null)story.step(new InputFrame(story.frame(),frameInput.poll(input),new int[]{0}));else if(session!=null)session.step(new InputFrame(session.frame(),frameInput.poll(input),new int[]{0}));}}
+  byte[] snapshot(){return story==null?session.snapshot():story.snapshot();}int frame(){return story==null?session.frame():story.frame();}
+ }
+ private final PauseGate pauseGate=new PauseGate();private final SessionFlow flow=new SessionFlow();private final DialogRoutes<DialogInterface> dialogRoutes=new DialogRoutes<>();private final Input input=new Input();
+ private final Game game=new Game();private final Audio audio=new Audio();private final Preferences prefs=new Preferences();private final HashMap<String,Pack> packs=new HashMap<>();private final HashMap<String,CommandGuide> guides=new HashMap<>();
+ private StoryCatalog storyCatalog;private LocaleCatalog locales;private boolean languageConfirmed,resumed,dialog,titleModes,focusPausePending;private int titleChoice,titleAxis,remap=-1,pauseCount,resumeCount;
+ private Object online;private String selected="0170",opponent="0104",selectedStage="0080",lastError="";private int cpuLevel=50,winsRequired=2,timeSetting=60;
+ private int moves,controls,onlineMenus;private boolean finishedActivity;
+ ReleaseFlowHarness()throws Exception{
+  storyCatalog=StoryDataTest.load(assets.resolve("game").toString());packs.putAll(StoryDataTest.packs);guides.put(selected,new CommandGuide(packs.get(selected)));
+  locales=new LocaleCatalog(Files.newInputStream(assets.resolve("localization/ui.tsv")),Files.newInputStream(assets.resolve("localization/scenes.tsv")));locales.language("en");showTitle();
+ }
+ private String tr(String s){return locales.text(s);}private void immersive(){}private void log(String s){}private void fail(String s){throw new AssertionError(s);}private void finish(){finishedActivity=true;}
+ private void leaveOnline(){online=null;}private void onlineMenu(){onlineMenus++;}
+ private void moveList(){moves++;show(new AlertDialog.Builder(this).setItems(new String[]{"Back"},(d,n)->{}).create(),this::pauseMenu);}
+ private void settings(){controls++;show(new AlertDialog.Builder(this).setItems(new String[]{"Done"},(d,n)->{}).create(),this::controlMenu);}
+ private void remapMenu(){throw new AssertionError("Unexpected remap in fixture");}private void matchOptions(){}
+ /*ACTIVITY_METHODS*/
+ static ReleaseFlowHarness launch()throws Exception{
+  ReleaseFlowHarness h=new ReleaseFlowHarness();h.onResume();check(h.dialog,"Cold launch asks language");check(LanguagePicker.checked.equals("en"),"English checked");AlertDialog.active.choose(1);flush();
+  check(h.flow.atTitle()&&!h.flow.canContinue()&&h.game.session==null,"No hidden startup battle");check(!h.audio.active,"Title has no original BGM");return h;
+ }
+ static void start(ReleaseFlowHarness h,boolean story)throws Exception{if(story)h.loadStory();else h.loadSession();for(int i=0;i<1200;i++)h.game.tick();}
+ static void freeze(ReleaseFlowHarness h,byte[] snapshot){for(int i=0;i<1000;i++)h.game.tick();check(Arrays.equals(snapshot,h.game.snapshot()),"Full state frozen");}
+ static void manual(boolean story)throws Exception{
+  ReleaseFlowHarness h=launch();start(h,story);byte[] before=h.game.snapshot();int frame=h.game.frame();h.input.set(2,Input.A|Input.RIGHT);
+  h.pauseMenu();check(h.dialog&&h.pauseGate.blocked()&&!h.audio.active&&h.input.mask()==0,"Pause blocks input/audio");freeze(h,before);
+  AlertDialog.active.choose(0);check(h.pauseGate.blocked(),"No tick before dismissal");flush();check(!h.dialog&&!h.pauseGate.blocked()&&h.audio.active,"Single Resume closes pause");check(h.game.lastFrame==0&&h.game.accumulator==0,"No clock catchup");
+  h.game.tick();check(h.game.frame()==frame+1,"Exactly next frame");
+  for(int i=0;i<20;i++){
+   before=h.game.snapshot();h.pauseMenu();AlertDialog.active.choose(1);flush();check(h.moves==i+1&&h.dialog,"Moves submenu");freeze(h,before);
+   AlertDialog.active.back();flush();check(AlertDialog.active.labels[0].equals("Continue"),"Moves Back to pause");AlertDialog.active.choose(2);flush();AlertDialog.active.choose(0);flush();check(h.controls==i+1,"Controls submenu");freeze(h,before);
+   AlertDialog.active.back();flush();AlertDialog.active.choose(AlertDialog.active.labels.length-1);flush();AlertDialog.active.choose(0);flush();check(!h.dialog&&!h.pauseGate.blocked()&&h.audio.active,"No recursive pause reopening");
+  }
+  h.pauseMenu();AlertDialog.active.back();flush();check(!h.pauseGate.blocked(),"Back from pause resumes");h.onDestroy();flush();check(h.game.session==null&&h.game.story==null&&!h.audio.active,"Destroy ends session");
+ }
+ static void background(boolean story,boolean pending,boolean late)throws Exception{
+  ReleaseFlowHarness h=launch();start(h,story);byte[] snapshot=h.game.snapshot();int frame=h.game.frame();if(pending){h.pauseMenu();AlertDialog.active.choose(0);}
+  h.input.set(7,Input.DOWN|Input.B);h.onPause();if(!late)flush();h.onResume();flush();
+  check(h.flow.atTitle()&&h.flow.canContinue()&&!h.audio.active&&!h.dialog,"Home/lock returns to title");check(h.pauseGate.blocked()&&h.input.mask()==0,"No implicit resume");freeze(h,snapshot);check(h.game.frame()==frame,"No background ticks");
+  h.titleAction(1);check(!h.flow.atTitle()&&!h.pauseGate.blocked()&&h.audio.active,"Continue explicitly resumes memory");check(Arrays.equals(snapshot,h.game.snapshot()),"Exact same state");
+  if(story){StoryController twin=new StoryController(h.storyCatalog,h.packs.get(h.selected),19,0,true,true);twin.restore(snapshot);twin.step(new InputFrame(twin.frame(),0,0));h.game.tick();check(twin.stateHash().equals(h.game.story.stateHash()),"Story next-frame hash");}
+  else{MatchController twin=new MatchController(h.packs.get(h.selected),h.packs.get(h.opponent),h.packs.get(h.selectedStage),h.packs.get("0116"),1,new MatchRules(h.packs.get("0116"),2,60,0,50,true));twin.restore(snapshot);twin.step(new InputFrame(twin.frame(),0,0));h.game.tick();check(twin.stateHash().equals(h.game.session.stateHash()),"Match next-frame hash");}
+  h.onPause();flush();h.onDestroy();flush();ReleaseFlowHarness cold=launch();check(!cold.flow.canContinue()&&cold.game.session==null&&cold.game.story==null,"Unload/relaunch cannot revive battle");cold.onDestroy();flush();
+ }
+ static void navigation()throws Exception{
+  ReleaseFlowHarness h=launch();h.titleAction(1);check(h.flow.atTitle(),"Disabled Continue does nothing");h.titleNavigate(1);check(h.titleChoice==2,"Skip disabled Continue");h.titleNavigate(-1);check(h.titleChoice==0,"Reverse skip");
+  start(h,false);h.pauseMenu();AlertDialog.active.choose(AlertDialog.active.labels.length-1);flush();check(h.flow.atTitle()&&h.flow.canContinue(),"Title retains match");h.titleAction(0);check(h.titleModes&&!h.flow.canContinue()&&h.game.session==null,"New Game ends previous match");
+  h.titleAction(0);check(h.game.selection!=null&&!h.flow.atTitle()&&!h.pauseGate.blocked(),"Story selection");h.onPause();flush();h.onResume();flush();check(h.flow.atTitle()&&h.game.selection==null&&!h.flow.canContinue(),"Selection Home leaves no ghost match");
+  h.titleAction(0);h.titleAction(1);check(h.game.selection!=null,"VS selection");h.selectionBack();check(h.flow.atTitle(),"Selection Back");
+  start(h,false);h.onWindowFocusChanged(false);check(h.pauseGate.requested()&&!h.audio.active,"Focus loss pauses");h.onWindowFocusChanged(true);check(h.dialog,"Focus regain shows pause");AlertDialog.active.choose(0);flush();check(!h.pauseGate.blocked(),"Explicit resume after focus");
+  h.game.editing=true;h.pauseMenu();check(!h.game.editing,"Edit exits to pause");AlertDialog.active.choose(0);flush();h.flow.finished();h.pauseMenu();check(h.flow.atTitle()&&!h.flow.canContinue()&&!h.dialog,"Finished match has no Continue");h.onDestroy();flush();
+ }
+ static void titleTouches()throws Exception{
+  ReleaseFlowHarness h=launch();
+  for(int[] size:new int[][]{{1280,720},{2048,945},{2400,1080},{800,1280}}){
+   h.showTitle();h.game.screenWidth=size[0];h.game.screenHeight=size[1];TitleLayout l=new TitleLayout(size[0],size[1]);float[] b=TitleLayout.BUTTONS[0];float x=l.left+(b[0]+b[2])*l.scale/2,y=l.top+(b[1]+b[3])*l.scale/2;
+   h.game.titleTouch(new MotionEvent(0,0,new int[]{1},x,y));check(!h.titleModes,"Release action only");h.game.titleTouch(new MotionEvent(3,0,new int[]{1},x,y));h.game.titleTouch(new MotionEvent(1,0,new int[]{1},x,y));check(!h.titleModes,"Cancel suppresses action");
+   h.game.titleTouch(new MotionEvent(0,0,new int[]{1},x,y));h.game.titleTouch(new MotionEvent(1,0,new int[]{1},0,0));check(!h.titleModes,"Release outside suppresses action");
+   h.game.titleTouch(new MotionEvent(0,0,new int[]{1},x,y));h.game.titleTouch(new MotionEvent(5,1,new int[]{1,2},x,y,x,y));h.game.titleTouch(new MotionEvent(6,1,new int[]{1,2},x,y,x,y));check(!h.titleModes,"Second pointer cannot steal press");h.game.titleTouch(new MotionEvent(1,0,new int[]{1},x,y));check(h.titleModes,"Touch New Game");
+   h.game.titleTouch(new MotionEvent(0,0,new int[]{1},x,y));h.game.titleTouch(new MotionEvent(1,0,new int[]{1},x,y));check(h.game.selection!=null,"Touch opens original selector");h.endCurrentGame();
+  }h.onDestroy();flush();
+ }
+ public static void main(String[] args)throws Exception{
+  assets=Paths.get(args[0]);manual(false);manual(true);for(boolean story:new boolean[]{false,true})for(boolean pending:new boolean[]{false,true})for(boolean late:new boolean[]{false,true})background(story,pending,late);navigation();titleTouches();
+  System.out.println("PASS "+checks+" lifecycle/navigation assertions; real VS/Story snapshots and next-frame hashes; 40 pause/moves/settings cycles; 8 Home/pending-dismiss orderings; title touch at 4 aspect ratios");
+ }
+}
+class ReleaseFlowHarnessBase {protected void onResume(){}protected void onPause(){}protected void onDestroy(){}public void onWindowFocusChanged(boolean f){}}

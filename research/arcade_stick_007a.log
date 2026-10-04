@@ -1,0 +1,9 @@
+PASS stick → InputFrame → command 0170 とび弱
+PASS stick → InputFrame → command 0104 ロケット弱
+PASS stick → InputFrame → command 0128 磯部くん
+PASS stick → InputFrame → command 0128 コマンド 1
+PASS stick → InputFrame → command 0128 ねこ座薬
+PASS stick → InputFrame → command 0104 のろい弱
+PASS stick → InputFrame → command 0104 呪い中
+PASS stick → InputFrame → command 0104 呪い大
+PASS arcade stick 7827 assertions; 7 viewports, 3 scales, 3 deadzones, mirror, multi-source and real commands

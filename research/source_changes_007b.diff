@@ -1,0 +1,573 @@
+--- 007a/app/src/main/AndroidManifest.xml
++++ 007b/app/src/main/AndroidManifest.xml
+@@ -1,9 +1,9 @@
+-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="8" android:versionName="0.0.7a-stick">
++<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="9" android:versionName="0.0.7a-stick">
+     <uses-permission android:name="android.permission.INTERNET" />
+     <uses-sdk android:minSdkVersion="29" android:targetSdkVersion="35" />
+     <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+     <uses-feature android:name="android.hardware.gamepad" android:required="false" />
+-    <application android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher_round" android:label="Elfen Fighting · test 007a" android:theme="@android:style/Theme.Material.NoActionBar" android:allowBackup="false" android:hardwareAccelerated="true" android:supportsRtl="true" android:usesCleartextTraffic="false">
++    <application android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher_round" android:label="Elfen Fighting · test 007b" android:theme="@android:style/Theme.Material.NoActionBar" android:allowBackup="false" android:hardwareAccelerated="true" android:supportsRtl="true" android:usesCleartextTraffic="false">
+         <activity android:name="org.elfen.fighting.MainActivity" android:screenOrientation="sensorLandscape" android:configChanges="orientation|screenSize|keyboardHidden|keyboard|navigation" android:exported="true">
+             <intent-filter><action android:name="android.intent.action.MAIN" /><category android:name="android.intent.category.LAUNCHER" /></intent-filter>
+         </activity>
+--- 007a/app/src/main/java/org/elfen/fighting/MainActivity.java
++++ 007b/app/src/main/java/org/elfen/fighting/MainActivity.java
+@@ -17,25 +17,27 @@
+ 
+ public final class MainActivity extends Activity {
+     private final HashMap<String,Pack> packs=new HashMap<>();
++    private final HashMap<String,CommandGuide> guides=new HashMap<>();
++    private final org.elfen.controls.PauseGate pauseGate=new org.elfen.controls.PauseGate();
+     private final ArrayList<String> characters=new ArrayList<>(),stages=new ArrayList<>();
+     private StoryCatalog storyCatalog;
+     private OnlineMatch online;private MatchController boundOnline;
+     private final Input input=new Input();private GameView game;private Audio audio;
+     private SharedPreferences prefs;private boolean resumed=false,dialog=false;private int remap=-1;
+-    private String selected="0170",opponent="0104",selectedStage="0080",lastError="";private int cpuLevel=50,winsRequired=3,timeSetting=60;private final StringBuilder events=new StringBuilder();
++    private String selected="0170",opponent="0104",selectedStage="0080",lastError="";private int cpuLevel=50,winsRequired=2,timeSetting=60;private final StringBuilder events=new StringBuilder();
+     private long startTime=System.currentTimeMillis();private int maxPointers=0,pauseCount=0,resumeCount=0;
+     private final int[] keys={KeyEvent.KEYCODE_BUTTON_A,KeyEvent.KEYCODE_BUTTON_B,KeyEvent.KEYCODE_BUTTON_X,KeyEvent.KEYCODE_BUTTON_Y,KeyEvent.KEYCODE_BUTTON_L1,KeyEvent.KEYCODE_BUTTON_R1};
+     @Override public void onCreate(Bundle state){
+         super.onCreate(state);prefs=getSharedPreferences("controls",MODE_PRIVATE);
+         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);immersive();
+         for(int i=0;i<6;i++)keys[i]=prefs.getInt("key"+i,keys[i]);
+-        selected=prefs.getString("character","0170");selectedStage=prefs.getString("stage","0080");opponent=prefs.getString("opponent","0104");cpuLevel=prefs.getInt("cpuLevel",50);winsRequired=prefs.getInt("winsRequired",3);timeSetting=prefs.getInt("timeSetting",60);
++        selected=prefs.getString("character","0170");selectedStage=prefs.getString("stage","0080");opponent=prefs.getString("opponent","0104");cpuLevel=prefs.getInt("cpuLevel",50);winsRequired=2;timeSetting=prefs.getInt("timeSetting",60);
+         audio=new Audio(this,this::fail);game=new GameView();setContentView(game);
+         try{
+             JSONArray rows=new JSONArray(readText(getAssets().open("game/catalog.json")));
+             for(int i=0;i<rows.length();i++){
+                 JSONObject row=rows.getJSONObject(i);String id=row.getString("id");
+-                Pack p=Pack.read(id,getAssets().open("game/"+id+"/data.efp"));packs.put(id,p);
++                Pack p=Pack.read(id,getAssets().open("game/"+id+"/data.efp"));packs.put(id,p);if(p.kind.equals(".player"))guides.put(id,new CommandGuide(p));
+                 if(p.kind.equals(".player")&&!id.equals("0082")&&!id.equals("0144"))characters.add(id);
+                 if(p.kind.equals(".stage"))stages.add(id);
+             }
+@@ -50,7 +52,7 @@
+     private static String readText(InputStream in)throws IOException{try(InputStream s=in;ByteArrayOutputStream b=new ByteArrayOutputStream()){byte[] buf=new byte[8192];int n;while((n=s.read(buf))!=-1)b.write(buf,0,n);return new String(b.toByteArray(),StandardCharsets.UTF_8);}}
+     private void clearInputs(){
+         input.clear();
+-        if(game!=null){game.pointerGroup.clear();game.stick.cancel();game.selectionTouch=-1;}
++        if(game!=null){game.pointerGroup.clear();game.stick.cancel();game.frameInput.reset();game.selectionTouch=-1;}
+     }
+     private void immersive(){getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY|View.SYSTEM_UI_FLAG_FULLSCREEN|View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|View.SYSTEM_UI_FLAG_LAYOUT_STABLE|View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN|View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);}
+     private void intro(){
+@@ -61,37 +63,73 @@
+                 .setNeutralButton("Новый сюжет",(d,n)->new Handler().post(()->openSelection(true,true)))
+                 .setNegativeButton("Обычный VS",(d,n)->new Handler().post(()->openSelection(false,true))).create());return;
+         }
+-        AlertDialog d=new AlertDialog.Builder(this).setTitle("Elfen Fighting · TEST 007a")
+-            .setMessage("Аркадный стик: веди палец по кругу, не отрывая от экрана. Размер и мёртвая зона — в настройках управления.\n\nНа экране выбора нажми на портрет, затем «Выбрать».\n\nВ VS сначала выбери своего бойца, затем противника.\n\nВ сюжетных сценах A–F — продолжить.")
++        AlertDialog d=new AlertDialog.Builder(this).setTitle("Elfen Fighting · TEST 007b")
++            .setMessage("Аркадный стик: веди палец по кругу, не отрывая от экрана. Размер и мёртвая зона — в настройках управления.\n\nНа экране выбора нажми на портрет, затем «Выбрать».\n\nВ VS сначала выбери своего бойца, затем противника.\n\nВ сюжетных сценах A — продолжить. Пауза → Приёмы — команды текущего бойца. Бои идут до двух побед.")
+             .setPositiveButton("Сюжет",(a,b)->new Handler().post(()->openSelection(true,true)))
+             .setNeutralButton("Онлайн",(a,b)->new Handler().post(this::onlineMenu))
+             .setNegativeButton("Обычный VS",(a,b)->new Handler().post(()->openSelection(false,true))).create();show(d);
+     }
+-    private void show(AlertDialog d){dialog=true;clearInputs();audio.pause();d.setOnDismissListener(a->{dialog=false;immersive();if(resumed)audio.resume();});d.show();}
++    private void show(AlertDialog d){
++        pauseGate.openModal();dialog=true;clearInputs();audio.pause();
++        d.setOnDismissListener(a->{
++            pauseGate.closeModal();dialog=pauseGate.hasModal();immersive();
++            if(game!=null){game.lastFrame=0;game.accumulator=0;}
++            if(!pauseGate.blocked()&&!game.editing&&lastError.isEmpty())audio.resume();
++            if(!dialog&&pauseGate.requested()&&!game.editing)new Handler().post(()->{if(resumed&&!dialog&&pauseGate.requested()&&!game.editing)pauseMenu();});
++        });d.show();
++    }
++    private void resumeBattle(){
++        pauseGate.resume();clearInputs();game.lastFrame=0;game.accumulator=0;
++        if(!pauseGate.blocked()&&!game.editing&&lastError.isEmpty())audio.resume();
++    }
++    private void pauseMenu(){
++        if(dialog||!resumed)return;
++        if(game.selection!=null){selectionBack();return;}
++        if(online!=null){onlineMenu();return;}
++        game.editing=false;pauseGate.request();clearInputs();audio.pause();
++        CommandGuide guide=guides.get(selected);boolean hasMoves=guide!=null&&!guide.entries.isEmpty();
++        String[] choices=hasMoves?new String[]{"Продолжить бой","Приёмы: "+label(packs.get(selected)),"Меню игры"}:new String[]{"Продолжить","Меню игры"};
++        show(new AlertDialog.Builder(this).setTitle("ПАУЗА").setItems(choices,(d,n)->{
++            if(n==0){resumeBattle();return;}
++            new Handler().post(hasMoves&&n==1?this::moveList:this::menu);
++        }).setOnCancelListener(d->resumeBattle()).create());
++    }
++    private void moveList(){
++        CommandGuide guide=guides.get(selected);if(guide==null||guide.entries.isEmpty())return;
++        LinearLayout content=new LinearLayout(this);content.setOrientation(LinearLayout.VERTICAL);int pad=(int)(16*getResources().getDisplayMetrics().density);content.setPadding(pad,8,pad,8);
++        TextView legend=new TextView(this);legend.setText("Направления указаны лицом вправо. С другой стороны зеркально. Запятая — следующий ввод; + — одновременно; • — отпусти стик.\n\nНазвания и команды взяты из игры. Доступность приёма зависит от состояния и энергии персонажа. Удержания: 60 кадров = 1 секунда.\n");legend.setTextSize(15);content.addView(legend);
++        for(CommandGuide.Entry entry:guide.entries){
++            TextView name=new TextView(this);name.setText(entry.name);name.setTextSize(18);name.setTypeface(null,android.graphics.Typeface.BOLD);content.addView(name);
++            TextView command=new TextView(this);command.setText(entry.notation+"\n"+entry.stances+"\n");command.setTextSize(16);content.addView(command);
++        }
++        if(guide.unsupported>0){TextView notice=new TextView(this);notice.setText("Не показаны команды с неподтверждённым форматом: "+guide.unsupported);content.addView(notice);}
++        ScrollView scroll=new ScrollView(this);scroll.addView(content);
++        show(new AlertDialog.Builder(this).setTitle("Приёмы · "+label(packs.get(selected))).setView(scroll).setPositiveButton("К паузе",(d,n)->{}).create());
++    }
+     private void loadSession()throws IOException{
+-        leaveOnline();
++        resumeBattle();leaveOnline();
+         saveStoryToDisk();
+         game.selection=null;
+         game.story=null;game.storyRecording=null;game.storyPlayback=null;game.storyHistory=null;
+         Pack p=packs.get(selected),s=packs.get(selectedStage),other=packs.get(opponent);
+         if(p==null||s==null||other==null)throw new IOException("Required pack missing");
+         audio.pause();audio.preload(p);audio.preload(other);audio.preload(s);audio.preload(packs.get("0116"));
+-        game.session=new MatchController(p,other,s,packs.get("0116"),1,new MatchRules(packs.get("0116"),winsRequired,timeSetting,0,cpuLevel));
++        game.session=new MatchController(p,other,s,packs.get("0116"),1,new MatchRules(packs.get("0116"),2,timeSetting,0,cpuLevel,true));
+         game.picture=game.session.view();game.recording=new MatchReplay(game.session);game.history=new MatchHistory(game.session,120);game.playback=null;game.replayDone=false;game.replayStatus="";game.savedSnapshot=null;game.lastCommand="";clearInputs();lastError="";game.lastFrame=0;game.accumulator=0;
+         audio.music(s,s.bgm);prefs.edit().putString("character",selected).putString("stage",selectedStage).putString("opponent",opponent).putInt("cpuLevel",cpuLevel).putInt("winsRequired",winsRequired).putInt("timeSetting",timeSetting).apply();
+-        log("load "+selected+" / "+selectedStage);if(resumed&&!dialog)audio.resume();
++        log("load "+selected+" / "+selectedStage);if(resumed&&!pauseGate.blocked())audio.resume();
+     }
+     private void chooseStory(){
+         openSelection(true,false);
+     }
+     private void openSelection(boolean storyMode){openSelection(storyMode,false);}
+     private void openSelection(boolean storyMode,boolean fromModes){
+-        try{
++        resumeBattle();try{
+             saveStoryToDisk();leaveOnline();audio.pause();game.selection=new CharacterSelect(storyCatalog,storyMode,selected,opponent);
+             game.selectionFromModes=fromModes;game.selectionAudioKey="";game.selectionControls=new SelectionControls();game.selectionTouch=-1;game.pointerGroup.clear();
+             game.editing=false;game.lastFrame=0;game.accumulator=0;clearInputs();lastError="";
+             game.selectionAudio();audio.music(game.selection.backgroundPack(),game.selection.backgroundPack().bgm);
+-            if(resumed&&!dialog)audio.resume();log("select-open "+(storyMode?"story":"vs"));
++            if(resumed&&!pauseGate.blocked())audio.resume();log("select-open "+(storyMode?"story":"vs"));
+         }catch(IOException|IllegalArgumentException e){fail("Экран выбора: "+e);}
+     }
+     private void selectionBack(){
+@@ -101,8 +139,8 @@
+         try{
+             if(game.story!=null)game.storyAudio();
+             else{audio.retain(Arrays.asList(packs.get(selected),packs.get(opponent),packs.get(selectedStage),packs.get("0116")));audio.music(packs.get(selectedStage),packs.get(selectedStage).bgm);}
+-            if(resumed&&!dialog)audio.resume();log("select-cancel");
+-            if(game.selectionFromModes)new Handler().post(this::intro);else new Handler().post(this::menu);
++            if(resumed&&!pauseGate.blocked())audio.resume();log("select-cancel");
++            if(game.selectionFromModes)new Handler().post(this::intro);else new Handler().post(this::pauseMenu);
+         }catch(IOException e){fail("Возврат из выбора: "+e);}
+     }
+     private void selectionComplete()throws IOException{
+@@ -126,11 +164,11 @@
+         }).setNegativeButton("Назад",(d,n)->{}).create());
+     }
+     private void loadStory()throws IOException{
+-        leaveOnline();
++        resumeBattle();leaveOnline();
+         game.selection=null;
+-        audio.pause();game.story=new StoryController(storyCatalog,packs.get(selected),19);game.storyRecording=new StoryReplay(game.story);game.storyHistory=new StoryHistory(game.story,120);game.storyPlayback=null;
++        audio.pause();game.story=new StoryController(storyCatalog,packs.get(selected),19,0,true);game.storyRecording=new StoryReplay(game.story);game.storyHistory=new StoryHistory(game.story,120);game.storyPlayback=null;
+         game.playback=null;game.replayDone=false;game.replayStatus="";game.savedSnapshot=null;game.lastCommand="";game.picture=null;game.lastFrame=0;game.accumulator=0;lastError="";clearInputs();game.storyAudio();
+-        saveStoryToDisk();log("story-start "+selected+" hash="+game.story.stateHash());if(resumed&&!dialog)audio.resume();
++        saveStoryToDisk();log("story-start "+selected+" hash="+game.story.stateHash());if(resumed&&!pauseGate.blocked())audio.resume();
+     }
+     private void saveStoryToDisk(){
+         if(game==null||game.story==null||game.storyPlayback!=null||game.replayDone)return;
+@@ -143,7 +181,7 @@
+         game.selection=null;
+         android.util.AtomicFile file=new android.util.AtomicFile(new File(getFilesDir(),"story-save.bin"));
+         try(DataInputStream in=new DataInputStream(file.openRead())){if(in.readInt()!=0x45464153||in.readInt()!=1)throw new IOException("Формат сохранения");String id=in.readUTF();int n=in.readInt();if(!packs.containsKey(id)||n<0||n>20_000_000)throw new IOException("Данные сохранения");byte[] state=new byte[n];in.readFully(state);if(in.read()!=-1)throw new IOException("Лишние данные сохранения");
+-            StoryController restored=new StoryController(storyCatalog,packs.get(id),19);restored.restore(state);selected=id;game.story=restored;game.storyRecording=new StoryReplay(restored);game.storyHistory=new StoryHistory(restored,120);game.storyPlayback=null;game.replayDone=false;game.replayStatus="";game.savedSnapshot=null;game.picture=restored.view();game.lastFrame=0;game.accumulator=0;lastError="";clearInputs();game.storyAudio();log("story-resume frame="+restored.frame()+" hash="+restored.stateHash());
++            StoryController restored=StoryController.loadOfflineSave(storyCatalog,packs.get(id),state);resumeBattle();selected=id;game.story=restored;game.storyRecording=new StoryReplay(restored);game.storyHistory=new StoryHistory(restored,120);game.storyPlayback=null;game.replayDone=false;game.replayStatus="";game.savedSnapshot=null;game.picture=restored.view();game.lastFrame=0;game.accumulator=0;lastError="";clearInputs();game.storyAudio();log("story-resume frame="+restored.frame()+" hash="+restored.stateHash());
+         }
+     }
+     private void fail(String message){
+@@ -163,22 +201,22 @@
+         }).create();show(d);
+     }
+     private String label(Pack p){if(p.id.equals("0170"))return "Люси / "+p.name;if(p.id.equals("0104"))return "Нана / "+p.name;if(p.id.equals("0128"))return "Марико / "+p.name;return p.name;}
+-    @Override public void onBackPressed(){menu();}
++    @Override public void onBackPressed(){pauseMenu();}
+     private void menu(){
+         if(dialog)return;
+         if(game.selection!=null){selectionBack();return;}
+         if(online!=null){onlineMenu();return;}
+         if(game.story!=null){storyMenu();return;}
+         String[] items={"Продолжить","Персонаж","Противник","Арена","Уровень AI","Настроить управление","Передвинуть элементы","Переназначить геймпад","Поделиться отчётом","Новый матч","Правила матча","Повторить запись","Сохранить состояние","Восстановить состояние","Сюжет","Онлайн"};
+-        AlertDialog d=new AlertDialog.Builder(this).setTitle("TEST 007a · VS").setItems(items,(a,i)->{
+-            new Handler().post(()->{switch(i){case 1:choose(0);break;case 2:choose(1);break;case 3:choose(2);break;case 4:cpuMenu();break;case 5:settings();break;
++        AlertDialog d=new AlertDialog.Builder(this).setTitle("TEST 007b · VS").setItems(items,(a,i)->{
++            new Handler().post(()->{switch(i){case 0:resumeBattle();break;case 1:choose(0);break;case 2:choose(1);break;case 3:choose(2);break;case 4:cpuMenu();break;case 5:settings();break;
+                 case 6:game.editing=!game.editing;break;case 7:remapMenu();break;case 8:shareReport();break;case 9:openSelection(false);break;case 10:matchRulesMenu();break;case 11:game.replay();break;case 12:game.saveSnapshot();break;case 13:game.restoreSnapshot();break;case 14:chooseStory();break;case 15:onlineMenu();break;}});
+         }).create();show(d);
+     }
+     private void storyMenu(){
+         String[] choices={"Продолжить","Начать сюжет заново","Другой персонаж","Обычный VS","Настроить управление","Передвинуть элементы","Переназначить геймпад","Сохранить состояние","Восстановить состояние","Повторить запись","Поделиться отчётом"};
+         show(new AlertDialog.Builder(this).setTitle("Сюжет · бой "+game.story.fights()+" · кадр "+game.story.frame()).setItems(choices,(d,n)->new Handler().post(()->{
+-            try{switch(n){case 1:loadStory();break;case 2:chooseStory();break;case 3:openSelection(false);break;case 4:settings();break;case 5:game.editing=!game.editing;break;case 6:remapMenu();break;case 7:game.saveSnapshot();break;case 8:game.restoreSnapshot();break;case 9:game.replay();break;case 10:shareReport();break;}}catch(IOException e){fail(e.toString());}
++            try{switch(n){case 0:resumeBattle();break;case 1:loadStory();break;case 2:chooseStory();break;case 3:openSelection(false);break;case 4:settings();break;case 5:game.editing=!game.editing;break;case 6:remapMenu();break;case 7:game.saveSnapshot();break;case 8:game.restoreSnapshot();break;case 9:game.replay();break;case 10:shareReport();break;}}catch(IOException e){fail(e.toString());}
+         })).create());
+     }
+     private void leaveOnline(){if(online!=null)online.close();online=null;boundOnline=null;}
+@@ -223,6 +261,11 @@
+         matchRulesMenu(false);
+     }
+     private void matchRulesMenu(boolean forOnline){
++        if(!forOnline){
++            show(new AlertDialog.Builder(this).setTitle("VS: до двух побед").setMessage("При 1:1 играется решающий раунд. Ничья не даёт победы. Изменение таймера начнёт новый матч.")
++                .setPositiveButton("Изменить таймер",(d,n)->new Handler().post(()->show(new AlertDialog.Builder(this).setTitle("Таймер VS").setItems(new String[]{"10","30","60","Без таймера"},(a,i)->{timeSetting=new int[]{10,30,60,0}[i];try{loadSession();}catch(IOException e){fail(e.toString());}}).create())))
++                .setNegativeButton("Назад",(d,n)->{}).create());return;
++        }
+         String[] labels={"До 1 победы","До 2 побед","До 3 побед (исходная настройка)","Таймер: 10","Таймер: 30","Таймер: 60 (исходная настройка)","Без таймера"};
+         show(new AlertDialog.Builder(this).setTitle(forOnline?"Правила комнаты":"Правила — начнётся новый матч").setItems(labels,(d,i)->{if(i<3)winsRequired=i+1;else timeSetting=new int[]{10,30,60,0}[i-3];if(forOnline){new Handler().post(this::onlineMenu);return;}try{loadSession();}catch(IOException e){fail(e.toString());}}).create());
+     }
+@@ -241,32 +284,36 @@
+         bar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){public void onStartTrackingTouch(SeekBar s){}public void onStopTrackingTouch(SeekBar s){}public void onProgressChanged(SeekBar s,int n,boolean user){if(user)prefs.edit().putFloat(key,min+n*(max-min)/100).apply();}});
+     }
+     private void check(LinearLayout root,String title,String key,boolean initial){CheckBox c=new CheckBox(this);c.setText(title);c.setChecked(prefs.getBoolean(key,initial));c.setOnCheckedChangeListener((b,v)->prefs.edit().putBoolean(key,v).apply());root.addView(c);}
+-    private void remapMenu(){AlertDialog d=new AlertDialog.Builder(this).setTitle("Выбери кнопку для переназначения").setItems(new String[]{"A","B","C","D","E","F"},(a,i)->{remap=i;Toast.makeText(this,"Нажми кнопку геймпада для "+(char)('A'+i),Toast.LENGTH_LONG).show();}).create();show(d);}
++    private void remapMenu(){
++        ArrayList<String> labels=new ArrayList<>();ArrayList<Integer> indices=new ArrayList<>();
++        for(int i=0;i<6;i++)if((game.activeButtons()&(16<<i))!=0){labels.add(""+(char)('A'+i));indices.add(i);}
++        show(new AlertDialog.Builder(this).setTitle("Кнопки текущего бойца").setItems(labels.toArray(new String[0]),(a,i)->{remap=indices.get(i);Toast.makeText(this,"Нажми кнопку геймпада для "+(char)('A'+remap),Toast.LENGTH_LONG).show();}).create());
++    }
+     @Override public boolean dispatchKeyEvent(KeyEvent e){
+         if(remap>=0&&e.getAction()==KeyEvent.ACTION_DOWN&&e.getKeyCode()!=KeyEvent.KEYCODE_BACK){keys[remap]=e.getKeyCode();prefs.edit().putInt("key"+remap,keys[remap]).apply();remap=-1;Toast.makeText(this,"Кнопка сохранена",Toast.LENGTH_SHORT).show();return true;}
+         if(dialog)return super.dispatchKeyEvent(e);
+         int code=e.getKeyCode(),mask=0;
+         if(game.selection!=null&&(code==KeyEvent.KEYCODE_DPAD_CENTER||code==KeyEvent.KEYCODE_ENTER))mask=Input.A;
+-        if(code==KeyEvent.KEYCODE_BUTTON_START||code==KeyEvent.KEYCODE_ESCAPE){if(e.getAction()==0&&e.getRepeatCount()==0)menu();return true;}
++        if(code==KeyEvent.KEYCODE_BUTTON_START||code==KeyEvent.KEYCODE_ESCAPE){if(e.getAction()==0&&e.getRepeatCount()==0)pauseMenu();return true;}
+         switch(code){case KeyEvent.KEYCODE_DPAD_LEFT:mask=Input.LEFT;break;case KeyEvent.KEYCODE_DPAD_RIGHT:mask=Input.RIGHT;break;case KeyEvent.KEYCODE_DPAD_UP:mask=Input.UP;break;case KeyEvent.KEYCODE_DPAD_DOWN:mask=Input.DOWN;break;}
+         int[] keyboard={KeyEvent.KEYCODE_Z,KeyEvent.KEYCODE_X,KeyEvent.KEYCODE_C,KeyEvent.KEYCODE_A,KeyEvent.KEYCODE_S,KeyEvent.KEYCODE_D};
+         for(int i=0;i<6;i++)if(code==keys[i]||code==keyboard[i])mask|=16<<i;
+-        if(mask!=0){input.set(-1000-code,e.getAction()==KeyEvent.ACTION_UP?0:mask);return true;}return super.dispatchKeyEvent(e);
++        if(mask!=0){if(pauseGate.blocked())return true;input.set(-1000-code,e.getAction()==KeyEvent.ACTION_UP?0:mask);return true;}return super.dispatchKeyEvent(e);
+     }
+     @Override public boolean onGenericMotionEvent(MotionEvent e){
+         if((e.getSource()&InputDevice.SOURCE_JOYSTICK)==InputDevice.SOURCE_JOYSTICK){
+             float x=e.getAxisValue(MotionEvent.AXIS_X),y=e.getAxisValue(MotionEvent.AXIS_Y),hx=e.getAxisValue(MotionEvent.AXIS_HAT_X),hy=e.getAxisValue(MotionEvent.AXIS_HAT_Y);
+             int mask=Input.dpad(x,y,1,.2f)|Input.dpad(hx,hy,1,.2f);
+             if(e.getAxisValue(MotionEvent.AXIS_LTRIGGER)>.5f)mask|=Input.E;if(e.getAxisValue(MotionEvent.AXIS_RTRIGGER)>.5f)mask|=Input.F;
+-            input.set(-20000-e.getDeviceId(),dialog?0:mask);return true;
++            input.set(-20000-e.getDeviceId(),pauseGate.blocked()?0:mask);return true;
+         }return super.onGenericMotionEvent(e);
+     }
+-    @Override protected void onResume(){super.onResume();resumed=true;resumeCount++;if(game!=null){game.lastFrame=0;game.accumulator=0;game.start();}if(audio!=null&&!dialog&&lastError.isEmpty())audio.resume();log("resume");immersive();}
+-    @Override protected void onPause(){resumed=false;pauseCount++;clearInputs();if(game!=null){game.selectionTouch=-1;game.selectionControls.requireRelease();game.pointerGroup.clear();game.stop();}if(audio!=null)audio.pause();saveStoryToDisk();if(online!=null&&online.state()!=OnlineMatch.COMPLETE){online.close();log("online-disconnected-on-background");}log("pause");super.onPause();}
++    @Override protected void onResume(){super.onResume();resumed=true;pauseGate.foreground(true);resumeCount++;if(game!=null){game.lastFrame=0;game.accumulator=0;game.start();}if(audio!=null&&!pauseGate.blocked()&&lastError.isEmpty())audio.resume();log("resume");immersive();if(pauseGate.requested()&&!dialog&&!game.editing)new Handler().post(this::pauseMenu);}
++    @Override protected void onPause(){resumed=false;pauseGate.foreground(false);pauseCount++;clearInputs();if(game!=null){game.selectionTouch=-1;game.selectionControls.requireRelease();game.pointerGroup.clear();game.stop();}if(audio!=null)audio.pause();saveStoryToDisk();if(online!=null&&online.state()!=OnlineMatch.COMPLETE){online.close();log("online-disconnected-on-background");}log("pause");super.onPause();}
+     @Override protected void onDestroy(){leaveOnline();if(audio!=null)audio.release();super.onDestroy();}
+     @Override public void onWindowFocusChanged(boolean focused){super.onWindowFocusChanged(focused);if(focused)immersive();else clearInputs();}
+     private void shareReport(){
+-        String data="Elfen Fighting native test 007\n"+Build.MANUFACTURER+" "+Build.MODEL+" / Android "+Build.VERSION.RELEASE+" SDK "+Build.VERSION.SDK_INT+"\nABIs "+Arrays.toString(Build.SUPPORTED_ABIS)+"\nScreen "+game.getWidth()+"x"+game.getHeight()+"\nCharacter "+selected+" Opponent "+opponent+" AI "+cpuLevel+" Stage "+selectedStage+"\nMax pointers "+maxPointers+"\nPause/resume "+pauseCount+"/"+resumeCount+"\nFrame count "+(game.story!=null?game.story.frame():game.session==null?0:game.session.frame())+"\nState hash "+(game.story!=null?game.story.stateHash():game.session==null?"":game.session.stateHash())+"\nReplay "+game.replayStatus+"\nSlow frames "+game.slowFrames+"\nSettings "+prefs.getAll()+"\nError "+lastError+"\n"+events;
++        String data="Elfen Fighting native test 007b\n"+Build.MANUFACTURER+" "+Build.MODEL+" / Android "+Build.VERSION.RELEASE+" SDK "+Build.VERSION.SDK_INT+"\nABIs "+Arrays.toString(Build.SUPPORTED_ABIS)+"\nScreen "+game.getWidth()+"x"+game.getHeight()+"\nCharacter "+selected+" Opponent "+opponent+" AI "+cpuLevel+" Stage "+selectedStage+"\nMax pointers "+maxPointers+"\nPause/resume "+pauseCount+"/"+resumeCount+"\nFrame count "+(game.story!=null?game.story.frame():game.session==null?0:game.session.frame())+"\nState hash "+(game.story!=null?game.story.stateHash():game.session==null?"":game.session.stateHash())+"\nReplay "+game.replayStatus+"\nSlow frames "+game.slowFrames+"\nSettings "+prefs.getAll()+"\nError "+lastError+"\n"+events;
+         if(game.story!=null)data+="\nStory slot "+game.story.slot()+" mode "+game.story.mode()+" fights "+game.story.fights()+" wins "+game.story.wins()+"\n";
+         if(online!=null){data+="\nOnline state "+online.state()+" message "+online.message()+"\n";if(online.rollback()!=null)data+="Confirmed "+online.rollback().confirmedFrame()+" rollback "+online.rollback().rollbackCount()+" resimulated "+online.rollback().resimulatedFrames()+"\n";}
+         File crash=new File(getFilesDir(),"last-crash.txt");
+@@ -291,6 +338,7 @@
+         final LruCache<String,Bitmap> bitmaps=new LruCache<String,Bitmap>(48*1024*1024){protected int sizeOf(String k,Bitmap b){return b.getAllocationByteCount();}};
+         final HashMap<Integer,Integer> pointerGroup=new HashMap<>();
+         final org.elfen.controls.ArcadeStick stick=new org.elfen.controls.ArcadeStick();
++        final org.elfen.controls.FrameInput frameInput=new org.elfen.controls.FrameInput();
+         long lastFrame=0,accumulator=0;int slowFrames=0;boolean running=false,editing=false;
+         float dx,dy,bx,by,radius,buttonRadius;int lastMask=0;
+         GameView(){super(MainActivity.this);setFocusable(true);setFocusableInTouchMode(true);paint.setFilterBitmap(false);}
+@@ -316,11 +364,11 @@
+         void replay(){
+             if(story!=null){
+                 if(storyPlayback!=null)return;if(storyRecording==null||storyRecording.length()==0){Toast.makeText(MainActivity.this,"Пока нет записи",Toast.LENGTH_SHORT).show();return;}
+-                saveStoryToDisk();storyPlayback=storyRecording;expectedReplayHash=story.stateHash();storyPlayback.restoreStart(story);storyHistory=new StoryHistory(story,120);playIndex=0;replayDone=false;replayStatus="Повтор сюжета";clearInputs();picture=story.view();lastFrame=0;accumulator=0;try{storyAudio();}catch(IOException e){fail(e.toString());}return;
++                saveStoryToDisk();resumeBattle();storyPlayback=storyRecording;expectedReplayHash=story.stateHash();storyPlayback.restoreStart(story);storyHistory=new StoryHistory(story,120);playIndex=0;replayDone=false;replayStatus="Повтор сюжета";clearInputs();picture=story.view();lastFrame=0;accumulator=0;try{storyAudio();}catch(IOException e){fail(e.toString());}return;
+             }
+             if(playback!=null)return;
+             if(recording==null||recording.length()==0){Toast.makeText(MainActivity.this,"Пока нет записанного ввода",Toast.LENGTH_SHORT).show();return;}
+-            playback=recording;expectedReplayHash=session.stateHash();playback.restoreStart(session);history=new MatchHistory(session,120);playIndex=0;replayDone=false;replayStatus="Повтор";clearInputs();picture=session.view();lastFrame=0;accumulator=0;audio.music(packs.get(selectedStage),packs.get(selectedStage).bgm);
++            resumeBattle();playback=recording;expectedReplayHash=session.stateHash();playback.restoreStart(session);history=new MatchHistory(session,120);playIndex=0;replayDone=false;replayStatus="Повтор";clearInputs();picture=session.view();lastFrame=0;accumulator=0;audio.music(packs.get(selectedStage),packs.get(selectedStage).bgm);
+         }
+         void saveSnapshot(){
+             if(story!=null){if(storyPlayback!=null||replayDone){Toast.makeText(MainActivity.this,"Сохранение доступно во время игры",Toast.LENGTH_SHORT).show();return;}savedSnapshot=story.snapshot();savedFrame=story.frame();Toast.makeText(MainActivity.this,"Сохранён сюжет, кадр "+savedFrame,Toast.LENGTH_SHORT).show();return;}
+@@ -339,7 +387,7 @@
+             if(boundOnline!=net.match()){
+                 boundOnline=net.match();session=boundOnline;GameConfig cfg=online.config();selected=net.localPlayer()==0?cfg.p1:cfg.p2;opponent=net.localPlayer()==0?cfg.p2:cfg.p1;selectedStage=cfg.stage;
+                 recording=net.replay();history=null;playback=null;replayDone=false;savedSnapshot=null;lastCommand="";picture=session.view();clearInputs();lastFrame=0;accumulator=0;
+-                audio.retain(Arrays.asList(packs.get(cfg.p1),packs.get(cfg.p2),packs.get(cfg.stage),packs.get("0116")));audio.music(packs.get(cfg.stage),packs.get(cfg.stage).bgm);if(resumed&&!dialog)audio.resume();
++                audio.retain(Arrays.asList(packs.get(cfg.p1),packs.get(cfg.p2),packs.get(cfg.stage),packs.get("0116")));audio.music(packs.get(cfg.stage),packs.get(cfg.stage).bgm);if(resumed&&!pauseGate.blocked())audio.resume();
+                 log("online-ready role="+net.localPlayer()+" initial="+session.stateHash());
+             }
+             picture=session.view();
+@@ -352,11 +400,11 @@
+         @Override public void doFrame(long time){
+             if(!running)return;long delta=lastFrame==0?0:time-lastFrame;lastFrame=time;
+             try{onlinePoll();}catch(IOException|IllegalStateException|IllegalArgumentException e){fail(e.toString());}
+-            if((selection!=null||(online!=null?online.canAdvance():story!=null?!story.finished():session!=null&&!session.state().finished))&&(selection!=null||!replayDone)&&resumed&&!dialog&&!editing&&lastError.isEmpty()){
++            if((selection!=null||(online!=null?online.canAdvance():story!=null?!story.finished():session!=null&&!session.state().finished))&&(selection!=null||!replayDone)&&resumed&&!pauseGate.blocked()&&!editing&&lastError.isEmpty()){
+                 if(delta>33000000)slowFrames++;accumulator+=Math.min(delta,100000000);
+                 try{int count=0;while(accumulator>=16666667&&count++<6){
+                     if(online!=null&&!online.canAdvance()){accumulator=0;break;}
+-                    int[] transitions=input.drain();int mask=input.sample();int[] samples=Arrays.copyOf(transitions,transitions.length+1);samples[samples.length-1]=mask;
++                    int[] samples=frameInput.poll(input);int mask=samples[samples.length-1];
+                     if(selection!=null){selectionStep(samples);if(selection==null){accumulator=0;break;}accumulator-=16666667;continue;}
+                     if(online!=null){online.advance(samples);picture=session.view();accumulator-=16666667;continue;}
+                     if(story!=null){
+@@ -442,9 +490,9 @@
+                 paint.setColor(0xdd16131d);c.drawRect(left,55,right,79,paint);paint.setColor(p==0?0xffbd3158:0xff687ddb);float width=(right-left-4)*f.life/f.maxLife;c.drawRect(p==0?left+2:right-2-width,57,p==0?left+2+width:right-2,77,paint);
+                 paint.setColor(Color.WHITE);paint.setTextSize(12);c.drawText(f.name+"  "+f.life+" / "+f.maxLife,left,94,paint);c.drawText("Stock "+f.stocks+"   "+f.meter,left,109,paint);
+             }
+-            if(story!=null){paint.setTextAlign(Paint.Align.CENTER);paint.setColor(Color.WHITE);paint.setTextSize(22);c.drawText(story.timer()<0?"∞":Integer.toString(story.timer()),320,76,paint);paint.setTextSize(14);c.drawText("Бой "+story.fights(),320,101,paint);paint.setTextAlign(Paint.Align.LEFT);return;}
++            if(story!=null){paint.setTextAlign(Paint.Align.CENTER);paint.setColor(Color.WHITE);paint.setTextSize(22);c.drawText(story.timer()<0?"∞":Integer.toString(story.timer()),320,76,paint);paint.setTextSize(14);c.drawText(story.score(0)+" : "+story.score(1),320,100,paint);c.drawText("Раунд "+story.roundNumber()+" · до "+story.roundsToWin(),320,124,paint);paint.setTextAlign(Paint.Align.LEFT);return;}
+             MatchState match=session.state();paint.setTextAlign(Paint.Align.CENTER);paint.setColor(Color.WHITE);paint.setTextSize(22);c.drawText(match.timer<0?"∞":Integer.toString(match.timer),320,76,paint);paint.setTextSize(14);c.drawText(match.score1+" : "+match.score2,320,100,paint);c.drawText("Раунд "+match.roundNumber+" · до "+match.roundsToWin,320,124,paint);
+-            if(match.finished&&(online==null||online.state()==OnlineMatch.COMPLETE)){int me=online==null?0:online.rollback().localPlayer();paint.setColor(0xee101018);c.drawRect(115,153,525,265,paint);paint.setColor(Color.WHITE);paint.setTextSize(26);c.drawText(match.winner<0?"НИЧЬЯ":match.winner==me?"МАТЧ ВЫИГРАН":"МАТЧ ПРОИГРАН",320,191,paint);paint.setTextSize(17);c.drawText(match.score1+" : "+match.score2,320,220,paint);paint.setTextSize(14);c.drawText(online==null?"Menu → Новый матч / Повторить запись":"Хеш результата совпал · Menu → Выйти",320,247,paint);}paint.setTextAlign(Paint.Align.LEFT);
++            if(match.finished&&(online==null||online.state()==OnlineMatch.COMPLETE)){int me=online==null?0:online.rollback().localPlayer();paint.setColor(0xee101018);c.drawRect(115,153,525,265,paint);paint.setColor(Color.WHITE);paint.setTextSize(26);c.drawText(match.winner<0?"НИЧЬЯ":match.winner==me?"МАТЧ ВЫИГРАН":"МАТЧ ПРОИГРАН",320,191,paint);paint.setTextSize(17);c.drawText(match.score1+" : "+match.score2,320,220,paint);paint.setTextSize(14);c.drawText(online==null?"Пауза → Меню → Новый матч / Повторить запись":"Хеш результата совпал · Пауза → Меню → Выйти",320,247,paint);}paint.setTextAlign(Paint.Align.LEFT);
+         }
+         @Override protected void onDraw(Canvas c){
+             c.drawColor(Color.BLACK);paint.setAntiAlias(false);paint.setColor(Color.WHITE);
+@@ -454,23 +502,23 @@
+                 try{if(story!=null){
+                     if(story.mode()==StoryController.FIGHT){for(BattleView.Sprite s:picture.sprites)sprite(sceneCanvas,s);hud(sceneCanvas);for(BattleView.Sprite s:story.overlays())sprite(sceneCanvas,s);}
+                     else{for(BattleView.Sprite s:story.sceneView())sprite(sceneCanvas,s);paint.setTextAlign(Paint.Align.CENTER);paint.setTextSize(15);paint.setColor(Color.WHITE);
+-                        if(story.mode()==StoryController.SCENE)sceneCanvas.drawText("A–F: продолжить",320,468,paint);
+-                        if(story.mode()==StoryController.CONTINUE){paint.setColor(0xdd15101a);sceneCanvas.drawRect(145,205,495,275,paint);paint.setColor(Color.WHITE);sceneCanvas.drawText(story.continueChoice()==0?"▶ Продолжить     В меню":"Продолжить     ▶ В меню",320,234,paint);sceneCanvas.drawText("Направление: выбор · A–F: подтвердить",320,260,paint);}
+-                        if(story.finished()){paint.setTextSize(25);sceneCanvas.drawText(story.mode()==StoryController.COMPLETE?"КОНЕЦ СЮЖЕТА":"ВОЗВРАТ В МЕНЮ",320,210,paint);paint.setTextSize(16);sceneCanvas.drawText("Menu → Другой персонаж / Обычный VS",320,250,paint);}paint.setTextAlign(Paint.Align.LEFT);
++                        if(story.mode()==StoryController.SCENE)sceneCanvas.drawText("A: продолжить",320,468,paint);
++                        if(story.mode()==StoryController.CONTINUE){paint.setColor(0xdd15101a);sceneCanvas.drawRect(145,205,495,275,paint);paint.setColor(Color.WHITE);sceneCanvas.drawText(story.continueChoice()==0?"▶ Продолжить     В меню":"Продолжить     ▶ В меню",320,234,paint);sceneCanvas.drawText("Направление: выбор · A: подтвердить",320,260,paint);}
++                        if(story.finished()){paint.setTextSize(25);sceneCanvas.drawText(story.mode()==StoryController.COMPLETE?"КОНЕЦ СЮЖЕТА":"ВОЗВРАТ В МЕНЮ",320,210,paint);paint.setTextSize(16);sceneCanvas.drawText("Пауза → Меню → Другой персонаж / Обычный VS",320,250,paint);}paint.setTextAlign(Paint.Align.LEFT);
+                     }
+                 }else{for(BattleView.Sprite s:picture.sprites)sprite(sceneCanvas,s);if(!session.state().finished)hud(sceneCanvas);for(BattleView.Sprite s:session.overlays())sprite(sceneCanvas,s);if(session.state().finished)hud(sceneCanvas);}}catch(IllegalStateException e){if(lastError.isEmpty())fail(e.getMessage());}
+                 float top=story==null?0:getHeight()*.10f,scale=Math.min(getWidth()/640f,(getHeight()-top)/480f);dest.set((getWidth()-640*scale)/2,top+(getHeight()-top-480*scale)/2,(getWidth()+640*scale)/2,top+(getHeight()-top+480*scale)/2);paint.setAlpha(255);c.drawBitmap(scene,null,dest,paint);
+             }
+             paint.setAntiAlias(true);paint.setTextSize(Math.max(12,getHeight()*.025f));paint.setColor(0xdd101018);c.drawRect(0,0,getWidth(),getHeight()*.10f,paint);paint.setColor(Color.WHITE);
+-            c.drawText(online!=null?"TEST 007a · ONLINE · "+(online.rollback()==null?online.code():"P"+(online.rollback().localPlayer()+1)+" · rollback "+online.rollback().rollbackCount()):story==null?"TEST 007a · VS / таймер / повтор":"TEST 007a · сюжет · "+(story.scenePack()!=null?story.scenePack().name:"бой "+story.fights()),getWidth()*.018f,getHeight()*.037f,paint);
++            c.drawText(online!=null?"TEST 007b · ONLINE · "+(online.rollback()==null?online.code():"P"+(online.rollback().localPlayer()+1)+" · rollback "+online.rollback().rollbackCount()):story==null?"TEST 007b · VS / таймер / повтор":"TEST 007b · сюжет · "+(story.scenePack()!=null?story.scenePack().name:"бой "+story.fights()),getWidth()*.018f,getHeight()*.037f,paint);
+             if(session!=null)c.drawText(label(packs.get(selected))+"  "+(replayStatus.isEmpty()?lastCommand:replayStatus)+"   ["+String.format(Locale.ROOT,"%03X",input.mask())+"]",getWidth()*.018f,getHeight()*.075f,paint);
+-            c.drawText("Menu",getWidth()*.89f,getHeight()*.055f,paint);
+-            if(editing){paint.setColor(0xfff2bf70);c.drawText("Передвигай левый и правый блок. Menu → Передвинуть элементы — закончить.",getWidth()*.025f,getHeight()*.14f,paint);}
++            selectionButton(c,new RectF(getWidth()*.84f,getHeight()*.01f,getWidth()*.99f,getHeight()*.09f),online==null?"Ⅱ Пауза":"Menu",0xff49323f);
++            if(editing){paint.setColor(0xfff2bf70);c.drawText("Передвигай левый и правый блок. Пауза → Меню → Передвинуть элементы — закончить.",getWidth()*.025f,getHeight()*.14f,paint);}
+             layoutControls();if(editing||!prefs.getBoolean("hidePad",true)||!hasGamepad())drawControls(c);
+             if(online!=null&&online.state()!=OnlineMatch.COMPLETE&&!online.canAdvance()){
+                 paint.setColor(0xee141523);c.drawRect(getWidth()*.13f,getHeight()*.33f,getWidth()*.87f,getHeight()*.62f,paint);paint.setColor(Color.WHITE);paint.setTextSize(getHeight()*.03f);
+                 String text=online.message();int row=0;for(int n=0;n<text.length()&&row<4;n+=55)c.drawText(text.substring(n,Math.min(n+55,text.length())),getWidth()*.16f,getHeight()*(.40f+.045f*row++),paint);
+-                c.drawText("Menu — продолжить или выйти",getWidth()*.16f,getHeight()*.58f,paint);
++                c.drawText("Пауза — продолжить или выйти",getWidth()*.16f,getHeight()*.58f,paint);
+             }
+             drawFailure(c);
+         }
+@@ -479,7 +527,7 @@
+                 paint.setColor(0xee24131b);c.drawRect(getWidth()*.08f,getHeight()*.25f,getWidth()*.92f,getHeight()*.70f,paint);paint.setColor(Color.WHITE);paint.setTextSize(getHeight()*.03f);
+                 c.drawText("Тест остановлен: требуется исправление runtime",getWidth()*.1f,getHeight()*.31f,paint);
+                 int n=0;for(int i=0;i<lastError.length()&&n<5;i+=72)c.drawText(lastError.substring(i,Math.min(lastError.length(),i+72)),getWidth()*.1f,getHeight()*(.37f+.045f*n++),paint);
+-                c.drawText("Menu → Поделиться отчётом / Перезапустить тест",getWidth()*.1f,getHeight()*.65f,paint);
++                c.drawText("Пауза → Меню → Поделиться отчётом / Перезапустить тест",getWidth()*.1f,getHeight()*.65f,paint);
+             }
+         }
+         void drawSelection(Canvas c){
+@@ -532,6 +580,7 @@
+             if(mirror){dx=w-dx;bx=w-bx;}radius=h*.17f*size;buttonRadius=h*.06f*size;
+             stick.configure(dx,dy,radius,prefs.getFloat("dead",.18f));
+         }
++        int activeButtons(){CommandGuide g=guides.get(selected);return g==null?Input.A:g.buttons;}
+         float buttonX(int i){return bx+(i%3-1)*buttonRadius*2.35f;}float buttonY(int i){return by+(i<3?.8f:-1.6f)*buttonRadius;}
+         void drawControls(Canvas c){
+             int alpha=(int)(prefs.getFloat("opacity",.6f)*255),mask=input.mask();
+@@ -555,7 +604,7 @@
+             paint.setColor(Color.argb(alpha,stick.active()?255:202,stick.active()?205:174,stick.active()?138:195));c.drawCircle(capX,capY,cap,paint);
+             paint.setStyle(Paint.Style.FILL);paint.setColor(Color.argb(alpha/3,255,244,232));c.drawCircle(capX-cap*.24f,capY-cap*.28f,cap*.24f,paint);
+             paint.setTextAlign(Paint.Align.CENTER);
+-            for(int i=0;i<6;i++){paint.setColor((mask&(16<<i))!=0?0xddce4661:Color.argb(alpha,45,49,65));c.drawCircle(buttonX(i),buttonY(i),buttonRadius,paint);paint.setColor(Color.argb(alpha,255,255,255));paint.setTextSize(buttonRadius*.85f);c.drawText(""+(char)('A'+i),buttonX(i),buttonY(i)+buttonRadius*.3f,paint);}paint.setTextAlign(Paint.Align.LEFT);
++            for(int i=0;i<6;i++){if((activeButtons()&(16<<i))==0)continue;paint.setColor((mask&(16<<i))!=0?0xddce4661:Color.argb(alpha,45,49,65));c.drawCircle(buttonX(i),buttonY(i),buttonRadius,paint);paint.setColor(Color.argb(alpha,255,255,255));paint.setTextSize(buttonRadius*.85f);c.drawText(""+(char)('A'+i),buttonX(i),buttonY(i)+buttonRadius*.3f,paint);}paint.setTextAlign(Paint.Align.LEFT);
+         }
+         @Override protected void onSizeChanged(int w,int h,int oldw,int oldh){
+             super.onSizeChanged(w,h,oldw,oldh);clearInputs();
+@@ -566,7 +615,8 @@
+             layoutControls();int action=e.getActionMasked(),index=e.getActionIndex();maxPointers=Math.max(maxPointers,e.getPointerCount());
+             if(action==MotionEvent.ACTION_CANCEL){clearInputs();pointerGroup.clear();return true;}
+             if(action==MotionEvent.ACTION_DOWN||action==MotionEvent.ACTION_POINTER_DOWN){int id=e.getPointerId(index);float x=e.getX(index),y=e.getY(index);
+-                if(x>getWidth()*.86f&&y<getHeight()*.12f){menu();return true;}
++                if(x>getWidth()*.84f&&y<getHeight()*.12f){pauseMenu();return true;}
++                if(pauseGate.blocked()&&!editing)return true;
+                 int group;
+                 if(stick.contains(x,y))group=editing||stick.begin(id,x,y)?1:0;
+                 else group=2;
+@@ -578,7 +628,7 @@
+                 if(!pointerGroup.containsKey(id))continue;float x=history<e.getHistorySize()?e.getHistoricalX(i,history):e.getX(i),y=history<e.getHistorySize()?e.getHistoricalY(i,history):e.getY(i);
+                 if(editing){if(i==0){boolean mirror=prefs.getBoolean("mirror",false);float nx=Math.max(.06f,Math.min(.94f,x/getWidth())),ny=Math.max(.2f,Math.min(.9f,y/getHeight()));if(mirror)nx=1-nx;String prefix=pointerGroup.get(id)==1?"d":"b";prefs.edit().putFloat(prefix+"x",nx).putFloat(prefix+"y",ny).apply();}input.set(id,0);continue;}
+                 int mask=0;if(pointerGroup.get(id)==1){stick.move(id,x,y);mask=stick.mask();}
+-                else if(pointerGroup.get(id)==2)for(int b=0;b<6;b++)if(Math.hypot(x-buttonX(b),y-buttonY(b))<buttonRadius*1.12f)mask|=16<<b;
++                else if(pointerGroup.get(id)==2)for(int b=0;b<6;b++)if((activeButtons()&(16<<b))!=0&&Math.hypot(x-buttonX(b),y-buttonY(b))<buttonRadius*1.12f)mask|=16<<b;
+                 input.set(id,mask);
+             }
+             if(up){int id=e.getPointerId(index);stick.end(id);input.set(id,0);pointerGroup.remove(id);}
+--- 007a/runtime/src/org/elfen/engine/MatchController.java
++++ 007b/runtime/src/org/elfen/engine/MatchController.java
+@@ -21,11 +21,11 @@
+         for(BattleSimulation.Event e:overlay.events)events.add(new BattleSimulation.Event(frame,e.emitter,events.size(),e.kind,e.packId,e.value,e.instruction()));
+         if(round.state==1000)events.add(new BattleSimulation.Event(frame,-1,events.size(),"match-end","",state().winner,null));frame++;
+     }
+-    public byte[] snapshot(){try{ByteArrayOutputStream b=new ByteArrayOutputStream();DataOutputStream o=new DataOutputStream(b);o.writeInt(0x45464d53);o.writeInt(1);o.writeUTF(identity);rules.write(o);o.writeInt(frame);round.write(o);byte[] core=battle.snapshot();o.writeInt(core.length);o.write(core);overlay.write(o);o.flush();return b.toByteArray();}catch(IOException e){throw new IllegalStateException(e);}}
++    public byte[] snapshot(){try{ByteArrayOutputStream b=new ByteArrayOutputStream();DataOutputStream o=new DataOutputStream(b);o.writeInt(0x45464d53);o.writeInt(rules.decisiveRounds?2:1);o.writeUTF(identity);rules.write(o);o.writeInt(frame);round.write(o);byte[] core=battle.snapshot();o.writeInt(core.length);o.write(core);overlay.write(o);o.flush();return b.toByteArray();}catch(IOException e){throw new IllegalStateException(e);}}
+     public void restore(byte[] bytes){
+         if(bytes.length>16_000_000)throw new IllegalArgumentException("Match snapshot too large");
+         try(DataInputStream i=new DataInputStream(new ByteArrayInputStream(bytes))){
+-            if(i.readInt()!=0x45464d53||i.readInt()!=1||!i.readUTF().equals(identity))throw new IOException("Match snapshot identity");if(!rules.same(MatchRules.read(kgt,i)))throw new IOException("Match rules differ");int f=i.readInt();if(f<0)throw new IOException("Negative match frame");
++            if(i.readInt()!=0x45464d53)throw new IOException("Match snapshot signature");int version=i.readInt();if((version!=1&&version!=2)||!i.readUTF().equals(identity))throw new IOException("Match snapshot identity");MatchRules read=MatchRules.read(kgt,i);read=new MatchRules(kgt,read.winsRequired,read.timeSetting,read.cpu1,read.cpu2,version==2);if(!rules.same(read))throw new IOException("Match rules differ");int f=i.readInt();if(f<0)throw new IOException("Negative match frame");
+             RoundController r=new RoundController(rules);r.read(i);byte[] core=new byte[StateIO.count(i,8_000_000)];i.readFully(core);BattleSimulation c=new BattleSimulation(a,b,stage,kgt,0);c.restore(core);MatchOverlay ov=new MatchOverlay(kgt);ov.read(i);if(i.read()!=-1)throw new IOException("Trailing match snapshot");
+             frame=f;round=r;battle=c;overlay=ov;events.clear();
+         }catch(IOException e){throw new IllegalArgumentException("Invalid match snapshot",e);}
+--- 007a/runtime/src/org/elfen/engine/MatchRules.java
++++ 007b/runtime/src/org/elfen/engine/MatchRules.java
+@@ -3,14 +3,15 @@
+ import static org.elfen.engine.Pack.*;
+ /** Immutable single-versus rules; all delays refer to the original KGT table. */
+ public final class MatchRules {
+-    public final int winsRequired,timeSetting,cpu1,cpu2; final Pack kgt;
+-    public MatchRules(Pack kgt,int wins,int time,int cpu1,int cpu2){
++    public final int winsRequired,timeSetting,cpu1,cpu2; final Pack kgt; public final boolean decisiveRounds;
++    public MatchRules(Pack kgt,int wins,int time,int cpu1,int cpu2){this(kgt,wins,time,cpu1,cpu2,false);}
++    public MatchRules(Pack kgt,int wins,int time,int cpu1,int cpu2,boolean decisiveRounds){
+         if(!kgt.kind.equals(".kgt")||wins<1||wins>9||time<0||time>999||cpu1<0||cpu1>100||cpu2<0||cpu2>100)throw new IllegalArgumentException("Match rules");
+-        this.kgt=kgt;winsRequired=wins;timeSetting=time;this.cpu1=cpu1;this.cpu2=cpu2;
++        this.decisiveRounds=decisiveRounds;this.kgt=kgt;winsRequired=wins;timeSetting=time;this.cpu1=cpu1;this.cpu2=cpu2;
+     }
+     int skill(int address){int offset=address-0x435470;if(offset<0||offset+2>kgt.originalTail.length)throw new IllegalArgumentException("KGT system table");int s=u16(kgt.originalTail,offset);if(s>=kgt.starts.length)throw new IllegalArgumentException("System skill "+s);return s;}
+     int duration(int skill){if(skill==0)return 0;int p=kgt.starts[skill]*16;if(p>=kgt.end(skill)*16||u(kgt.code,p)!=0)throw new IllegalStateException("System skill metadata "+skill);return u16(kgt.code,p+1);}
+     void write(DataOutput o)throws IOException{for(int v:new int[]{winsRequired,timeSetting,cpu1,cpu2})o.writeInt(v);}
+     static MatchRules read(Pack k,DataInput i)throws IOException{return new MatchRules(k,i.readInt(),i.readInt(),i.readInt(),i.readInt());}
+-    boolean same(MatchRules r){return winsRequired==r.winsRequired&&timeSetting==r.timeSetting&&cpu1==r.cpu1&&cpu2==r.cpu2;}
++    boolean same(MatchRules r){return decisiveRounds==r.decisiveRounds&&winsRequired==r.winsRequired&&timeSetting==r.timeSetting&&cpu1==r.cpu1&&cpu2==r.cpu2;}
+ }
+--- 007a/runtime/src/org/elfen/engine/RoundController.java
++++ 007b/runtime/src/org/elfen/engine/RoundController.java
+@@ -20,7 +20,7 @@
+             int a=max1==0?0:1000*life1/max1,b=max2==0?0:1000*life2/max2;
+             state=a==0&&b==0?540:a==b?510:a>b?520:530;
+             winner=state==520?0:state==530?1:-1;reason=state==540?3:state==510?2:timer==0?1:0;return;
+-        case 510:state=511;show(0x4451e8);wins1++;wins2++;
++        case 510:state=511;show(0x4451e8);if(!rules.decisiveRounds){wins1++;wins2++;}
+         case 511:if(wait-->0)return;state=900;return;
+         case 520:state=521;show(0x4451dc);wins1++;
+         case 521:if(wait-->0)return;state=522;show(0x4451e4);
+@@ -30,7 +30,7 @@
+         case 531:if(wait-->0)return;state=532;show(0x4451e6);
+         case 532:if(wait-->0)return;if(life2==max2){state=533;show(0x4451de);}else state=900;return;
+         case 533:if(wait-->0)return;state=900;return;
+-        case 540:state=541;show(0x4451ea);wins1++;wins2++;
++        case 540:state=541;show(0x4451ea);if(!rules.decisiveRounds){wins1++;wins2++;}
+         case 541:if(wait-->0)return;state=900;return;
+         case 900:state=901;show(0x4451c4);
+         case 901:if(wait-->0)return;state=902;
+@@ -42,6 +42,6 @@
+     void write(DataOutput o)throws IOException{StateIO.writeInts(o,new int[]{state,wait,timer,round,wins1,wins2,winner,reason});}
+     void read(DataInput i)throws IOException{
+         state=i.readInt();wait=i.readInt();timer=i.readInt();round=i.readInt();wins1=i.readInt();wins2=i.readInt();winner=i.readInt();reason=i.readInt();
+-        if(!Arrays.asList(100,110,111,112,200,300,510,511,520,521,522,523,530,531,532,533,540,541,900,901,902,1000).contains(state)||round<1||round>100||wait< -1||timer< -1||wins1<0||wins2<0||winner< -1||winner>1||reason<0||reason>3)throw new IOException("Round snapshot");
++        if(!Arrays.asList(100,110,111,112,200,300,510,511,520,521,522,523,530,531,532,533,540,541,900,901,902,1000).contains(state)||round<1||round>(rules.decisiveRounds?1000000:100)||wait< -1||timer< -1||wins1<0||wins2<0||winner< -1||winner>1||reason<0||reason>3)throw new IOException("Round snapshot");
+     }
+ }
+--- 007a/runtime/src/org/elfen/engine/StoryController.java
++++ 007b/runtime/src/org/elfen/engine/StoryController.java
+@@ -5,15 +5,16 @@
+ /** Frame-addressed original single-player route. UI/audio consume detached output only. */
+ public final class StoryController {
+     public static final int SCENE=0,FIGHT=1,CONTINUE=2,COMPLETE=3,EXIT=4;
+-    final StoryCatalog catalog;final StoryProgram program;final int p1Cpu;final String identity;
++    final StoryCatalog catalog;final StoryProgram program;final int p1Cpu;final String identity;final boolean classicRounds;
+     int frame,slot=-1,mode,seed,previousResult,losses,lastLife,fightCount,wonCount,continueChoice,lastMenuInput;
+     BattleSimulation battle;StoryRound round;DemoSession demo;MatchOverlay overlay;
+     private final ArrayList<BattleSimulation.Event> events=new ArrayList<>();
+     public StoryController(StoryCatalog catalog,Pack player,int seed){this(catalog,player,seed,0);}
+     /** CPU P1 is a deterministic test/demo input source, not a story difficulty change. */
+-    public StoryController(StoryCatalog catalog,Pack player,int seed,int cpu){
+-        this.catalog=catalog;program=new StoryProgram(player);if(!program.available()||cpu<0||cpu>100)throw new IllegalArgumentException("Story protagonist/CPU");p1Cpu=cpu;this.seed=seed;lastLife=player.life();
+-        identity="ELF-STORY-1:combat="+BattleSimulation.RULESET_REVISION+":"+catalog.kgt.hash+":"+player.hash+":"+cpu;advance();
++    public StoryController(StoryCatalog catalog,Pack player,int seed,int cpu){this(catalog,player,seed,cpu,false);}
++    public StoryController(StoryCatalog catalog,Pack player,int seed,int cpu,boolean classicRounds){
++        this.classicRounds=classicRounds;this.catalog=catalog;program=new StoryProgram(player);if(!program.available()||cpu<0||cpu>100)throw new IllegalArgumentException("Story protagonist/CPU");p1Cpu=cpu;this.seed=seed;lastLife=player.life();
++        identity="ELF-STORY-1:combat="+BattleSimulation.RULESET_REVISION+":"+catalog.kgt.hash+":"+player.hash+":"+cpu+(classicRounds?":first-to-two-v1":"");advance();
+     }
+     public int frame(){return frame;}public int mode(){return mode;}public int slot(){return slot;}
+     public boolean finished(){return mode==COMPLETE||mode==EXIT;}public int fights(){return fightCount;}public int wins(){return wonCount;}
+@@ -22,6 +23,8 @@
+     public Pack stagePack(){return battle==null?null:battle.packs[2];}
+     public int timer(){return round==null?-1:round.timer<0?-1:round.timer/100;}public int roundNumber(){return round==null?0:round.round;}
+     public int phase(){return round==null?-1:round.state;}
++    public int roundsToWin(){return round==null?2:round.rules.winsRequired;}
++    public boolean classicRounds(){return classicRounds;}
+     public int score(int p){return round==null?0:p==0?round.wins1:round.wins2;}
+     public BattleView view(){return battle==null?null:battle.view();}
+     public List<BattleView.Sprite> sceneView(){return demo==null?Collections.emptyList():demo.view();}
+@@ -32,7 +35,7 @@
+         slot=program.next(slot,previousResult,lastLife,losses);StoryProgram.Event e=program.event(slot);battle=null;round=null;overlay=null;demo=null;
+         if(e.type==0||e.type==4){mode=e.type==4?COMPLETE:EXIT;emit("story-end",program.player,mode);return;}
+         if(e.type==2){mode=SCENE;demo=new DemoSession(catalog.demo(e.value(1)));emit("music",demo.pack,demo.pack.bgm);emit("story-scene",demo.pack,slot);return;}
+-        mode=FIGHT;round=new StoryRound(catalog.kgt,e);fightCount++;newRound();emit("story-fight",battle.packs[1],slot);
++        mode=FIGHT;round=new StoryRound(catalog.kgt,e,classicRounds);fightCount++;newRound();emit("story-fight",battle.packs[1],slot);
+     }
+     private void newRound(){
+         StoryProgram.Event e=program.event(slot);BattleSimulation old=battle;
+@@ -58,7 +61,7 @@
+             demo.step(new InputFrame(demo.frame(),0,0));append(demo.events());int mask=input.mask(0);
+             if((mask&15)!=0&&(lastMenuInput&15)==0)continueChoice^=1;
+             if((mask&0x3f0)!=0&&(lastMenuInput&0x3f0)==0&&demo.frame()>10){
+-                if(continueChoice==0){mode=FIGHT;demo=null;round=new StoryRound(catalog.kgt,program.event(slot));battle=null;newRound();emit("story-retry",program.player,slot);}
++                if(continueChoice==0){mode=FIGHT;demo=null;round=new StoryRound(catalog.kgt,program.event(slot),classicRounds);battle=null;newRound();emit("story-retry",program.player,slot);}
+                 else{mode=EXIT;demo=null;emit("story-end",program.player,mode);}
+             }lastMenuInput=mask;
+         }else if(mode==FIGHT){
+@@ -87,13 +90,30 @@
+     static void blob(DataOutput o,byte[] b)throws IOException{o.writeInt(b.length);o.write(b);}static byte[] blob(DataInput i)throws IOException{byte[] b=new byte[StateIO.count(i,16_000_000)];i.readFully(b);return b;}
+     public void restore(byte[] bytes){try(DataInputStream i=new DataInputStream(new ByteArrayInputStream(bytes))){
+         if(bytes.length>20_000_000||i.readInt()!=0x45465353||i.readInt()!=1||!i.readUTF().equals(identity))throw new IOException("Story identity");
+-        StoryController s=new StoryController(catalog,program.player,0,p1Cpu);s.frame=i.readInt();s.slot=i.readInt();s.mode=i.readInt();s.seed=i.readInt();s.previousResult=i.readInt();s.losses=i.readInt();s.lastLife=i.readInt();s.fightCount=i.readInt();s.wonCount=i.readInt();s.continueChoice=i.readInt();s.lastMenuInput=i.readInt();
++        StoryController s=new StoryController(catalog,program.player,0,p1Cpu,classicRounds);s.frame=i.readInt();s.slot=i.readInt();s.mode=i.readInt();s.seed=i.readInt();s.previousResult=i.readInt();s.losses=i.readInt();s.lastLife=i.readInt();s.fightCount=i.readInt();s.wonCount=i.readInt();s.continueChoice=i.readInt();s.lastMenuInput=i.readInt();
+         if(s.frame<0||s.slot<0||s.slot>=100||s.mode<0||s.mode>4||s.losses<0||s.lastLife<0||s.lastLife>program.player.life()||s.fightCount<0||s.wonCount<0||s.wonCount>s.fightCount||s.continueChoice<0||s.continueChoice>1||(s.lastMenuInput&~1023)!=0)throw new IOException("Story state");
+         s.battle=null;s.round=null;s.demo=null;s.overlay=null;StoryProgram.Event e=program.event(s.slot);
+-        if(i.readBoolean()){if(e.type!=1)throw new IOException("Story battle event");s.round=new StoryRound(catalog.kgt,e);s.round.read(i);s.battle=new BattleSimulation(program.player,catalog.character(e.enemy()),catalog.stage(e.value(1)),catalog.kgt,0);s.battle.restore(blob(i));if(i.readBoolean()){s.overlay=new MatchOverlay(catalog.kgt);s.overlay.read(i);}}
++        if(i.readBoolean()){if(e.type!=1)throw new IOException("Story battle event");s.round=new StoryRound(catalog.kgt,e,classicRounds);s.round.read(i);s.battle=new BattleSimulation(program.player,catalog.character(e.enemy()),catalog.stage(e.value(1)),catalog.kgt,0);s.battle.restore(blob(i));if(i.readBoolean()){s.overlay=new MatchOverlay(catalog.kgt);s.overlay.read(i);}}
+         if(i.readBoolean()){String id=i.readUTF();Pack p=s.mode==CONTINUE?catalog.screen(4):catalog.demo(e.value(1));if(!p.id.equals(id))throw new IOException("Story scene identity");s.demo=new DemoSession(p);s.demo.restore(blob(i));}
+         if(i.read()!=-1||(s.mode==FIGHT&&(s.battle==null||s.overlay==null))||((s.mode==SCENE||s.mode==CONTINUE)&&s.demo==null))throw new IOException("Story snapshot components");
+         frame=s.frame;slot=s.slot;mode=s.mode;seed=s.seed;previousResult=s.previousResult;losses=s.losses;lastLife=s.lastLife;fightCount=s.fightCount;wonCount=s.wonCount;continueChoice=s.continueChoice;lastMenuInput=s.lastMenuInput;battle=s.battle;round=s.round;demo=s.demo;overlay=s.overlay;events.clear();
+     }catch(IOException e){throw new IllegalArgumentException("Invalid story snapshot",e);}}
++    /** Explicit save migration, not replay migration. Completed route events stay completed.
++     * The current round's battle/VM/RNG and earned scores survive; future adjudication
++     * uses first-to-two. Old recordings still use the unchanged legacy constructor. */
++    public static StoryController loadOfflineSave(StoryCatalog catalog,Pack player,byte[] bytes){
++        String id;
++        try(DataInputStream in=new DataInputStream(new ByteArrayInputStream(bytes))){
++            if(in.readInt()!=0x45465353||in.readInt()!=1)throw new IOException("Story save header");id=in.readUTF();
++        }catch(IOException e){throw new IllegalArgumentException("Invalid story save",e);}
++        StoryController current=new StoryController(catalog,player,0,0,true);
++        if(id.equals(current.identity)){current.restore(bytes);return current;}
++        StoryController old=new StoryController(catalog,player,0,0);old.restore(bytes);
++        // Re-encode only the rules identity, then validate every component with the new rules.
++        try(DataInputStream in=new DataInputStream(new ByteArrayInputStream(bytes));ByteArrayOutputStream b=new ByteArrayOutputStream()){
++            DataOutputStream out=new DataOutputStream(b);out.writeInt(in.readInt());out.writeInt(in.readInt());in.readUTF();out.writeUTF(current.identity);
++            byte[] rest=new byte[in.available()];in.readFully(rest);out.write(rest);current.restore(b.toByteArray());return current;
++        }catch(IOException e){throw new IllegalArgumentException("Story save migration",e);}
++    }
+     public String stateHash(){return StateIO.hex(StateIO.hash(snapshot()));}
+ }
+--- 007a/runtime/src/org/elfen/engine/StoryRound.java
++++ 007b/runtime/src/org/elfen/engine/StoryRound.java
+@@ -5,7 +5,8 @@
+     final MatchRules rules;final StoryProgram.Event event;
+     int state=110,wait,timer,round=1,wins1,wins2,points1,points2,losses,winner=-1;
+     final ArrayList<Integer> started=new ArrayList<>();
+-    StoryRound(Pack k,StoryProgram.Event e){event=e;rules=new MatchRules(k,e.value(2),e.word(6),0,Math.min(100,e.value(29)));timer=e.word(6)*100-1;wait=rules.duration(rules.skill(0x4451c2));
++    StoryRound(Pack k,StoryProgram.Event e){this(k,e,false);}
++    StoryRound(Pack k,StoryProgram.Event e,boolean classic){event=e;rules=new MatchRules(k,classic?2:e.value(2),e.word(6),0,Math.min(100,e.value(29)),classic);timer=e.word(6)*100-1;wait=rules.duration(rules.skill(0x4451c2));
+         if(e.enemyCount()!=1||e.value(28)==0||e.word(24)!=0||e.word(26)!=0||e.value(30)!=1||e.value(18)!=0||e.value(38)!=0)throw new IllegalArgumentException("Unaudited story score/team layout at "+e.slot);
+     }
+     private void show(int address){int s=rules.skill(address);started.add(s);wait=rules.duration(s);}
+@@ -21,12 +22,12 @@
+         case 300:
+             if(timer==0){int a=max1==0?0:1000*hp1/max1,b=max2==0?0:1000*hp2/max2;if(a<b)points2+=event.value(17);if(b<a)points1+=event.value(44);}
+             int opponentPoints=points2>=100?points2:0;
+-            state=points1==opponentPoints?430:points1>opponentPoints?410:420;winner=state==410?0:state==420?1:-1;if(state!=410)losses++;return;
++            state=points1==opponentPoints?430:points1>opponentPoints?410:420;winner=state==410?0:state==420?1:-1;if(state!=410&&(!rules.decisiveRounds||state!=430))losses++;return;
+         case 410:state=411;wins1++;show(0x4451e0);
+         case 411:if(wait-->0)return;state=900;return;
+         case 420:state=421;wins2++;show(0x4451e2);
+         case 421:if(wait-->0)return;state=900;return;
+-        case 430:state=431;wins1++;wins2++;show(0x4451e8);
++        case 430:state=431;if(!rules.decisiveRounds){wins1++;wins2++;}show(0x4451e8);
+         case 431:if(wait-->0)return;state=900;return;
+         case 900:state=901;show(0x4451c4);
+         case 901:if(wait-->0)return;state=902;
+@@ -38,6 +39,6 @@
+     void write(DataOutput o)throws IOException{StateIO.writeInts(o,new int[]{state,wait,timer,round,wins1,wins2,points1,points2,losses,winner});}
+     void read(DataInput i)throws IOException{
+         state=i.readInt();wait=i.readInt();timer=i.readInt();round=i.readInt();wins1=i.readInt();wins2=i.readInt();points1=i.readInt();points2=i.readInt();losses=i.readInt();winner=i.readInt();
+-        if(!Arrays.asList(100,110,111,112,200,300,410,411,420,421,430,431,900,901,902,1000,1001).contains(state)||wait< -1||timer< -1||round<1||round>100||wins1<0||wins2<0||points1<0||points2<0||losses<0||winner< -1||winner>1)throw new IOException("Story round snapshot");
++        if(!Arrays.asList(100,110,111,112,200,300,410,411,420,421,430,431,900,901,902,1000,1001).contains(state)||wait< -1||timer< -1||round<1||round>(rules.decisiveRounds?1000000:100)||wins1<0||wins2<0||points1<0||points2<0||losses<0||winner< -1||winner>1)throw new IOException("Story round snapshot");
+     }
+ }

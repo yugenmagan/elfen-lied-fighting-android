@@ -1,0 +1,153 @@
+{
+  "checkpoint": "TEST007a",
+  "date": "2026-10-01",
+  "based_on": "Final TEST007 checkpoint; original runtime and all assets unchanged",
+  "apk": "builds/elfen-fighting-007a-stick.apk",
+  "apk_sha256": "20eb76c88ef73f76c474af1ef0085e8ec5b252b2232efde2eb9a3375a8dc7aa2",
+  "project_zip": "builds/Elfen_Lied_Android_007a_project.zip",
+  "combat_ruleset_revision": 2,
+  "standalone_build": "passed",
+  "gradle_clean_release": "passed; 74 executed tasks; release/debug packaging validated",
+  "original_runtime_files_unchanged": 30,
+  "full_story_routes": [
+    {
+      "character": "0170",
+      "frames": 217600,
+      "wins": 9,
+      "fights": 10,
+      "hash": "99d01a21bdee45b171cf5df51e652ea1f4cd639e472a5f3a551d8333d6936ce0",
+      "log": "research/regression_lucy_story_007.log",
+      "input_source": "original CPU80",
+      "complete": true
+    },
+    {
+      "character": "0104",
+      "frames": 173751,
+      "wins": 9,
+      "fights": 10,
+      "hash": "cc66ca394b153493b473a8bc5256de40329cbd1019eacd3e85a9af0f1fbb6ce8",
+      "log": "research/story_route_0104_cpu80_006.log",
+      "input_source": "original CPU80",
+      "complete": true
+    },
+    {
+      "character": "0108",
+      "frames": 192227,
+      "wins": 9,
+      "fights": 10,
+      "hash": "d21eb0854139391edfa7e5c0d023b699a2921026bb6a5791716d450536b7e020",
+      "log": "research/story_route_0108_006.log",
+      "input_source": "original CPU80",
+      "complete": true
+    },
+    {
+      "character": "0110",
+      "frames": 98848,
+      "wins": 9,
+      "fights": 10,
+      "hash": "0cd440bbe22cb985dcf2443d9cb776006b8378c7bc85f62057d18d27c205358b",
+      "log": "research/story_route_0110_006.log",
+      "input_source": "original CPU80",
+      "complete": true
+    },
+    {
+      "character": "0114",
+      "frames": 188974,
+      "wins": 9,
+      "fights": 10,
+      "hash": "4dd43fdb1a14c5882cc8c43eb6bc9b1c25551dfe7b4b307a34b7b7f1fffc7dde",
+      "log": "research/story_route_0114_006.log",
+      "input_source": "original CPU80",
+      "complete": true
+    },
+    {
+      "character": "0122",
+      "frames": 115314,
+      "wins": 9,
+      "fights": 10,
+      "hash": "8d93a6284b97a1cf886d8ac227ed3e1a735ef2111755c3b2805446a30b14f68c",
+      "log": "research/story_route_0122_006.log",
+      "input_source": "original CPU80",
+      "complete": true
+    },
+    {
+      "character": "0136",
+      "frames": 105679,
+      "wins": 9,
+      "fights": 10,
+      "hash": "26edcb24af7dc824b6f8953296244ffcfd8893cb2f60e49c3e6c8fa7ac2516ec",
+      "log": "research/story_route_0136_006.log",
+      "input_source": "original CPU80",
+      "complete": true
+    },
+    {
+      "character": "0156",
+      "frames": 212275,
+      "wins": 9,
+      "fights": 10,
+      "hash": "91601d47ed671a2a3aa8c74c87d47dbfe38456372296c8ebe9d15e7d6968f5d9",
+      "log": "research/story_route_0156_006.log",
+      "input_source": "original CPU80",
+      "complete": true
+    },
+    {
+      "character": "0168",
+      "frames": 149773,
+      "wins": 9,
+      "fights": 10,
+      "hash": "9674e8176b5f905fa4ba7bdd8407142ff28d461e28d271b71c2314aa393aea8e",
+      "log": "research/story_route_0168_006.log",
+      "input_source": "original CPU80",
+      "complete": true
+    }
+  ],
+  "incomplete_route": {
+    "character": "0128 Mariko",
+    "pilot7_frames": 500000,
+    "wins": 6,
+    "slot": 13,
+    "crash": false,
+    "complete": false
+  },
+  "rollback_peer_checks": 54088,
+  "tls_network_checks": 5443,
+  "online_transport": "local TLS tests passed",
+  "public_online_available": false,
+  "public_endpoint": null,
+  "android_test006_execution": false,
+  "android_test005_user_confirmation": true,
+  "android_test005_confirmation_scope": "User reports everything works; individual scenarios not enumerated",
+  "russian_story_translation": false,
+  "next": [
+    "Physical Android TEST007a touch-stick check",
+    "Continue approved offline fidelity/progression after feedback"
+  ],
+  "documents": [
+    "README_RU.md",
+    "PHONE_TEST_007A_RU.md",
+    "TEST_RESULTS_007A.md",
+    "KNOWN_ISSUES.md",
+    "PORTING_NOTES.md",
+    "FORMAT_NOTES.md",
+    "RECOVERY_NOTES.md",
+    "docs/BUILD.md",
+    "docs/NANA_CAN_007A.md"
+  ],
+  "android_test006_user_confirmation": true,
+  "android_test006_confirmation_scope": "User reports everything works; individual scenarios not enumerated",
+  "android_test007_execution": false,
+  "selection_assertions": 20321,
+  "selection_original_input_fixtures": 1764,
+  "selection_original_wrap_fixtures": 160,
+  "selection_roster": 10,
+  "selection_viewport_sizes": 7,
+  "online_deployment": "Deferred by user; offline development requested",
+  "current_lucy_regression": "research/regression_lucy_story_007a.log",
+  "checkpoint_validation": "CRC passed; independently extracted sources rebuild byte-identical APK (verification rerun for delivered ZIP)",
+  "android_test007a_execution": false,
+  "arcade_stick_assertions": 7827,
+  "nana_can_assertions": 15156,
+  "nana_original_x86_contacts": 60,
+  "nana_original_x86_motion_frames": 960,
+  "combat_changes": "none; can behavior verified against supplied original instructions/procedures"
+}

@@ -1,0 +1,155 @@
+{
+  "based_on": "TEST005",
+  "original_runtime_source_files": 29,
+  "all_original_runtime_sources_unchanged": true,
+  "added_runtime_files": [
+    "runtime/src/org/elfen/engine/RollbackSession.java"
+  ],
+  "files": [
+    {
+      "path": "runtime/src/org/elfen/engine/BattleHistory.java",
+      "sha256": "e58c313c817956ce36798fceb77a6a8cc7f6081086e32d9261f4a25ce955a803",
+      "unchanged": true
+    },
+    {
+      "path": "runtime/src/org/elfen/engine/BattleSimulation.java",
+      "sha256": "208c6f0e1b1b9504278b100d4b395dd8d583238007e0f10a05ea707a318a29b7",
+      "unchanged": true
+    },
+    {
+      "path": "runtime/src/org/elfen/engine/BattleView.java",
+      "sha256": "ca1fe72454b3475ecae558a4e2201caf7e5b4ac0a15ed9c8fc2490b67cbfbf98",
+      "unchanged": true
+    },
+    {
+      "path": "runtime/src/org/elfen/engine/CombatMath.java",
+      "sha256": "a6d917910779aa535e4da2acaae247e5eebe3a17e3f61ccdfe147ad9e1623969",
+      "unchanged": true
+    },
+    {
+      "path": "runtime/src/org/elfen/engine/CombatRules.java",
+      "sha256": "aed2b7399b2083730e8ebd6181ecb6a7560bb84091223713d6ab3edb3bbb682e",
+      "unchanged": true
+    },
+    {
+      "path": "runtime/src/org/elfen/engine/CommandRecognizer.java",
+      "sha256": "9c8ac32a0dbf1072fb2746f395cae0bef90d575d2da12e6299c15d32035f119b",
+      "unchanged": true
+    },
+    {
+      "path": "runtime/src/org/elfen/engine/Commands.java",
+      "sha256": "f334a9853912f8884d5a7e7f444f028fe47b3766cd3ff2cf4e4dd5c05de4dc17",
+      "unchanged": true
+    },
+    {
+      "path": "runtime/src/org/elfen/engine/CpuProgram.java",
+      "sha256": "0c6f41bfc9232c4fb1ecfca6212e2bff35ca4fadfd755fc683b0cd0eb85aa960",
+      "unchanged": true
+    },
+    {
+      "path": "runtime/src/org/elfen/engine/DemoSession.java",
+      "sha256": "d8210da9139d26b6130a135748c86f05c0ada9ec25d84eb5941fc3dadb63132a",
+      "unchanged": true
+    },
+    {
+      "path": "runtime/src/org/elfen/engine/Input.java",
+      "sha256": "f0bfd4ee5354793019bab976d5f794d93d1387fe8b6bad1722c2ade65a7831e2",
+      "unchanged": true
+    },
+    {
+      "path": "runtime/src/org/elfen/engine/InputFrame.java",
+      "sha256": "9ab41a93ef30e315aab2098dc9d3bab9e503379e16f082ca655ddd378dc83627",
+      "unchanged": true
+    },
+    {
+      "path": "runtime/src/org/elfen/engine/MatchController.java",
+      "sha256": "404846a8c96fbc7194bfac7c712b98b501fdada82b4b1b2bc921fff0006dd1e8",
+      "unchanged": true
+    },
+    {
+      "path": "runtime/src/org/elfen/engine/MatchHistory.java",
+      "sha256": "be534de0e5053e9c6b6a14e50662b39aad34524bd49b070800be8f6bb4a7556e",
+      "unchanged": true
+    },
+    {
+      "path": "runtime/src/org/elfen/engine/MatchOverlay.java",
+      "sha256": "e433c5a7483327cb39dff21303b63ec32bb1851479c667faabb9abe901c6268f",
+      "unchanged": true
+    },
+    {
+      "path": "runtime/src/org/elfen/engine/MatchReplay.java",
+      "sha256": "2a0fc781bf17c85322d79a6720a2a8ca5e0532c9b12953be62b43789ab56df3a",
+      "unchanged": true
+    },
+    {
+      "path": "runtime/src/org/elfen/engine/MatchRules.java",
+      "sha256": "6b3c5ecf589fe002fbdbf540def493dcd2b2657a4b4d283dd3a8f7289b34e18c",
+      "unchanged": true
+    },
+    {
+      "path": "runtime/src/org/elfen/engine/MatchState.java",
+      "sha256": "87d32750d9be648425d8c8ce1a013dc8d7574591e6492014b435487dc26a0f00",
+      "unchanged": true
+    },
+    {
+      "path": "runtime/src/org/elfen/engine/Pack.java",
+      "sha256": "622f84e31967099f91001d78d679cfe9ace0aeab50e87f2d15db7ae6ba862621",
+      "unchanged": true
+    },
+    {
+      "path": "runtime/src/org/elfen/engine/PreviewSession.java",
+      "sha256": "3d7acbf8467ff574d909022ec57e16541f95ccfbc4e64bfd076b636a47506cc0",
+      "unchanged": true
+    },
+    {
+      "path": "runtime/src/org/elfen/engine/ReplayTape.java",
+      "sha256": "353da0e8e7dba47f69b0a37b107ac0974a39a8c1438a835e519d238f169cad20",
+      "unchanged": true
+    },
+    {
+      "path": "runtime/src/org/elfen/engine/RoundController.java",
+      "sha256": "0b6abc16c78c7afcb5c1a0fdff1a7dd252395ab7379824cf0ad26a0b749feee0",
+      "unchanged": true
+    },
+    {
+      "path": "runtime/src/org/elfen/engine/Script.java",
+      "sha256": "6b81f89e1c2658abde470656026bd9b4cc77b9500e36f8a7b43cc727b4cafb3f",
+      "unchanged": true
+    },
+    {
+      "path": "runtime/src/org/elfen/engine/StateIO.java",
+      "sha256": "a755dcb375f8a6da0cc3b4a1b2ac8e15e1b928a89ea254694b3bd406eee25ea3",
+      "unchanged": true
+    },
+    {
+      "path": "runtime/src/org/elfen/engine/StoryCatalog.java",
+      "sha256": "5d4498aa1835d5e0fc557b53b1be60027ee6d1bcb02402586c554adebd4395f7",
+      "unchanged": true
+    },
+    {
+      "path": "runtime/src/org/elfen/engine/StoryController.java",
+      "sha256": "6b609cdc024415fc1a5ecf2eb6356844bd9f9065e500eeb6af63066f8e615fb6",
+      "unchanged": true
+    },
+    {
+      "path": "runtime/src/org/elfen/engine/StoryHistory.java",
+      "sha256": "f9acc5c63011b5833ef42ccc68af53a3f65d10becf528dc571d0f9079eea2c75",
+      "unchanged": true
+    },
+    {
+      "path": "runtime/src/org/elfen/engine/StoryProgram.java",
+      "sha256": "048132030ccb289359045647076989b5fa709f61b3458926ee6bd3e323ea7910",
+      "unchanged": true
+    },
+    {
+      "path": "runtime/src/org/elfen/engine/StoryReplay.java",
+      "sha256": "5df9926f4d36d02b62f1b3a07927f788a2b3f1eab48996ee7115d05643815f52",
+      "unchanged": true
+    },
+    {
+      "path": "runtime/src/org/elfen/engine/StoryRound.java",
+      "sha256": "3634d4b92db091b7c17c56e4468cb23c7bc83ff34406d056bf2253c1b1594b38",
+      "unchanged": true
+    }
+  ]
+}

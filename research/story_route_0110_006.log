@@ -1,0 +1,29 @@
+START character=0110 name=マユ seed=19 cpu=80
+f=1 slot=0 mode=0 wins=0 hp=scene
+f=1622 slot=1 mode=1 wins=0 hp=400:400
+f=8847 slot=2 mode=0 wins=1 hp=scene
+f=10469 slot=3 mode=1 wins=1 hp=400:400
+f=17592 slot=4 mode=0 wins=2 hp=scene
+f=19214 slot=5 mode=1 wins=2 hp=400:400
+f=26245 slot=5 mode=2 wins=2 hp=0:226
+f=26306 slot=5 mode=1 wins=2 hp=400:400
+f=34854 slot=5 mode=2 wins=2 hp=0:6
+f=34915 slot=5 mode=1 wins=2 hp=400:400
+f=41560 slot=6 mode=0 wins=3 hp=scene
+f=43182 slot=7 mode=1 wins=3 hp=400:400
+f=50869 slot=8 mode=0 wins=4 hp=scene
+f=52491 slot=9 mode=1 wins=4 hp=400:400
+f=56620 slot=10 mode=0 wins=5 hp=scene
+f=58242 slot=11 mode=1 wins=5 hp=400:400
+f=64838 slot=12 mode=0 wins=6 hp=scene
+f=66460 slot=13 mode=1 wins=6 hp=400:400
+f=75005 slot=14 mode=0 wins=7 hp=scene
+f=76627 slot=15 mode=1 wins=7 hp=400:400
+f=83275 slot=16 mode=0 wins=8 hp=scene
+f=84897 slot=17 mode=1 wins=8 hp=400:400
+f=90972 slot=18 mode=1 wins=9 hp=400:1000
+f=95604 slot=19 mode=0 wins=9 hp=scene
+f=97226 slot=20 mode=0 wins=9 hp=scene
+f=98848 slot=21 mode=3 wins=9 hp=scene
+ROUTE with per-frame history snapshots, frames=98848 slot=21 mode=3 wins=9 fights=10 hash=0cd440bbe22cb985dcf2443d9cb776006b8378c7bc85f62057d18d27c205358b
+PASS full route replay 0 checkpoints=124 0cd440bbe22cb985dcf2443d9cb776006b8378c7bc85f62057d18d27c205358b

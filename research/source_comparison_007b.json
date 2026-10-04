@@ -1,0 +1,24 @@
+{
+  "reference_sha256": "e6663c1eb62440e766b9f6faea2c71d5dace74febe61e8e7935c8f1df6f66c19",
+  "changed_existing_source_or_asset_files": [
+    "app/src/main/AndroidManifest.xml",
+    "app/src/main/java/org/elfen/fighting/MainActivity.java",
+    "runtime/src/org/elfen/engine/MatchController.java",
+    "runtime/src/org/elfen/engine/MatchRules.java",
+    "runtime/src/org/elfen/engine/RoundController.java",
+    "runtime/src/org/elfen/engine/StoryController.java",
+    "runtime/src/org/elfen/engine/StoryRound.java"
+  ],
+  "new_java_files": [
+    "runtime/src/org/elfen/engine/CommandGuide.java",
+    "app/src/main/java/org/elfen/controls/FrameInput.java",
+    "app/src/main/java/org/elfen/controls/PauseGate.java"
+  ],
+  "unchanged_source_or_asset_files": 2931,
+  "all_game_assets_unchanged": true,
+  "arcade_stick_unchanged": true,
+  "combat_simulation_unchanged": true,
+  "script_vm_unchanged": true,
+  "command_recognizer_unchanged": true,
+  "network_unchanged": true
+}

@@ -1,0 +1,67 @@
+{
+  "checkpoint": "TEST007b",
+  "date": "2026-10-02",
+  "based_on": "TEST007a; original combat VM, assets and arcade-stick geometry preserved",
+  "apk": "builds/elfen-fighting-007b-offline.apk",
+  "apk_sha256": "9f208d20646172890aa6075edf3f20b97d229bc6c657584c6ab6906a93549e8b",
+  "project_zip": "builds/Elfen_Lied_Android_007b_project.zip",
+  "combat_ruleset_revision": 2,
+  "offline_match_policy": "first-to-two-v1; draws give no wins",
+  "standalone_build": "passed",
+  "gradle_clean_release_debug": "passed; 75 tasks, 73 executed",
+  "apk_packaging_checks": "passed standalone, Gradle release and debug; original asset hashes and signing certificate retained",
+  "android_execution_performed": false,
+  "new_tests": {
+    "offline_assertions": 26442,
+    "original_command_cases": 1668,
+    "arcade_stick_assertions": 7827,
+    "selection_assertions": 20321,
+    "asset_assertions": 2854,
+    "rollback_delays_ms": [
+      50,
+      100,
+      150,
+      200
+    ],
+    "classic_rollback_final_hash": "8f2913ac4f83c08131fcd980c9ce1da346405198c07cc88221a26d693be15e24"
+  },
+  "full_story_routes": [
+    {
+      "character": "0110",
+      "name": "Mayu",
+      "frames": 169804,
+      "wins": 9,
+      "fights": 10,
+      "hash": "b8409b34c4e60c75957c5683963416c3e8e7454e9f1f61f90c6eb9c3d35f5a31",
+      "log": "research/story_mayu_first2_007b.log",
+      "input_source": "original CPU80; seed19; first-to-two",
+      "complete": true,
+      "replay_runs": 3,
+      "hash_checkpoints_per_replay": 193
+    }
+  ],
+  "bounded_incomplete_checks": [
+    {
+      "character": "0170",
+      "cpu": 80,
+      "seed": 19,
+      "frames": 900000,
+      "wins": 5,
+      "slot": 11,
+      "reason": "P1 CPU repeatedly lost; no artificial wins"
+    },
+    {
+      "character": "0170",
+      "cpu": 100,
+      "seed": 19,
+      "frames": 900000,
+      "wins": 5,
+      "slot": 11,
+      "reason": "P1 CPU repeatedly lost; no artificial wins"
+    }
+  ],
+  "device_test": "PHONE_TEST_007B_RU.md",
+  "known_issues": "KNOWN_ISSUES.md",
+  "next_step": "Physical Android verification of new pause/move list, round flow and simultaneous touch; stay on TEST007 branch until user verdict",
+  "checkpoint_validation": "passed: CRC, separate extraction, rebuilt APK byte-identical; final report in builds/TEST007B_CHECKPOINT_VERIFICATION.json"
+}

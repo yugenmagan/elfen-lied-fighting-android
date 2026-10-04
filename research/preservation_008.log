@@ -1,0 +1,32 @@
+{
+  "reference_zip_sha256": "68fde066f6d8f9f7b638699b2ba9abc13082c2ded6dda4f1e2fadf0b64afdc06",
+  "existing_files_compared": 3386,
+  "unchanged_count": 3371,
+  "changed_existing_files": [
+    "FORMAT_NOTES.md",
+    "KNOWN_ISSUES.md",
+    "PORTING_NOTES.md",
+    "README_RU.md",
+    "STATUS.json",
+    "app/build.gradle",
+    "app/src/main/AndroidManifest.xml",
+    "app/src/main/java/org/elfen/fighting/MainActivity.java",
+    "docs/BUILD.md",
+    "docs/RESUME.md",
+    "runtime/src/org/elfen/engine/StoryController.java",
+    "runtime/src/org/elfen/engine/StoryProgram.java",
+    "tools/build_android.py",
+    "tools/check_apk.py",
+    "tools/package_checkpoint.py"
+  ],
+  "combat_input_ai_physics_network_unchanged": true,
+  "all_original_game_assets_unchanged": true,
+  "launcher_icons_unchanged": true,
+  "touch_handler_geometry_haptics_exact": [
+    "void layoutControls()",
+    "float buttonX(int i)",
+    "float buttonY(int i)",
+    "public boolean onTouchEvent(MotionEvent e)"
+  ],
+  "audio_and_signing_key_unchanged": true
+}

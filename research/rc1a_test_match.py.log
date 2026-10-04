@@ -1,0 +1,44 @@
+PASS original dispatcher 432 cases
+Round 1 at 1
+Round 2 at 7205
+Round 3 at 14410
+PASS full match replay 0 frames=21614
+PASS full match replay 1 frames=21614
+PASS full match replay 2 frames=21614
+PASS match checks=68663 final=5909b6d6ba5269dacce2273759f35ebba3530500c4abf55f44a379fe36fb3b49 frames=21614 score=2:1 snapshots=5
+PASS delay=50ms / 3ticks confirmed=2997 resimulated=11988 final=80c4f41871bd4fc59bd7b54f4ba0cf9102834d465f86d2ede1fcced94b0281e7
+PASS delay=100ms / 6ticks confirmed=2994 resimulated=20958 final=80c4f41871bd4fc59bd7b54f4ba0cf9102834d465f86d2ede1fcced94b0281e7
+PASS delay=150ms / 9ticks confirmed=2991 resimulated=29910 final=80c4f41871bd4fc59bd7b54f4ba0cf9102834d465f86d2ede1fcced94b0281e7
+PASS delay=200ms / 12ticks confirmed=2988 resimulated=38844 final=80c4f41871bd4fc59bd7b54f4ba0cf9102834d465f86d2ede1fcced94b0281e7
+Round transitions=0 classic=false
+PASS independent twins=3000 every-frame hashes; no network transport used
+PASS match 0170 frames=7204 HP=141:72 score=1:0
+PASS match 0104 frames=7204 HP=251:1 score=1:0
+PASS match 0128 frames=7204 HP=225:155 score=1:0
+PASS match 0122 frames=7204 HP=108:198 score=0:1
+PASS match 0114 frames=7204 HP=62:181 score=0:1
+PASS match 0110 frames=6111 HP=158:0 score=1:0
+PASS match 0156 frames=7204 HP=75:163 score=0:1
+PASS match 0108 frames=7204 HP=40:223 score=0:1
+PASS match 0168 frames=7204 HP=10:220 score=0:1
+PASS match 0136 frames=6010 HP=0:179 score=0:1
+PASS match 0142 frames=6251 HP=707:0 score=1:0
+PASS match 0144 frames=6240 HP=656:0 score=1:0
+PASS natural KO matches=4; forced result branches: P1/P2 perfect, doubleKO, infinite clock, cross-round restore
+PASS 2854 assertions; loaded 46 packs; animation paths completed 99 / 99
+This is not combat, Android installation, or full story validation.
+PASS 0170 quarter-circle A command=とび弱
+PASS 0104 quarter-circle A command=ロケット弱
+PASS 0128 quarter-circle A command=磯部くん
+PASS 0128 back charge forward A command=ねこ座薬
+PASS 0128 half-circle A command=コマンド 1
+PASS stage 0080 1800 ticks
+PASS stage 0084 1800 ticks
+PASS stage 0138 1800 ticks
+PASS stage 0148 1800 ticks
+PASS combat physical inputs 0170 とび弱 +600ticks
+PASS combat physical inputs 0104 ロケット弱 +600ticks
+PASS combat physical inputs 0128 磯部くん +600ticks
+PASS combat physical inputs 0128 ねこ座薬 +600ticks
+PASS combat physical inputs 0128 コマンド 1 +600ticks
+PASS desktop match render samples

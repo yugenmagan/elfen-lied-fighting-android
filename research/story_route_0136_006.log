@@ -1,0 +1,29 @@
+START character=0136 name=ロストナンバー seed=19 cpu=80
+f=1 slot=0 mode=0 wins=0 hp=scene
+f=1622 slot=1 mode=1 wins=0 hp=400:400
+f=10487 slot=2 mode=0 wins=1 hp=scene
+f=12109 slot=3 mode=1 wins=1 hp=400:400
+f=19973 slot=4 mode=0 wins=2 hp=scene
+f=21595 slot=5 mode=1 wins=2 hp=400:400
+f=29062 slot=6 mode=0 wins=3 hp=scene
+f=30684 slot=7 mode=1 wins=3 hp=400:400
+f=37063 slot=8 mode=0 wins=4 hp=scene
+f=38685 slot=9 mode=1 wins=4 hp=400:400
+f=47202 slot=9 mode=2 wins=4 hp=0:35
+f=47263 slot=9 mode=1 wins=4 hp=400:400
+f=55116 slot=10 mode=0 wins=5 hp=scene
+f=56738 slot=11 mode=1 wins=5 hp=400:400
+f=63274 slot=12 mode=0 wins=6 hp=scene
+f=64896 slot=13 mode=1 wins=6 hp=400:400
+f=71268 slot=14 mode=0 wins=7 hp=scene
+f=72890 slot=15 mode=1 wins=7 hp=400:400
+f=79980 slot=15 mode=2 wins=7 hp=0:200
+f=80041 slot=15 mode=1 wins=7 hp=400:400
+f=86962 slot=16 mode=0 wins=8 hp=scene
+f=88584 slot=17 mode=1 wins=8 hp=400:400
+f=98182 slot=18 mode=1 wins=9 hp=400:1000
+f=102435 slot=19 mode=0 wins=9 hp=scene
+f=104057 slot=20 mode=0 wins=9 hp=scene
+f=105679 slot=21 mode=3 wins=9 hp=scene
+ROUTE with per-frame history snapshots, frames=105679 slot=21 mode=3 wins=9 fights=10 hash=26edcb24af7dc824b6f8953296244ffcfd8893cb2f60e49c3e6c8fa7ac2516ec
+PASS full route replay 0 checkpoints=131 26edcb24af7dc824b6f8953296244ffcfd8893cb2f60e49c3e6c8fa7ac2516ec

@@ -1,0 +1,1 @@
+PASS original CPU 12 x120 ticks / 1481760 exact assertions

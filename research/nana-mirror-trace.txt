@@ -1,0 +1,17 @@
+0 hp 400:400 p0=5:54@396,900 left=false flags=2 wait=2400 vx=458500 vy=-1274630 ay=35370 ended=false p1=133:1593@890,920 left=true flags=4 wait=400 vx=0 vy=0 ay=0 ended=false
+3000 hp 364:137 p0=85:750@1163,920 left=false flags=4 wait=600 vx=0 vy=0 ay=0 ended=false p1=52:350@1230,696 left=true flags=8 wait=1400 vx=0 vy=0 ay=0 ended=false
+6000 hp 338:27 p0=62:471@610,920 left=true flags=4 wait=400 vx=0 vy=0 ay=0 ended=false p1=62:470@351,920 left=false flags=4 wait=0 vx=0 vy=0 ay=0 ended=false
+9000 hp 338:27 p0=136:1645@610,920 left=true flags=4 wait=4400 vx=0 vy=0 ay=0 ended=false p1=136:1645@351,920 left=false flags=4 wait=6300 vx=0 vy=0 ay=0 ended=false
+12000 hp 338:27 p0=136:1645@610,920 left=true flags=4 wait=700 vx=0 vy=0 ay=0 ended=false p1=136:1645@351,920 left=false flags=4 wait=7100 vx=0 vy=0 ay=0 ended=false
+15000 hp 338:27 p0=136:1645@610,920 left=true flags=4 wait=6400 vx=0 vy=0 ay=0 ended=false p1=136:1645@351,920 left=false flags=4 wait=5400 vx=0 vy=0 ay=0 ended=false
+18000 hp 338:27 p0=62:471@610,920 left=true flags=4 wait=300 vx=0 vy=0 ay=0 ended=false p1=62:466@351,920 left=false flags=4 wait=0 vx=0 vy=0 ay=0 ended=false
+21000 hp 338:27 p0=136:1645@610,920 left=true flags=4 wait=2600 vx=0 vy=0 ay=0 ended=false p1=62:476@351,920 left=false flags=4 wait=300 vx=0 vy=0 ay=0 ended=false
+24000 hp 338:27 p0=136:1644@610,920 left=true flags=4 wait=400 vx=0 vy=0 ay=0 ended=false p1=136:1645@351,920 left=false flags=4 wait=3500 vx=0 vy=0 ay=0 ended=false
+27000 hp 338:27 p0=97:1070@610,920 left=true flags=4 wait=300 vx=0 vy=0 ay=0 ended=false p1=136:1645@351,920 left=false flags=4 wait=2400 vx=0 vy=0 ay=0 ended=false
+30000 hp 338:27 p0=136:1645@610,920 left=true flags=4 wait=3100 vx=0 vy=0 ay=0 ended=false p1=136:1644@351,920 left=false flags=4 wait=900 vx=0 vy=0 ay=0 ended=false
+33000 hp 338:27 p0=62:471@610,920 left=true flags=4 wait=100 vx=0 vy=0 ay=0 ended=false p1=62:461@351,920 left=false flags=4 wait=100 vx=0 vy=0 ay=0 ended=false
+36000 hp 338:27 p0=136:1645@610,920 left=true flags=4 wait=1100 vx=0 vy=0 ay=0 ended=false p1=62:470@351,920 left=false flags=4 wait=400 vx=0 vy=0 ay=0 ended=false
+39000 hp 338:27 p0=136:1645@610,920 left=true flags=4 wait=4600 vx=0 vy=0 ay=0 ended=false p1=136:1645@351,920 left=false flags=4 wait=1000 vx=0 vy=0 ay=0 ended=false
+42000 hp 338:27 p0=136:1645@610,920 left=true flags=4 wait=1100 vx=0 vy=0 ay=0 ended=false p1=136:1645@351,920 left=false flags=4 wait=3900 vx=0 vy=0 ay=0 ended=false
+45000 hp 338:27 p0=97:1068@610,920 left=true flags=4 wait=300 vx=0 vy=0 ay=0 ended=false p1=136:1645@351,920 left=false flags=4 wait=900 vx=0 vy=0 ay=0 ended=false
+48000 hp 338:27 p0=136:1645@610,920 left=true flags=4 wait=700 vx=0 vy=0 ay=0 ended=false p1=136:1645@351,920 left=false flags=4 wait=1300 vx=0 vy=0 ay=0 ended=false

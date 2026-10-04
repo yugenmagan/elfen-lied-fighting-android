@@ -1,0 +1,391 @@
+[
+  {
+    "type": ".player",
+    "index": 1,
+    "id": "0122",
+    "filename": "にゅう.player",
+    "alternatives": [
+      "0122"
+    ]
+  },
+  {
+    "type": ".player",
+    "index": 2,
+    "id": "0128",
+    "filename": "マリコ.player",
+    "alternatives": [
+      "0082",
+      "0128"
+    ]
+  },
+  {
+    "type": ".player",
+    "index": 3,
+    "id": "0114",
+    "filename": "アンナ.player",
+    "alternatives": [
+      "0114"
+    ]
+  },
+  {
+    "type": ".player",
+    "index": 4,
+    "id": "0110",
+    "filename": "マユ.player",
+    "alternatives": [
+      "0110"
+    ]
+  },
+  {
+    "type": ".player",
+    "index": 5,
+    "id": "0156",
+    "filename": "るーしー.player",
+    "alternatives": [
+      "0156"
+    ]
+  },
+  {
+    "type": ".player",
+    "index": 6,
+    "id": "0108",
+    "filename": "ダイアナ.player",
+    "alternatives": [
+      "0108"
+    ]
+  },
+  {
+    "type": ".player",
+    "index": 7,
+    "id": "0170",
+    "filename": "ルーシー.player",
+    "alternatives": [
+      "0170"
+    ]
+  },
+  {
+    "type": ".player",
+    "index": 8,
+    "id": "0168",
+    "filename": "ミサキ.player",
+    "alternatives": [
+      "0168"
+    ]
+  },
+  {
+    "type": ".player",
+    "index": 9,
+    "id": "0136",
+    "filename": "ロストナンバー.player",
+    "alternatives": [
+      "0136"
+    ]
+  },
+  {
+    "type": ".player",
+    "index": 10,
+    "id": "0104",
+    "filename": "ナナ裏.player",
+    "alternatives": [
+      "0104"
+    ]
+  },
+  {
+    "type": ".player",
+    "index": 11,
+    "id": "0142",
+    "filename": "クラフト.player",
+    "alternatives": [
+      "0142",
+      "0144"
+    ]
+  },
+  {
+    "type": ".player",
+    "index": 12,
+    "id": "0154",
+    "filename": "プレーヤー 1.player",
+    "alternatives": [
+      "0154"
+    ]
+  },
+  {
+    "type": ".stage",
+    "index": 1,
+    "id": "0080",
+    "filename": "ステージ 2.stage",
+    "alternatives": [
+      "0080"
+    ]
+  },
+  {
+    "type": ".stage",
+    "index": 2,
+    "id": "0148",
+    "filename": "新ステージ.stage",
+    "alternatives": [
+      "0148"
+    ]
+  },
+  {
+    "type": ".stage",
+    "index": 3,
+    "id": "0084",
+    "filename": "香港.stage",
+    "alternatives": [
+      "0084"
+    ]
+  },
+  {
+    "type": ".stage",
+    "index": 4,
+    "id": "0138",
+    "filename": "ラウンジ.stage",
+    "alternatives": [
+      "0138"
+    ]
+  },
+  {
+    "type": ".demo",
+    "index": 1,
+    "id": "0086",
+    "filename": "こんてにゅー.demo",
+    "alternatives": [
+      "0086"
+    ]
+  },
+  {
+    "type": ".demo",
+    "index": 2,
+    "id": "0124",
+    "filename": "マリコED.demo",
+    "alternatives": [
+      "0124"
+    ]
+  },
+  {
+    "type": ".demo",
+    "index": 3,
+    "id": "0078",
+    "filename": "マリコ登場.demo",
+    "alternatives": [
+      "0078"
+    ]
+  },
+  {
+    "type": ".demo",
+    "index": 4,
+    "id": "0060",
+    "filename": "デモるーしＥＤ.demo",
+    "alternatives": [
+      "0060"
+    ]
+  },
+  {
+    "type": ".demo",
+    "index": 5,
+    "id": "0092",
+    "filename": "マユＥＤ.demo",
+    "alternatives": [
+      "0092"
+    ]
+  },
+  {
+    "type": ".demo",
+    "index": 6,
+    "id": "0226",
+    "filename": "奴.demo",
+    "alternatives": [
+      "0226"
+    ]
+  },
+  {
+    "type": ".demo",
+    "index": 7,
+    "id": "0074",
+    "filename": "デモ 2.demo",
+    "alternatives": [
+      "0074"
+    ]
+  },
+  {
+    "type": ".demo",
+    "index": 8,
+    "id": "0064",
+    "filename": "キャラセレ.demo",
+    "alternatives": [
+      "0064"
+    ]
+  },
+  {
+    "type": ".demo",
+    "index": 9,
+    "id": "0130",
+    "filename": "ナナＯＰ.demo",
+    "alternatives": [
+      "0130"
+    ]
+  },
+  {
+    "type": ".demo",
+    "index": 10,
+    "id": "0068",
+    "filename": "ナナＥＤ.demo",
+    "alternatives": [
+      "0068"
+    ]
+  },
+  {
+    "type": ".demo",
+    "index": 11,
+    "id": "0076",
+    "filename": "アンナＯＰ.demo",
+    "alternatives": [
+      "0076"
+    ]
+  },
+  {
+    "type": ".demo",
+    "index": 12,
+    "id": "0098",
+    "filename": "アンナED.demo",
+    "alternatives": [
+      "0098"
+    ]
+  },
+  {
+    "type": ".demo",
+    "index": 13,
+    "id": "0096",
+    "filename": "クローンＯＰ.demo",
+    "alternatives": [
+      "0096"
+    ]
+  },
+  {
+    "type": ".demo",
+    "index": 14,
+    "id": "0146",
+    "filename": "クローンＥＤ.demo",
+    "alternatives": [
+      "0146"
+    ]
+  },
+  {
+    "type": ".demo",
+    "index": 15,
+    "id": "0062",
+    "filename": "マリコＯＰ.demo",
+    "alternatives": [
+      "0062"
+    ]
+  },
+  {
+    "type": ".demo",
+    "index": 16,
+    "id": "0178",
+    "filename": "るーしーＯＰ.demo",
+    "alternatives": [
+      "0178"
+    ]
+  },
+  {
+    "type": ".demo",
+    "index": 17,
+    "id": "0088",
+    "filename": "にゅうＯＰ.demo",
+    "alternatives": [
+      "0088"
+    ]
+  },
+  {
+    "type": ".demo",
+    "index": 18,
+    "id": "0102",
+    "filename": "にゅうED.demo",
+    "alternatives": [
+      "0102"
+    ]
+  },
+  {
+    "type": ".demo",
+    "index": 19,
+    "id": "0094",
+    "filename": "マユＯＰ.demo",
+    "alternatives": [
+      "0094"
+    ]
+  },
+  {
+    "type": ".demo",
+    "index": 20,
+    "id": "0118",
+    "filename": "ルーシーＯＰ.demo",
+    "alternatives": [
+      "0118"
+    ]
+  },
+  {
+    "type": ".demo",
+    "index": 21,
+    "id": "0202",
+    "filename": "ルーシーED.demo",
+    "alternatives": [
+      "0202"
+    ]
+  },
+  {
+    "type": ".demo",
+    "index": 22,
+    "id": "0112",
+    "filename": "ロストＯＰ.demo",
+    "alternatives": [
+      "0112"
+    ]
+  },
+  {
+    "type": ".demo",
+    "index": 23,
+    "id": "0070",
+    "filename": "ミサキＯＰ.demo",
+    "alternatives": [
+      "0070"
+    ]
+  },
+  {
+    "type": ".demo",
+    "index": 24,
+    "id": "0132",
+    "filename": "ミサキＥＤ.demo",
+    "alternatives": [
+      "0132"
+    ]
+  },
+  {
+    "type": ".demo",
+    "index": 25,
+    "id": "0072",
+    "filename": "デモ 1.demo",
+    "alternatives": [
+      "0072"
+    ]
+  },
+  {
+    "type": ".demo",
+    "index": 26,
+    "id": "0222",
+    "filename": "クレ.demo",
+    "alternatives": [
+      "0222"
+    ]
+  },
+  {
+    "type": ".demo",
+    "index": 27,
+    "id": "0066",
+    "filename": "ロストＥＤ.demo",
+    "alternatives": [
+      "0066"
+    ]
+  }
+]

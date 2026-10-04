@@ -1,0 +1,94 @@
+--- 007c/app/src/main/java/org/elfen/fighting/MainActivity.java
++++ 007d/app/src/main/java/org/elfen/fighting/MainActivity.java
+@@ -21,6 +21,7 @@
+     private final org.elfen.controls.PauseGate pauseGate=new org.elfen.controls.PauseGate();
+     private final ArrayList<String> characters=new ArrayList<>(),stages=new ArrayList<>();
+     private StoryCatalog storyCatalog;
++    private BattleHud battleHud;
+     private OnlineMatch online;private MatchController boundOnline;
+     private final Input input=new Input();private GameView game;private Audio audio;
+     private SharedPreferences prefs;private boolean resumed=false,dialog=false;private int remap=-1;
+@@ -42,6 +43,7 @@
+                 if(p.kind.equals(".stage"))stages.add(id);
+             }
+             storyCatalog=new StoryCatalog(packs.get("0116"),packs,getAssets().open("game/story-index.tsv"));
++            battleHud=new BattleHud(packs.get("0116"),packs);
+             loadSession();new Handler().post(this::intro);
+         }catch(Exception e){fail("Загрузка данных: "+e);}
+         Thread.setDefaultUncaughtExceptionHandler((thread,ex)->{
+@@ -63,7 +65,7 @@
+                 .setNeutralButton("Новый сюжет",(d,n)->new Handler().post(()->openSelection(true,true)))
+                 .setNegativeButton("Обычный VS",(d,n)->new Handler().post(()->openSelection(false,true))).create());return;
+         }
+-        AlertDialog d=new AlertDialog.Builder(this).setTitle("Elfen Fighting · TEST 007c")
++        AlertDialog d=new AlertDialog.Builder(this).setTitle("Elfen Fighting · TEST 007d")
+             .setMessage("Аркадный стик: веди палец по кругу, не отрывая от экрана. Размер и мёртвая зона — в настройках управления.\n\nНа экране выбора нажми на портрет, затем «Выбрать».\n\nВ VS сначала выбери своего бойца, затем противника.\n\nВ сюжетных сценах A — продолжить. Пауза → Приёмы — команды текущего бойца. Бои идут до двух побед.")
+             .setPositiveButton("Сюжет",(a,b)->new Handler().post(()->openSelection(true,true)))
+             .setNeutralButton("Онлайн",(a,b)->new Handler().post(this::onlineMenu))
+@@ -208,7 +210,7 @@
+         if(online!=null){onlineMenu();return;}
+         if(game.story!=null){storyMenu();return;}
+         String[] items={"Продолжить","Персонаж","Противник","Арена","Уровень AI","Настроить управление","Передвинуть элементы","Переназначить геймпад","Поделиться отчётом","Новый матч","Правила матча","Повторить запись","Сохранить состояние","Восстановить состояние","Сюжет","Онлайн"};
+-        AlertDialog d=new AlertDialog.Builder(this).setTitle("TEST 007c · VS").setItems(items,(a,i)->{
++        AlertDialog d=new AlertDialog.Builder(this).setTitle("TEST 007d · VS").setItems(items,(a,i)->{
+             new Handler().post(()->{switch(i){case 0:resumeBattle();break;case 1:choose(0);break;case 2:choose(1);break;case 3:choose(2);break;case 4:cpuMenu();break;case 5:settings();break;
+                 case 6:game.editing=!game.editing;break;case 7:remapMenu();break;case 8:shareReport();break;case 9:openSelection(false);break;case 10:matchRulesMenu();break;case 11:game.replay();break;case 12:game.saveSnapshot();break;case 13:game.restoreSnapshot();break;case 14:chooseStory();break;case 15:onlineMenu();break;}});
+         }).create();show(d);
+@@ -313,7 +315,7 @@
+     @Override protected void onDestroy(){leaveOnline();if(audio!=null)audio.release();super.onDestroy();}
+     @Override public void onWindowFocusChanged(boolean focused){super.onWindowFocusChanged(focused);if(focused)immersive();else clearInputs();}
+     private void shareReport(){
+-        String data="Elfen Fighting native test 007c\n"+Build.MANUFACTURER+" "+Build.MODEL+" / Android "+Build.VERSION.RELEASE+" SDK "+Build.VERSION.SDK_INT+"\nABIs "+Arrays.toString(Build.SUPPORTED_ABIS)+"\nScreen "+game.getWidth()+"x"+game.getHeight()+"\nCharacter "+selected+" Opponent "+opponent+" AI "+cpuLevel+" Stage "+selectedStage+"\nMax pointers "+maxPointers+"\nPause/resume "+pauseCount+"/"+resumeCount+"\nFrame count "+(game.story!=null?game.story.frame():game.session==null?0:game.session.frame())+"\nState hash "+(game.story!=null?game.story.stateHash():game.session==null?"":game.session.stateHash())+"\nReplay "+game.replayStatus+"\nSlow frames "+game.slowFrames+"\nSettings "+prefs.getAll()+"\nError "+lastError+"\n"+events;
++        String data="Elfen Fighting native test 007d\n"+Build.MANUFACTURER+" "+Build.MODEL+" / Android "+Build.VERSION.RELEASE+" SDK "+Build.VERSION.SDK_INT+"\nABIs "+Arrays.toString(Build.SUPPORTED_ABIS)+"\nScreen "+game.getWidth()+"x"+game.getHeight()+"\nCharacter "+selected+" Opponent "+opponent+" AI "+cpuLevel+" Stage "+selectedStage+"\nMax pointers "+maxPointers+"\nPause/resume "+pauseCount+"/"+resumeCount+"\nFrame count "+(game.story!=null?game.story.frame():game.session==null?0:game.session.frame())+"\nState hash "+(game.story!=null?game.story.stateHash():game.session==null?"":game.session.stateHash())+"\nReplay "+game.replayStatus+"\nSlow frames "+game.slowFrames+"\nSettings "+prefs.getAll()+"\nError "+lastError+"\n"+events;
+         if(game.story!=null)data+="\nStory slot "+game.story.slot()+" mode "+game.story.mode()+" fights "+game.story.fights()+" wins "+game.story.wins()+"\n";
+         if(online!=null){data+="\nOnline state "+online.state()+" message "+online.message()+"\n";if(online.rollback()!=null)data+="Confirmed "+online.rollback().confirmedFrame()+" rollback "+online.rollback().rollbackCount()+" resimulated "+online.rollback().resimulatedFrames()+"\n";}
+         File crash=new File(getFilesDir(),"last-crash.txt");
+@@ -486,12 +488,16 @@
+         }
+         void boxes(Canvas c,List<CombatMath.Box> boxes,int colour){paint.setStyle(Paint.Style.STROKE);paint.setStrokeWidth(1);paint.setColor(colour);for(CombatMath.Box b:boxes)c.drawRect(b.left-picture.cameraX,b.top-picture.cameraY,b.right-picture.cameraX,b.bottom-picture.cameraY,paint);paint.setStyle(Paint.Style.FILL);}
+         void hud(Canvas c){
+-            for(int p=0;p<2;p++){BattleView.Fighter f=picture.fighters.get(p);float left=p==0?12:356,right=p==0?284:628;
+-                paint.setColor(0xdd16131d);c.drawRect(left,55,right,79,paint);paint.setColor(p==0?0xffbd3158:0xff687ddb);float width=(right-left-4)*f.life/f.maxLife;c.drawRect(p==0?left+2:right-2-width,57,p==0?left+2+width:right-2,77,paint);
+-                paint.setColor(Color.WHITE);paint.setTextSize(12);c.drawText(f.name+"  "+f.life+" / "+f.maxLife,left,94,paint);c.drawText("Stock "+f.stocks+"   "+f.meter,left,109,paint);
+-            }
+-            if(story!=null){paint.setTextAlign(Paint.Align.CENTER);paint.setColor(Color.WHITE);paint.setTextSize(22);c.drawText(story.timer()<0?"∞":Integer.toString(story.timer()),320,76,paint);paint.setTextSize(14);c.drawText(story.score(0)+" : "+story.score(1),320,100,paint);c.drawText("Раунд "+story.roundNumber()+" · до "+story.roundsToWin(),320,124,paint);paint.setTextAlign(Paint.Align.LEFT);return;}
+-            MatchState match=session.state();paint.setTextAlign(Paint.Align.CENTER);paint.setColor(Color.WHITE);paint.setTextSize(22);c.drawText(match.timer<0?"∞":Integer.toString(match.timer),320,76,paint);paint.setTextSize(14);c.drawText(match.score1+" : "+match.score2,320,100,paint);c.drawText("Раунд "+match.roundNumber+" · до "+match.roundsToWin,320,124,paint);
++            MatchState match=story==null?session.state():null;
++            int timer=story==null?match.timer:story.timer(),score1=story==null?match.score1:story.score(0),score2=story==null?match.score2:story.score(1);
++            int rounds=story==null?match.roundsToWin:story.roundsToWin();
++            for(BattleHud.Draw draw:battleHud.view(picture,timer,score1,score2,rounds)){
++                if(draw.clipWidth<=0||draw.clipHeight<=0)continue;
++                int save=c.save();c.clipRect(draw.clipLeft,draw.clipTop,draw.clipLeft+draw.clipWidth,draw.clipTop+draw.clipHeight);
++                sprite(c,draw.sprite);c.restoreToCount(save);
++            }
++            if(story!=null)return;
++            paint.setTextAlign(Paint.Align.CENTER);
+             if(match.finished&&(online==null||online.state()==OnlineMatch.COMPLETE)){int me=online==null?0:online.rollback().localPlayer();paint.setColor(0xee101018);c.drawRect(115,153,525,265,paint);paint.setColor(Color.WHITE);paint.setTextSize(26);c.drawText(match.winner<0?"НИЧЬЯ":match.winner==me?"МАТЧ ВЫИГРАН":"МАТЧ ПРОИГРАН",320,191,paint);paint.setTextSize(17);c.drawText(match.score1+" : "+match.score2,320,220,paint);paint.setTextSize(14);c.drawText(online==null?"Пауза → Меню → Новый матч / Повторить запись":"Хеш результата совпал · Пауза → Меню → Выйти",320,247,paint);}paint.setTextAlign(Paint.Align.LEFT);
+         }
+         @Override protected void onDraw(Canvas c){
+@@ -507,10 +513,10 @@
+                         if(story.finished()){paint.setTextSize(25);sceneCanvas.drawText(story.mode()==StoryController.COMPLETE?"КОНЕЦ СЮЖЕТА":"ВОЗВРАТ В МЕНЮ",320,210,paint);paint.setTextSize(16);sceneCanvas.drawText("Пауза → Меню → Другой персонаж / Обычный VS",320,250,paint);}paint.setTextAlign(Paint.Align.LEFT);
+                     }
+                 }else{for(BattleView.Sprite s:picture.sprites)sprite(sceneCanvas,s);if(!session.state().finished)hud(sceneCanvas);for(BattleView.Sprite s:session.overlays())sprite(sceneCanvas,s);if(session.state().finished)hud(sceneCanvas);}}catch(IllegalStateException e){if(lastError.isEmpty())fail(e.getMessage());}
+-                float top=story==null?0:getHeight()*.10f,scale=Math.min(getWidth()/640f,(getHeight()-top)/480f);dest.set((getWidth()-640*scale)/2,top+(getHeight()-top-480*scale)/2,(getWidth()+640*scale)/2,top+(getHeight()-top+480*scale)/2);paint.setAlpha(255);c.drawBitmap(scene,null,dest,paint);
++                float top=getHeight()*.10f,scale=Math.min(getWidth()/640f,(getHeight()-top)/480f);dest.set((getWidth()-640*scale)/2,top+(getHeight()-top-480*scale)/2,(getWidth()+640*scale)/2,top+(getHeight()-top+480*scale)/2);paint.setAlpha(255);c.drawBitmap(scene,null,dest,paint);
+             }
+             paint.setAntiAlias(true);paint.setTextSize(Math.max(12,getHeight()*.025f));paint.setColor(0xdd101018);c.drawRect(0,0,getWidth(),getHeight()*.10f,paint);paint.setColor(Color.WHITE);
+-            c.drawText(online!=null?"TEST 007c · ONLINE · "+(online.rollback()==null?online.code():"P"+(online.rollback().localPlayer()+1)+" · rollback "+online.rollback().rollbackCount()):story==null?"TEST 007c · VS / таймер / повтор":"TEST 007c · сюжет · "+(story.scenePack()!=null?story.scenePack().name:"бой "+story.fights()),getWidth()*.018f,getHeight()*.037f,paint);
++            c.drawText(online!=null?"TEST 007d · ONLINE · "+(online.rollback()==null?online.code():"P"+(online.rollback().localPlayer()+1)+" · rollback "+online.rollback().rollbackCount()):story==null?"TEST 007d · VS / таймер / повтор":"TEST 007d · сюжет · "+(story.scenePack()!=null?story.scenePack().name:"бой "+story.fights()),getWidth()*.018f,getHeight()*.037f,paint);
+             if(session!=null)c.drawText(label(packs.get(selected))+"  "+(replayStatus.isEmpty()?lastCommand:replayStatus)+"   ["+String.format(Locale.ROOT,"%03X",input.mask())+"]",getWidth()*.018f,getHeight()*.075f,paint);
+             drawStartButton(c);
+             if(editing){paint.setColor(0xfff2bf70);c.drawText("Передвигай левый и правый блок. Пауза → Меню → Передвинуть элементы — закончить.",getWidth()*.025f,getHeight()*.14f,paint);}
+--- 007c/runtime/src/org/elfen/engine/BattleView.java
++++ 007d/runtime/src/org/elfen/engine/BattleView.java
+@@ -13,8 +13,8 @@
+         Collections.sort(s,(a,b)->{int d=Integer.compare(a.depth,b.depth);return d!=0?d:Integer.compare(a.id,b.id);});sprites=Collections.unmodifiableList(s);
+     }
+     public static final class Fighter {
+-        public final String name;public final int life,maxLife,meter,stocks,combo,x,y,skill,wait,hitstop,flags;
+-        Fighter(Script s,int c){name=s.pack.name;life=s.life;maxLife=s.pack.life();meter=s.special;stocks=s.stocks;combo=c;x=s.x;y=s.y;skill=s.skill;wait=s.wait;hitstop=s.freeze;flags=s.battleFlags;}
++        public final String name,packId;public final int life,maxLife,meter,stocks,combo,x,y,skill,wait,hitstop,flags;
++        Fighter(Script s,int c){name=s.pack.name;packId=s.pack.id;life=s.life;maxLife=s.pack.life();meter=s.special;stocks=s.stocks;combo=c;x=s.x;y=s.y;skill=s.skill;wait=s.wait;hitstop=s.freeze;flags=s.battleFlags;}
+     }
+     public static final class Sprite {
+         public final String packId;public final int id,image,x,y,offsetX,offsetY,flags,options,depth,colour,rgba;public final boolean left,background,absolute;

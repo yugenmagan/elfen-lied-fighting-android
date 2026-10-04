@@ -1,0 +1,7 @@
+PASS TLS Create/Join + READY/hash + rollback frames=1800 finished=false hashes=002e572620e3633cb69d9ed7bc842922d1c19a3a68ec6e84dea4923483eb0cd6 rollbacks=109:68
+PASS disconnect stops peer explicitly
+PASS TLS Create/Join + READY/hash + rollback frames=904 finished=true hashes=27c37d0449190777b0905a8c85a476f1e27cdef8360b92be7d11e5d654de8bf2 rollbacks=50:45
+Exception in thread "main" java.lang.AssertionError: Network deadline
+	at org.elfen.engine.NetworkTest.waitFor(NetworkTest.java:11)
+	at org.elfen.engine.NetworkTest.play(NetworkTest.java:39)
+	at org.elfen.engine.NetworkTest.main(NetworkTest.java:48)

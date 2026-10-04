@@ -1,0 +1,29 @@
+START character=0122 name=にゅう seed=19 cpu=80
+f=1 slot=0 mode=0 wins=0 hp=scene
+f=1622 slot=1 mode=1 wins=0 hp=400:400
+f=9316 slot=2 mode=0 wins=1 hp=scene
+f=10938 slot=3 mode=1 wins=1 hp=400:400
+f=21189 slot=3 mode=2 wins=1 hp=0:61
+f=21250 slot=3 mode=1 wins=1 hp=400:400
+f=27782 slot=4 mode=0 wins=2 hp=scene
+f=29404 slot=5 mode=1 wins=2 hp=400:400
+f=34165 slot=5 mode=2 wins=2 hp=0:246
+f=34226 slot=5 mode=1 wins=2 hp=400:400
+f=41372 slot=6 mode=0 wins=3 hp=scene
+f=42994 slot=7 mode=1 wins=3 hp=400:400
+f=52216 slot=8 mode=0 wins=4 hp=scene
+f=53838 slot=9 mode=1 wins=4 hp=400:400
+f=61905 slot=10 mode=0 wins=5 hp=scene
+f=63527 slot=11 mode=1 wins=5 hp=400:400
+f=73990 slot=12 mode=0 wins=6 hp=scene
+f=75612 slot=13 mode=1 wins=6 hp=400:400
+f=82714 slot=14 mode=0 wins=7 hp=scene
+f=84336 slot=15 mode=1 wins=7 hp=400:400
+f=94905 slot=16 mode=0 wins=8 hp=scene
+f=96527 slot=17 mode=1 wins=8 hp=400:400
+f=106261 slot=18 mode=1 wins=9 hp=400:1000
+f=112070 slot=19 mode=0 wins=9 hp=scene
+f=113692 slot=20 mode=0 wins=9 hp=scene
+f=115314 slot=21 mode=3 wins=9 hp=scene
+ROUTE with per-frame history snapshots, frames=115314 slot=21 mode=3 wins=9 fights=10 hash=8d93a6284b97a1cf886d8ac227ed3e1a735ef2111755c3b2805446a30b14f68c
+PASS full route replay 0 checkpoints=141 8d93a6284b97a1cf886d8ac227ed3e1a735ef2111755c3b2805446a30b14f68c

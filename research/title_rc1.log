@@ -1,0 +1,9 @@
+KGT screen[0]=0074 デモ 2
+KGT screen[1]=0064 キャラセレ
+KGT screen[2]=0064 キャラセレ
+KGT screen[3] unassigned
+KGT screen[4]=0086 こんてにゅー
+KGT screen[5]=0072 デモ 1
+Title sprite=0074:1 xy=0,0 bg=true
+Title sprite=0074:11 xy=0,0 bg=true
+PASS 9 original-title desktop renders, 30 scaled hit-region checks; bgm=0 demo=デモ 2

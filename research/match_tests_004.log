@@ -1,0 +1,8 @@
+PASS original dispatcher 432 cases
+Round 1 at 1
+Round 2 at 7205
+Round 3 at 14410
+PASS full match replay 0 frames=21614
+PASS full match replay 1 frames=21614
+PASS full match replay 2 frames=21614
+PASS match checks=68663 final=5909b6d6ba5269dacce2273759f35ebba3530500c4abf55f44a379fe36fb3b49 frames=21614 score=2:1 snapshots=5

@@ -1,0 +1,29 @@
+/workspace/scratch/033a2b108d46/elfen_test007b/.deps/android-sdk
++ java -m
+Note: /workspace/scratch/033a2b108d46/elfen_test007b/app/src/main/java/org/elfen/fighting/MainActivity.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
++ java -cp
++ /workspace/scratch/033a2b108d46/elfen_test007b/.deps/android-sdk/build-tools/35.0.0/aapt2 compile
++ /workspace/scratch/033a2b108d46/elfen_test007b/.deps/android-sdk/build-tools/35.0.0/aapt2 link
++ /workspace/scratch/033a2b108d46/elfen_test007b/.deps/android-sdk/build-tools/35.0.0/zipalign -f
++ java -jar
++ java -jar
+Verifies
+Verified using v1 scheme (JAR signing): false
+Verified using v2 scheme (APK Signature Scheme v2): false
+Verified using v3 scheme (APK Signature Scheme v3): true
+Verified using v3.1 scheme (APK Signature Scheme v3.1): false
+Verified using v4 scheme (APK Signature Scheme v4): false
+Verified for SourceStamp: false
+Number of signers: 1
+Signer #1 certificate DN: CN=Elfen Fighting private test build
+Signer #1 certificate SHA-256 digest: 12f2989f0ab609532bdf881cfcb54093343a5707874af00a0ee8f47ce460d086
+Signer #1 certificate SHA-1 digest: d64f3912dd847dba6b1d231fb3651fd2c8a47200
+Signer #1 certificate MD5 digest: 5a0639f4cd25539d40fd5b0c1fe51162
+Signer #1 key algorithm: RSA
+Signer #1 key size (bits): 2048
+Signer #1 public key SHA-256 digest: 42df0544e30d439b94860c17b540fbdf3fc1ac95670eaee1e72a2479002800e8
+Signer #1 public key SHA-1 digest: 6f221754b702da2b77602d101f0d303e04e0a8ab
+Signer #1 public key MD5 digest: bb47bbd9cbc491005ad0c94d9777d6c5
++ /workspace/scratch/033a2b108d46/elfen_test007b/.deps/android-sdk/build-tools/35.0.0/zipalign -c
+APK: /workspace/scratch/033a2b108d46/elfen_test007b/builds/elfen-fighting-007b-offline.apk bytes: 68680031 SHA256: 9f208d20646172890aa6075edf3f20b97d229bc6c657584c6ab6906a93549e8b

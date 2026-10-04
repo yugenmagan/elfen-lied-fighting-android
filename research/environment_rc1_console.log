@@ -1,0 +1,2 @@
+usage: probe_environment.py [-h] [--wine WINE] --output OUTPUT
+probe_environment.py: error: the following arguments are required: --output

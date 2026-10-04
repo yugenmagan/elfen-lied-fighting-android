@@ -1,0 +1,13 @@
+PASS 2854 assertions; loaded 46 packs; animation paths completed 99 / 99
+This is not combat, Android installation, or full story validation.
+PASS 0170 quarter-circle A command=とび弱
+PASS 0104 quarter-circle A command=ロケット弱
+PASS 0128 quarter-circle A command=磯部くん
+PASS 0128 back charge forward A command=ねこ座薬
+PASS 0128 half-circle A command=コマンド 1
+PASS stage 0080 1800 ticks
+PASS stage 0084 1800 ticks
+PASS stage 0138 1800 ticks
+PASS stage 0148 1800 ticks
+Error: Could not find or load main class org.elfen.engine.CombatInputScenarios
+Caused by: java.lang.ClassNotFoundException: org.elfen.engine.CombatInputScenarios

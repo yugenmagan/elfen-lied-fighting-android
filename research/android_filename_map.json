@@ -1,0 +1,1954 @@
+[
+  {
+    "entry_index": 0,
+    "raw_zip_name_hex": "4669676874696e672f",
+    "decoded_japanese_path": "Fighting/",
+    "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "android_pack_path": null,
+    "preserved_original_path": null
+  },
+  {
+    "entry_index": 1,
+    "raw_zip_name_hex": "5f5f4d41434f53582f2e5f4669676874696e67",
+    "decoded_japanese_path": "__MACOSX/._Fighting",
+    "source_sha256": "24e6a3d8be9e8743e95af7a3453dd710a2fca42436b0d2c45040ca8ce961c9e0",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0001.bin"
+  },
+  {
+    "entry_index": 2,
+    "raw_zip_name_hex": "4669676874696e672f2e44535f53746f7265",
+    "decoded_japanese_path": "Fighting/.DS_Store",
+    "source_sha256": "341433fc2400f5ef88d6b14f1ca4ea60fb02b3b4ed8e9be602560e7cbe117ac7",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0002.bin"
+  },
+  {
+    "entry_index": 3,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f2e5f2e44535f53746f7265",
+    "decoded_japanese_path": "__MACOSX/Fighting/._.DS_Store",
+    "source_sha256": "2f380f4a3d05a8d90c2106f50da75064e9ce57a598599dc5404f8f69a0223aa9",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0003.ds_store"
+  },
+  {
+    "entry_index": 4,
+    "raw_zip_name_hex": "4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f",
+    "decoded_japanese_path": "Fighting/マニュアル/",
+    "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "android_pack_path": null,
+    "preserved_original_path": null
+  },
+  {
+    "entry_index": 5,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f2e5fc6927dc6926ac692e280a6c69241c692e280b9",
+    "decoded_japanese_path": "__MACOSX/Fighting/._マニュアル",
+    "source_sha256": "24e6a3d8be9e8743e95af7a3453dd710a2fca42436b0d2c45040ca8ce961c9e0",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0005.bin"
+  },
+  {
+    "entry_index": 6,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/",
+    "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "android_pack_path": null,
+    "preserved_original_path": null
+  },
+  {
+    "entry_index": 7,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f2e5f6732c69254c692e2809dc69240c69243c692e2809d",
+    "decoded_japanese_path": "__MACOSX/Fighting/._g2サヴァイヴ",
+    "source_sha256": "24e6a3d8be9e8743e95af7a3453dd710a2fca42436b0d2c45040ca8ce961c9e0",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0007.bin"
+  },
+  {
+    "entry_index": 8,
+    "raw_zip_name_hex": "4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f636f6d626f73696e616e2e6a7067",
+    "decoded_japanese_path": "Fighting/マニュアル/combosinan.jpg",
+    "source_sha256": "40432f67f39b69e97c8848fc0cb65ba64a49b966634be6c62c5ffa79a22874d5",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0008.jpg"
+  },
+  {
+    "entry_index": 9,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f2e5f636f6d626f73696e616e2e6a7067",
+    "decoded_japanese_path": "__MACOSX/Fighting/マニュアル/._combosinan.jpg",
+    "source_sha256": "e80f25c14fac94db38723412bd31523000a4b8461b8a62dc89785fa61f6ab4f8",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0009.jpg"
+  },
+  {
+    "entry_index": 10,
+    "raw_zip_name_hex": "4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f6e65776169636f6e2e676966",
+    "decoded_japanese_path": "Fighting/マニュアル/newaicon.gif",
+    "source_sha256": "82ea4e96d83669deefa712b2c8f048b946a7d34bfbf3a801c773503ed18b9779",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0010.gif"
+  },
+  {
+    "entry_index": 11,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f2e5f6e65776169636f6e2e676966",
+    "decoded_japanese_path": "__MACOSX/Fighting/マニュアル/._newaicon.gif",
+    "source_sha256": "8d88ae1895b55babc4f7fbdf1872e06865c062e4310be9394f27155d1e338835",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0011.gif"
+  },
+  {
+    "entry_index": 12,
+    "raw_zip_name_hex": "4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f616e6e61322e676966",
+    "decoded_japanese_path": "Fighting/マニュアル/anna2.gif",
+    "source_sha256": "de6e723fba65e9ae491af30de173ab9f2e0543ee21fecd002ad09c64be8a7fed",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0012.gif"
+  },
+  {
+    "entry_index": 13,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f2e5f616e6e61322e676966",
+    "decoded_japanese_path": "__MACOSX/Fighting/マニュアル/._anna2.gif",
+    "source_sha256": "a1e31c25dfe6ff63accdea23a703566ea5fb72e28281bb746449370624495365",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0013.gif"
+  },
+  {
+    "entry_index": 14,
+    "raw_zip_name_hex": "4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f6c6f7374636f6d2e6a7067",
+    "decoded_japanese_path": "Fighting/マニュアル/lostcom.jpg",
+    "source_sha256": "9d3cbd53a307c60453d62c15dd96feccea685b84afcc4e6f63a98a75e53eeba9",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0014.jpg"
+  },
+  {
+    "entry_index": 15,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f2e5f6c6f7374636f6d2e6a7067",
+    "decoded_japanese_path": "__MACOSX/Fighting/マニュアル/._lostcom.jpg",
+    "source_sha256": "2ec20f7a78910bee599668f4adf1313ddbba4deb0b21218208ed5c843e982765",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0015.jpg"
+  },
+  {
+    "entry_index": 16,
+    "raw_zip_name_hex": "4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f6d6973616b6969636f6e2e6a7067",
+    "decoded_japanese_path": "Fighting/マニュアル/misakiicon.jpg",
+    "source_sha256": "83ccc14cc5158a08507a5a492e93b86f425102d16405aa34b29dabaf458d9c08",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0016.jpg"
+  },
+  {
+    "entry_index": 17,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f2e5f6d6973616b6969636f6e2e6a7067",
+    "decoded_japanese_path": "__MACOSX/Fighting/マニュアル/._misakiicon.jpg",
+    "source_sha256": "f81543250b7ca7b26e23ad98b12012ed1b774a68cd8cbe1edc1ad552dc61782c",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0017.jpg"
+  },
+  {
+    "entry_index": 18,
+    "raw_zip_name_hex": "4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f636f6d6469616e612e6a7067",
+    "decoded_japanese_path": "Fighting/マニュアル/comdiana.jpg",
+    "source_sha256": "64ee344f59dfe5373c140ad4940138994d62cb1a10703c54b9f1c5e5875867b7",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0018.jpg"
+  },
+  {
+    "entry_index": 19,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f2e5f636f6d6469616e612e6a7067",
+    "decoded_japanese_path": "__MACOSX/Fighting/マニュアル/._comdiana.jpg",
+    "source_sha256": "9ad7ec7b977c33542184579f3e2ad566c46f4406eb2e2087ab3680cae4dd782f",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0019.jpg"
+  },
+  {
+    "entry_index": 20,
+    "raw_zip_name_hex": "4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f636f6d616e6e612e6a7067",
+    "decoded_japanese_path": "Fighting/マニュアル/comanna.jpg",
+    "source_sha256": "0b5e1afedda36b4f4bda3cbf5f638393a7715c66166af4c911d7ece60fd2606d",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0020.jpg"
+  },
+  {
+    "entry_index": 21,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f2e5f636f6d616e6e612e6a7067",
+    "decoded_japanese_path": "__MACOSX/Fighting/マニュアル/._comanna.jpg",
+    "source_sha256": "a4138708dbdff7b0127c5e46ab335201a045757963d875e54de6fdc672269018",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0021.jpg"
+  },
+  {
+    "entry_index": 22,
+    "raw_zip_name_hex": "4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f636f6d6d6172696b6f2e6a7067",
+    "decoded_japanese_path": "Fighting/マニュアル/commariko.jpg",
+    "source_sha256": "8eae3d3512a9eb06cd50338225cadaa24bf0699ab736720541bf75ce4c60e132",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0022.jpg"
+  },
+  {
+    "entry_index": 23,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f2e5f636f6d6d6172696b6f2e6a7067",
+    "decoded_japanese_path": "__MACOSX/Fighting/マニュアル/._commariko.jpg",
+    "source_sha256": "96f5a7a9fae74368b6b8180eb81cb64e2c8f7e6a615e9b07017b21f3766c6cf5",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0023.jpg"
+  },
+  {
+    "entry_index": 24,
+    "raw_zip_name_hex": "4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f6d617269636f6169636f6e2e676966",
+    "decoded_japanese_path": "Fighting/マニュアル/maricoaicon.gif",
+    "source_sha256": "6e74ca61cff4e69324db533a393342375a937e72da439c766fb1ef124c4b2919",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0024.gif"
+  },
+  {
+    "entry_index": 25,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f2e5f6d617269636f6169636f6e2e676966",
+    "decoded_japanese_path": "__MACOSX/Fighting/マニュアル/._maricoaicon.gif",
+    "source_sha256": "e8d4425d655b99b16957517300d2b5a0263d524cfc0ca2b4344bde0b9f96e4eb",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0025.gif"
+  },
+  {
+    "entry_index": 26,
+    "raw_zip_name_hex": "4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f736f757361322e6a7067",
+    "decoded_japanese_path": "Fighting/マニュアル/sousa2.jpg",
+    "source_sha256": "96b2fe025d74fa1eee651b44cc47ec76f6d64318d41cdc5c09e18e7370c6afb2",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0026.jpg"
+  },
+  {
+    "entry_index": 27,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f2e5f736f757361322e6a7067",
+    "decoded_japanese_path": "__MACOSX/Fighting/マニュアル/._sousa2.jpg",
+    "source_sha256": "99262ebb9f47bc103bd77f547ed64655c747ffb4a1c39182a702ea5f6137a7ab",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0027.jpg"
+  },
+  {
+    "entry_index": 28,
+    "raw_zip_name_hex": "4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f7572616e616e61636f6d2e6a7067",
+    "decoded_japanese_path": "Fighting/マニュアル/urananacom.jpg",
+    "source_sha256": "abcbf2793b95e6005f4770492c0f9c351e8f6db74aed84f8ceabec55c5b0a988",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0028.jpg"
+  },
+  {
+    "entry_index": 29,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f2e5f7572616e616e61636f6d2e6a7067",
+    "decoded_japanese_path": "__MACOSX/Fighting/マニュアル/._urananacom.jpg",
+    "source_sha256": "74438273dd6b99deca1de39ca7d0a5948a4c850d3816aa147098e143fcfa48a4",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0029.jpg"
+  },
+  {
+    "entry_index": 30,
+    "raw_zip_name_hex": "4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f636f6d6c7563792e6a7067",
+    "decoded_japanese_path": "Fighting/マニュアル/comlucy.jpg",
+    "source_sha256": "ddd9173e1d8d0a05695e37e048a670e6de929d4187a2e7e1c7fff03731708444",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0030.jpg"
+  },
+  {
+    "entry_index": 31,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f2e5f636f6d6c7563792e6a7067",
+    "decoded_japanese_path": "__MACOSX/Fighting/マニュアル/._comlucy.jpg",
+    "source_sha256": "1309e0d60689c48cf37709e7436193552aefc1d3bc5496affeb3a48820177d77",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0031.jpg"
+  },
+  {
+    "entry_index": 32,
+    "raw_zip_name_hex": "4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f73696e7369612e676966",
+    "decoded_japanese_path": "Fighting/マニュアル/sinsia.gif",
+    "source_sha256": "29b9f758304a13c42cf29f959c439ea4dd2ea623126726c002ab094cb089298b",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0032.gif"
+  },
+  {
+    "entry_index": 33,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f2e5f73696e7369612e676966",
+    "decoded_japanese_path": "__MACOSX/Fighting/マニュアル/._sinsia.gif",
+    "source_sha256": "dd4078659b292adfb16ba58b8aaaa41a0428e0aa1b6a64262630a0a82bd7a3a5",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0033.gif"
+  },
+  {
+    "entry_index": 34,
+    "raw_zip_name_hex": "4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f72756379326169636f6e2e676966",
+    "decoded_japanese_path": "Fighting/マニュアル/rucy2aicon.gif",
+    "source_sha256": "e0ffeecb05b430777d1f06c7119f00662e1e3dbb7cac72639f11bb581e737e24",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0034.gif"
+  },
+  {
+    "entry_index": 35,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f2e5f72756379326169636f6e2e676966",
+    "decoded_japanese_path": "__MACOSX/Fighting/マニュアル/._rucy2aicon.gif",
+    "source_sha256": "2787aa7ac7f6e864d2641badfd7f7ad813f465bfebcea13331fd26950ff4f6a3",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0035.gif"
+  },
+  {
+    "entry_index": 36,
+    "raw_zip_name_hex": "4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f6e616e6169636f6e322e676966",
+    "decoded_japanese_path": "Fighting/マニュアル/nanaicon2.gif",
+    "source_sha256": "a480d1f7402c927aa8de50d348bbfa59dd9c568679da3e2b0ae55dbd83b1fd33",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0036.gif"
+  },
+  {
+    "entry_index": 37,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f2e5f6e616e6169636f6e322e676966",
+    "decoded_japanese_path": "__MACOSX/Fighting/マニュアル/._nanaicon2.gif",
+    "source_sha256": "bfa414c50af98bfb65718975d2a8af66aaa0f7409fd0de876dfc9ffff9983833",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0037.gif"
+  },
+  {
+    "entry_index": 38,
+    "raw_zip_name_hex": "4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f636f6d6e79752e6a7067",
+    "decoded_japanese_path": "Fighting/マニュアル/comnyu.jpg",
+    "source_sha256": "9aeef5ad5d2198885cd6646b138a550104b9f41502f561a3d6cc40da1ffbc869",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0038.jpg"
+  },
+  {
+    "entry_index": 39,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f2e5f636f6d6e79752e6a7067",
+    "decoded_japanese_path": "__MACOSX/Fighting/マニュアル/._comnyu.jpg",
+    "source_sha256": "08e4f9e9f1ab51446fe7cb4db6d8b5ec56350daee3b2c9a6ceff6f61fcafd78e",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0039.jpg"
+  },
+  {
+    "entry_index": 40,
+    "raw_zip_name_hex": "4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f636f6d6c756379322e6a7067",
+    "decoded_japanese_path": "Fighting/マニュアル/comlucy2.jpg",
+    "source_sha256": "c76363be13757ce97e52bfd923b4f3c5588c83c5a9bf639f6a08c7d03e4b3ae5",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0040.jpg"
+  },
+  {
+    "entry_index": 41,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f2e5f636f6d6c756379322e6a7067",
+    "decoded_japanese_path": "__MACOSX/Fighting/マニュアル/._comlucy2.jpg",
+    "source_sha256": "373e8965320243a44d56f803face50d5d270ef6e6bb47e31bcf3795fd54f1942",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0041.jpg"
+  },
+  {
+    "entry_index": 42,
+    "raw_zip_name_hex": "4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f6d6973616b69636f6d2e6a7067",
+    "decoded_japanese_path": "Fighting/マニュアル/misakicom.jpg",
+    "source_sha256": "926ee8fd067cc3c057f87fbb4f39243228cdb305022cdda835f9d1b2e0775e7a",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0042.jpg"
+  },
+  {
+    "entry_index": 43,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f2e5f6d6973616b69636f6d2e6a7067",
+    "decoded_japanese_path": "__MACOSX/Fighting/マニュアル/._misakicom.jpg",
+    "source_sha256": "d54d957a2173e213dfcaf6b4ca9dff0dfaf9469876b1a9168ffe8b5189ba32be",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0043.jpg"
+  },
+  {
+    "entry_index": 44,
+    "raw_zip_name_hex": "4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f736574756d65692e68746d",
+    "decoded_japanese_path": "Fighting/マニュアル/setumei.htm",
+    "source_sha256": "41413bf39cbf31fe5ec727a4314bbbe7e1dc37b864b409685cc7a6b49b92d679",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0044.htm"
+  },
+  {
+    "entry_index": 45,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f2e5f736574756d65692e68746d",
+    "decoded_japanese_path": "__MACOSX/Fighting/マニュアル/._setumei.htm",
+    "source_sha256": "fd7c1b9d19f7508852d87963fe187711d67e69873485a5a6517ea8700931b691",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0045.htm"
+  },
+  {
+    "entry_index": 46,
+    "raw_zip_name_hex": "4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f6c6f73742e676966",
+    "decoded_japanese_path": "Fighting/マニュアル/lost.gif",
+    "source_sha256": "59f2a313dece31368863a3ece99b7fb28b46ab6228317490c4007151f5b1c5c3",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0046.gif"
+  },
+  {
+    "entry_index": 47,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f2e5f6c6f73742e676966",
+    "decoded_japanese_path": "__MACOSX/Fighting/マニュアル/._lost.gif",
+    "source_sha256": "d0c0d834f3b3b8648870ee8767421e5ef8494e7fa1e1a5d1550c9bcf8769a8e5",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0047.gif"
+  },
+  {
+    "entry_index": 48,
+    "raw_zip_name_hex": "4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f636f6d6d617975322e6a7067",
+    "decoded_japanese_path": "Fighting/マニュアル/commayu2.jpg",
+    "source_sha256": "cac14bd3a624c096f829436a503709a3294ddde4dc8d27d0ba0ccfdacfd250ec",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0048.jpg"
+  },
+  {
+    "entry_index": 49,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f2e5f636f6d6d617975322e6a7067",
+    "decoded_japanese_path": "__MACOSX/Fighting/マニュアル/._commayu2.jpg",
+    "source_sha256": "ed73f703e4a01ba702e53fe2e656693b39339a69c5dafa670fb374903038810d",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0049.jpg"
+  },
+  {
+    "entry_index": 50,
+    "raw_zip_name_hex": "4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f6d6179752e676966",
+    "decoded_japanese_path": "Fighting/マニュアル/mayu.gif",
+    "source_sha256": "591416a4332ff6079c3f27d6b705838952a3b2d22ef1bac05b773974657a4576",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0050.gif"
+  },
+  {
+    "entry_index": 51,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f2e5f6d6179752e676966",
+    "decoded_japanese_path": "__MACOSX/Fighting/マニュアル/._mayu.gif",
+    "source_sha256": "5c607156e5b7b6e3fa7f510f459b6b4658b453aa227ae8b0fb37859c4cbf35e5",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0051.gif"
+  },
+  {
+    "entry_index": 52,
+    "raw_zip_name_hex": "4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f6e616e616169636f6e2e676966",
+    "decoded_japanese_path": "Fighting/マニュアル/nanaaicon.gif",
+    "source_sha256": "cd03e42bb7feec56c11e447967b69f645ee1a70d04fd3ac39a6cd558f980e6cd",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0052.gif"
+  },
+  {
+    "entry_index": 53,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f2e5f6e616e616169636f6e2e676966",
+    "decoded_japanese_path": "__MACOSX/Fighting/マニュアル/._nanaaicon.gif",
+    "source_sha256": "e895a9cdb9c7229799b4405ba1d4896524c03065d6f48de1b512d06323167de6",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0053.gif"
+  },
+  {
+    "entry_index": 54,
+    "raw_zip_name_hex": "4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f796f75727563792e676966",
+    "decoded_japanese_path": "Fighting/マニュアル/yourucy.gif",
+    "source_sha256": "7b3b65e61ff3d7e0269d2785aee8335c3f387f5eb7e966d6fe4928cb647e8972",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0054.gif"
+  },
+  {
+    "entry_index": 55,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f2e5f796f75727563792e676966",
+    "decoded_japanese_path": "__MACOSX/Fighting/マニュアル/._yourucy.gif",
+    "source_sha256": "afaf7c340e00155447b616e180a1501d82517f43c59c57b760cf58467f6fc442",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0055.gif"
+  },
+  {
+    "entry_index": 56,
+    "raw_zip_name_hex": "4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f636f6d626f6e616e612e6a7067",
+    "decoded_japanese_path": "Fighting/マニュアル/combonana.jpg",
+    "source_sha256": "24c674651bfd42dfa07c9d9168ef878241ef32ff97c822f65b24c782773de425",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0056.jpg"
+  },
+  {
+    "entry_index": 57,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f2e5f636f6d626f6e616e612e6a7067",
+    "decoded_japanese_path": "__MACOSX/Fighting/マニュアル/._combonana.jpg",
+    "source_sha256": "7db60f7ef580d90f68b2c040d29c00bb2df83b2a18809f44ef3869e804d7ef28",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0057.jpg"
+  },
+  {
+    "entry_index": 58,
+    "raw_zip_name_hex": "4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f686f736f6b752e6a7067",
+    "decoded_japanese_path": "Fighting/マニュアル/hosoku.jpg",
+    "source_sha256": "d7d28ba6399828a227db81dabb7036b9014f73c446ce890924a1d58b99c8d34d",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0058.jpg"
+  },
+  {
+    "entry_index": 59,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672fc6927dc6926ac692e280a6c69241c692e280b92f2e5f686f736f6b752e6a7067",
+    "decoded_japanese_path": "__MACOSX/Fighting/マニュアル/._hosoku.jpg",
+    "source_sha256": "1aebb0e378669b027491a2509635fc97bad2ab27c418f4c58359737509f3bd36",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0059.jpg"
+  },
+  {
+    "entry_index": 60,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc69266c692e2809ae2809a65cc81c2815be2809ac2b5e2809a64e2809a632e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/デモるーしＥＤ.demo",
+    "source_sha256": "f69895e4c884f068eef91d313c3263e9054b4253362daa3a4aba5fc5fa3814f1",
+    "android_pack_path": "game/0060/data.efp",
+    "preserved_original_path": "source_original/entries/0060.demo"
+  },
+  {
+    "entry_index": 61,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc69266c692e2809ae2809a65cc81c2815be2809ac2b5e2809a64e2809a632e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._デモるーしＥＤ.demo",
+    "source_sha256": "dca93cf4d77730bcf5fa30c0125d9f6d100686af4b2851b12e295e18871d9b4f",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0061.demo"
+  },
+  {
+    "entry_index": 62,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc6927dc69253cc8cc69252e2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/マリコＯＰ.demo",
+    "source_sha256": "4c05816d41ed0d3a827d75fa7b5657a79be6f2db0747bf011f0b66860d0456d6",
+    "android_pack_path": "game/0062/data.efp",
+    "preserved_original_path": "source_original/entries/0062.demo"
+  },
+  {
+    "entry_index": 63,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc6927dc69253cc8cc69252e2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._マリコＯＰ.demo",
+    "source_sha256": "923cadacf28fe0c1251818e31d0c09c4d1b38e29c1e144eb0a958e2a507076f2",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0063.demo"
+  },
+  {
+    "entry_index": 64,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc6924cc692c692c692e280b0c6925ac692c5922e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/キャラセレ.demo",
+    "source_sha256": "2f8ae9d3caa7b26378c589a678b896574cfe4ca3433d91e8524d9daaa343078d",
+    "android_pack_path": "game/0064/data.efp",
+    "preserved_original_path": "source_original/entries/0064.demo"
+  },
+  {
+    "entry_index": 65,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc6924cc692c692c692e280b0c6925ac692c5922e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._キャラセレ.demo",
+    "source_sha256": "bbf2399db765e7999de539af05f6507c26291492c252a0552887a6977ab81e0b",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0065.demo"
+  },
+  {
+    "entry_index": 66,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc692c28dc69258c69267e2809a64e2809a632e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/ロストＥＤ.demo",
+    "source_sha256": "bd2b660cf75281f89593c2908bddb31e5343c39799d8f5e84c5c775fe71675e8",
+    "android_pack_path": "game/0066/data.efp",
+    "preserved_original_path": "source_original/entries/0066.demo"
+  },
+  {
+    "entry_index": 67,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc692c28dc69258c69267e2809a64e2809a632e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._ロストＥＤ.demo",
+    "source_sha256": "1875105cb30f6cc23c2c1b0fd933fa562eaee3886fdde902057c1e5e2d79a6d1",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0067.demo"
+  },
+  {
+    "entry_index": 68,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc69269c69269e2809a64e2809a632e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/ナナＥＤ.demo",
+    "source_sha256": "816ea670b402a161c507f79bc2901a088c8925f9d6faeacc20e2683db56c0748",
+    "android_pack_path": "game/0068/data.efp",
+    "preserved_original_path": "source_original/entries/0068.demo"
+  },
+  {
+    "entry_index": 69,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc69269c69269e2809a64e2809a632e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._ナナＥＤ.demo",
+    "source_sha256": "4d29e2977e2b2aa8dd414cb1cbe4cb8c3d40e522511fe17b74c16d64e93ad806",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0069.demo"
+  },
+  {
+    "entry_index": 70,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc6927ec69254c6924ce2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/ミサキＯＰ.demo",
+    "source_sha256": "e725a461a07d74f3407a1d01b8607ee7aa910e2772e3056f4357df30929cb52b",
+    "android_pack_path": "game/0070/data.efp",
+    "preserved_original_path": "source_original/entries/0070.demo"
+  },
+  {
+    "entry_index": 71,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc6927ec69254c6924ce2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._ミサキＯＰ.demo",
+    "source_sha256": "693cbfa9c32ac3f3b859f8157e12550ff293173a97d481368819e64ed12b3cff",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0071.demo"
+  },
+  {
+    "entry_index": 72,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc69266c692e2809a20312e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/デモ 1.demo",
+    "source_sha256": "a849fa7f0c3521821eaf4bc2ade5a4688aed320e92b7cb6a5c4f429b0811c764",
+    "android_pack_path": "game/0072/data.efp",
+    "preserved_original_path": "source_original/entries/0072.demo"
+  },
+  {
+    "entry_index": 73,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc69266c692e2809a20312e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._デモ 1.demo",
+    "source_sha256": "34a962d0601a7b5f131dc46d26ca6b3514820881e45eb8bfde48cd4919c07ff7",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0073.demo"
+  },
+  {
+    "entry_index": 74,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd0b3cc8166d0b3cc81e2809a20322e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/デモ 2.demo",
+    "source_sha256": "c6d1bc70aa7d2d1d158c479db7ead04d53c5c00c8eb4f738fcbde6795079dd21",
+    "android_pack_path": "game/0074/data.efp",
+    "preserved_original_path": "source_original/entries/0074.demo"
+  },
+  {
+    "entry_index": 75,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd0b3cc8166d0b3cc81e2809a20322e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._デモ 2.demo",
+    "source_sha256": "d65c7ab7c36c7ace69cde14487aad91c571946c259b695184dc480d3fb5488b2",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0075.demo"
+  },
+  {
+    "entry_index": 76,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd0b3cc8141d0b3cc81e2809cd0b3cc8169e2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/アンナＯＰ.demo",
+    "source_sha256": "cc0a223f5c04d3528a65a673b3fc51fc5ac4c50f94a03fb4e467b5e05334cc69",
+    "android_pack_path": "game/0076/data.efp",
+    "preserved_original_path": "source_original/entries/0076.demo"
+  },
+  {
+    "entry_index": 77,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd0b3cc8141d0b3cc81e2809cd0b3cc8169e2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._アンナＯＰ.demo",
+    "source_sha256": "1da18fccd13556ba8a7983d12dbf9749b972e5fd13e84c754c5b4ed4230928b3",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0077.demo"
+  },
+  {
+    "entry_index": 78,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc6927dc69253cc8cc69252e2809c6fc28f65cc822e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/マリコ登場.demo",
+    "source_sha256": "38a213f60cd5649041295bd7dfcd7eda1b50176e04c75e855835121d24deba7e",
+    "android_pack_path": "game/0078/data.efp",
+    "preserved_original_path": "source_original/entries/0078.demo"
+  },
+  {
+    "entry_index": 79,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc6927dc69253cc8cc69252e2809c6fc28f65cc822e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._マリコ登場.demo",
+    "source_sha256": "f5290dcc42c1845fa9c3299066c689ad8d75a7a2b1d2a2e906fa0b8f78c6c187",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0079.demo"
+  },
+  {
+    "entry_index": 80,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd0b3cc8158d0b3cc8165d093cc815bd0b3cc815720322e7374616765",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/ステージ 2.stage",
+    "source_sha256": "fbbc3c7cd4183484ef3bffcd70bd84face4b6eaca1e4d8f1c27fabc90b00ed64",
+    "android_pack_path": "game/0080/data.efp",
+    "preserved_original_path": "source_original/entries/0080.stage"
+  },
+  {
+    "entry_index": 81,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd0b3cc8158d0b3cc8165d093cc815bd0b3cc815720322e7374616765",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._ステージ 2.stage",
+    "source_sha256": "0862ce9ed1fad87de7bec294eeabcfc3edf4c5c51fffa9061757b69547477610",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0081.stage"
+  },
+  {
+    "entry_index": 82,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc6927dc69253cc8cc692522e706c61796572",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/マリコ.player",
+    "source_sha256": "f76ea3acc5adbe7ed32fa36f756529eb555de3b83d813cc17c68d684b212b5af",
+    "android_pack_path": "game/0082/data.efp",
+    "preserved_original_path": "source_original/entries/0082.player"
+  },
+  {
+    "entry_index": 83,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc6927dc69253cc8cc692522e706c61796572",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._マリコ.player",
+    "source_sha256": "fbd4b648a2619e8513c996e03f2d07bd8bd03a05d83356be6732b383e0b4c768",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0083.player"
+  },
+  {
+    "entry_index": 84,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc28dc281c28d602e7374616765",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/香港.stage",
+    "source_sha256": "22547000ce2b954a7e82407168eeab10cfd652bb686858b5c9a9721f00be5192",
+    "android_pack_path": "game/0084/data.efp",
+    "preserved_original_path": "source_original/entries/0084.stage"
+  },
+  {
+    "entry_index": 85,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc28dc281c28d602e7374616765",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._香港.stage",
+    "source_sha256": "55a37fa538dafdc15f69bf087972e9580e23b360070579a7e9b1f21aa4f93fc2",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0085.stage"
+  },
+  {
+    "entry_index": 86,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fe2809ac2b1e2809a6ecc83e2809a41cc88e2809a45cc81e2809a61cc83c2815b2e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/こんてにゅー.demo",
+    "source_sha256": "74fa318884a799db0c15dc49caf244bab02bb5834d4bfd98aef1ff9c7b13e6d5",
+    "android_pack_path": "game/0086/data.efp",
+    "preserved_original_path": "source_original/entries/0086.demo"
+  },
+  {
+    "entry_index": 87,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fe2809ac2b1e2809a6ecc83e2809a41cc88e2809a45cc81e2809a61cc83c2815b2e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._こんてにゅー.demo",
+    "source_sha256": "592a98a07e720e73ee6a9fb8ac2438458e534fc195541b0f3e1eb468a0a71d36",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0087.demo"
+  },
+  {
+    "entry_index": 88,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fe2809a45cc81e2809a61cc83e2809ac2a4e2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/にゅうＯＰ.demo",
+    "source_sha256": "948bbd9a39a2727838c6944d5dadf459a71f2af97fd646736ee693e4f81370bb",
+    "android_pack_path": "game/0088/data.efp",
+    "preserved_original_path": "source_original/entries/0088.demo"
+  },
+  {
+    "entry_index": 89,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fe2809a45cc81e2809a61cc83e2809ac2a4e2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._にゅうＯＰ.demo",
+    "source_sha256": "99bccb084fa6be2b18262920e13c72f3953a9728b2534e98a87fdc2ed26cb881",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0089.demo"
+  },
+  {
+    "entry_index": 90,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc69258c69265c2815bc6925720322e7374616765",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/ステージ 2.stage",
+    "source_sha256": "fbbc3c7cd4183484ef3bffcd70bd84face4b6eaca1e4d8f1c27fabc90b00ed64",
+    "android_pack_path": "game/0080/data.efp",
+    "preserved_original_path": "source_original/entries/0090.stage"
+  },
+  {
+    "entry_index": 91,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc69258c69265c2815bc6925720322e7374616765",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._ステージ 2.stage",
+    "source_sha256": "66cb04a8233195c21fe38ea27f4172accc3a342916972344304cf13d0d1c2262",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0091.stage"
+  },
+  {
+    "entry_index": 92,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc6927dc692e280a0e2809a64e2809a632e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/マユＥＤ.demo",
+    "source_sha256": "fc719e4b3c8aabe7b0766d6079e45226ba8ac659b2e1c0258593288300ef87f5",
+    "android_pack_path": "game/0092/data.efp",
+    "preserved_original_path": "source_original/entries/0092.demo"
+  },
+  {
+    "entry_index": 93,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc6927dc692e280a0e2809a64e2809a632e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._マユＥＤ.demo",
+    "source_sha256": "7f9ae32faaedf886bd077ca03f3ff4e5f0689d3dc12b37a157a058f88bece01d",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0093.demo"
+  },
+  {
+    "entry_index": 94,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd0b3cc817dd0b3cc81e280a0e2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/マユＯＰ.demo",
+    "source_sha256": "50aae4863fb2ef35c278ff85f622a81293d3e88ee6719211f3cccf973c7eec23",
+    "android_pack_path": "game/0094/data.efp",
+    "preserved_original_path": "source_original/entries/0094.demo"
+  },
+  {
+    "entry_index": 95,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd0b3cc817dd0b3cc81e280a0e2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._マユＯＰ.demo",
+    "source_sha256": "83cfde6fd3369097d3fa927b17a41a133db6253c59cff9d7c3ec2466c9443c1c",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0095.demo"
+  },
+  {
+    "entry_index": 96,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd0b3cc814ed0b3cc81d09acc81d093cc815bd0b3cc81e2809ce2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/クローンＯＰ.demo",
+    "source_sha256": "3b8fde4fbf39047264daf6524d933857657bc175804336953044e14c30d60a1e",
+    "android_pack_path": "game/0096/data.efp",
+    "preserved_original_path": "source_original/entries/0096.demo"
+  },
+  {
+    "entry_index": 97,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd0b3cc814ed0b3cc81d09acc81d093cc815bd0b3cc81e2809ce2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._クローンＯＰ.demo",
+    "source_sha256": "6c36380350701e907751f22d2ab4654bd797fe58051f16eb0f98e39977e70b9c",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0097.demo"
+  },
+  {
+    "entry_index": 98,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd0b3cc8141d0b3cc81e2809cd0b3cc816945442e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/アンナED.demo",
+    "source_sha256": "eed04b9f7049624917327929642ff3cb13643454beb805b85b662e37db0cfcea",
+    "android_pack_path": "game/0098/data.efp",
+    "preserved_original_path": "source_original/entries/0098.demo"
+  },
+  {
+    "entry_index": 99,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd0b3cc8141d0b3cc81e2809cd0b3cc816945442e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._アンナED.demo",
+    "source_sha256": "b337907a023c1df3aaf81a56b2a9019a9b0abc5bb4e09929786272816dbf02b5",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0099.demo"
+  },
+  {
+    "entry_index": 100,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd0b3cc817dd0b3cc81d089d0b3cc8152e2809c6fd08fd0ba2e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/マリコ登場.demo",
+    "source_sha256": "38a213f60cd5649041295bd7dfcd7eda1b50176e04c75e855835121d24deba7e",
+    "android_pack_path": "game/0078/data.efp",
+    "preserved_original_path": "source_original/entries/0100.demo"
+  },
+  {
+    "entry_index": 101,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd0b3cc817dd0b3cc81d089d0b3cc8152e2809c6fd08fd0ba2e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._マリコ登場.demo",
+    "source_sha256": "dcd8ceb1bf4a6847689051118fc92f4f6a87928ab83e236ea94e3e4bf08081a1",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0101.demo"
+  },
+  {
+    "entry_index": 102,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fe2809a45cc81e2809a61cc83e2809ac2a445442e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/にゅうED.demo",
+    "source_sha256": "dbe7c5099bc5572f01edd05c3ada671c1e332cd77c792de94517f141261a9cd2",
+    "android_pack_path": "game/0102/data.efp",
+    "preserved_original_path": "source_original/entries/0102.demo"
+  },
+  {
+    "entry_index": 103,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fe2809a45cc81e2809a61cc83e2809ac2a445442e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._にゅうED.demo",
+    "source_sha256": "32da71997920b1e3bd627b880e89a32acc7601bc28c067f14a411d7edc0732c7",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0103.demo"
+  },
+  {
+    "entry_index": 104,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc69269c69269e28094c2a02e706c61796572",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/ナナ裏.player",
+    "source_sha256": "9367665b293bd5d549438082d22ff4b3b10904b77257937a5dae4791665c7d9a",
+    "android_pack_path": "game/0104/data.efp",
+    "preserved_original_path": "source_original/entries/0104.player"
+  },
+  {
+    "entry_index": 105,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc69269c69269e28094c2a02e706c61796572",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._ナナ裏.player",
+    "source_sha256": "3e847abdfbf642b3f4e2dd6e8d960a389bfe1ba35c0cd7da27ba98d8adc668e2",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0105.player"
+  },
+  {
+    "entry_index": 106,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd0b3cc817dd0b3cc81d089d0b3cc8152e2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/マリコＯＰ.demo",
+    "source_sha256": "4c05816d41ed0d3a827d75fa7b5657a79be6f2db0747bf011f0b66860d0456d6",
+    "android_pack_path": "game/0062/data.efp",
+    "preserved_original_path": "source_original/entries/0106.demo"
+  },
+  {
+    "entry_index": 107,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd0b3cc817dd0b3cc81d089d0b3cc8152e2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._マリコＯＰ.demo",
+    "source_sha256": "b728baaaf96110a3cf83c63d57be6de57d9db434c70b9899811067780da54607",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0107.demo"
+  },
+  {
+    "entry_index": 108,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc6925fc69243c69241c692692e706c61796572",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/ダイアナ.player",
+    "source_sha256": "b5b201dd9158efbacf3a4932ca68baa395d86f86205068f3c4e001bc8c4d4a7f",
+    "android_pack_path": "game/0108/data.efp",
+    "preserved_original_path": "source_original/entries/0108.player"
+  },
+  {
+    "entry_index": 109,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc6925fc69243c69241c692692e706c61796572",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._ダイアナ.player",
+    "source_sha256": "5dd33d7abe2c91bc4c6ae3e46b0436a09f3ae856eaaea46957344ae1128e91a1",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0109.player"
+  },
+  {
+    "entry_index": 110,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc6927dc692e280a02e706c61796572",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/マユ.player",
+    "source_sha256": "1cca11eaf1885ac4f82c57dde79e4ea10b0acc980d630cefee00ebed1ea10210",
+    "android_pack_path": "game/0110/data.efp",
+    "preserved_original_path": "source_original/entries/0110.player"
+  },
+  {
+    "entry_index": 111,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc6927dc692e280a02e706c61796572",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._マユ.player",
+    "source_sha256": "82ff9d16602d4b96ccbfadc8cf914f3f7932ed86ea0d6bb1b7ec6d7294265cf7",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0111.player"
+  },
+  {
+    "entry_index": 112,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc692c28dc69258c69267e2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/ロストＯＰ.demo",
+    "source_sha256": "84f9b103a692440079ff53a7e91776cb7cc9e03d4d090172432661447d253fce",
+    "android_pack_path": "game/0112/data.efp",
+    "preserved_original_path": "source_original/entries/0112.demo"
+  },
+  {
+    "entry_index": 113,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc692c28dc69258c69267e2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._ロストＯＰ.demo",
+    "source_sha256": "6508e852495e1c2d041f8267a71c8e9abf9ba8a154f92917efc8a428484d617c",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0113.demo"
+  },
+  {
+    "entry_index": 114,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd0b3cc8141d0b3cc81e2809cd0b3cc81692e706c61796572",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/アンナ.player",
+    "source_sha256": "76f22506d313490e1a9c03b807c75e8de81314cdb6727b757900489aed492c3d",
+    "android_pack_path": "game/0114/data.efp",
+    "preserved_original_path": "source_original/entries/0114.player"
+  },
+  {
+    "entry_index": 115,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd0b3cc8141d0b3cc81e2809cd0b3cc81692e706c61796572",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._アンナ.player",
+    "source_sha256": "32b199d465d25743919c65cae57576c63013d912ca84f19661cc7643d69969fc",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0115.player"
+  },
+  {
+    "entry_index": 116,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc69247c692e280b9c69274c69246c692e2809cc69274c69240c69243c692672e6b6774",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/エルフェンファイト.kgt",
+    "source_sha256": "ca8052849d32e85a5b889931928072b66c740fe75d0e995bf1639d3873e93d39",
+    "android_pack_path": "game/0116/data.efp",
+    "preserved_original_path": "source_original/entries/0116.kgt"
+  },
+  {
+    "entry_index": 117,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc69247c692e280b9c69274c69246c692e2809cc69274c69240c69243c692672e6b6774",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._エルフェンファイト.kgt",
+    "source_sha256": "a851f3d2e4f2fe62b236dbe830bf4f2ae8f72e5fe1a013ffaeffd6e3ee93a92b",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0117.kgt"
+  },
+  {
+    "entry_index": 118,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc692e280b9c2815bc69256c2815be2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/ルーシーＯＰ.demo",
+    "source_sha256": "b7b2c8797866964b2a7bcbb8db9103d85e4ad4579abf713563bec7b477994d67",
+    "android_pack_path": "game/0118/data.efp",
+    "preserved_original_path": "source_original/entries/0118.demo"
+  },
+  {
+    "entry_index": 119,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc692e280b9c2815bc69256c2815be2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._ルーシーＯＰ.demo",
+    "source_sha256": "2e42cc6e778175d2492ec6b34f49b7ab42e55171d897f40018f62466b6d1d90e",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0119.demo"
+  },
+  {
+    "entry_index": 120,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fe2809ad098cc86e2809ad0b3e2809ac2a4e2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/にゅうＯＰ.demo",
+    "source_sha256": "948bbd9a39a2727838c6944d5dadf459a71f2af97fd646736ee693e4f81370bb",
+    "android_pack_path": "game/0088/data.efp",
+    "preserved_original_path": "source_original/entries/0120.demo"
+  },
+  {
+    "entry_index": 121,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fe2809ad098cc86e2809ad0b3e2809ac2a4e2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._にゅうＯＰ.demo",
+    "source_sha256": "ba2207ccf2378a8cf79962df20afc533013ed04f52753e61b18571706ce3b47b",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0121.demo"
+  },
+  {
+    "entry_index": 122,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fe2809a45cc81e2809a61cc83e2809ac2a42e706c61796572",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/にゅう.player",
+    "source_sha256": "a4bb1c0053c1ed103f796e4d5bd18c999fc1ee57ca62cdde55a4c8c4778f1332",
+    "android_pack_path": "game/0122/data.efp",
+    "preserved_original_path": "source_original/entries/0122.player"
+  },
+  {
+    "entry_index": 123,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fe2809a45cc81e2809a61cc83e2809ac2a42e706c61796572",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._にゅう.player",
+    "source_sha256": "71f90d6e3c2df9a83d2b62b67de857317f12073f2701083b50fa046159d5df49",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0123.player"
+  },
+  {
+    "entry_index": 124,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc6927dc69253cc8cc6925245442e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/マリコED.demo",
+    "source_sha256": "710956011f06253ae4f409e11b39fb1968d46a17b6cc118d572cfb797ca8a3e4",
+    "android_pack_path": "game/0124/data.efp",
+    "preserved_original_path": "source_original/entries/0124.demo"
+  },
+  {
+    "entry_index": 125,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc6927dc69253cc8cc6925245442e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._マリコED.demo",
+    "source_sha256": "02b183f8279fb3619400fd6b153c53bae36c03aa1eb094cca0f0ff89962a8150",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0125.demo"
+  },
+  {
+    "entry_index": 126,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd0b3cc8166d0b3cc81e2809ae2809a65cc81d093cc815be2809ac2b5e2809a64e2809a632e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/デモるーしＥＤ.demo",
+    "source_sha256": "f69895e4c884f068eef91d313c3263e9054b4253362daa3a4aba5fc5fa3814f1",
+    "android_pack_path": "game/0060/data.efp",
+    "preserved_original_path": "source_original/entries/0126.demo"
+  },
+  {
+    "entry_index": 127,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd0b3cc8166d0b3cc81e2809ae2809a65cc81d093cc815be2809ac2b5e2809a64e2809a632e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._デモるーしＥＤ.demo",
+    "source_sha256": "4139b257125dc9161521917881f12f2ba9a38d5a9df4524b6214629b91eb2938",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0127.demo"
+  },
+  {
+    "entry_index": 128,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd0b3cc817dd0b3cc81d089d0b3cc81522e706c61796572",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/マリコ.player",
+    "source_sha256": "6138eea3061c63b41626fc4c5cb0776b1a1d35796d06c5072173c5a2a964fe86",
+    "android_pack_path": "game/0128/data.efp",
+    "preserved_original_path": "source_original/entries/0128.player"
+  },
+  {
+    "entry_index": 129,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd0b3cc817dd0b3cc81d089d0b3cc81522e706c61796572",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._マリコ.player",
+    "source_sha256": "3cebfc46c2956e7e57f0e92cf3660dda6b75005901a483412992738636631c17",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0129.player"
+  },
+  {
+    "entry_index": 130,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc69269c69269e2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/ナナＯＰ.demo",
+    "source_sha256": "41b209aa5242e94ddebbd1ecd04e9a6a11309f630dcefcca39bafd8e26574b84",
+    "android_pack_path": "game/0130/data.efp",
+    "preserved_original_path": "source_original/entries/0130.demo"
+  },
+  {
+    "entry_index": 131,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc69269c69269e2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._ナナＯＰ.demo",
+    "source_sha256": "ca6f0fe1ce93d02781d48297a82807334924f5899f966e58c95a66876e78a960",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0131.demo"
+  },
+  {
+    "entry_index": 132,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc6927ec69254c6924ce2809a64e2809a632e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/ミサキＥＤ.demo",
+    "source_sha256": "cf8f2285b62c57fe9a7dedc4cb8dc2f59265181ce08e596c58984b33437eeb84",
+    "android_pack_path": "game/0132/data.efp",
+    "preserved_original_path": "source_original/entries/0132.demo"
+  },
+  {
+    "entry_index": 133,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc6927ec69254c6924ce2809a64e2809a632e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._ミサキＥＤ.demo",
+    "source_sha256": "b6403a282dfe05cdccedea3a464d121c6ac4b381cb0737bfa8c2a10570b72c34",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0133.demo"
+  },
+  {
+    "entry_index": 134,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f456c66656e204c696564204669676874696e672e6b6774",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/Elfen Lied Fighting.kgt",
+    "source_sha256": "ca8052849d32e85a5b889931928072b66c740fe75d0e995bf1639d3873e93d39",
+    "android_pack_path": "game/0116/data.efp",
+    "preserved_original_path": "source_original/entries/0134.kgt"
+  },
+  {
+    "entry_index": 135,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5f456c66656e204c696564204669676874696e672e6b6774",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._Elfen Lied Fighting.kgt",
+    "source_sha256": "70bcc52fa60dc2be69e89b415ff21e9823efa84ec4c34fc715d8dee2c519882b",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0135.kgt"
+  },
+  {
+    "entry_index": 136,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd0b3cc81d09acc81d0b3cc8158d0b3cc8167d0b3cc8169d0b3cc81e2809cd0b3cc816fd093cc815b2e706c61796572",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/ロストナンバー.player",
+    "source_sha256": "183155fb040b92d51f6d46962f23462d600b0a36dbaeb7b69a1fc3e4c7475e4c",
+    "android_pack_path": "game/0136/data.efp",
+    "preserved_original_path": "source_original/entries/0136.player"
+  },
+  {
+    "entry_index": 137,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd0b3cc81d09acc81d0b3cc8158d0b3cc8167d0b3cc8169d0b3cc81e2809cd0b3cc816fd093cc815b2e706c61796572",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._ロストナンバー.player",
+    "source_sha256": "d3b19d6a13672587df2a74ec9d2b6d05b29bbbbeebc35058b5f8e43630aeb381",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0137.player"
+  },
+  {
+    "entry_index": 138,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc692e280b0c69245c692e2809cc692572e7374616765",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/ラウンジ.stage",
+    "source_sha256": "6cf0d747cfffe7d5473b7db4e7acc036db14ea6a98ac854aee5b76432a0413f0",
+    "android_pack_path": "game/0138/data.efp",
+    "preserved_original_path": "source_original/entries/0138.stage"
+  },
+  {
+    "entry_index": 139,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc692e280b0c69245c692e2809cc692572e7374616765",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._ラウンジ.stage",
+    "source_sha256": "84ccff6243e9ac3bb1cc2eb47923ccd8c1d5aa21bd2614f23f9684363f35bcb5",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0139.stage"
+  },
+  {
+    "entry_index": 140,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd0b3cc814cd0b3cc81d0b3cc81d0b3cc81e280b0d0b3cc815ad0b3cc81d08a2e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/キャラセレ.demo",
+    "source_sha256": "2f8ae9d3caa7b26378c589a678b896574cfe4ca3433d91e8524d9daaa343078d",
+    "android_pack_path": "game/0064/data.efp",
+    "preserved_original_path": "source_original/entries/0140.demo"
+  },
+  {
+    "entry_index": 141,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd0b3cc814cd0b3cc81d0b3cc81d0b3cc81e280b0d0b3cc815ad0b3cc81d08a2e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._キャラセレ.demo",
+    "source_sha256": "156436807da069f306699e3e2ac3beefe2b620e2b6fdcd57710ccf92df995d1c",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0141.demo"
+  },
+  {
+    "entry_index": 142,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc6924ec692e280b0c69274c692672e706c61796572",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/クラフト.player",
+    "source_sha256": "856adc56e4e0d7e819cdc2ddd6472aee070f7334b34ccef6604dfe07801093e4",
+    "android_pack_path": "game/0142/data.efp",
+    "preserved_original_path": "source_original/entries/0142.player"
+  },
+  {
+    "entry_index": 143,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc6924ec692e280b0c69274c692672e706c61796572",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._クラフト.player",
+    "source_sha256": "30a2188dbe834beace40444b39ac7c01fed78c7ccabd905b69cdc829e5ad3021",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0143.player"
+  },
+  {
+    "entry_index": 144,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd0b3cc814ed0b3cc81e280b0d0b3cc8174d0b3cc81672e706c61796572",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/クラフト.player",
+    "source_sha256": "53bf3361f6167297f719b7852f81eec8ef123bac5f8175224563fa24e450aae1",
+    "android_pack_path": "game/0144/data.efp",
+    "preserved_original_path": "source_original/entries/0144.player"
+  },
+  {
+    "entry_index": 145,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd0b3cc814ed0b3cc81e280b0d0b3cc8174d0b3cc81672e706c61796572",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._クラフト.player",
+    "source_sha256": "8f309f8c7e63e5d95c9ea6df85533cfb2bc4d071cebcec037e9c49c922c45263",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0145.player"
+  },
+  {
+    "entry_index": 146,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd0b3cc814ed0b3cc81d09acc81d093cc815bd0b3cc81e2809ce2809a64e2809a632e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/クローンＥＤ.demo",
+    "source_sha256": "109a1b7f3b2123d299d03c25af442ab7f1c6a8fae06de90157a6ced362b07f4b",
+    "android_pack_path": "game/0146/data.efp",
+    "preserved_original_path": "source_original/entries/0146.demo"
+  },
+  {
+    "entry_index": 147,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd0b3cc814ed0b3cc81d09acc81d093cc815bd0b3cc81e2809ce2809a64e2809a632e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._クローンＥＤ.demo",
+    "source_sha256": "fde3fa495638677d2be2bd559cc857e58fd4bf9ef500a53a0a3422ce890eb819",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0147.demo"
+  },
+  {
+    "entry_index": 148,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc29056c69258c69265c2815bc692572e7374616765",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/新ステージ.stage",
+    "source_sha256": "9796e0484ae6dadc0bfa78f5c75859ff38554fcad00a6e87b9282e865ce4c668",
+    "android_pack_path": "game/0148/data.efp",
+    "preserved_original_path": "source_original/entries/0148.stage"
+  },
+  {
+    "entry_index": 149,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc29056c69258c69265c2815bc692572e7374616765",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._新ステージ.stage",
+    "source_sha256": "109f19d57bb9d2c27f313df71ffb8abd9b795e91b4a458718e23be92f54926d8",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0149.stage"
+  },
+  {
+    "entry_index": 150,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc6927dc692e280a0e2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/マユＯＰ.demo",
+    "source_sha256": "50aae4863fb2ef35c278ff85f622a81293d3e88ee6719211f3cccf973c7eec23",
+    "android_pack_path": "game/0094/data.efp",
+    "preserved_original_path": "source_original/entries/0150.demo"
+  },
+  {
+    "entry_index": 151,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc6927dc692e280a0e2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._マユＯＰ.demo",
+    "source_sha256": "e766b59edf72658c846f873cbfd1407b10998bd432e504a35cff5a13f52168d0",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0151.demo"
+  },
+  {
+    "entry_index": 152,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd0b3cc817dd0b3cc81e280a0e2809a64e2809a632e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/マユＥＤ.demo",
+    "source_sha256": "fc719e4b3c8aabe7b0766d6079e45226ba8ac659b2e1c0258593288300ef87f5",
+    "android_pack_path": "game/0092/data.efp",
+    "preserved_original_path": "source_original/entries/0152.demo"
+  },
+  {
+    "entry_index": 153,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd0b3cc817dd0b3cc81e280a0e2809a64e2809a632e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._マユＥＤ.demo",
+    "source_sha256": "dd1afdb52614f42cb75c2866aa21f5d6c568bc4fb2f24287c050730850863e44",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0153.demo"
+  },
+  {
+    "entry_index": 154,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc69276c692c592c2815bc692e2809ec2815b20312e706c61796572",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/プレーヤー 1.player",
+    "source_sha256": "e9c1a367c0d3f58dc7e23eb71a27159096b0379e0c749056a16c03f5cca07d78",
+    "android_pack_path": "game/0154/data.efp",
+    "preserved_original_path": "source_original/entries/0154.player"
+  },
+  {
+    "entry_index": 155,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc69276c692c592c2815bc692e2809ec2815b20312e706c61796572",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._プレーヤー 1.player",
+    "source_sha256": "49e5007ddafe0a6faf502ac414f0f3c4983d67df2c8c40772f19aa4b59ffd738",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0155.player"
+  },
+  {
+    "entry_index": 156,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fe2809ad0b8cc86d093cc815be2809ac2b5d093cc815b2e706c61796572",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/るーしー.player",
+    "source_sha256": "32ee23c5b652ff7cc3856db6f3c1ec42994a596651f1223b2335560937a8d8a9",
+    "android_pack_path": "game/0156/data.efp",
+    "preserved_original_path": "source_original/entries/0156.player"
+  },
+  {
+    "entry_index": 157,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fe2809ad0b8cc86d093cc815be2809ac2b5d093cc815b2e706c61796572",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._るーしー.player",
+    "source_sha256": "c4acfcdf012c61a9a622bf660adb3e84a2ec6d8ffe8dc452878bfe0802ba4ac8",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0157.player"
+  },
+  {
+    "entry_index": 158,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd0b3cc817dd0b3cc81e280a02e706c61796572",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/マユ.player",
+    "source_sha256": "1cca11eaf1885ac4f82c57dde79e4ea10b0acc980d630cefee00ebed1ea10210",
+    "android_pack_path": "game/0110/data.efp",
+    "preserved_original_path": "source_original/entries/0158.player"
+  },
+  {
+    "entry_index": 159,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd0b3cc817dd0b3cc81e280a02e706c61796572",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._マユ.player",
+    "source_sha256": "8d5c6ffda34d462d0ba407851c51a018d6d42e884614b0eb2a6db9c130d39d29",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0159.player"
+  },
+  {
+    "entry_index": 160,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc6924ec692c28dc2815bc692e2809ce2809a64e2809a632e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/クローンＥＤ.demo",
+    "source_sha256": "109a1b7f3b2123d299d03c25af442ab7f1c6a8fae06de90157a6ced362b07f4b",
+    "android_pack_path": "game/0146/data.efp",
+    "preserved_original_path": "source_original/entries/0160.demo"
+  },
+  {
+    "entry_index": 161,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc6924ec692c28dc2815bc692e2809ce2809a64e2809a632e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._クローンＥＤ.demo",
+    "source_sha256": "d3406e23b40a0b2c835377ff711b4f7f6a54b3b577414efc8e0f17a77f8f69a3",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0161.demo"
+  },
+  {
+    "entry_index": 162,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc69247c692e280b9c69274c69246c692e2809cc69274c69240c69243c692672e657865",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/エルフェンファイト.exe",
+    "source_sha256": "7c37a53ba1635eb6f814c25bac53fc0436ea6b76aa38566d00998e0b5d91d9db",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0162.exe"
+  },
+  {
+    "entry_index": 163,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc69247c692e280b9c69274c69246c692e2809cc69274c69240c69243c692672e657865",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._エルフェンファイト.exe",
+    "source_sha256": "0cf9bf8bec422be417f77beb4295c2e8caef53c81cad33f3f0b15f93ea11e702",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0163.exe"
+  },
+  {
+    "entry_index": 164,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd0b3cc817ed0b3cc8154d0b3cc814ce2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/ミサキＯＰ.demo",
+    "source_sha256": "e725a461a07d74f3407a1d01b8607ee7aa910e2772e3056f4357df30929cb52b",
+    "android_pack_path": "game/0070/data.efp",
+    "preserved_original_path": "source_original/entries/0164.demo"
+  },
+  {
+    "entry_index": 165,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd0b3cc817ed0b3cc8154d0b3cc814ce2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._ミサキＯＰ.demo",
+    "source_sha256": "1f36989a0c38fbe2336c526e1257020401cd606c21ecd8a58bdadfd2df8ab512",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0165.demo"
+  },
+  {
+    "entry_index": 166,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd19256d0b3cc8158d0b3cc8165d093cc815bd0b3cc81572e7374616765",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/新ステージ.stage",
+    "source_sha256": "9796e0484ae6dadc0bfa78f5c75859ff38554fcad00a6e87b9282e865ce4c668",
+    "android_pack_path": "game/0148/data.efp",
+    "preserved_original_path": "source_original/entries/0166.stage"
+  },
+  {
+    "entry_index": 167,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd19256d0b3cc8158d0b3cc8165d093cc815bd0b3cc81572e7374616765",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._新ステージ.stage",
+    "source_sha256": "bd18fc8d9f9bbd44ddddaab5cda2b92808fd92903a24e60465425a3edfeee0f9",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0167.stage"
+  },
+  {
+    "entry_index": 168,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc6927ec69254c6924c2e706c61796572",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/ミサキ.player",
+    "source_sha256": "cf4756c0f5f92f6c02c82d69d38712fe928380513aeeb125b26f49c5ad850062",
+    "android_pack_path": "game/0168/data.efp",
+    "preserved_original_path": "source_original/entries/0168.player"
+  },
+  {
+    "entry_index": 169,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc6927ec69254c6924c2e706c61796572",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._ミサキ.player",
+    "source_sha256": "e7986b526958c1efb962ada2e5cde3a71ab2157bd1f502bd7d1602e4ade95722",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0169.player"
+  },
+  {
+    "entry_index": 170,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd0b3cc81e280b9d093cc815bd0b3cc8156d093cc815b2e706c61796572",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/ルーシー.player",
+    "source_sha256": "fa6d47eb961061245e6c5972e1ab32063f12ec2dd5dfde5788f40ebf0226b1d7",
+    "android_pack_path": "game/0170/data.efp",
+    "preserved_original_path": "source_original/entries/0170.player"
+  },
+  {
+    "entry_index": 171,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd0b3cc81e280b9d093cc815bd0b3cc8156d093cc815b2e706c61796572",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._ルーシー.player",
+    "source_sha256": "4b00f09eb9fceb53450e15159c297386c55d7ef341f15290952072dca8c194da",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0171.player"
+  },
+  {
+    "entry_index": 172,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc692c28dc69258c69267c69269c692e2809cc6926fc2815b2e706c61796572",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/ロストナンバー.player",
+    "source_sha256": "183155fb040b92d51f6d46962f23462d600b0a36dbaeb7b69a1fc3e4c7475e4c",
+    "android_pack_path": "game/0136/data.efp",
+    "preserved_original_path": "source_original/entries/0172.player"
+  },
+  {
+    "entry_index": 173,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc692c28dc69258c69267c69269c692e2809cc6926fc2815b2e706c61796572",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._ロストナンバー.player",
+    "source_sha256": "91cd19dac3a502eb672362e0df18503a5f5da08d2d8451482f11fad1f372c2bd",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0173.player"
+  },
+  {
+    "entry_index": 174,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd0b3cc81e280b9d093cc815bd0b3cc8156d093cc815be2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/ルーシーＯＰ.demo",
+    "source_sha256": "b7b2c8797866964b2a7bcbb8db9103d85e4ad4579abf713563bec7b477994d67",
+    "android_pack_path": "game/0118/data.efp",
+    "preserved_original_path": "source_original/entries/0174.demo"
+  },
+  {
+    "entry_index": 175,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd0b3cc81e280b9d093cc815bd0b3cc8156d093cc815be2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._ルーシーＯＰ.demo",
+    "source_sha256": "271503dd00311e7dfbc633fe544c0d5e14745cdbcdbaefdc83306763c95bc9e5",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0175.demo"
+  },
+  {
+    "entry_index": 176,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc69241c692e2809cc69269e2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/アンナＯＰ.demo",
+    "source_sha256": "cc0a223f5c04d3528a65a673b3fc51fc5ac4c50f94a03fb4e467b5e05334cc69",
+    "android_pack_path": "game/0076/data.efp",
+    "preserved_original_path": "source_original/entries/0176.demo"
+  },
+  {
+    "entry_index": 177,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc69241c692e2809cc69269e2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._アンナＯＰ.demo",
+    "source_sha256": "1de9374d5af21488d9f4fa9555cdd5b77bc937f06f8dbc424348d19444b91b27",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0177.demo"
+  },
+  {
+    "entry_index": 178,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fe2809ad0b8cc86d093cc815be2809ac2b5d093cc815be2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/るーしーＯＰ.demo",
+    "source_sha256": "b1f9e50285af899a715974edf9a38719962bab6f94d014ec70839a16ef7ef0b8",
+    "android_pack_path": "game/0178/data.efp",
+    "preserved_original_path": "source_original/entries/0178.demo"
+  },
+  {
+    "entry_index": 179,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fe2809ad0b8cc86d093cc815be2809ac2b5d093cc815be2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._るーしーＯＰ.demo",
+    "source_sha256": "b449dd15d87c755d71433e84c04bbf6983b4da02b6d021b891b777cd93e5157e",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0179.demo"
+  },
+  {
+    "entry_index": 180,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd0b3cc815fd0b3cc8143d0b3cc8141d0b3cc81692e706c61796572",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/ダイアナ.player",
+    "source_sha256": "b5b201dd9158efbacf3a4932ca68baa395d86f86205068f3c4e001bc8c4d4a7f",
+    "android_pack_path": "game/0108/data.efp",
+    "preserved_original_path": "source_original/entries/0180.player"
+  },
+  {
+    "entry_index": 181,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd0b3cc815fd0b3cc8143d0b3cc8141d0b3cc81692e706c61796572",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._ダイアナ.player",
+    "source_sha256": "68177b3fc3cd7e0b10d25267be1b50875c377384e1a948cb34bda4281e608b4c",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0181.player"
+  },
+  {
+    "entry_index": 182,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd0b3cc8169d0b3cc8169e2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/ナナＯＰ.demo",
+    "source_sha256": "41b209aa5242e94ddebbd1ecd04e9a6a11309f630dcefcca39bafd8e26574b84",
+    "android_pack_path": "game/0130/data.efp",
+    "preserved_original_path": "source_original/entries/0182.demo"
+  },
+  {
+    "entry_index": 183,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd0b3cc8169d0b3cc8169e2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._ナナＯＰ.demo",
+    "source_sha256": "29b583e4d6d8c4f0b5fe8d4d5df83b1cf0e895827031e3416ab05e6fdf456b80",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0183.demo"
+  },
+  {
+    "entry_index": 184,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc69241c692e2809cc6926945442e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/アンナED.demo",
+    "source_sha256": "eed04b9f7049624917327929642ff3cb13643454beb805b85b662e37db0cfcea",
+    "android_pack_path": "game/0098/data.efp",
+    "preserved_original_path": "source_original/entries/0184.demo"
+  },
+  {
+    "entry_index": 185,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc69241c692e2809cc6926945442e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._アンナED.demo",
+    "source_sha256": "df6cfae1e625b09242b46655809e078b7bc7851b996de670c11586f9dec457bb",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0185.demo"
+  },
+  {
+    "entry_index": 186,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f456c66656e204c696564204669676874696e672e657865",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/Elfen Lied Fighting.exe",
+    "source_sha256": "7c37a53ba1635eb6f814c25bac53fc0436ea6b76aa38566d00998e0b5d91d9db",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0186.exe"
+  },
+  {
+    "entry_index": 187,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5f456c66656e204c696564204669676874696e672e657865",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._Elfen Lied Fighting.exe",
+    "source_sha256": "94b04ed0553c2766a35fff4e34f3baa1db8f875791bc13d1bd4a77b57cd0f1e5",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0187.exe"
+  },
+  {
+    "entry_index": 188,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd0b3cc81d09acc81d0b3cc8158d0b3cc8167e2809a64e2809a632e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/ロストＥＤ.demo",
+    "source_sha256": "bd2b660cf75281f89593c2908bddb31e5343c39799d8f5e84c5c775fe71675e8",
+    "android_pack_path": "game/0066/data.efp",
+    "preserved_original_path": "source_original/entries/0188.demo"
+  },
+  {
+    "entry_index": 189,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd0b3cc81d09acc81d0b3cc8158d0b3cc8167e2809a64e2809a632e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._ロストＥＤ.demo",
+    "source_sha256": "4f0825467bb258e56a343f6638001a2587fec8c00e838571d0927e9e849e0955",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0189.demo"
+  },
+  {
+    "entry_index": 190,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd0b3cc8176d0b3cc81d08ad093cc815bd0b3cc81e2809ed093cc815b20312e706c61796572",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/プレーヤー 1.player",
+    "source_sha256": "e9c1a367c0d3f58dc7e23eb71a27159096b0379e0c749056a16c03f5cca07d78",
+    "android_pack_path": "game/0154/data.efp",
+    "preserved_original_path": "source_original/entries/0190.player"
+  },
+  {
+    "entry_index": 191,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd0b3cc8176d0b3cc81d08ad093cc815bd0b3cc81e2809ed093cc815b20312e706c61796572",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._プレーヤー 1.player",
+    "source_sha256": "89c5a74e9a2f15dac236c7195e0548d4ec379274b68963937f6285239ba12220",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0191.player"
+  },
+  {
+    "entry_index": 192,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fe2809ad098cc86e2809ad0b3e2809ac2a445442e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/にゅうED.demo",
+    "source_sha256": "dbe7c5099bc5572f01edd05c3ada671c1e332cd77c792de94517f141261a9cd2",
+    "android_pack_path": "game/0102/data.efp",
+    "preserved_original_path": "source_original/entries/0192.demo"
+  },
+  {
+    "entry_index": 193,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fe2809ad098cc86e2809ad0b3e2809ac2a445442e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._にゅうED.demo",
+    "source_sha256": "c4e817597fe3068d33d7b37e4b4610d8ac209cfe6815526e3051010734e731dc",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0193.demo"
+  },
+  {
+    "entry_index": 194,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc692e280b9c2815bc69256c2815b2e706c61796572",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/ルーシー.player",
+    "source_sha256": "fa6d47eb961061245e6c5972e1ab32063f12ec2dd5dfde5788f40ebf0226b1d7",
+    "android_pack_path": "game/0170/data.efp",
+    "preserved_original_path": "source_original/entries/0194.player"
+  },
+  {
+    "entry_index": 195,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc692e280b9c2815bc69256c2815b2e706c61796572",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._ルーシー.player",
+    "source_sha256": "05849bd4dd9a4e1b716b6717096f51d5017ed9cb92fbf591148af5de551fb171",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0195.player"
+  },
+  {
+    "entry_index": 196,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc6924ec692c28dc2815bc692e2809ce2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/クローンＯＰ.demo",
+    "source_sha256": "3b8fde4fbf39047264daf6524d933857657bc175804336953044e14c30d60a1e",
+    "android_pack_path": "game/0096/data.efp",
+    "preserved_original_path": "source_original/entries/0196.demo"
+  },
+  {
+    "entry_index": 197,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc6924ec692c28dc2815bc692e2809ce2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._クローンＯＰ.demo",
+    "source_sha256": "06fe78c847cc2365fc8867071793d1e51053436f82a17aee77b7864717830be1",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0197.demo"
+  },
+  {
+    "entry_index": 198,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f67616d652e696e69",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/game.ini",
+    "source_sha256": "d7c3b31eda4722004e1de2a2b573fc9f4cb3859d8ba009f82f8eea05d8c438db",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0198.ini"
+  },
+  {
+    "entry_index": 199,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5f67616d652e696e69",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._game.ini",
+    "source_sha256": "183c91e867c08d65677eb5eba2c279532e43046e88aaed12fc5a00df9be71764",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0199.ini"
+  },
+  {
+    "entry_index": 200,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd0b3cc817ed0b3cc8154d0b3cc814ce2809a64e2809a632e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/ミサキＥＤ.demo",
+    "source_sha256": "cf8f2285b62c57fe9a7dedc4cb8dc2f59265181ce08e596c58984b33437eeb84",
+    "android_pack_path": "game/0132/data.efp",
+    "preserved_original_path": "source_original/entries/0200.demo"
+  },
+  {
+    "entry_index": 201,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd0b3cc817ed0b3cc8154d0b3cc814ce2809a64e2809a632e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._ミサキＥＤ.demo",
+    "source_sha256": "4dffce9bdfcbbb09fc1dddc3830bfea6c1593822b4ad54fb957f2ee7cecd76b0",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0201.demo"
+  },
+  {
+    "entry_index": 202,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc692e280b9c2815bc69256c2815b45442e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/ルーシーED.demo",
+    "source_sha256": "c983744567f4f4e14d0fb96de4047300e0bab16c616a9f44586b69de5108f8c7",
+    "android_pack_path": "game/0202/data.efp",
+    "preserved_original_path": "source_original/entries/0202.demo"
+  },
+  {
+    "entry_index": 203,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc692e280b9c2815bc69256c2815b45442e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._ルーシーED.demo",
+    "source_sha256": "361461311b92ce21cf410d3061d6bbe0db4f2685821dbccd17c9151096abd795",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0203.demo"
+  },
+  {
+    "entry_index": 204,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd09acc81d093cc81d09acc81602e7374616765",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/香港.stage",
+    "source_sha256": "22547000ce2b954a7e82407168eeab10cfd652bb686858b5c9a9721f00be5192",
+    "android_pack_path": "game/0084/data.efp",
+    "preserved_original_path": "source_original/entries/0204.stage"
+  },
+  {
+    "entry_index": 205,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd09acc81d093cc81d09acc81602e7374616765",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._香港.stage",
+    "source_sha256": "e83b1a78f6d92b8888225524e6c3919f74f64047acd6780da3f5c5b13853218d",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0205.stage"
+  },
+  {
+    "entry_index": 206,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd0b3cc8169d0b3cc8169e28094c2a02e706c61796572",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/ナナ裏.player",
+    "source_sha256": "9367665b293bd5d549438082d22ff4b3b10904b77257937a5dae4791665c7d9a",
+    "android_pack_path": "game/0104/data.efp",
+    "preserved_original_path": "source_original/entries/0206.player"
+  },
+  {
+    "entry_index": 207,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd0b3cc8169d0b3cc8169e28094c2a02e706c61796572",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._ナナ裏.player",
+    "source_sha256": "1c263cb86d165b23796e31f58966d668909711c63de696efcb21bdadb02cb048",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0207.player"
+  },
+  {
+    "entry_index": 208,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fe2809a65cc81c2815be2809ac2b5c2815be2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/るーしーＯＰ.demo",
+    "source_sha256": "b1f9e50285af899a715974edf9a38719962bab6f94d014ec70839a16ef7ef0b8",
+    "android_pack_path": "game/0178/data.efp",
+    "preserved_original_path": "source_original/entries/0208.demo"
+  },
+  {
+    "entry_index": 209,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fe2809a65cc81c2815be2809ac2b5c2815be2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._るーしーＯＰ.demo",
+    "source_sha256": "860003553773cb0f3d70f3513e96b5177ac47a603f7b33ec850897927203a6d2",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0209.demo"
+  },
+  {
+    "entry_index": 210,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fe2809ad098cc86e2809ad0b3e2809ac2a42e706c61796572",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/にゅう.player",
+    "source_sha256": "a4bb1c0053c1ed103f796e4d5bd18c999fc1ee57ca62cdde55a4c8c4778f1332",
+    "android_pack_path": "game/0122/data.efp",
+    "preserved_original_path": "source_original/entries/0210.player"
+  },
+  {
+    "entry_index": 211,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fe2809ad098cc86e2809ad0b3e2809ac2a42e706c61796572",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._にゅう.player",
+    "source_sha256": "40a60ab6306f8462da4064d49951928339afcd0d1ff32ff4f697e46b267b23c1",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0211.player"
+  },
+  {
+    "entry_index": 212,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd0b3cc81e280b0d0b3cc8145d0b3cc81e2809cd0b3cc81572e7374616765",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/ラウンジ.stage",
+    "source_sha256": "6cf0d747cfffe7d5473b7db4e7acc036db14ea6a98ac854aee5b76432a0413f0",
+    "android_pack_path": "game/0138/data.efp",
+    "preserved_original_path": "source_original/entries/0212.stage"
+  },
+  {
+    "entry_index": 213,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd0b3cc81e280b0d0b3cc8145d0b3cc81e2809cd0b3cc81572e7374616765",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._ラウンジ.stage",
+    "source_sha256": "5f47c3ad59504f23ec283ed3a3214eb58f8bbe7b83fbbe28f31e6efbb96bf62b",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0213.stage"
+  },
+  {
+    "entry_index": 214,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd0b3cc817ed0b3cc8154d0b3cc814c2e706c61796572",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/ミサキ.player",
+    "source_sha256": "cf4756c0f5f92f6c02c82d69d38712fe928380513aeeb125b26f49c5ad850062",
+    "android_pack_path": "game/0168/data.efp",
+    "preserved_original_path": "source_original/entries/0214.player"
+  },
+  {
+    "entry_index": 215,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd0b3cc817ed0b3cc8154d0b3cc814c2e706c61796572",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._ミサキ.player",
+    "source_sha256": "722684a983a6b58619af37e371e190d3fa8cc94e6a25c99b2ead3dc69bc462a8",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0215.player"
+  },
+  {
+    "entry_index": 216,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fe2809a65cc81c2815be2809ac2b5c2815b2e706c61796572",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/るーしー.player",
+    "source_sha256": "32ee23c5b652ff7cc3856db6f3c1ec42994a596651f1223b2335560937a8d8a9",
+    "android_pack_path": "game/0156/data.efp",
+    "preserved_original_path": "source_original/entries/0216.player"
+  },
+  {
+    "entry_index": 217,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fe2809a65cc81c2815be2809ac2b5c2815b2e706c61796572",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._るーしー.player",
+    "source_sha256": "50ed24fd98c2731644baced8a34a210eaeadd82d911554d8194c1cd25c4b514b",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0217.player"
+  },
+  {
+    "entry_index": 218,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc69241c692e2809cc692692e706c61796572",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/アンナ.player",
+    "source_sha256": "76f22506d313490e1a9c03b807c75e8de81314cdb6727b757900489aed492c3d",
+    "android_pack_path": "game/0114/data.efp",
+    "preserved_original_path": "source_original/entries/0218.player"
+  },
+  {
+    "entry_index": 219,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc69241c692e2809cc692692e706c61796572",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._アンナ.player",
+    "source_sha256": "f5298c3d17cada4993a359a9b9e82df5884cacd9a508a5e48d14758d92c53ac6",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0219.player"
+  },
+  {
+    "entry_index": 220,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd0b3cc81e280b9d093cc815bd0b3cc8156d093cc815b45442e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/ルーシーED.demo",
+    "source_sha256": "c983744567f4f4e14d0fb96de4047300e0bab16c616a9f44586b69de5108f8c7",
+    "android_pack_path": "game/0202/data.efp",
+    "preserved_original_path": "source_original/entries/0220.demo"
+  },
+  {
+    "entry_index": 221,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd0b3cc81e280b9d093cc815bd0b3cc8156d093cc815b45442e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._ルーシーED.demo",
+    "source_sha256": "55d055fa66a02c18f952c73ac5f2fd0fab70d567d3c07d165a44a322e5a822db",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0221.demo"
+  },
+  {
+    "entry_index": 222,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd0b3cc814ed0b3cc81d08a2e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/クレ.demo",
+    "source_sha256": "3ef219b6d2cc5c9a664ca068d7b3a6f36bee81eaf84224d285a0cdd78b14f73c",
+    "android_pack_path": "game/0222/data.efp",
+    "preserved_original_path": "source_original/entries/0222.demo"
+  },
+  {
+    "entry_index": 223,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd0b3cc814ed0b3cc81d08a2e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._クレ.demo",
+    "source_sha256": "97c5de979d303998a3d75a22fb9bab127e231111cc808ed0af88bf28cfc81a9e",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0223.demo"
+  },
+  {
+    "entry_index": 224,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc69266c692e2809a20322e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/デモ 2.demo",
+    "source_sha256": "c6d1bc70aa7d2d1d158c479db7ead04d53c5c00c8eb4f738fcbde6795079dd21",
+    "android_pack_path": "game/0074/data.efp",
+    "preserved_original_path": "source_original/entries/0224.demo"
+  },
+  {
+    "entry_index": 225,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc69266c692e2809a20322e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._デモ 2.demo",
+    "source_sha256": "66ff2eea88aa0e2dbaf12e5bc8179b41301e9d49644cbcc09eea2e248686e4b2",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0225.demo"
+  },
+  {
+    "entry_index": 226,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fe2809c7a2e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/奴.demo",
+    "source_sha256": "39e688f0f849c30ac9b8eefbbb30ef687b295b1038232566cb75eeaca03124c9",
+    "android_pack_path": "game/0226/data.efp",
+    "preserved_original_path": "source_original/entries/0226.demo"
+  },
+  {
+    "entry_index": 227,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fe2809c7a2e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._奴.demo",
+    "source_sha256": "9466e383f57b0bb46fb7df9a20484f170cee75f3bfd40901b793b148dd981913",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0227.demo"
+  },
+  {
+    "entry_index": 228,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd0b3cc8169d0b3cc8169e2809a64e2809a632e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/ナナＥＤ.demo",
+    "source_sha256": "816ea670b402a161c507f79bc2901a088c8925f9d6faeacc20e2683db56c0748",
+    "android_pack_path": "game/0068/data.efp",
+    "preserved_original_path": "source_original/entries/0228.demo"
+  },
+  {
+    "entry_index": 229,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd0b3cc8169d0b3cc8169e2809a64e2809a632e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._ナナＥＤ.demo",
+    "source_sha256": "46c7f6095fd79df37617dcf7dd6b451361903fb6074586347d8eb1257b9420c1",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0229.demo"
+  },
+  {
+    "entry_index": 230,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd0b3cc8166d0b3cc81e2809a20312e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/デモ 1.demo",
+    "source_sha256": "a849fa7f0c3521821eaf4bc2ade5a4688aed320e92b7cb6a5c4f429b0811c764",
+    "android_pack_path": "game/0072/data.efp",
+    "preserved_original_path": "source_original/entries/0230.demo"
+  },
+  {
+    "entry_index": 231,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd0b3cc8166d0b3cc81e2809a20312e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._デモ 1.demo",
+    "source_sha256": "cf30a08e51cf18990ba6517fb628b136198a268416b6d0e7e741ab470d1454ce",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0231.demo"
+  },
+  {
+    "entry_index": 232,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc6924ec692c5922e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/クレ.demo",
+    "source_sha256": "3ef219b6d2cc5c9a664ca068d7b3a6f36bee81eaf84224d285a0cdd78b14f73c",
+    "android_pack_path": "game/0222/data.efp",
+    "preserved_original_path": "source_original/entries/0232.demo"
+  },
+  {
+    "entry_index": 233,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc6924ec692c5922e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._クレ.demo",
+    "source_sha256": "48331bce6f086f12d5ec80befe04952a05a11e949f5876d50f788eab555caffd",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0233.demo"
+  },
+  {
+    "entry_index": 234,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd0b3cc817dd0b3cc8153cc8cd0b3cc815245442e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/マリコED.demo",
+    "source_sha256": "710956011f06253ae4f409e11b39fb1968d46a17b6cc118d572cfb797ca8a3e4",
+    "android_pack_path": "game/0124/data.efp",
+    "preserved_original_path": "source_original/entries/0234.demo"
+  },
+  {
+    "entry_index": 235,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd0b3cc817dd0b3cc8153cc8cd0b3cc815245442e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._マリコED.demo",
+    "source_sha256": "76210c691db56e1505332bdf0ae6d11ff8c8543211d6e3e78489685994c9d534",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0235.demo"
+  },
+  {
+    "entry_index": 236,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd0b3cc81d09acc81d0b3cc8158d0b3cc8167e2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/ロストＯＰ.demo",
+    "source_sha256": "84f9b103a692440079ff53a7e91776cb7cc9e03d4d090172432661447d253fce",
+    "android_pack_path": "game/0112/data.efp",
+    "preserved_original_path": "source_original/entries/0236.demo"
+  },
+  {
+    "entry_index": 237,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd0b3cc81d09acc81d0b3cc8158d0b3cc8167e2809a6ee2809a6f2e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._ロストＯＰ.demo",
+    "source_sha256": "80a6ffcaba6b6587477c1757d8e257eb9ae31e364f31076c5f4d1a4e7698253b",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0237.demo"
+  },
+  {
+    "entry_index": 238,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fe2809ac2b1e2809ad181e2809ad094e2809ad098cc86e2809ad0b3d093cc815b2e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/こんてにゅー.demo",
+    "source_sha256": "74fa318884a799db0c15dc49caf244bab02bb5834d4bfd98aef1ff9c7b13e6d5",
+    "android_pack_path": "game/0086/data.efp",
+    "preserved_original_path": "source_original/entries/0238.demo"
+  },
+  {
+    "entry_index": 239,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fe2809ac2b1e2809ad181e2809ad094e2809ad098cc86e2809ad0b3d093cc815b2e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._こんてにゅー.demo",
+    "source_sha256": "a1a980d596a7b9c30752394218441f1de246eef366d10756e2f0520740900c4b",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0239.demo"
+  },
+  {
+    "entry_index": 240,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fd0b3cc81d093cc81d0b3cc8158d0b3cc8167e2809a64e2809a632e64656d6f",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/メストＥＤ.demo",
+    "source_sha256": "bd2b660cf75281f89593c2908bddb31e5343c39799d8f5e84c5c775fe71675e8",
+    "android_pack_path": "game/0066/data.efp",
+    "preserved_original_path": "source_original/entries/0240.demo"
+  },
+  {
+    "entry_index": 241,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fd0b3cc81d093cc81d0b3cc8158d0b3cc8167e2809a64e2809a632e64656d6f",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._メストＥＤ.demo",
+    "source_sha256": "971a0dcaac59285ca83fbb377fd407c6b6a2eeb6a19d751cf65ca91898b0eec1",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0241.demo"
+  },
+  {
+    "entry_index": 242,
+    "raw_zip_name_hex": "4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2fc29061cc80e28093c2be2e747874",
+    "decoded_japanese_path": "Fighting/g2サヴァイヴ/説明.txt",
+    "source_sha256": "c93c5ac2339712f771a45f182216c87e45be47758752fad7dfd86f004bee1e7a",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0242.txt"
+  },
+  {
+    "entry_index": 243,
+    "raw_zip_name_hex": "5f5f4d41434f53582f4669676874696e672f6732c69254c692e2809dc69240c69243c692e2809d2f2e5fc29061cc80e28093c2be2e747874",
+    "decoded_japanese_path": "__MACOSX/Fighting/g2サヴァイヴ/._説明.txt",
+    "source_sha256": "5a8c8ecfebb1fb935d59752be6a6d6845fcefa80a4a3aff6327f10fcbd99b247",
+    "android_pack_path": null,
+    "preserved_original_path": "source_original/entries/0243.txt"
+  }
+]

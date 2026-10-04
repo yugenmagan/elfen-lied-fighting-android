@@ -1,0 +1,23 @@
+{
+  "apk": "app-release.apk",
+  "bytes": 68527799,
+  "sha256": "3094f9bc28d68bae2e029e4aad26f18a4d5f6d99fdd48a2d8fa67150de3c611e",
+  "original_assets_unchanged": 2881,
+  "total_assets": 2882,
+  "new_assets": [
+    "assets/game/story-index.tsv"
+  ],
+  "launcher_resources_unchanged": true,
+  "launcher_resource_paths_renamed": true,
+  "signature_matches_test003": true,
+  "application_id": "org.elfen.fighting.nativeport",
+  "version_code": 6,
+  "min_sdk": 29,
+  "target_sdk": 35,
+  "permissions": [
+    "android.permission.INTERNET"
+  ],
+  "native_libraries": [],
+  "zip_crc_ok": true,
+  "android_execution_performed": false
+}

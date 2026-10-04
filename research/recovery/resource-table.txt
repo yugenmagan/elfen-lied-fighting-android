@@ -1,0 +1,32 @@
+Package Groups (1)
+Package Group 0 id=0x7f packageCount=1 name=org.elfen.fighting.nativeport
+  Package 0 id=0x7f name=org.elfen.fighting.nativeport
+    type 0 configCount=1 entryCount=1
+      spec resource 0x7f010000 org.elfen.fighting.nativeport:color/icon_background: flags=0x00000000
+      config (default):
+        resource 0x7f010000 org.elfen.fighting.nativeport:color/icon_background: t=0x1d d=0xff30101f (s=0x0008 r=0x00)
+    type 1 configCount=1 entryCount=1
+      spec resource 0x7f020000 org.elfen.fighting.nativeport:drawable/launcher_foreground: flags=0x00000000
+      config nodpi:
+        resource 0x7f020000 org.elfen.fighting.nativeport:drawable/launcher_foreground: t=0x03 d=0x00000000 (s=0x0008 r=0x00)
+    type 2 configCount=6 entryCount=2
+      spec resource 0x7f030000 org.elfen.fighting.nativeport:mipmap/ic_launcher: flags=0x00000100
+      spec resource 0x7f030001 org.elfen.fighting.nativeport:mipmap/ic_launcher_round: flags=0x00000100
+      config mdpi:
+        resource 0x7f030000 org.elfen.fighting.nativeport:mipmap/ic_launcher: t=0x03 d=0x00000005 (s=0x0008 r=0x00)
+        resource 0x7f030001 org.elfen.fighting.nativeport:mipmap/ic_launcher_round: t=0x03 d=0x00000006 (s=0x0008 r=0x00)
+      config hdpi:
+        resource 0x7f030000 org.elfen.fighting.nativeport:mipmap/ic_launcher: t=0x03 d=0x00000003 (s=0x0008 r=0x00)
+        resource 0x7f030001 org.elfen.fighting.nativeport:mipmap/ic_launcher_round: t=0x03 d=0x00000004 (s=0x0008 r=0x00)
+      config xhdpi:
+        resource 0x7f030000 org.elfen.fighting.nativeport:mipmap/ic_launcher: t=0x03 d=0x00000007 (s=0x0008 r=0x00)
+        resource 0x7f030001 org.elfen.fighting.nativeport:mipmap/ic_launcher_round: t=0x03 d=0x00000008 (s=0x0008 r=0x00)
+      config xxhdpi:
+        resource 0x7f030000 org.elfen.fighting.nativeport:mipmap/ic_launcher: t=0x03 d=0x00000009 (s=0x0008 r=0x00)
+        resource 0x7f030001 org.elfen.fighting.nativeport:mipmap/ic_launcher_round: t=0x03 d=0x0000000a (s=0x0008 r=0x00)
+      config xxxhdpi:
+        resource 0x7f030000 org.elfen.fighting.nativeport:mipmap/ic_launcher: t=0x03 d=0x0000000b (s=0x0008 r=0x00)
+        resource 0x7f030001 org.elfen.fighting.nativeport:mipmap/ic_launcher_round: t=0x03 d=0x0000000c (s=0x0008 r=0x00)
+      config anydpi:
+        resource 0x7f030000 org.elfen.fighting.nativeport:mipmap/ic_launcher: t=0x03 d=0x00000001 (s=0x0008 r=0x00)
+        resource 0x7f030001 org.elfen.fighting.nativeport:mipmap/ic_launcher_round: t=0x03 d=0x00000002 (s=0x0008 r=0x00)

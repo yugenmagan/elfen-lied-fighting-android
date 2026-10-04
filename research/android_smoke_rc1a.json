@@ -1,0 +1,34 @@
+{
+  "apk": "elfen-fighting-v1.0.0-rc1.apk",
+  "sha256": "5b770f932b1bec3dcda4cb7a0e68e1ce730430e91d946b63059a120ddb45c110",
+  "api": 29,
+  "abi": "x86_64",
+  "emulator": "37.3.2",
+  "gpu": "swiftshader_indirect; Vulkan disabled",
+  "cpu_acceleration": false,
+  "audio_enabled": false,
+  "installation_success": true,
+  "cold_start_status": "ok",
+  "observed": [
+    "title",
+    "Versus Lucy/Nana selection",
+    "battle and AI special/meter spending",
+    "native Pause",
+    "Pause Continue closes dialog",
+    "Home returns to title",
+    "title Continue restores battle"
+  ],
+  "actual_screenshots": {
+    "docs/android-smoke/battle.png": "bb749b59b80071d20871382ea7490bdbed714cdbddd3d129cfe7eb121713521c",
+    "docs/android-smoke/pause.png": "5a09731dc762bd61593aaa36678c22bdfc6cafa7d5db15333a495a71dfc8a79e",
+    "docs/android-smoke/return-title.png": "6378d0e79fb414ceafe32f500e738201fc148a574f43a953e1cedd6c1f03d5f8",
+    "docs/android-smoke/title.png": "36eb21a137736d2e560a5b1b9daa85d4080409c8378bc0f32341924552f3a290"
+  },
+  "initial_capture_graphics_artifact": true,
+  "force_stop_recheck_pending": false,
+  "physical_device_test_performed_here": false,
+  "force_stop_restarts_cold_with_continue_disabled": true,
+  "crash_buffer_empty": true,
+  "installed_package_version": 14,
+  "cold_restart_status": "ok"
+}

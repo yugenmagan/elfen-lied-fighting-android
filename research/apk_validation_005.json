@@ -1,0 +1,20 @@
+{
+  "apk": "elfen-fighting-005-story.apk",
+  "bytes": 68655455,
+  "sha256": "3b16ae87daaa1ee45d32d158823fdd287e6c089ac56e102bd2879691ceb5bc07",
+  "original_assets_unchanged": 2881,
+  "total_assets": 2882,
+  "new_assets": [
+    "assets/game/story-index.tsv"
+  ],
+  "launcher_resources_unchanged": true,
+  "launcher_resource_paths_renamed": false,
+  "signature_matches_test003": true,
+  "application_id": "org.elfen.fighting.nativeport",
+  "version_code": 5,
+  "min_sdk": 29,
+  "target_sdk": 35,
+  "native_libraries": [],
+  "zip_crc_ok": true,
+  "android_execution_performed": false
+}

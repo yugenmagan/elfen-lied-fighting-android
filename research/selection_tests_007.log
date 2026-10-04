@@ -1,0 +1,1 @@
+PASS CharacterSelect: 20321 assertions; 1764 original EXE input frames; 160 grid cases; 10 story intro->fight transitions; 10 VS mirrors; 7 screen ratios; confirmation/release/back, deterministic visuals, paused-battle isolation

@@ -1,0 +1,14 @@
+Collecting capstone==5.0.6
+  Downloading capstone-5.0.6-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.3 kB)
+Collecting pefile==2024.8.26
+  Downloading pefile-2024.8.26-py3-none-any.whl.metadata (1.4 kB)
+Collecting unicorn==2.1.4
+  Downloading unicorn-2.1.4-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.2 kB)
+Downloading capstone-5.0.6-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 18.9 MB/s  0:00:00
+Downloading pefile-2024.8.26-py3-none-any.whl (74 kB)
+Downloading unicorn-2.1.4-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.4/16.4 MB 69.5 MB/s  0:00:00
+Installing collected packages: unicorn, pefile, capstone
+
+Successfully installed capstone-5.0.6 pefile-2024.8.26 unicorn-2.1.4

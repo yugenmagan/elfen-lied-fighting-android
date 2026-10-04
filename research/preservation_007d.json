@@ -1,0 +1,21 @@
+{
+  "base_zip_sha256": "5c8d7b74e54a7bb9c99413016c833406bd2a8aef3a83806766ce0e5343d1bae1",
+  "checked_scopes": [
+    "runtime/src/",
+    "network/src/",
+    "app/src/main/java/",
+    "app/src/main/assets/",
+    "app/src/main/res/"
+  ],
+  "unchanged_files": 2938,
+  "changed_existing_files": [
+    "app/src/main/java/org/elfen/fighting/MainActivity.java",
+    "runtime/src/org/elfen/engine/BattleView.java"
+  ],
+  "added_files": [
+    "runtime/src/org/elfen/engine/BattleHud.java"
+  ],
+  "missing_files": [],
+  "controls_from_layoutControls_to_EOF_identical": true,
+  "result": "PASS"
+}

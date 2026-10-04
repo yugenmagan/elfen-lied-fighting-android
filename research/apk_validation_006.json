@@ -1,0 +1,23 @@
+{
+  "apk": "elfen-fighting-006-rooms.apk",
+  "bytes": 68667743,
+  "sha256": "0f7456f804ca4b7695319ca3977c5441f8ef84e7fb957b57ade40fdf0d619f49",
+  "original_assets_unchanged": 2881,
+  "total_assets": 2882,
+  "new_assets": [
+    "assets/game/story-index.tsv"
+  ],
+  "launcher_resources_unchanged": true,
+  "launcher_resource_paths_renamed": false,
+  "signature_matches_test003": true,
+  "application_id": "org.elfen.fighting.nativeport",
+  "version_code": 6,
+  "min_sdk": 29,
+  "target_sdk": 35,
+  "permissions": [
+    "android.permission.INTERNET"
+  ],
+  "native_libraries": [],
+  "zip_crc_ok": true,
+  "android_execution_performed": false
+}

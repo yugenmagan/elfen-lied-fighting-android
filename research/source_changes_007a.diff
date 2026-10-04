@@ -1,0 +1,401 @@
+--- TEST007/app/build.gradle
++++ TEST007a/app/build.gradle
+@@ -7,8 +7,8 @@
+         applicationId 'org.elfen.fighting.nativeport'
+         minSdk 29
+         targetSdk 35
+-        versionCode 7
+-        versionName '0.0.7-select'
++        versionCode 8
++        versionName '0.0.7a-stick'
+     }
+     sourceSets { main { java.srcDirs += ['../runtime/src', '../network/src'] } }
+     compileOptions { sourceCompatibility JavaVersion.VERSION_1_8; targetCompatibility JavaVersion.VERSION_1_8 }
+--- TEST007/app/src/main/AndroidManifest.xml
++++ TEST007a/app/src/main/AndroidManifest.xml
+@@ -1,9 +1,9 @@
+-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="7" android:versionName="0.0.7-select">
++<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="8" android:versionName="0.0.7a-stick">
+     <uses-permission android:name="android.permission.INTERNET" />
+     <uses-sdk android:minSdkVersion="29" android:targetSdkVersion="35" />
+     <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+     <uses-feature android:name="android.hardware.gamepad" android:required="false" />
+-    <application android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher_round" android:label="Elfen Fighting · test 007" android:theme="@android:style/Theme.Material.NoActionBar" android:allowBackup="false" android:hardwareAccelerated="true" android:supportsRtl="true" android:usesCleartextTraffic="false">
++    <application android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher_round" android:label="Elfen Fighting · test 007a" android:theme="@android:style/Theme.Material.NoActionBar" android:allowBackup="false" android:hardwareAccelerated="true" android:supportsRtl="true" android:usesCleartextTraffic="false">
+         <activity android:name="org.elfen.fighting.MainActivity" android:screenOrientation="sensorLandscape" android:configChanges="orientation|screenSize|keyboardHidden|keyboard|navigation" android:exported="true">
+             <intent-filter><action android:name="android.intent.action.MAIN" /><category android:name="android.intent.category.LAUNCHER" /></intent-filter>
+         </activity>
+--- TEST007/app/src/main/java/org/elfen/fighting/MainActivity.java
++++ TEST007a/app/src/main/java/org/elfen/fighting/MainActivity.java
+@@ -48,6 +48,10 @@
+         });
+     }
+     private static String readText(InputStream in)throws IOException{try(InputStream s=in;ByteArrayOutputStream b=new ByteArrayOutputStream()){byte[] buf=new byte[8192];int n;while((n=s.read(buf))!=-1)b.write(buf,0,n);return new String(b.toByteArray(),StandardCharsets.UTF_8);}}
++    private void clearInputs(){
++        input.clear();
++        if(game!=null){game.pointerGroup.clear();game.stick.cancel();game.selectionTouch=-1;}
++    }
+     private void immersive(){getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY|View.SYSTEM_UI_FLAG_FULLSCREEN|View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|View.SYSTEM_UI_FLAG_LAYOUT_STABLE|View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN|View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);}
+     private void intro(){
+         if(new File(getFilesDir(),"story-save.bin").exists()){
+@@ -57,13 +61,13 @@
+                 .setNeutralButton("Новый сюжет",(d,n)->new Handler().post(()->openSelection(true,true)))
+                 .setNegativeButton("Обычный VS",(d,n)->new Handler().post(()->openSelection(false,true))).create());return;
+         }
+-        AlertDialog d=new AlertDialog.Builder(this).setTitle("Elfen Fighting · TEST 007")
+-            .setMessage("Выбор персонажей: оригинальные портреты и анимации. Нажми на портрет, затем «Выбрать».\n\nВ VS сначала выбери своего бойца, затем противника.\n\nВ сюжетных сценах A–F — продолжить.")
++        AlertDialog d=new AlertDialog.Builder(this).setTitle("Elfen Fighting · TEST 007a")
++            .setMessage("Аркадный стик: веди палец по кругу, не отрывая от экрана. Размер и мёртвая зона — в настройках управления.\n\nНа экране выбора нажми на портрет, затем «Выбрать».\n\nВ VS сначала выбери своего бойца, затем противника.\n\nВ сюжетных сценах A–F — продолжить.")
+             .setPositiveButton("Сюжет",(a,b)->new Handler().post(()->openSelection(true,true)))
+             .setNeutralButton("Онлайн",(a,b)->new Handler().post(this::onlineMenu))
+             .setNegativeButton("Обычный VS",(a,b)->new Handler().post(()->openSelection(false,true))).create();show(d);
+     }
+-    private void show(AlertDialog d){dialog=true;input.clear();audio.pause();d.setOnDismissListener(a->{dialog=false;immersive();if(resumed)audio.resume();});d.show();}
++    private void show(AlertDialog d){dialog=true;clearInputs();audio.pause();d.setOnDismissListener(a->{dialog=false;immersive();if(resumed)audio.resume();});d.show();}
+     private void loadSession()throws IOException{
+         leaveOnline();
+         saveStoryToDisk();
+@@ -73,7 +77,7 @@
+         if(p==null||s==null||other==null)throw new IOException("Required pack missing");
+         audio.pause();audio.preload(p);audio.preload(other);audio.preload(s);audio.preload(packs.get("0116"));
+         game.session=new MatchController(p,other,s,packs.get("0116"),1,new MatchRules(packs.get("0116"),winsRequired,timeSetting,0,cpuLevel));
+-        game.picture=game.session.view();game.recording=new MatchReplay(game.session);game.history=new MatchHistory(game.session,120);game.playback=null;game.replayDone=false;game.replayStatus="";game.savedSnapshot=null;game.lastCommand="";input.clear();lastError="";game.lastFrame=0;game.accumulator=0;
++        game.picture=game.session.view();game.recording=new MatchReplay(game.session);game.history=new MatchHistory(game.session,120);game.playback=null;game.replayDone=false;game.replayStatus="";game.savedSnapshot=null;game.lastCommand="";clearInputs();lastError="";game.lastFrame=0;game.accumulator=0;
+         audio.music(s,s.bgm);prefs.edit().putString("character",selected).putString("stage",selectedStage).putString("opponent",opponent).putInt("cpuLevel",cpuLevel).putInt("winsRequired",winsRequired).putInt("timeSetting",timeSetting).apply();
+         log("load "+selected+" / "+selectedStage);if(resumed&&!dialog)audio.resume();
+     }
+@@ -85,13 +89,13 @@
+         try{
+             saveStoryToDisk();leaveOnline();audio.pause();game.selection=new CharacterSelect(storyCatalog,storyMode,selected,opponent);
+             game.selectionFromModes=fromModes;game.selectionAudioKey="";game.selectionControls=new SelectionControls();game.selectionTouch=-1;game.pointerGroup.clear();
+-            game.editing=false;game.lastFrame=0;game.accumulator=0;input.clear();lastError="";
++            game.editing=false;game.lastFrame=0;game.accumulator=0;clearInputs();lastError="";
+             game.selectionAudio();audio.music(game.selection.backgroundPack(),game.selection.backgroundPack().bgm);
+             if(resumed&&!dialog)audio.resume();log("select-open "+(storyMode?"story":"vs"));
+         }catch(IOException|IllegalArgumentException e){fail("Экран выбора: "+e);}
+     }
+     private void selectionBack(){
+-        if(game.selection==null)return;input.clear();game.selectionTouch=-1;game.selectionControls.requireRelease();
++        if(game.selection==null)return;clearInputs();game.selectionTouch=-1;game.selectionControls.requireRelease();
+         if(!game.selection.back())return;
+         game.selection=null;game.lastFrame=0;game.accumulator=0;
+         try{
+@@ -125,7 +129,7 @@
+         leaveOnline();
+         game.selection=null;
+         audio.pause();game.story=new StoryController(storyCatalog,packs.get(selected),19);game.storyRecording=new StoryReplay(game.story);game.storyHistory=new StoryHistory(game.story,120);game.storyPlayback=null;
+-        game.playback=null;game.replayDone=false;game.replayStatus="";game.savedSnapshot=null;game.lastCommand="";game.picture=null;game.lastFrame=0;game.accumulator=0;lastError="";input.clear();game.storyAudio();
++        game.playback=null;game.replayDone=false;game.replayStatus="";game.savedSnapshot=null;game.lastCommand="";game.picture=null;game.lastFrame=0;game.accumulator=0;lastError="";clearInputs();game.storyAudio();
+         saveStoryToDisk();log("story-start "+selected+" hash="+game.story.stateHash());if(resumed&&!dialog)audio.resume();
+     }
+     private void saveStoryToDisk(){
+@@ -139,11 +143,11 @@
+         game.selection=null;
+         android.util.AtomicFile file=new android.util.AtomicFile(new File(getFilesDir(),"story-save.bin"));
+         try(DataInputStream in=new DataInputStream(file.openRead())){if(in.readInt()!=0x45464153||in.readInt()!=1)throw new IOException("Формат сохранения");String id=in.readUTF();int n=in.readInt();if(!packs.containsKey(id)||n<0||n>20_000_000)throw new IOException("Данные сохранения");byte[] state=new byte[n];in.readFully(state);if(in.read()!=-1)throw new IOException("Лишние данные сохранения");
+-            StoryController restored=new StoryController(storyCatalog,packs.get(id),19);restored.restore(state);selected=id;game.story=restored;game.storyRecording=new StoryReplay(restored);game.storyHistory=new StoryHistory(restored,120);game.storyPlayback=null;game.replayDone=false;game.replayStatus="";game.savedSnapshot=null;game.picture=restored.view();game.lastFrame=0;game.accumulator=0;lastError="";input.clear();game.storyAudio();log("story-resume frame="+restored.frame()+" hash="+restored.stateHash());
++            StoryController restored=new StoryController(storyCatalog,packs.get(id),19);restored.restore(state);selected=id;game.story=restored;game.storyRecording=new StoryReplay(restored);game.storyHistory=new StoryHistory(restored,120);game.storyPlayback=null;game.replayDone=false;game.replayStatus="";game.savedSnapshot=null;game.picture=restored.view();game.lastFrame=0;game.accumulator=0;lastError="";clearInputs();game.storyAudio();log("story-resume frame="+restored.frame()+" hash="+restored.stateHash());
+         }
+     }
+     private void fail(String message){
+-        lastError=message;input.clear();if(audio!=null)audio.pause();log("ERROR "+message);
++        lastError=message;clearInputs();if(audio!=null)audio.pause();log("ERROR "+message);
+         try{writeCrash(new IllegalStateException(message));}catch(IOException e){android.util.Log.e("ElfenNative","Error report write failed",e);}
+         if(game!=null)game.invalidate();
+     }
+@@ -166,7 +170,7 @@
+         if(online!=null){onlineMenu();return;}
+         if(game.story!=null){storyMenu();return;}
+         String[] items={"Продолжить","Персонаж","Противник","Арена","Уровень AI","Настроить управление","Передвинуть элементы","Переназначить геймпад","Поделиться отчётом","Новый матч","Правила матча","Повторить запись","Сохранить состояние","Восстановить состояние","Сюжет","Онлайн"};
+-        AlertDialog d=new AlertDialog.Builder(this).setTitle("TEST 007 · VS").setItems(items,(a,i)->{
++        AlertDialog d=new AlertDialog.Builder(this).setTitle("TEST 007a · VS").setItems(items,(a,i)->{
+             new Handler().post(()->{switch(i){case 1:choose(0);break;case 2:choose(1);break;case 3:choose(2);break;case 4:cpuMenu();break;case 5:settings();break;
+                 case 6:game.editing=!game.editing;break;case 7:remapMenu();break;case 8:shareReport();break;case 9:openSelection(false);break;case 10:matchRulesMenu();break;case 11:game.replay();break;case 12:game.saveSnapshot();break;case 13:game.restoreSnapshot();break;case 14:chooseStory();break;case 15:onlineMenu();break;}});
+         }).create();show(d);
+@@ -210,7 +214,7 @@
+         String server=prefs.getString("onlineServer","");if(server.isEmpty()){new Handler().post(this::serverDialog);return;}
+         try{
+             saveStoryToDisk();leaveOnline();game.selection=null;online=new OnlineMatch(RoomClient.connect(server),packs);
+-            game.story=null;game.storyRecording=null;game.storyPlayback=null;game.storyHistory=null;game.playback=null;game.replayDone=false;game.savedSnapshot=null;game.replayStatus="";game.editing=false;game.lastFrame=0;game.accumulator=0;input.clear();lastError="";
++            game.story=null;game.storyRecording=null;game.storyPlayback=null;game.storyHistory=null;game.playback=null;game.replayDone=false;game.savedSnapshot=null;game.replayStatus="";game.editing=false;game.lastFrame=0;game.accumulator=0;clearInputs();lastError="";
+             if(code==null)online.create(selected,selectedStage,winsRequired,timeSetting);else online.join(selected,code);
+             audio.pause();log(code==null?"online-create":"online-join");
+         }catch(IllegalArgumentException|IllegalStateException e){leaveOnline();Toast.makeText(this,e.getMessage(),Toast.LENGTH_LONG).show();}
+@@ -227,9 +231,9 @@
+         LinearLayout root=new LinearLayout(this);root.setOrientation(LinearLayout.VERTICAL);root.setPadding(24,8,24,8);
+         slider(root,"Прозрачность",prefs.getFloat("opacity",.6f),.15f,1f,"opacity");
+         slider(root,"Размер",prefs.getFloat("size",1f),.65f,1.5f,"size");
+-        slider(root,"Мёртвая зона",prefs.getFloat("dead",.18f),.05f,.5f,"dead");
++        slider(root,"Мёртвая зона стика",prefs.getFloat("dead",.18f),.05f,.5f,"dead");
+         check(root,"Зеркальное расположение","mirror",false);check(root,"Скрывать кнопки с геймпадом","hidePad",true);check(root,"Показывать исходные хитбоксы","boxes",false);
+-        AlertDialog d=new AlertDialog.Builder(this).setTitle("Экранное управление").setView(root).setPositiveButton("Готово",(a,b)->{})
++        AlertDialog d=new AlertDialog.Builder(this).setTitle("Аркадный стик и кнопки").setView(root).setPositiveButton("Готово",(a,b)->{})
+             .setNeutralButton("Сброс положения",(a,b)->{prefs.edit().remove("dx").remove("dy").remove("bx").remove("by").apply();}).create();show(d);
+     }
+     private void slider(LinearLayout root,String label,float value,float min,float max,String key){
+@@ -258,9 +262,9 @@
+         }return super.onGenericMotionEvent(e);
+     }
+     @Override protected void onResume(){super.onResume();resumed=true;resumeCount++;if(game!=null){game.lastFrame=0;game.accumulator=0;game.start();}if(audio!=null&&!dialog&&lastError.isEmpty())audio.resume();log("resume");immersive();}
+-    @Override protected void onPause(){resumed=false;pauseCount++;input.clear();if(game!=null){game.selectionTouch=-1;game.selectionControls.requireRelease();game.pointerGroup.clear();game.stop();}if(audio!=null)audio.pause();saveStoryToDisk();if(online!=null&&online.state()!=OnlineMatch.COMPLETE){online.close();log("online-disconnected-on-background");}log("pause");super.onPause();}
++    @Override protected void onPause(){resumed=false;pauseCount++;clearInputs();if(game!=null){game.selectionTouch=-1;game.selectionControls.requireRelease();game.pointerGroup.clear();game.stop();}if(audio!=null)audio.pause();saveStoryToDisk();if(online!=null&&online.state()!=OnlineMatch.COMPLETE){online.close();log("online-disconnected-on-background");}log("pause");super.onPause();}
+     @Override protected void onDestroy(){leaveOnline();if(audio!=null)audio.release();super.onDestroy();}
+-    @Override public void onWindowFocusChanged(boolean focused){super.onWindowFocusChanged(focused);if(focused)immersive();else input.clear();}
++    @Override public void onWindowFocusChanged(boolean focused){super.onWindowFocusChanged(focused);if(focused)immersive();else clearInputs();}
+     private void shareReport(){
+         String data="Elfen Fighting native test 007\n"+Build.MANUFACTURER+" "+Build.MODEL+" / Android "+Build.VERSION.RELEASE+" SDK "+Build.VERSION.SDK_INT+"\nABIs "+Arrays.toString(Build.SUPPORTED_ABIS)+"\nScreen "+game.getWidth()+"x"+game.getHeight()+"\nCharacter "+selected+" Opponent "+opponent+" AI "+cpuLevel+" Stage "+selectedStage+"\nMax pointers "+maxPointers+"\nPause/resume "+pauseCount+"/"+resumeCount+"\nFrame count "+(game.story!=null?game.story.frame():game.session==null?0:game.session.frame())+"\nState hash "+(game.story!=null?game.story.stateHash():game.session==null?"":game.session.stateHash())+"\nReplay "+game.replayStatus+"\nSlow frames "+game.slowFrames+"\nSettings "+prefs.getAll()+"\nError "+lastError+"\n"+events;
+         if(game.story!=null)data+="\nStory slot "+game.story.slot()+" mode "+game.story.mode()+" fights "+game.story.fights()+" wins "+game.story.wins()+"\n";
+@@ -286,6 +290,7 @@
+         MatchController session;BattleView picture;MatchReplay recording,playback;MatchHistory history;byte[] savedSnapshot;int savedFrame,playIndex;String expectedReplayHash="",replayStatus="";boolean replayDone;String lastCommand="";Bitmap scene;Canvas sceneCanvas;final Paint paint=new Paint();final RectF dest=new RectF();
+         final LruCache<String,Bitmap> bitmaps=new LruCache<String,Bitmap>(48*1024*1024){protected int sizeOf(String k,Bitmap b){return b.getAllocationByteCount();}};
+         final HashMap<Integer,Integer> pointerGroup=new HashMap<>();
++        final org.elfen.controls.ArcadeStick stick=new org.elfen.controls.ArcadeStick();
+         long lastFrame=0,accumulator=0;int slowFrames=0;boolean running=false,editing=false;
+         float dx,dy,bx,by,radius,buttonRadius;int lastMask=0;
+         GameView(){super(MainActivity.this);setFocusable(true);setFocusableInTouchMode(true);paint.setFilterBitmap(false);}
+@@ -311,11 +316,11 @@
+         void replay(){
+             if(story!=null){
+                 if(storyPlayback!=null)return;if(storyRecording==null||storyRecording.length()==0){Toast.makeText(MainActivity.this,"Пока нет записи",Toast.LENGTH_SHORT).show();return;}
+-                saveStoryToDisk();storyPlayback=storyRecording;expectedReplayHash=story.stateHash();storyPlayback.restoreStart(story);storyHistory=new StoryHistory(story,120);playIndex=0;replayDone=false;replayStatus="Повтор сюжета";input.clear();picture=story.view();lastFrame=0;accumulator=0;try{storyAudio();}catch(IOException e){fail(e.toString());}return;
++                saveStoryToDisk();storyPlayback=storyRecording;expectedReplayHash=story.stateHash();storyPlayback.restoreStart(story);storyHistory=new StoryHistory(story,120);playIndex=0;replayDone=false;replayStatus="Повтор сюжета";clearInputs();picture=story.view();lastFrame=0;accumulator=0;try{storyAudio();}catch(IOException e){fail(e.toString());}return;
+             }
+             if(playback!=null)return;
+             if(recording==null||recording.length()==0){Toast.makeText(MainActivity.this,"Пока нет записанного ввода",Toast.LENGTH_SHORT).show();return;}
+-            playback=recording;expectedReplayHash=session.stateHash();playback.restoreStart(session);history=new MatchHistory(session,120);playIndex=0;replayDone=false;replayStatus="Повтор";input.clear();picture=session.view();lastFrame=0;accumulator=0;audio.music(packs.get(selectedStage),packs.get(selectedStage).bgm);
++            playback=recording;expectedReplayHash=session.stateHash();playback.restoreStart(session);history=new MatchHistory(session,120);playIndex=0;replayDone=false;replayStatus="Повтор";clearInputs();picture=session.view();lastFrame=0;accumulator=0;audio.music(packs.get(selectedStage),packs.get(selectedStage).bgm);
+         }
+         void saveSnapshot(){
+             if(story!=null){if(storyPlayback!=null||replayDone){Toast.makeText(MainActivity.this,"Сохранение доступно во время игры",Toast.LENGTH_SHORT).show();return;}savedSnapshot=story.snapshot();savedFrame=story.frame();Toast.makeText(MainActivity.this,"Сохранён сюжет, кадр "+savedFrame,Toast.LENGTH_SHORT).show();return;}
+@@ -324,8 +329,8 @@
+         }
+         void restoreSnapshot(){
+             if(savedSnapshot==null){Toast.makeText(MainActivity.this,"Сначала сохрани состояние",Toast.LENGTH_SHORT).show();return;}
+-            if(story!=null){story.restore(savedSnapshot);storyRecording.truncateAt(savedFrame);storyHistory=new StoryHistory(story,120);storyPlayback=null;replayDone=false;replayStatus="";input.clear();picture=story.view();lastFrame=0;accumulator=0;try{storyAudio();}catch(IOException e){fail(e.toString());}Toast.makeText(MainActivity.this,"Восстановлен сюжет, кадр "+savedFrame,Toast.LENGTH_SHORT).show();return;}
+-            session.restore(savedSnapshot);recording.truncateAt(savedFrame);history=new MatchHistory(session,120);playback=null;replayDone=false;replayStatus="";input.clear();picture=session.view();lastFrame=0;accumulator=0;audio.music(packs.get(selectedStage),packs.get(selectedStage).bgm);Toast.makeText(MainActivity.this,"Восстановлен кадр "+savedFrame,Toast.LENGTH_SHORT).show();
++            if(story!=null){story.restore(savedSnapshot);storyRecording.truncateAt(savedFrame);storyHistory=new StoryHistory(story,120);storyPlayback=null;replayDone=false;replayStatus="";clearInputs();picture=story.view();lastFrame=0;accumulator=0;try{storyAudio();}catch(IOException e){fail(e.toString());}Toast.makeText(MainActivity.this,"Восстановлен сюжет, кадр "+savedFrame,Toast.LENGTH_SHORT).show();return;}
++            session.restore(savedSnapshot);recording.truncateAt(savedFrame);history=new MatchHistory(session,120);playback=null;replayDone=false;replayStatus="";clearInputs();picture=session.view();lastFrame=0;accumulator=0;audio.music(packs.get(selectedStage),packs.get(selectedStage).bgm);Toast.makeText(MainActivity.this,"Восстановлен кадр "+savedFrame,Toast.LENGTH_SHORT).show();
+         }
+         void start(){if(!running){running=true;Choreographer.getInstance().postFrameCallback(this);}}
+         void stop(){running=false;Choreographer.getInstance().removeFrameCallback(this);}
+@@ -333,7 +338,7 @@
+             if(online==null)return;online.pump();RollbackSession net=online.rollback();if(net==null){audio.pause();return;}
+             if(boundOnline!=net.match()){
+                 boundOnline=net.match();session=boundOnline;GameConfig cfg=online.config();selected=net.localPlayer()==0?cfg.p1:cfg.p2;opponent=net.localPlayer()==0?cfg.p2:cfg.p1;selectedStage=cfg.stage;
+-                recording=net.replay();history=null;playback=null;replayDone=false;savedSnapshot=null;lastCommand="";picture=session.view();input.clear();lastFrame=0;accumulator=0;
++                recording=net.replay();history=null;playback=null;replayDone=false;savedSnapshot=null;lastCommand="";picture=session.view();clearInputs();lastFrame=0;accumulator=0;
+                 audio.retain(Arrays.asList(packs.get(cfg.p1),packs.get(cfg.p2),packs.get(cfg.stage),packs.get("0116")));audio.music(packs.get(cfg.stage),packs.get(cfg.stage).bgm);if(resumed&&!dialog)audio.resume();
+                 log("online-ready role="+net.localPlayer()+" initial="+session.stateHash());
+             }
+@@ -457,7 +462,7 @@
+                 float top=story==null?0:getHeight()*.10f,scale=Math.min(getWidth()/640f,(getHeight()-top)/480f);dest.set((getWidth()-640*scale)/2,top+(getHeight()-top-480*scale)/2,(getWidth()+640*scale)/2,top+(getHeight()-top+480*scale)/2);paint.setAlpha(255);c.drawBitmap(scene,null,dest,paint);
+             }
+             paint.setAntiAlias(true);paint.setTextSize(Math.max(12,getHeight()*.025f));paint.setColor(0xdd101018);c.drawRect(0,0,getWidth(),getHeight()*.10f,paint);paint.setColor(Color.WHITE);
+-            c.drawText(online!=null?"TEST 007 · ONLINE · "+(online.rollback()==null?online.code():"P"+(online.rollback().localPlayer()+1)+" · rollback "+online.rollback().rollbackCount()):story==null?"TEST 007 · VS / таймер / повтор":"TEST 007 · сюжет · "+(story.scenePack()!=null?story.scenePack().name:"бой "+story.fights()),getWidth()*.018f,getHeight()*.037f,paint);
++            c.drawText(online!=null?"TEST 007a · ONLINE · "+(online.rollback()==null?online.code():"P"+(online.rollback().localPlayer()+1)+" · rollback "+online.rollback().rollbackCount()):story==null?"TEST 007a · VS / таймер / повтор":"TEST 007a · сюжет · "+(story.scenePack()!=null?story.scenePack().name:"бой "+story.fights()),getWidth()*.018f,getHeight()*.037f,paint);
+             if(session!=null)c.drawText(label(packs.get(selected))+"  "+(replayStatus.isEmpty()?lastCommand:replayStatus)+"   ["+String.format(Locale.ROOT,"%03X",input.mask())+"]",getWidth()*.018f,getHeight()*.075f,paint);
+             c.drawText("Menu",getWidth()*.89f,getHeight()*.055f,paint);
+             if(editing){paint.setColor(0xfff2bf70);c.drawText("Передвигай левый и правый блок. Menu → Передвинуть элементы — закончить.",getWidth()*.025f,getHeight()*.14f,paint);}
+@@ -504,7 +509,7 @@
+         }
+         boolean selectionTouch(MotionEvent e){
+             int action=e.getActionMasked(),index=e.getActionIndex();
+-            if(action==MotionEvent.ACTION_CANCEL){input.clear();selectionTouch=-1;return true;}
++            if(action==MotionEvent.ACTION_CANCEL){clearInputs();selectionTouch=-1;return true;}
+             if(action==MotionEvent.ACTION_DOWN||action==MotionEvent.ACTION_POINTER_DOWN){
+                 float x=e.getX(index),y=e.getY(index);
+                 if(selectBack.contains(x,y)){selectionBack();return true;}
+@@ -525,30 +530,59 @@
+         void layoutControls(){float w=getWidth(),h=getHeight(),size=prefs.getFloat("size",1);boolean mirror=prefs.getBoolean("mirror",false);
+             dx=prefs.getFloat("dx",.15f)*w;dy=prefs.getFloat("dy",.75f)*h;bx=prefs.getFloat("bx",.84f)*w;by=prefs.getFloat("by",.75f)*h;
+             if(mirror){dx=w-dx;bx=w-bx;}radius=h*.17f*size;buttonRadius=h*.06f*size;
++            stick.configure(dx,dy,radius,prefs.getFloat("dead",.18f));
+         }
+         float buttonX(int i){return bx+(i%3-1)*buttonRadius*2.35f;}float buttonY(int i){return by+(i<3?.8f:-1.6f)*buttonRadius;}
+-        void drawControls(Canvas c){int alpha=(int)(prefs.getFloat("opacity",.6f)*255),mask=input.mask();paint.setColor(Color.argb(alpha,45,49,65));c.drawCircle(dx,dy,radius,paint);paint.setTextAlign(Paint.Align.CENTER);paint.setTextSize(radius*.36f);
+-            String[] glyph={"←","→","↑","↓"};float[] xx={dx-radius*.63f,dx+radius*.63f,dx,dx},yy={dy,dy,dy-radius*.63f,dy+radius*.63f};
+-            for(int i=0;i<4;i++){paint.setColor((mask&(1<<i))!=0?0xffffcb76:Color.argb(alpha,255,255,255));c.drawText(glyph[i],xx[i],yy[i]+radius*.12f,paint);}
++        void drawControls(Canvas c){
++            int alpha=(int)(prefs.getFloat("opacity",.6f)*255),mask=input.mask();
++            // A recessed circular gate, eight marks and a moving thumb cap.
++            paint.setColor(Color.argb(alpha,23,24,34));c.drawCircle(dx,dy,radius,paint);
++            paint.setStyle(Paint.Style.STROKE);paint.setStrokeWidth(Math.max(1,radius*.025f));
++            paint.setColor(Color.argb(alpha,151,133,148));c.drawCircle(dx,dy,radius*.94f,paint);
++            paint.setColor(Color.argb(alpha/2,198,178,187));c.drawCircle(dx,dy,radius*.58f,paint);
++            paint.setStyle(Paint.Style.FILL);
++            int[] directions={Input.RIGHT,Input.RIGHT|Input.DOWN,Input.DOWN,Input.LEFT|Input.DOWN,Input.LEFT,Input.LEFT|Input.UP,Input.UP,Input.RIGHT|Input.UP};
++            for(int i=0;i<8;i++){
++                double angle=i*Math.PI/4;boolean selected=(mask&15)==directions[i];
++                paint.setColor(selected?Color.argb(alpha,255,209,132):Color.argb(alpha/2,194,184,201));
++                c.drawCircle(dx+(float)Math.cos(angle)*radius*.81f,dy+(float)Math.sin(angle)*radius*.81f,radius*(selected?.046f:.025f),paint);
++            }
++            float capX=dx+stick.offsetX(),capY=dy+stick.offsetY(),cap=radius*org.elfen.controls.ArcadeStick.CAP;
++            paint.setColor(Color.argb(alpha,13,12,20));c.drawCircle(capX,capY+radius*.045f,cap*1.08f,paint);
++            paint.setStrokeWidth(radius*.13f);paint.setColor(Color.argb(alpha,128,110,124));c.drawLine(dx,dy,capX,capY,paint);
++            paint.setColor(stick.active()?Color.argb(alpha,156,61,84):Color.argb(alpha,93,71,92));c.drawCircle(capX,capY,cap,paint);
++            paint.setStyle(Paint.Style.STROKE);paint.setStrokeWidth(radius*.025f);
++            paint.setColor(Color.argb(alpha,stick.active()?255:202,stick.active()?205:174,stick.active()?138:195));c.drawCircle(capX,capY,cap,paint);
++            paint.setStyle(Paint.Style.FILL);paint.setColor(Color.argb(alpha/3,255,244,232));c.drawCircle(capX-cap*.24f,capY-cap*.28f,cap*.24f,paint);
++            paint.setTextAlign(Paint.Align.CENTER);
+             for(int i=0;i<6;i++){paint.setColor((mask&(16<<i))!=0?0xddce4661:Color.argb(alpha,45,49,65));c.drawCircle(buttonX(i),buttonY(i),buttonRadius,paint);paint.setColor(Color.argb(alpha,255,255,255));paint.setTextSize(buttonRadius*.85f);c.drawText(""+(char)('A'+i),buttonX(i),buttonY(i)+buttonRadius*.3f,paint);}paint.setTextAlign(Paint.Align.LEFT);
+         }
++        @Override protected void onSizeChanged(int w,int h,int oldw,int oldh){
++            super.onSizeChanged(w,h,oldw,oldh);clearInputs();
++        }
+         @Override public boolean onTouchEvent(MotionEvent e){
++            if(dialog||!resumed)return true;
+             if(selection!=null)return selectionTouch(e);
+             layoutControls();int action=e.getActionMasked(),index=e.getActionIndex();maxPointers=Math.max(maxPointers,e.getPointerCount());
+-            if(action==MotionEvent.ACTION_CANCEL){input.clear();pointerGroup.clear();return true;}
++            if(action==MotionEvent.ACTION_CANCEL){clearInputs();pointerGroup.clear();return true;}
+             if(action==MotionEvent.ACTION_DOWN||action==MotionEvent.ACTION_POINTER_DOWN){int id=e.getPointerId(index);float x=e.getX(index),y=e.getY(index);
+                 if(x>getWidth()*.86f&&y<getHeight()*.12f){menu();return true;}
+-                int group=Math.hypot(x-dx,y-dy)<radius*1.45?1:2;pointerGroup.put(id,group);
++                int group;
++                if(stick.contains(x,y))group=editing||stick.begin(id,x,y)?1:0;
++                else group=2;
++                pointerGroup.put(id,group);
+             }
+             boolean up=action==MotionEvent.ACTION_UP||action==MotionEvent.ACTION_POINTER_UP;
+             for(int history=0;history<=e.getHistorySize();history++)for(int i=0;i<e.getPointerCount();i++){
+-                int id=e.getPointerId(i);if(up&&i==index){input.set(id,0);pointerGroup.remove(id);continue;}
++                int id=e.getPointerId(i);
+                 if(!pointerGroup.containsKey(id))continue;float x=history<e.getHistorySize()?e.getHistoricalX(i,history):e.getX(i),y=history<e.getHistorySize()?e.getHistoricalY(i,history):e.getY(i);
+                 if(editing){if(i==0){boolean mirror=prefs.getBoolean("mirror",false);float nx=Math.max(.06f,Math.min(.94f,x/getWidth())),ny=Math.max(.2f,Math.min(.9f,y/getHeight()));if(mirror)nx=1-nx;String prefix=pointerGroup.get(id)==1?"d":"b";prefs.edit().putFloat(prefix+"x",nx).putFloat(prefix+"y",ny).apply();}input.set(id,0);continue;}
+-                int mask=0;if(pointerGroup.get(id)==1)mask=Input.dpad(x-dx,y-dy,radius,prefs.getFloat("dead",.18f));
+-                else for(int b=0;b<6;b++)if(Math.hypot(x-buttonX(b),y-buttonY(b))<buttonRadius*1.12f)mask|=16<<b;
++                int mask=0;if(pointerGroup.get(id)==1){stick.move(id,x,y);mask=stick.mask();}
++                else if(pointerGroup.get(id)==2)for(int b=0;b<6;b++)if(Math.hypot(x-buttonX(b),y-buttonY(b))<buttonRadius*1.12f)mask|=16<<b;
+                 input.set(id,mask);
+-            }invalidate();return true;
++            }
++            if(up){int id=e.getPointerId(index);stick.end(id);input.set(id,0);pointerGroup.remove(id);}
++            invalidate();return true;
+         }
+     }
+ }
+--- TEST007/tools/build_android.py
++++ TEST007a/tools/build_android.py
+@@ -48,7 +48,7 @@
+     aligned=build/'aligned.apk';run([bt/'zipalign','-f','-p','4',apk,aligned])
+     key=ROOT/'builds/test-signing.p12'
+     if not key.exists():run(['keytool','-genkeypair','-keystore',key,'-storetype','PKCS12','-storepass','REDACTED_PRIVATE_SIGNING_PASSWORD','-keypass','REDACTED_PRIVATE_SIGNING_PASSWORD','-alias','elfen-test','-keyalg','RSA','-keysize','2048','-validity','10000','-dname','CN=Elfen Fighting private test build'])
+-    final=ROOT/'builds/elfen-fighting-007-select.apk'
++    final=ROOT/'builds/elfen-fighting-007a-stick.apk'
+     run(['java','-jar',bt/'lib/apksigner.jar','sign','--ks',key,'--ks-pass','pass:REDACTED_PRIVATE_SIGNING_PASSWORD','--ks-key-alias','elfen-test','--out',final,aligned])
+     run(['java','-jar',bt/'lib/apksigner.jar','verify','--verbose','--print-certs',final])
+     run([bt/'zipalign','-c','-p','4',final])
+--- TEST007/tools/check_apk.py
++++ TEST007a/tools/check_apk.py
+@@ -1,11 +1,11 @@
+ #!/usr/bin/env python3
+-"""Check TEST007 packaging, assets, identity and signing without pretending to run Android."""
++"""Check TEST007a packaging, assets, identity and signing without pretending to run Android."""
+ from pathlib import Path
+ import hashlib,json,zipfile,subprocess,sys,io,re
+ from bootstrap_android import SDK
+ ROOT=Path(__file__).resolve().parents[1]
+ def main():
+- apk=Path(sys.argv[1]) if len(sys.argv)>1 else ROOT/'builds/elfen-fighting-007-select.apk'
++ apk=Path(sys.argv[1]) if len(sys.argv)>1 else ROOT/'builds/elfen-fighting-007a-stick.apk'
+  old=json.loads((ROOT/'research/recovery/reference_inventory.json').read_text());assets=0;renamed=False;reencoded=[]
+  with zipfile.ZipFile(apk) as z:
+   assert z.testzip() is None
+@@ -39,17 +39,17 @@
+   assert hashlib.sha256(z.read('classes.dex')).hexdigest()!=next(r['sha256'] for r in old['entries'] if r['path']=='classes.dex')
+  bt=SDK/'build-tools/35.0.0'
+  badging=subprocess.check_output([bt/'aapt','dump','badging',apk],text=True)
+- assert "name='org.elfen.fighting.nativeport' versionCode='7' versionName='0.0.7-select'" in badging
++ assert "name='org.elfen.fighting.nativeport' versionCode='8' versionName='0.0.7a-stick'" in badging
+  assert "sdkVersion:'29'" in badging and "targetSdkVersion:'35'" in badging
+  permissions=[line for line in badging.splitlines() if line.startswith('uses-permission:')]
+  assert permissions==["uses-permission: name='android.permission.INTERNET'"],permissions
+  signature=subprocess.check_output(['java','-jar',bt/'lib/apksigner.jar','verify','--verbose','--print-certs',apk],text=True)
+  assert '12f2989f0ab609532bdf881cfcb54093343a5707874af00a0ee8f47ce460d086' in signature
+  subprocess.run([bt/'zipalign','-c','-p','4',apk],check=True)
+- report={'apk':apk.name,'bytes':apk.stat().st_size,'sha256':hashlib.sha256(apk.read_bytes()).hexdigest(),'original_assets_unchanged':assets,'total_assets':len(expectedAssets),'new_assets':['assets/game/story-index.tsv'],'launcher_resources_unchanged':True,'launcher_resource_paths_renamed':renamed,'signature_matches_test003':True,'application_id':'org.elfen.fighting.nativeport','version_code':7,'min_sdk':29,'target_sdk':35,'permissions':['android.permission.INTERNET'],'native_libraries':[],'zip_crc_ok':True,'android_execution_performed':False}
++ report={'apk':apk.name,'bytes':apk.stat().st_size,'sha256':hashlib.sha256(apk.read_bytes()).hexdigest(),'original_assets_unchanged':assets,'total_assets':len(expectedAssets),'new_assets':['assets/game/story-index.tsv'],'launcher_resources_unchanged':True,'launcher_resource_paths_renamed':renamed,'signature_matches_test003':True,'application_id':'org.elfen.fighting.nativeport','version_code':8,'min_sdk':29,'target_sdk':35,'permissions':['android.permission.INTERNET'],'native_libraries':[],'zip_crc_ok':True,'android_execution_performed':False}
+  report['launcher_png_reencoded']=reencoded
+  report['launcher_pixels_unchanged']=True
+  report['launcher_resources_unchanged']=not reencoded
+- reportPath=Path(sys.argv[2]) if len(sys.argv)>2 else ROOT/'research/apk_validation_007.json'
++ reportPath=Path(sys.argv[2]) if len(sys.argv)>2 else ROOT/'research/apk_validation_007a.json'
+  reportPath.write_text(json.dumps(report,indent=2));print(json.dumps(report,indent=2))
+ if __name__=='__main__':main()
+--- TEST007/tools/package_checkpoint.py
++++ TEST007a/tools/package_checkpoint.py
+@@ -1,5 +1,5 @@
+ #!/usr/bin/env python3
+-"""Create TEST007 ZIP, validate CRC, unpack independently and rebuild the APK."""
++"""Create TEST007a ZIP, validate CRC, unpack independently and rebuild the APK."""
+ import hashlib,json,os,shutil,subprocess,zipfile
+ from pathlib import Path
+ from bootstrap_android import SDK
+@@ -7,17 +7,17 @@
+ def include(p):
+  q=p.relative_to(ROOT);parts=q.parts
+  if any(x in ('.deps','.gradle','.git','__pycache__') for x in parts):return False
+- if parts[0]=='builds':return p.name in ('test-signing.p12','elfen-fighting-007-select.apk.sha256')
++ if parts[0]=='builds':return p.name in ('test-signing.p12','elfen-fighting-007a-stick.apk.sha256')
+  if parts[:2]==('app','build') or parts[0]=='build':return False
+  return p.is_file() and p.name!='local.properties' and p.suffix not in ('.pyc','.idsig')
+ def main():
+- apk=ROOT/'builds/elfen-fighting-007-select.apk';expected=hashlib.sha256(apk.read_bytes()).hexdigest()
+- target=ROOT/'builds/Elfen_Lied_Android_007_project.zip';files=sorted(p for p in ROOT.rglob('*') if include(p))
++ apk=ROOT/'builds/elfen-fighting-007a-stick.apk';expected=hashlib.sha256(apk.read_bytes()).hexdigest()
++ target=ROOT/'builds/Elfen_Lied_Android_007a_project.zip';files=sorted(p for p in ROOT.rglob('*') if include(p))
+  with zipfile.ZipFile(target,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:
+   for p in files:
+    if p.is_symlink():raise ValueError('Symlink in checkpoint')
+-   entry=zipfile.ZipInfo('elfen_test007/'+p.relative_to(ROOT).as_posix(),(2026,10,1,0,0,0));entry.create_system=3;entry.external_attr=(p.stat().st_mode&0xffff)<<16;entry.compress_type=zipfile.ZIP_DEFLATED;z.writestr(entry,p.read_bytes())
+- destination=ROOT.parent/'test007_zip_verification'
++   entry=zipfile.ZipInfo('elfen_test007a/'+p.relative_to(ROOT).as_posix(),(2026,10,1,0,0,0));entry.create_system=3;entry.external_attr=(p.stat().st_mode&0xffff)<<16;entry.compress_type=zipfile.ZIP_DEFLATED;z.writestr(entry,p.read_bytes())
++ destination=ROOT.parent/'test007a_zip_verification'
+  if destination.exists():shutil.rmtree(destination)
+  destination.mkdir()
+  with zipfile.ZipFile(target) as z:
+@@ -26,14 +26,14 @@
+    q=Path(e.filename)
+    if q.is_absolute() or '..' in q.parts:raise ValueError('Unsafe checkpoint path')
+    p=destination/q;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(z.read(e));p.chmod((e.external_attr>>16)&0o777)
+- extracted=destination/'elfen_test007';env=dict(os.environ,ANDROID_SDK_ROOT=str(SDK))
+- with (ROOT/'builds/unpacked-build-007.log').open('w') as log:
++ extracted=destination/'elfen_test007a';env=dict(os.environ,ANDROID_SDK_ROOT=str(SDK))
++ with (ROOT/'builds/unpacked-build-007a.log').open('w') as log:
+   for cmd in (['python3','tools/build_android.py'],['python3','tools/check_apk.py']):
+    p=subprocess.run(cmd,cwd=extracted,env=env,stdout=log,stderr=subprocess.STDOUT)
+    if p.returncode:raise RuntimeError('Unpacked build/check failed')
+- actual=hashlib.sha256((extracted/'builds/elfen-fighting-007-select.apk').read_bytes()).hexdigest()
++ actual=hashlib.sha256((extracted/'builds/elfen-fighting-007a-stick.apk').read_bytes()).hexdigest()
+  if actual!=expected:raise ValueError('Unpacked APK differs')
+  digest=hashlib.sha256(target.read_bytes()).hexdigest();target.with_suffix('.zip.sha256').write_text(digest+'  '+target.name+'\n')
+- report={'zip':target.name,'zip_bytes':target.stat().st_size,'zip_sha256':digest,'files':len(files),'crc_all_entries_passed':True,'unpacked_into_separate_directory':True,'rebuilt_from_unpacked_sources':True,'unpacked_apk_sha256':actual,'same_as_delivered_test007_apk':True,'android_execution_performed':False}
+- (ROOT/'builds/TEST007_CHECKPOINT_VERIFICATION.json').write_text(json.dumps(report,indent=2));print(json.dumps(report,indent=2))
++ report={'zip':target.name,'zip_bytes':target.stat().st_size,'zip_sha256':digest,'files':len(files),'crc_all_entries_passed':True,'unpacked_into_separate_directory':True,'rebuilt_from_unpacked_sources':True,'unpacked_apk_sha256':actual,'same_as_delivered_test007a_apk':True,'android_execution_performed':False}
++ (ROOT/'builds/TEST007aA_CHECKPOINT_VERIFICATION.json').write_text(json.dumps(report,indent=2));print(json.dumps(report,indent=2))
+ if __name__=='__main__':main()
+--- TEST007/tools/probe_combat_x86.py
++++ TEST007a/tools/probe_combat_x86.py
+@@ -3,11 +3,12 @@
+ import json,struct
+ from pathlib import Path
+ from probe_x86 import machine,put,get,ROOT
++from inspect_portable import pack
+ from unicorn import UC_HOOK_CODE
+ from unicorn.x86_const import *
+ TASK=0x4701e0;STRIDE=0x17e;CHAR=0x4d1d80;CS=0xe03f
+ STACK=0x13ff000;STOP=0x13ffff0;FA=0x1200000;FD=FA+0x20;R=FA+0x40
+-NANA_JUNCTIONS=json.loads((ROOT/'research/containers/0104.player.json').read_text())['specific']['hit_junctions']
++NANA_JUNCTIONS=pack(ROOT/'app/src/main/assets/game/0104/data.efp')['junctions']
+ 
+ def box(op,x,y,w,h,flags=0,rate=100,power=0):
+  b=bytearray(16);struct.pack_into('<BhhhhBBB',b,0,op,x,y,w,h,0,flags,rate);b[12]=power;return bytes(b)
+@@ -25,7 +26,7 @@
+    put(u,task+off,val)
+   for off,val in ((0xdef5,task),(0xdf05,400),(0xdf11,400),(0xdfb7,1<<(1-i)),(0x7cae,400),(0x7cb2,200),(0x7cb6,2)):
+    put(u,c+off,val)
+-  for j in range(1,13):u.mem_write(c+0x6daa+4*j,struct.pack('<HH',NANA_JUNCTIONS[j]['hit_skill'],0))
++  for j in range(1,13):u.mem_write(c+0x6daa+4*j,struct.pack('<HH',NANA_JUNCTIONS[j][0],0))
+   u.mem_write(c+0x75a0,struct.pack('<H',20))
+  u.mem_write(CHAR+0x7ca5,bytes([3,0,0,2]));u.mem_write(CHAR+CS+0x7ca5,bytes([5,0,0,3]))
+  put(u,CHAR+CS+0xdf01,combo)

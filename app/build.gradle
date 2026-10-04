@@ -1,0 +1,39 @@
+plugins { id 'com.android.application' }
+android {
+    namespace 'org.elfen.fighting'
+    compileSdk 35
+    buildToolsVersion '35.0.0'
+    defaultConfig {
+        applicationId 'org.elfen.fighting.nativeport'
+        minSdk 29
+        targetSdk 35
+        versionCode 14
+        versionName '1.0.0-rc1'
+    }
+    sourceSets { main { java.srcDirs += ['../runtime/src', '../network/src'] } }
+    compileOptions { sourceCompatibility JavaVersion.VERSION_1_8; targetCompatibility JavaVersion.VERSION_1_8 }
+    androidResources { noCompress += ['efp', 'wav', 'mid', 'zlib'] }
+    // Private release signing is configured only through the local environment.
+    def signingPath = System.getenv('ELFEN_KEYSTORE')
+    def signingAlias = System.getenv('ELFEN_KEY_ALIAS')
+    def signingStorePass = System.getenv('ELFEN_STORE_PASSWORD')
+    def signingKeyPass = System.getenv('ELFEN_KEY_PASSWORD')
+    def hasSigning = signingPath && signingAlias && signingStorePass && signingKeyPass
+    signingConfigs {
+        if (hasSigning) {
+            externalRelease {
+                storeFile file(signingPath)
+                storePassword signingStorePass
+                keyAlias signingAlias
+                keyPassword signingKeyPass
+            }
+        }
+    }
+    buildTypes {
+        debug { if (hasSigning) signingConfig signingConfigs.externalRelease }
+        release {
+            if (hasSigning) signingConfig signingConfigs.externalRelease
+            minifyEnabled false
+        }
+    }
+}

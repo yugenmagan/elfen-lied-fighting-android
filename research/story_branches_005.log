@@ -1,0 +1,1 @@
+PASS 100 story-fight loading/twin runs (750 frames each), loss/retry/quit, cross-scene rollback, atomic rejected restore, Mayu nested-object slot reuse

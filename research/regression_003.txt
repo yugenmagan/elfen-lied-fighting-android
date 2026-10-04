@@ -1,0 +1,31 @@
+test_all_names_decoded (test_audit.ArchiveTests.test_all_names_decoded) ... ok
+test_all_unique_containers_covered (test_audit.ArchiveTests.test_all_unique_containers_covered) ... ok
+test_demo_and_stage_trailers_are_zero (test_audit.ArchiveTests.test_demo_and_stage_trailers_are_zero) ... ok
+test_every_entry_hash_preserved (test_audit.ArchiveTests.test_every_entry_hash_preserved) ... ok
+test_kgt_filename_references_exist (test_audit.ArchiveTests.test_kgt_filename_references_exist) ... ok
+test_story_scene_and_stage_references_exist (test_audit.ArchiveTests.test_story_scene_and_stage_references_exist) ... ok
+test_backreference_before_start_is_error (test_audit.DecoderTests.test_backreference_before_start_is_error) ... ok
+test_extended_lengths (test_audit.DecoderTests.test_extended_lengths) ... ok
+test_long_distance (test_audit.DecoderTests.test_long_distance) ... ok
+test_output_overrun_is_error (test_audit.DecoderTests.test_output_overrun_is_error) ... ok
+test_overlapping_backreference (test_audit.DecoderTests.test_overlapping_backreference) ... ok
+test_reader_bounds (test_audit.DecoderTests.test_reader_bounds) ... ok
+test_rle_and_literals (test_audit.DecoderTests.test_rle_and_literals) ... ok
+test_short_output_is_error (test_audit.DecoderTests.test_short_output_is_error) ... ok
+test_truncated_literal_is_error (test_audit.DecoderTests.test_truncated_literal_is_error) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 1.538s
+
+OK
+PASS 2854 assertions; loaded 46 packs; animation paths completed 99 / 99
+This is not combat, Android installation, or full story validation.
+PASS 0170 quarter-circle A command=とび弱
+PASS 0104 quarter-circle A command=ロケット弱
+PASS 0128 quarter-circle A command=磯部くん
+PASS 0128 back charge forward A command=ねこ座薬
+PASS 0128 half-circle A command=コマンド 1
+PASS stage 0080 1800 ticks
+PASS stage 0084 1800 ticks
+PASS stage 0138 1800 ticks
+PASS stage 0148 1800 ticks

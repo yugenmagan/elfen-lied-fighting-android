@@ -1,0 +1,135 @@
+0	Loading data: 	データの読み込み: 
+1	Saved story	ストーリーの続き
+2	Resume from the last saved point?	最後に保存したところから再開しますか？
+3	Continue	続ける
+4	Reading save: 	セーブの読み込み: 
+5	New story	はじめから
+6	Versus	対戦
+7	Arcade stick: slide your finger around without lifting it. Size and dead zone are in control settings.\n\nTap a portrait, then confirm your selection.\n\nIn VS, choose your fighter and then your opponent.\n\nPress A to advance scenes. Pause → Moves shows your fighter's commands. Matches are first to two wins.	スティックは指を離さずに動かします。大きさと遊びは操作設定で変更できます。\n\n顔をタップしてから選択を確定してください。\n\n対戦では自分のキャラクター、次に相手を選びます。\n\nデモはAで進めます。ポーズ→技表でコマンドを確認できます。先に2勝すると勝利です。
+8	Story	ストーリー
+9	Online	オンライン
+10	Resume fight	対戦を再開
+11	Moves: 	技表: 
+12	Game menu	ゲームメニュー
+13	PAUSED	ポーズ
+14	Directions assume you face right; reverse them when facing left. A comma means the next input; + means together; • means release the stick.\n\nCommands come from the original game. A move may require a particular state or energy level. Holds: 60 frames = 1 second.\n	方向は右向きの場合です。左向きでは左右を逆にします。コンマは次の入力、+は同時押し、•はスティックを離す操作です。\n\n原作のコマンドを表示しています。技によって状態やゲージの条件があります。ため時間は60フレームで1秒です。\n
+15	Commands with unverified formats are omitted: 	未確認の形式のため表示していないコマンド: 
+16	Moves · 	技表 · 
+17	Back to pause	ポーズへ戻る
+18	Character select: 	キャラクター選択: 
+19	Leaving character select: 	選択画面から戻る: 
+20	Opponent: 	対戦相手: 
+21	Additional VS fighters	追加の対戦キャラクター
+22	Back	戻る
+23	Saving story: 	ストーリーの保存: 
+24	Save format	セーブ形式
+25	Save data	セーブデータ
+26	Unexpected extra save data	セーブデータの余分な内容
+27	Stage	ステージ
+28	Opponent	対戦相手
+29	Character	キャラクター
+30	Lucy / 	ルーシー / 
+31	Nana / 	ナナ / 
+32	Mariko / 	マリコ / 
+33	CPU level	CPUレベル
+34	Control settings	操作設定
+35	Move controls	ボタン配置を変更
+36	Remap gamepad	ゲームパッドの割り当て
+37	Share report	レポートを共有
+38	New match	新しい対戦
+39	Match rules	対戦ルール
+40	Play recording	リプレイを再生
+41	Save state	状態を保存
+42	Restore state	状態を復元
+43	Restart story	ストーリーをやり直す
+44	Another character	キャラクターを変更
+45	Story · fight 	ストーリー · 対戦 
+46	 · frame 	 · フレーム 
+47	Online match	オンライン対戦
+48	Report	レポート
+49	Leave	終了
+50	Create room	ルームを作成
+51	Join with code	コードで参加
+52	Character: 	キャラクター: 
+53	Stage: 	ステージ: 
+54	Server	サーバー
+55	Online · two players	オンライン · 2人対戦
+56	Room stage	ルームのステージ
+57	Your fighter	自分のキャラクター
+58	8-character code	8文字のコード
+59	Join room	ルームに参加
+60	Join	参加
+61	Enter an 8-character code	8文字のコードを入力してください
+62	tls://host:443	tls://サーバー:443
+63	Room server	ルームサーバー
+64	A shared server has not been set up for this test build. Its address will be added after deployment. Single-player works without it.	このテスト版では共用サーバーはまだ設置されていません。設置後にアドレスを追加します。一人プレイには必要ありません。
+65	Save	保存
+66	VS: first to two wins	対戦: 2本先取
+67	At 1–1, play a deciding round. Draws award no wins. Changing the timer starts a new match.	1対1なら決勝ラウンドになります。引き分けは勝利に数えません。タイマーを変えると新しい対戦が始まります。
+68	Change timer	タイマーを変更
+69	VS timer	対戦タイマー
+70	No time limit	時間無制限
+71	First to 1 win	1本先取
+72	First to 2 wins	2本先取
+73	First to 3 wins (original setting)	3本先取（原作設定）
+74	Timer: 10	制限時間: 10
+75	Timer: 30	制限時間: 30
+76	Timer: 60 (original setting)	制限時間: 60（原作設定）
+77	Room rules	ルームのルール
+78	Rules · starts a new match	ルール変更 · 新しい対戦を開始
+79	Training dummy (0)	動かない相手（0）
+80	Opacity	不透明度
+81	Size	大きさ
+82	Stick dead zone	スティックの遊び
+83	Mirror layout	左右を入れ替える
+84	Hide touch controls with gamepad	ゲームパッド使用時は画面ボタンを隠す
+85	Show original collision boxes	原作の当たり判定を表示
+86	Arcade stick and buttons	スティックとボタン
+87	Done	完了
+88	Reset positions	配置をリセット
+89	Current fighter's buttons	使用中のキャラクターのボタン
+90	Press a gamepad button for 	割り当てるゲームパッドのボタンを押してください: 
+91	Button saved	ボタンを保存しました
+92	Save or share report and replay	レポートとリプレイを保存・共有
+93	Could not create report: 	レポートを作成できませんでした: 
+94	No recording yet	まだ記録がありません
+95	Story replay	ストーリーのリプレイ
+96	No recorded input yet	入力はまだ記録されていません
+97	Replay	リプレイ
+98	You can save during play	プレイ中に保存できます
+99	Story saved, frame 	ストーリーを保存、フレーム 
+100	State can be saved during play	プレイ中に状態を保存できます
+101	Saved frame 	保存したフレーム 
+102	Save a state first	先に状態を保存してください
+103	Story restored, frame 	ストーリーを復元、フレーム 
+104	Restored frame 	復元したフレーム 
+105	Replay: hash matched	リプレイ: ハッシュ一致
+106	Replay: DESYNC	リプレイ: 同期ずれ
+107	DRAW	引き分け
+108	MATCH WON	対戦勝利
+109	MATCH LOST	対戦敗北
+110	Pause → Menu → New match / Play recording	ポーズ → メニュー → 新しい対戦 / リプレイ
+111	Result hash matched · Pause → Menu → Leave	結果ハッシュ一致 · ポーズ → メニュー → 終了
+112	A: continue	A: 次へ
+113	▶ Continue     Main menu	▶ 続ける     メニューへ
+114	Continue     ▶ Main menu	続ける     ▶ メニューへ
+115	Direction: choose · A: confirm	方向: 選択 · A: 決定
+116	STORY COMPLETE	ストーリー終了
+117	RETURN TO MENU	メニューへ戻る
+118	Pause → Menu → Another character / Versus	ポーズ → メニュー → キャラクター変更 / 対戦
+119	TEST 008 · VS / timer / replay	TEST 008 · 対戦 / タイマー / リプレイ
+120	TEST 008 · story · 	TEST 008 · ストーリー · 
+121	fight 	対戦 
+122	Drag the left and right control groups. Pause → Menu → Move controls to finish.	左右の操作部分をドラッグしてください。ポーズ→メニュー→配置変更で終了します。
+123	Pause to resume or leave	ポーズで再開・終了
+124	Test stopped: runtime error	テスト停止: 実行エラー
+125	Pause → Menu → Share report / Restart	ポーズ → メニュー → レポート共有 / 再開始
+126	STORY · CHARACTER SELECT	ストーリー · キャラクター選択
+127	VS · CHARACTER SELECT	対戦 · キャラクター選択
+128	Selection confirmed…	選択を確定しました…
+129	Your fighter: 	自分のキャラクター: 
+130	 · tap a portrait	 · 顔をタップ
+131	More fighters	追加キャラクター
+132	Starting…	開始中…
+133	Choose fighter	キャラクター決定
+134	Start fight	対戦開始

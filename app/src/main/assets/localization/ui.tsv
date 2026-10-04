@@ -1,0 +1,368 @@
+ELF-UI-1
+Загрузка данных: 	データの読み込み: 	Loading data: 	Загрузка данных: 
+Сохранённый сюжет	ストーリーの続き	Saved story	Сохранённый сюжет
+Продолжить с последнего сворачивания игры?	最後に保存したところから再開しますか？	Resume from the last saved point?	Продолжить с последнего сворачивания игры?
+Продолжить	続ける	Continue	Продолжить
+Чтение сохранения: 	セーブの読み込み: 	Reading save: 	Чтение сохранения: 
+Новый сюжет	はじめから	New story	Новый сюжет
+Обычный VS	対戦	Versus	Обычный VS
+Аркадный стик: веди палец по кругу, не отрывая от экрана. Размер и мёртвая зона — в настройках управления.\n\nНа экране выбора нажми на портрет, затем «Выбрать».\n\nВ VS сначала выбери своего бойца, затем противника.\n\nВ сюжетных сценах A — продолжить. Пауза → Приёмы — команды текущего бойца. Бои идут до двух побед.	スティックは指を離さずに動かします。大きさと遊びは操作設定で変更できます。\n\n顔をタップしてから選択を確定してください。\n\n対戦では自分のキャラクター、次に相手を選びます。\n\nデモはAで進めます。ポーズ→技表でコマンドを確認できます。先に2勝すると勝利です。	Arcade stick: slide your finger around without lifting it. Size and dead zone are in control settings.\n\nTap a portrait, then confirm your selection.\n\nIn VS, choose your fighter and then your opponent.\n\nPress A to advance scenes. Pause → Moves shows your fighter's commands. Matches are first to two wins.	Аркадный стик: веди палец по кругу, не отрывая от экрана. Размер и мёртвая зона — в настройках управления.\n\nНа экране выбора нажми на портрет, затем «Выбрать».\n\nВ VS сначала выбери своего бойца, затем противника.\n\nВ сюжетных сценах A — продолжить. Пауза → Приёмы — команды текущего бойца. Бои идут до двух побед.
+Сюжет	ストーリー	Story	Сюжет
+Онлайн	オンライン	Online	Онлайн
+Продолжить бой	対戦を再開	Resume fight	Продолжить бой
+Приёмы: 	技表: 	Moves: 	Приёмы: 
+Меню игры	ゲームメニュー	Game menu	Меню игры
+ПАУЗА	ポーズ	PAUSED	ПАУЗА
+Направления указаны лицом вправо. С другой стороны зеркально. Запятая — следующий ввод; + — одновременно; • — отпусти стик.\n\nНазвания и команды взяты из игры. Доступность приёма зависит от состояния и энергии персонажа. Удержания: 60 кадров = 1 секунда.\n	方向は右向きの場合です。左向きでは左右を逆にします。コンマは次の入力、+は同時押し、•はスティックを離す操作です。\n\n原作のコマンドを表示しています。技によって状態やゲージの条件があります。ため時間は60フレームで1秒です。\n	Directions assume you face right; reverse them when facing left. A comma means the next input; + means together; • means release the stick.\n\nCommands come from the original game. A move may require a particular state or energy level. Holds: 60 frames = 1 second.\n	Направления указаны лицом вправо. С другой стороны зеркально. Запятая — следующий ввод; + — одновременно; • — отпусти стик.\n\nНазвания и команды взяты из игры. Доступность приёма зависит от состояния и энергии персонажа. Удержания: 60 кадров = 1 секунда.\n
+Не показаны команды с неподтверждённым форматом: 	未確認の形式のため表示していないコマンド: 	Commands with unverified formats are omitted: 	Не показаны команды с неподтверждённым форматом: 
+Приёмы · 	技表 · 	Moves · 	Приёмы · 
+К паузе	ポーズへ戻る	Back to pause	К паузе
+Экран выбора: 	キャラクター選択: 	Character select: 	Экран выбора: 
+Возврат из выбора: 	選択画面から戻る: 	Leaving character select: 	Возврат из выбора: 
+Противник: 	対戦相手: 	Opponent: 	Противник: 
+Дополнительные бойцы VS	追加の対戦キャラクター	Additional VS fighters	Дополнительные бойцы VS
+Назад	戻る	Back	Назад
+Сохранение сюжета: 	ストーリーの保存: 	Saving story: 	Сохранение сюжета: 
+Формат сохранения	セーブ形式	Save format	Формат сохранения
+Данные сохранения	セーブデータ	Save data	Данные сохранения
+Лишние данные сохранения	セーブデータの余分な内容	Unexpected extra save data	Лишние данные сохранения
+Арена	ステージ	Stage	Арена
+Противник	対戦相手	Opponent	Противник
+Персонаж	キャラクター	Character	Персонаж
+Люси / 	ルーシー / 	Lucy / 	Люси / 
+Нана / 	ナナ / 	Nana / 	Нана / 
+Марико / 	マリコ / 	Mariko / 	Марико / 
+Уровень AI	CPUレベル	CPU level	Уровень AI
+Настроить управление	操作設定	Control settings	Настроить управление
+Передвинуть элементы	ボタン配置を変更	Move controls	Передвинуть элементы
+Переназначить геймпад	ゲームパッドの割り当て	Remap gamepad	Переназначить геймпад
+Поделиться отчётом	レポートを共有	Share report	Поделиться отчётом
+Новый матч	新しい対戦	New match	Новый матч
+Правила матча	対戦ルール	Match rules	Правила матча
+Повторить запись	リプレイを再生	Play recording	Повторить запись
+Сохранить состояние	状態を保存	Save state	Сохранить состояние
+Восстановить состояние	状態を復元	Restore state	Восстановить состояние
+Начать сюжет заново	ストーリーをやり直す	Restart story	Начать сюжет заново
+Другой персонаж	キャラクターを変更	Another character	Другой персонаж
+Сюжет · бой 	ストーリー · 対戦 	Story · fight 	Сюжет · бой 
+ · кадр 	 · フレーム 	 · frame 	 · кадр 
+Сетевой бой	オンライン対戦	Online match	Сетевой бой
+Отчёт	レポート	Report	Отчёт
+Выйти	終了	Leave	Выйти
+Создать комнату	ルームを作成	Create room	Создать комнату
+Войти по коду	コードで参加	Join with code	Войти по коду
+Персонаж: 	キャラクター: 	Character: 	Персонаж: 
+Арена: 	ステージ: 	Stage: 	Арена: 
+Сервер	サーバー	Server	Сервер
+Онлайн · два игрока	オンライン · 2人対戦	Online · two players	Онлайн · два игрока
+Арена комнаты	ルームのステージ	Room stage	Арена комнаты
+Твой персонаж	自分のキャラクター	Your fighter	Твой персонаж
+Код из 8 знаков	8文字のコード	8-character code	Код из 8 знаков
+Войти в комнату	ルームに参加	Join room	Войти в комнату
+Войти	参加	Join	Войти
+Нужен код из 8 знаков	8文字のコードを入力してください	Enter an 8-character code	Нужен код из 8 знаков
+tls://адрес:443	tls://サーバー:443	tls://host:443	tls://адрес:443
+Сервер комнат	ルームサーバー	Room server	Сервер комнат
+В этой тестовой сборке общий сервер ещё не выбран. Адрес будет добавлен после размещения. Одиночная игра работает без него.	このテスト版では共用サーバーはまだ設置されていません。設置後にアドレスを追加します。一人プレイには必要ありません。	A shared server has not been set up for this test build. Its address will be added after deployment. Single-player works without it.	В этой тестовой сборке общий сервер ещё не выбран. Адрес будет добавлен после размещения. Одиночная игра работает без него.
+Сохранить	保存	Save	Сохранить
+VS: до двух побед	対戦: 2本先取	VS: first to two wins	VS: до двух побед
+При 1:1 играется решающий раунд. Ничья не даёт победы. Изменение таймера начнёт новый матч.	1対1なら決勝ラウンドになります。引き分けは勝利に数えません。タイマーを変えると新しい対戦が始まります。	At 1–1, play a deciding round. Draws award no wins. Changing the timer starts a new match.	При 1:1 играется решающий раунд. Ничья не даёт победы. Изменение таймера начнёт новый матч.
+Изменить таймер	タイマーを変更	Change timer	Изменить таймер
+Таймер VS	対戦タイマー	VS timer	Таймер VS
+Без таймера	時間無制限	No time limit	Без таймера
+До 1 победы	1本先取	First to 1 win	До 1 победы
+До 2 побед	2本先取	First to 2 wins	До 2 побед
+До 3 побед (исходная настройка)	3本先取（原作設定）	First to 3 wins (original setting)	До 3 побед (исходная настройка)
+Таймер: 10	制限時間: 10	Timer: 10	Таймер: 10
+Таймер: 30	制限時間: 30	Timer: 30	Таймер: 30
+Таймер: 60 (исходная настройка)	制限時間: 60（原作設定）	Timer: 60 (original setting)	Таймер: 60 (исходная настройка)
+Правила комнаты	ルームのルール	Room rules	Правила комнаты
+Правила — начнётся новый матч	ルール変更 · 新しい対戦を開始	Rules · starts a new match	Правила — начнётся новый матч
+Манекен (0)	動かない相手（0）	Training dummy (0)	Манекен (0)
+Прозрачность	不透明度	Opacity	Прозрачность
+Размер	大きさ	Size	Размер
+Мёртвая зона стика	スティックの遊び	Stick dead zone	Мёртвая зона стика
+Зеркальное расположение	左右を入れ替える	Mirror layout	Зеркальное расположение
+Скрывать кнопки с геймпадом	ゲームパッド使用時は画面ボタンを隠す	Hide touch controls with gamepad	Скрывать кнопки с геймпадом
+Показывать исходные хитбоксы	原作の当たり判定を表示	Show original collision boxes	Показывать исходные хитбоксы
+Аркадный стик и кнопки	スティックとボタン	Arcade stick and buttons	Аркадный стик и кнопки
+Готово	完了	Done	Готово
+Сброс положения	配置をリセット	Reset positions	Сброс положения
+Кнопки текущего бойца	使用中のキャラクターのボタン	Current fighter's buttons	Кнопки текущего бойца
+Нажми кнопку геймпада для 	割り当てるゲームパッドのボタンを押してください: 	Press a gamepad button for 	Нажми кнопку геймпада для 
+Кнопка сохранена	ボタンを保存しました	Button saved	Кнопка сохранена
+Сохранить или отправить отчёт и повтор	レポートとリプレイを保存・共有	Save or share report and replay	Сохранить или отправить отчёт и повтор
+Не удалось создать отчёт: 	レポートを作成できませんでした: 	Could not create report: 	Не удалось создать отчёт: 
+Пока нет записи	まだ記録がありません	No recording yet	Пока нет записи
+Повтор сюжета	ストーリーのリプレイ	Story replay	Повтор сюжета
+Пока нет записанного ввода	入力はまだ記録されていません	No recorded input yet	Пока нет записанного ввода
+Повтор	リプレイ	Replay	Повтор
+Сохранение доступно во время игры	プレイ中に保存できます	You can save during play	Сохранение доступно во время игры
+Сохранён сюжет, кадр 	ストーリーを保存、フレーム 	Story saved, frame 	Сохранён сюжет, кадр 
+Состояние сохраняется во время игры	プレイ中に状態を保存できます	State can be saved during play	Состояние сохраняется во время игры
+Сохранён кадр 	保存したフレーム 	Saved frame 	Сохранён кадр 
+Сначала сохрани состояние	先に状態を保存してください	Save a state first	Сначала сохрани состояние
+Восстановлен сюжет, кадр 	ストーリーを復元、フレーム 	Story restored, frame 	Восстановлен сюжет, кадр 
+Восстановлен кадр 	復元したフレーム 	Restored frame 	Восстановлен кадр 
+Повтор: хеш совпал	リプレイ: ハッシュ一致	Replay: hash matched	Повтор: хеш совпал
+Повтор: DESYNC	リプレイ: 同期ずれ	Replay: DESYNC	Повтор: DESYNC
+НИЧЬЯ	引き分け	DRAW	НИЧЬЯ
+МАТЧ ВЫИГРАН	対戦勝利	MATCH WON	МАТЧ ВЫИГРАН
+МАТЧ ПРОИГРАН	対戦敗北	MATCH LOST	МАТЧ ПРОИГРАН
+Пауза → Меню → Новый матч / Повторить запись	ポーズ → メニュー → 新しい対戦 / リプレイ	Pause → Menu → New match / Play recording	Пауза → Меню → Новый матч / Повторить запись
+Хеш результата совпал · Пауза → Меню → Выйти	結果ハッシュ一致 · ポーズ → メニュー → 終了	Result hash matched · Pause → Menu → Leave	Хеш результата совпал · Пауза → Меню → Выйти
+A: продолжить	A: 次へ	A: continue	A: продолжить
+▶ Продолжить     В меню	▶ 続ける     メニューへ	▶ Continue     Main menu	▶ Продолжить     В меню
+Продолжить     ▶ В меню	続ける     ▶ メニューへ	Continue     ▶ Main menu	Продолжить     ▶ В меню
+Направление: выбор · A: подтвердить	方向: 選択 · A: 決定	Direction: choose · A: confirm	Направление: выбор · A: подтвердить
+КОНЕЦ СЮЖЕТА	ストーリー終了	STORY COMPLETE	КОНЕЦ СЮЖЕТА
+ВОЗВРАТ В МЕНЮ	メニューへ戻る	RETURN TO MENU	ВОЗВРАТ В МЕНЮ
+Пауза → Меню → Другой персонаж / Обычный VS	ポーズ → メニュー → キャラクター変更 / 対戦	Pause → Menu → Another character / Versus	Пауза → Меню → Другой персонаж / Обычный VS
+TEST 008 · VS / таймер / повтор	TEST 008 · 対戦 / タイマー / リプレイ	TEST 008 · VS / timer / replay	TEST 008 · VS / таймер / повтор
+TEST 008 · сюжет · 	TEST 008 · ストーリー · 	TEST 008 · story · 	TEST 008 · сюжет · 
+бой 	対戦 	fight 	бой 
+Передвигай левый и правый блок. Пауза → Меню → Передвинуть элементы — закончить.	左右の操作部分をドラッグしてください。ポーズ→メニュー→配置変更で終了します。	Drag the left and right control groups. Pause → Menu → Move controls to finish.	Передвигай левый и правый блок. Пауза → Меню → Передвинуть элементы — закончить.
+Пауза — продолжить или выйти	ポーズで再開・終了	Pause to resume or leave	Пауза — продолжить или выйти
+Тест остановлен: требуется исправление runtime	テスト停止: 実行エラー	Test stopped: runtime error	Тест остановлен: требуется исправление runtime
+Пауза → Меню → Поделиться отчётом / Перезапустить тест	ポーズ → メニュー → レポート共有 / 再開始	Pause → Menu → Share report / Restart	Пауза → Меню → Поделиться отчётом / Перезапустить тест
+СЮЖЕТ · ВЫБОР ПЕРСОНАЖА	ストーリー · キャラクター選択	STORY · CHARACTER SELECT	СЮЖЕТ · ВЫБОР ПЕРСОНАЖА
+VS · ВЫБОР ПЕРСОНАЖЕЙ	対戦 · キャラクター選択	VS · CHARACTER SELECT	VS · ВЫБОР ПЕРСОНАЖЕЙ
+Выбор подтверждён…	選択を確定しました…	Selection confirmed…	Выбор подтверждён…
+Твой боец: 	自分のキャラクター: 	Your fighter: 	Твой боец: 
+ · нажми на портрет	 · 顔をタップ	 · tap a portrait	 · нажми на портрет
+Дополнительно	追加キャラクター	More fighters	Дополнительно
+Начинаем…	開始中…	Starting…	Начинаем…
+Выбрать бойца	キャラクター決定	Choose fighter	Выбрать бойца
+Начать бой	対戦開始	Start fight	Начать бой
+Язык	言語	Language	Язык
+Соединение с сервером	サーバーに接続中	Connecting to server	Соединение с сервером
+Код комнаты: 	ルームコード: 	Room code: 	Код комнаты: 
+. Ожидание второго игрока	 · 対戦相手を待っています	. Waiting for another player	. Ожидание второго игрока
+Проверка игровых данных	ゲームデータを確認中	Checking game data	Проверка игровых данных
+Бой	対戦	Fight	Бой
+Матч завершён: хеши совпали	対戦終了: ハッシュ一致	Match complete: hashes matched	Матч завершён: хеши совпали
+Проверка результата	結果を確認中	Checking result	Проверка результата
+Ожидание соединения	接続待ち	Waiting for connection	Ожидание соединения
+Соединение закрыто	接続終了	Connection closed	Соединение закрыто
+любой ввод	任意の入力	any input	любой ввод
+: держать 	: ため 	: hold 	: держать 
+ кадр.]	フレーム]	 frames]	 кадр.]
+в воздухе	空中	airborne	в воздухе
+стоя близко	近距離・立ち	standing close	стоя близко
+стоя далеко	遠距離・立ち	standing far	стоя далеко
+из приседа	しゃがみ	crouching	из приседа
+pack:0060	デモるーしＥＤ	Young Lucy: ending	Маленькая Люси: концовка
+pack:0062	マリコＯＰ	Mariko: introduction	Марико: вступление
+pack:0064	キャラセレ	Character select	Выбор персонажа
+pack:0066	ロストＥＤ	Lost Number: ending	Лост Намбер: концовка
+pack:0068	ナナＥＤ	Nana: ending	Нана: концовка
+pack:0070	ミサキＯＰ	Misaki: introduction	Мисаки: вступление
+pack:0072	デモ 1	Opening	Вступление
+pack:0074	デモ 2	Title screen	Заставка
+pack:0076	アンナＯＰ	Anna: introduction	Анна: вступление
+pack:0078	マリコ登場	Mariko arrives	Появление Марико
+pack:0080	ステージ 2	Stage 2	Арена 2
+pack:0082	マリコ	Mariko	Марико
+pack:0084	香港	Hong Kong	Гонконг
+pack:0086	こんてにゅー	Continue	Продолжить
+pack:0088	にゅうＯＰ	Nyu: introduction	Ню: вступление
+pack:0092	マユＥＤ	Mayu: ending	Маю: концовка
+pack:0094	マユＯＰ	Mayu: introduction	Маю: вступление
+pack:0096	クローンＯＰ	Clone: introduction	Клон: вступление
+pack:0098	アンナED	Anna: ending	Анна: концовка
+pack:0102	にゅうED	Nyu: ending	Ню: концовка
+pack:0104	ナナ裏	Nana	Нана
+pack:0108	ダイアナ	Diana / Clone	Диана / Клон
+pack:0110	マユ	Mayu	Маю
+pack:0112	ロストＯＰ	Lost Number: introduction	Лост Намбер: вступление
+pack:0114	アンナ	Anna	Анна
+pack:0116	エルフェンファイト	Elfen Fight	Elfen Fight
+pack:0118	ルーシーＯＰ	Lucy: introduction	Люси: вступление
+pack:0122	にゅう	Nyu	Ню
+pack:0124	マリコED	Mariko: ending	Марико: концовка
+pack:0128	マリコ	Mariko	Марико
+pack:0130	ナナＯＰ	Nana: introduction	Нана: вступление
+pack:0132	ミサキＥＤ	Misaki: ending	Мисаки: концовка
+pack:0136	ロストナンバー	Lost Number	Лост Намбер
+pack:0138	ラウンジ	Lounge	Гостиная
+pack:0142	クラフト	Kraft	Крафт
+pack:0144	クラフト	Kraft	Крафт
+pack:0146	クローンＥＤ	Clone: ending	Клон: концовка
+pack:0148	新ステージ	New Stage	Новая арена
+pack:0154	プレーヤー 1	Bando	Бандо
+pack:0156	るーしー	Young Lucy	Маленькая Люси
+pack:0168	ミサキ	Misaki	Мисаки
+pack:0170	ルーシー	Lucy	Люси
+pack:0178	るーしーＯＰ	Young Lucy: introduction	Маленькая Люси: вступление
+pack:0202	ルーシーED	Lucy: ending	Люси: концовка
+pack:0222	クレ	Credits	Титры
+pack:0226	奴	Him	Он
+command:11メートル上	11メートル上	11 Metres Up	11 метров вверх
+command:11メートル下	11メートル下	11 Metres Down	11 метров вниз
+command:baria-中	baria-中	Barrier (Medium)	Барьер (средний)
+command:いけー大	いけー大	Go! (Heavy)	Вперёд! (сильный)
+command:いけー弱	いけー弱	Go! (Light)	Вперёд! (слабый)
+command:いっけー	いっけー	Go for it!	Вперё-ёд!
+command:うちあげ	うちあげ	Launch	Подброс
+command:うちおろし	うちおろし	Downward Strike	Удар сверху
+command:おっきい	おっきい	Big!	Большо-ой!
+command:おっきい中	おっきい中	Big! (Medium)	Большо-ой! (средний)
+command:おとうさん	おとうさん	Daddy	Папа
+command:かけっこ	かけっこ	Footrace	Наперегонки
+command:かけっこ中	かけっこ中	Footrace (Medium)	Наперегонки (средний)
+command:かけっこ弱	かけっこ弱	Footrace (Light)	Наперегонки (слабый)
+command:くびながい	くびながい	Long Neck	Длинная шея
+command:ぜんだんはっしゃ	ぜんだんはっしゃ	Fire Everything!	Огонь из всех орудий!
+command:とびクロウ	とびクロウ	Flying Claw	Прыжок с когтями
+command:とび中	とび中	Jump Attack (Medium)	Удар в прыжке (средний)
+command:とび今日	とび今日	Jump Attack (Heavy)	Удар в прыжке (сильный)
+command:とび弱	とび弱	Jump Attack (Light)	Удар в прыжке (слабый)
+command:とび注	とび注	Jump Attack (Medium)	Удар в прыжке (средний)
+command:ねこゆう	ねこゆう	Nekoyuu	Нэкою
+command:ねこ大	ねこ大	Cat (Heavy)	Кошка (сильный)
+command:ねこ座薬	ねこ座薬	Cat Suppository	Кошачья свечка
+command:ねこ弱	ねこ弱	Cat (Light)	Кошка (слабый)
+command:のろい弱	のろい弱	Curse (Light)	Проклятие (слабый)
+command:ふっとばし	ふっとばし	Send Flying	Отбросить
+command:ぶらさがり弱	ぶらさがり弱	Hanging On (Light)	Повиснуть (слабый)
+command:ぶらさがり注	ぶらさがり注	Hanging On (Medium)	Повиснуть (средний)
+command:まっする弱	まっする弱	Muscle (Light)	Мускул (слабый)
+command:みずかけ今日	みずかけ今日	Water Splash (Heavy)	Облить водой (сильный)
+command:みずかけ弱	みずかけ弱	Water Splash (Light)	Облить водой (слабый)
+command:みずっみず！	みずっみず！	Water! Water!	Вода! Вода!
+command:むにゅーん弱	むにゅーん弱	Squeeeze (Light)	Мня-я-ять (слабый)
+command:むにゅーん注	むにゅーん注	Squeeeze (Medium)	Мня-я-ять (средний)
+command:もみもみ中	もみもみ中	Squeeze Squeeze (Medium)	Потискать (средний)
+command:もみもみ弱	もみもみ弱	Squeeze Squeeze (Light)	Потискать (слабый)
+command:もみもみ強	もみもみ強	Squeeze Squeeze (Heavy)	Потискать (сильный)
+command:アルマーの刃	アルマーの刃	Arma's Blade	Клинок Армы
+command:アルマー中	アルマー中	Arma (Medium)	Арма (средний)
+command:アルマー弱	アルマー弱	Arma (Light)	Арма (слабый)
+command:アンナ転生	アンナ転生	Anna Reborn	Перерождение Анны
+command:ウィップ	ウィップ	Whip	Хлыст
+command:エールストライク	エールストライク	Air Strike	Воздушный удар
+command:エールストライク大	エールストライク大	Air Strike (Heavy)	Воздушный удар (сильный)
+command:エール中	エール中	Air (Medium)	Воздух (средний)
+command:キメラ	キメラ	Chimera	Химера
+command:キャッツ	キャッツ	Cats	Кошки
+command:キャッツ弱	キャッツ弱	Cats (Light)	Кошки (слабый)
+command:キャッツ注	キャッツ注	Cats (Medium)	Кошки (средний)
+command:キャンセラー	キャンセラー	Canceller	Отмена
+command:クラフ子	クラフ子	Krafuko	Крафуко
+command:クロウラッシュ	クロウラッシュ	Claw Rush	Шквал когтей
+command:コマンド 1	コマンド 1	Command 1	Команда 1
+command:コマンド 11	コマンド 11	Command 11	Команда 11
+command:コマンド 2	コマンド 2	Command 2	Команда 2
+command:コマンド 3	コマンド 3	Command 3	Команда 3
+command:コマンド 4	コマンド 4	Command 4	Команда 4
+command:コマンド 5	コマンド 5	Command 5	Команда 5
+command:コマンド 6	コマンド 6	Command 6	Команда 6
+command:コマンド 7	コマンド 7	Command 7	Команда 7
+command:コマンド 8	コマンド 8	Command 8	Команда 8
+command:コマンド 9	コマンド 9	Command 9	Команда 9
+command:ジェームス	ジェームス	James	Джеймс
+command:ジルベリット	ジルベリット	Gilberit	Гильберит
+command:ストップ中	ストップ中	Stop (Medium)	Стоп (средний)
+command:ストップ弱	ストップ弱	Stop (Light)	Стоп (слабый)
+command:ストップ強	ストップ強	Stop (Heavy)	Стоп (сильный)
+command:スナイプ中	スナイプ中	Snipe (Medium)	Прицельный выстрел (средний)
+command:スナイプ弱	スナイプ弱	Snipe (Light)	Прицельный выстрел (слабый)
+command:スナイプ強	スナイプ強	Snipe (Heavy)	Прицельный выстрел (сильный)
+command:セット大	セット大	Set (Heavy)	Установка (сильный)
+command:セット弱	セット弱	Set (Light)	Установка (слабый)
+command:セット注	セット注	Set (Medium)	Установка (средний)
+command:ゼロ距離	ゼロ距離	Point Blank	В упор
+command:ダッシュ	ダッシュ	Dash	Рывок
+command:ネコ強	ネコ強	Cat (Heavy)	Кошка (сильный)
+command:ハウンド中	ハウンド中	Hound (Medium)	Гончая (средний)
+command:ハウンド弱	ハウンド弱	Hound (Light)	Гончая (слабый)
+command:ハウンド強	ハウンド強	Hound (Heavy)	Гончая (сильный)
+command:ハープーン直撃	ハープーン直撃	Direct Harpoon Hit	Прямое попадание гарпуна
+command:バリアー大	バリアー大	Barrier (Heavy)	Барьер (сильный)
+command:バリアー弱	バリアー弱	Barrier (Light)	Барьер (слабый)
+command:パパたすけて	パパたすけて	Papa, Help!	Папа, помоги!
+command:パルスブレイカー	パルスブレイカー	Pulse Breaker	Разрушитель импульса
+command:ヒロミ	ヒロミ	Hiromi	Хироми
+command:ビーム1	ビーム1	Beam 1	Луч 1
+command:ブラスター	ブラスター	Blaster	Бластер
+command:ヘリお年	ヘリお年	Helicopter Takedown	Сбить вертолёт
+command:ヘルプ兄	ヘルプ兄	Big Brother, Help!	Брат, помоги!
+command:ボルボックス	ボルボックス	Volvox	Вольвокс
+command:ポッキー中	ポッキー中	Pocky (Medium)	Покки (средний)
+command:ポッキー強	ポッキー強	Pocky (Heavy)	Покки (сильный)
+command:ポッキー連打弱	ポッキー連打弱	Pocky Barrage (Light)	Шквал «Покки» (слабый)
+command:マッスル中	マッスル中	Muscle (Medium)	Мускул (средний)
+command:マッスル大	マッスル大	Muscle (Heavy)	Мускул (сильный)
+command:リミッター解除	リミッター解除	Limiter Release	Снять ограничитель
+command:ロケット中	ロケット中	Rocket (Medium)	Ракета (средний)
+command:ロケット大	ロケット大	Rocket (Heavy)	Ракета (сильный)
+command:ロケット弱	ロケット弱	Rocket (Light)	Ракета (слабый)
+command:一斉パンチ	一斉パンチ	Punch Barrage	Шквал кулаков
+command:中	中	Medium Attack	Средний удар
+command:中攻撃	中攻撃	Medium Attack	Средний удар
+command:兄ラッシュ	兄ラッシュ	Big Brother Rush	Натиск старшего брата
+command:前段繚乱	前段繚乱	Zendan Ryouran	Дзэндан рёран
+command:呪い中	呪い中	Curse (Medium)	Проклятие (средний)
+command:呪い大	呪い大	Curse (Heavy)	Проклятие (сильный)
+command:坂東中	坂東中	Bando (Medium)	Бандо (средний)
+command:坂東大	坂東大	Bando (Heavy)	Бандо (сильный)
+command:坂東超	坂東超	Bando (Super)	Бандо (супер)
+command:変身	変身	Transformation	Превращение
+command:大	大	Heavy Attack	Сильный удар
+command:家族の絆	家族の絆	Family Bonds	Семейные узы
+command:対空	対空	Anti-Air	Противовоздушный удар
+command:対空中	対空中	Anti-Air (Medium)	Противовоздушный удар (средний)
+command:対空大	対空大	Anti-Air (Heavy)	Противовоздушный удар (сильный)
+command:対空弱	対空弱	Anti-Air (Light)	Противовоздушный удар (слабый)
+command:対空強	対空強	Anti-Air (Heavy)	Противовоздушный удар (сильный)
+command:展開中	展開中	Deploy (Medium)	Развернуть (средний)
+command:展開大	展開大	Deploy (Heavy)	Развернуть (сильный)
+command:展開弱	展開弱	Deploy (Light)	Развернуть (слабый)
+command:弟	弟	Little Brother	Младший брат
+command:弱	弱	Light Attack	Слабый удар
+command:弱坂東	弱坂東	Bando (Light)	Бандо (слабый)
+command:弱攻撃	弱攻撃	Light Attack	Слабый удар
+command:強	強	Heavy Attack	Сильный удар
+command:強攻撃	強攻撃	Heavy Attack	Сильный удар
+command:怪獣さん中	怪獣さん中	Mr. Monster (Medium)	Господин монстр (средний)
+command:怪獣対地	怪獣対地	Monster: Ground Attack	Монстр: наземная атака
+command:怪獣対空	怪獣対空	Monster: Anti-Air	Монстр: атака в воздухе
+command:打ち上げ	打ち上げ	Launch	Подброс
+command:斉藤さん	斉藤さん	Mr. Saito	Господин Сайто
+command:水掛中	水掛中	Water Splash (Medium)	Облить водой (средний)
+command:爆砕剣	爆砕剣	Explosive Blade	Взрывной клинок
+command:特攻	特攻	Charge	Таран
+command:百列中	百列中	Hundred Strikes (Medium)	Сотня ударов (средний)
+command:百列弱	百列弱	Hundred Strikes (Light)	Сотня ударов (слабый)
+command:百列激	百列激	Hundred Strikes (Fierce)	Сотня ударов (яростный)
+command:磯部くん	磯部くん	Isobe	Исобэ
+command:祖母ラッシュ	祖母ラッシュ	Grandmother Rush	Натиск бабушки
+command:立ち中	立ち中	Standing Attack (Medium)	Удар стоя (средний)
+command:立ち弱	立ち弱	Standing Attack (Light)	Удар стоя (слабый)
+command:立ち強	立ち強	Standing Attack (Heavy)	Удар стоя (сильный)
+command:紅葉ラッシュ	紅葉ラッシュ	Momiji Rush	Натиск Момидзи
+command:自爆特攻	自爆特攻	Self-Destruct Charge	Подрыв с разбега
+command:裏発動	裏発動	Hidden Activation	Скрытая активация
+command:覚醒	覚醒	Awakening	Пробуждение
+command:覚醒ベクター	覚醒ベクター	Awakened Vectors	Пробуждённые векторы
+command:車椅子	車椅子	Wheelchair	Инвалидное кресло
+command:連射	連射	Rapid Fire	Очередь
+command:闇の心	闇の心	Heart of Darkness	Сердце тьмы
+command:隊長	隊長	Captain	Командир
+command:首飛ばし	首飛ばし	Head Toss	Бросок головы
+command:高浴	高浴	Koyoku	Коёку
+command:魔空覇王剣	魔空覇王剣	Demon Sky King's Blade	Клинок владыки демонических небес
+command:１１めーとる	１１めーとる	11 Metres	11 метров
+Новая игра	はじめから	New Game	Новая игра
+Настройки	設定	Settings	Настройки
+Главный экран	タイトルへ	Title Screen	Главный экран
+Приёмы	技表	Moves	Приёмы
+Настройки матча	対戦設定	Match Settings	Настройки матча
+До 3 побед	3本先取	First to 3 wins	До 3 побед
+Таймер: 60	タイマー: 60	Timer: 60	Таймер: 60
+Открой паузу, чтобы вернуться на главный экран	ポーズからタイトルへ戻れます	Open Pause to return to the title screen	Открой паузу, чтобы вернуться на главный экран
+Передвинь элементы. Нажми паузу, чтобы закончить.	配置を調整したらポーズを押してください。	Drag the controls. Press Pause when finished.	Передвинь элементы. Нажми паузу, чтобы закончить.
+Не удалось продолжить игру	ゲームを続行できません	Unable to continue the game	Не удалось продолжить игру
+Перезапусти приложение	アプリを再起動してください	Please restart the app	Перезапусти приложение
+Адрес сервера комнат	ルームサーバーのアドレス	Room server address	Адрес сервера комнат
+Введи адрес сервера, к которому подключается второй игрок.	対戦相手と同じサーバーのアドレスを入力してください。	Enter the same server address as the other player.	Введи адрес сервера, к которому подключается второй игрок.

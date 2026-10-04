@@ -1,0 +1,25 @@
+{
+  "parser": {
+    "repo": "https://github.com/xem85/fm2ndparser",
+    "commit": "7266d65b9ca486a619b6b10836ee0cfed734fefb",
+    "license": "MIT"
+  },
+  "winlator_app": {
+    "repo": "https://github.com/brunodev85/winlator-app",
+    "commit": "a030f552f452158a2db64fdb32b490fa19c0b48d",
+    "license": "LGPL-2.1",
+    "used_in_android_build": false
+  },
+  "wine_test": {
+    "url": "https://github.com/Kron4ek/Wine-Builds/releases/download/11.18/wine-11.18-amd64-wow64.tar.xz",
+    "sha256": "f899879b8c37e0b20adca19d147cf77436f3f1a37bf16d08d27fa7137a52b9ba",
+    "version": "11.18",
+    "outcome": "blocked_by_AF_UNIX_EPERM"
+  },
+  "dotnet_sdk": {
+    "version": "10.0.401",
+    "purpose": "upstream_parser_build",
+    "sha512_verified": true
+  },
+  "android_apk": null
+}

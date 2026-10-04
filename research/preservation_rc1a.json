@@ -1,0 +1,11 @@
+{
+  "unchanged_files": {
+    "runtime/src": 37,
+    "network/src": 4,
+    "app/src/main/assets": 2884,
+    "app/src/main/res": 14
+  },
+  "actual_touch_handler_identical": true,
+  "all_existing_activity_logic_outside_five_layout_drawing_methods_identical": true,
+  "combat_audio_network_lifecycle_changes": false
+}

@@ -1,0 +1,8 @@
+
+PASS original collision/damage/RNG fixtures 518
+FIGHT 0170 frames=4712 hits=80 objects=1706 hp=400:0 hash=d30a6ffdb0deee30a1b49b2dd34da8ffeecc7784dd41d33ed304e8945d3100c2
+FIGHT 0104 frames=4462 hits=80 objects=1706 hp=400:0 hash=6c6ba8d9e53d6d233160dda5102a7f9fa94e1aa73eb00e6a9444fbdc2dc24666
+FIGHT 0128 frames=7307 hits=134 objects=7174 hp=400:0 hash=7d7c36fdf251f31eecad518eb665ac39e4be7d5a6d8b03256487d10ed8ff2d6c
+PASS combat and deterministic restore assertions=32582
+Not Android installation, original AI, match rules, story or online validation.
+

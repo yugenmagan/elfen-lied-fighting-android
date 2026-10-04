@@ -1,0 +1,255 @@
+{
+  "scope": "isolated x86 handlers, not Windows or Android execution",
+  "speed": [
+    {
+      "setting": 0,
+      "timing_velocity_acceleration": [
+        50,
+        1310,
+        1572
+      ]
+    },
+    {
+      "setting": 5,
+      "timing_velocity_acceleration": [
+        75,
+        873,
+        699
+      ]
+    },
+    {
+      "setting": 10,
+      "timing_velocity_acceleration": [
+        100,
+        655,
+        393
+      ]
+    },
+    {
+      "setting": 15,
+      "timing_velocity_acceleration": [
+        150,
+        436,
+        174
+      ]
+    },
+    {
+      "setting": 20,
+      "timing_velocity_acceleration": [
+        200,
+        327,
+        98
+      ]
+    }
+  ],
+  "motion": [
+    {
+      "facing": 0,
+      "flags": 0,
+      "actual": [
+        458500,
+        -1310000,
+        -3930,
+        35370
+      ]
+    },
+    {
+      "facing": 0,
+      "flags": 1,
+      "actual": [
+        468500,
+        -1300000,
+        6070,
+        45370
+      ]
+    },
+    {
+      "facing": 0,
+      "flags": 2,
+      "actual": [
+        10000,
+        -1310000,
+        -3930,
+        35370
+      ]
+    },
+    {
+      "facing": 0,
+      "flags": 4,
+      "actual": [
+        458500,
+        10000,
+        -3930,
+        35370
+      ]
+    },
+    {
+      "facing": 0,
+      "flags": 8,
+      "actual": [
+        458500,
+        -1310000,
+        10000,
+        35370
+      ]
+    },
+    {
+      "facing": 0,
+      "flags": 16,
+      "actual": [
+        458500,
+        -1310000,
+        -3930,
+        10000
+      ]
+    },
+    {
+      "facing": 0,
+      "flags": 31,
+      "actual": [
+        10000,
+        10000,
+        10000,
+        10000
+      ]
+    },
+    {
+      "facing": 1,
+      "flags": 0,
+      "actual": [
+        -458500,
+        -1310000,
+        3930,
+        35370
+      ]
+    },
+    {
+      "facing": 1,
+      "flags": 1,
+      "actual": [
+        -448500,
+        -1300000,
+        13930,
+        45370
+      ]
+    },
+    {
+      "facing": 1,
+      "flags": 2,
+      "actual": [
+        10000,
+        -1310000,
+        3930,
+        35370
+      ]
+    },
+    {
+      "facing": 1,
+      "flags": 4,
+      "actual": [
+        -458500,
+        10000,
+        3930,
+        35370
+      ]
+    },
+    {
+      "facing": 1,
+      "flags": 8,
+      "actual": [
+        -458500,
+        -1310000,
+        10000,
+        35370
+      ]
+    },
+    {
+      "facing": 1,
+      "flags": 16,
+      "actual": [
+        -458500,
+        -1310000,
+        3930,
+        10000
+      ]
+    },
+    {
+      "facing": 1,
+      "flags": 31,
+      "actual": [
+        10000,
+        10000,
+        10000,
+        10000
+      ]
+    }
+  ],
+  "wait_cases": 5,
+  "integration": [
+    {
+      "initial": [
+        100,
+        200,
+        10,
+        -20,
+        3,
+        7
+      ],
+      "position_velocity": [
+        113,
+        187,
+        13,
+        -13
+      ]
+    },
+    {
+      "initial": [
+        0,
+        60293120,
+        0,
+        -1310000,
+        0,
+        35370
+      ],
+      "position_velocity": [
+        0,
+        59018490,
+        0,
+        -1274630
+      ]
+    },
+    {
+      "initial": [
+        2147483645,
+        0,
+        5,
+        0,
+        0,
+        0
+      ],
+      "position_velocity": [
+        -2147483646,
+        0,
+        5,
+        0
+      ]
+    }
+  ],
+  "attachment": [
+    {
+      "facing": 0,
+      "position": [
+        7012352,
+        12517376
+      ]
+    },
+    {
+      "facing": 1,
+      "position": [
+        6094848,
+        12517376
+      ]
+    }
+  ],
+  "passed": true
+}

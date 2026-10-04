@@ -1,0 +1,68 @@
+{
+  "res/drawable-nodpi-v4/launcher_foreground.png": {
+    "encoded_sha256": "ccb3cdcab1e879ae1e15109d4763aa9b3461e024682c8bfc66a9c63bc2d33b0d",
+    "width": 1024,
+    "height": 1024,
+    "rgba_sha256": "2481f5cf73b80ad48110d84bef93f9f394a45661b7f36d0320c4de167824f46e"
+  },
+  "res/mipmap-mdpi-v4/ic_launcher.png": {
+    "encoded_sha256": "3e17896be69a2f4de3d051c0e1f72dd8922b434ef16ca5e1d1f46be1ad045762",
+    "width": 48,
+    "height": 48,
+    "rgba_sha256": "837a0794d22ad592f52f5090b5bc75251daf59de7762e09dfd307be6c3707c00"
+  },
+  "res/mipmap-mdpi-v4/ic_launcher_round.png": {
+    "encoded_sha256": "3ca4d934e4a3634042d32c962f9a8730feeee7da6173479f4d95adc584b8cd03",
+    "width": 48,
+    "height": 48,
+    "rgba_sha256": "383feef0a693d3cb343842a789f537983b0941ef8dbf2408be109c60a39809cc"
+  },
+  "res/mipmap-hdpi-v4/ic_launcher.png": {
+    "encoded_sha256": "9050f4d689991b5621fffc52aef6823a59de7394109aff46158f15d611c4fcb9",
+    "width": 72,
+    "height": 72,
+    "rgba_sha256": "08835a3d5b961c66c469074dbd76496bb88c5d46ecb945305cd479ea5ee86232"
+  },
+  "res/mipmap-hdpi-v4/ic_launcher_round.png": {
+    "encoded_sha256": "d275e16071d0c8856c097574bd1b90ab23f65e266a3909a855ce02b1dc2d11f9",
+    "width": 72,
+    "height": 72,
+    "rgba_sha256": "ead99f5a46f3701188f20ccad33bb31ed4fe41b297c67f754cb18abd49645428"
+  },
+  "res/mipmap-xhdpi-v4/ic_launcher.png": {
+    "encoded_sha256": "f0c9ac73ea41f2f0dc5b235bc4d3ac765b09a2c3cae4f0618958c2daf6a134f2",
+    "width": 96,
+    "height": 96,
+    "rgba_sha256": "f26a6363ebd6b246be4ea85223e7f88a00da4c48b2c4ce4bad68d4e39da749d5"
+  },
+  "res/mipmap-xhdpi-v4/ic_launcher_round.png": {
+    "encoded_sha256": "9321a072358b7c945fd2a9fe085ff3fb832a40eec5ada0db8a26098aa0e1f8cf",
+    "width": 96,
+    "height": 96,
+    "rgba_sha256": "2ace3f5388015d998da557d66aa32c740599dffae45dd9674346fa5683aedd36"
+  },
+  "res/mipmap-xxhdpi-v4/ic_launcher.png": {
+    "encoded_sha256": "a608695b54a9e0eebce484e8d5617f1e90d26847e4a14c1e80bb1ac516d4fd52",
+    "width": 144,
+    "height": 144,
+    "rgba_sha256": "29776d8f759df7e9961a1fb631bad0549521e3dc196c3770e5331f19e77d7e6c"
+  },
+  "res/mipmap-xxhdpi-v4/ic_launcher_round.png": {
+    "encoded_sha256": "e895a761046e35559c69a1cb3576eb320aac5fe86cf3a8318a20374b0403817c",
+    "width": 144,
+    "height": 144,
+    "rgba_sha256": "6fad9d8b006392779936e6d72f6faa8b76a1e24d9b29623a25ffcadfe72231a7"
+  },
+  "res/mipmap-xxxhdpi-v4/ic_launcher.png": {
+    "encoded_sha256": "3a5a03d0c5cce2c2942914f12d0e8a84a3968ea7e224350b62c84ef986e9670a",
+    "width": 192,
+    "height": 192,
+    "rgba_sha256": "595f37da5ae8de1cf3eef3b94b091048bea70355dc5185a1af3248832ceb50e4"
+  },
+  "res/mipmap-xxxhdpi-v4/ic_launcher_round.png": {
+    "encoded_sha256": "880391c16a516222e58c1a8dfcb5447c289b8c556bea54101bcc6aedc75900d8",
+    "width": 192,
+    "height": 192,
+    "rgba_sha256": "6dfdeba79f0bf870cc1fcf663fdb1441cfb247389498501bc98e9dd7fe46fddb"
+  }
+}

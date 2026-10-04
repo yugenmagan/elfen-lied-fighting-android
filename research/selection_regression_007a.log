@@ -1,0 +1,81 @@
+PASS CharacterSelect: 20321 assertions; 1764 original EXE input frames; 160 grid cases; 10 story intro->fight transitions; 10 VS mirrors; 7 screen ratios; confirmation/release/back, deterministic visuals, paused-battle isolation
+PASS 10 portraits in both positions; 180 ticks each; all image references; 11 desktop VM renders (not Android screenshots)
+PASS delay=50ms / 3ticks confirmed=2997 resimulated=11988 final=80c4f41871bd4fc59bd7b54f4ba0cf9102834d465f86d2ede1fcced94b0281e7
+PASS delay=100ms / 6ticks confirmed=2994 resimulated=20958 final=80c4f41871bd4fc59bd7b54f4ba0cf9102834d465f86d2ede1fcced94b0281e7
+PASS delay=150ms / 9ticks confirmed=2991 resimulated=29910 final=80c4f41871bd4fc59bd7b54f4ba0cf9102834d465f86d2ede1fcced94b0281e7
+PASS delay=200ms / 12ticks confirmed=2988 resimulated=38844 final=80c4f41871bd4fc59bd7b54f4ba0cf9102834d465f86d2ede1fcced94b0281e7
+PASS independent twins=3000 every-frame hashes; no network transport used
+PASS match 0170 frames=7204 HP=141:72 score=1:0
+PASS match 0104 frames=7204 HP=251:1 score=1:0
+PASS match 0128 frames=7204 HP=225:155 score=1:0
+PASS match 0122 frames=7204 HP=108:198 score=0:1
+PASS match 0114 frames=7204 HP=62:181 score=0:1
+PASS match 0110 frames=6111 HP=158:0 score=1:0
+PASS match 0156 frames=7204 HP=75:163 score=0:1
+PASS match 0108 frames=7204 HP=40:223 score=0:1
+PASS match 0168 frames=7204 HP=10:220 score=0:1
+PASS match 0136 frames=6010 HP=0:179 score=0:1
+PASS match 0142 frames=6251 HP=707:0 score=1:0
+PASS match 0144 frames=6240 HP=656:0 score=1:0
+PASS natural KO matches=4; forced result branches: P1/P2 perfect, doubleKO, infinite clock, cross-round restore
+PASS 2854 assertions; loaded 46 packs; animation paths completed 99 / 99
+This is not combat, Android installation, or full story validation.
+START character=0170 name=ルーシー seed=19 cpu=80
+f=1 slot=0 mode=0 wins=0 hp=scene
+f=1622 slot=1 mode=1 wins=0 hp=400:400
+f=9580 slot=2 mode=0 wins=1 hp=scene
+f=11202 slot=3 mode=1 wins=1 hp=400:400
+f=20775 slot=4 mode=0 wins=2 hp=scene
+f=22397 slot=5 mode=1 wins=2 hp=400:400
+f=31041 slot=5 mode=2 wins=2 hp=0:176
+f=31102 slot=5 mode=1 wins=2 hp=400:400
+f=41307 slot=6 mode=0 wins=3 hp=scene
+f=42929 slot=7 mode=1 wins=3 hp=400:400
+f=50934 slot=8 mode=0 wins=4 hp=scene
+f=52556 slot=9 mode=1 wins=4 hp=400:400
+f=58533 slot=10 mode=0 wins=5 hp=scene
+f=60155 slot=11 mode=1 wins=5 hp=400:400
+f=64646 slot=11 mode=2 wins=5 hp=0:365
+f=64707 slot=11 mode=1 wins=5 hp=400:400
+f=72263 slot=11 mode=2 wins=5 hp=0:71
+f=72324 slot=11 mode=1 wins=5 hp=400:400
+f=78399 slot=11 mode=2 wins=5 hp=0:289
+f=78460 slot=11 mode=1 wins=5 hp=400:400
+f=84587 slot=11 mode=2 wins=5 hp=0:252
+f=84648 slot=11 mode=1 wins=5 hp=400:400
+f=93264 slot=11 mode=2 wins=5 hp=0:44
+f=93325 slot=11 mode=1 wins=5 hp=400:400
+f=98433 slot=11 mode=2 wins=5 hp=0:353
+f=98494 slot=11 mode=1 wins=5 hp=400:400
+f=103669 slot=11 mode=2 wins=5 hp=0:253
+f=103730 slot=11 mode=1 wins=5 hp=400:400
+f=113804 slot=11 mode=2 wins=5 hp=0:10
+f=113865 slot=11 mode=1 wins=5 hp=400:400
+f=122259 slot=11 mode=2 wins=5 hp=0:77
+f=122320 slot=11 mode=1 wins=5 hp=400:400
+f=130594 slot=11 mode=2 wins=5 hp=0:36
+f=130655 slot=11 mode=1 wins=5 hp=400:400
+f=137476 slot=11 mode=2 wins=5 hp=0:29
+f=137537 slot=11 mode=1 wins=5 hp=400:400
+f=142963 slot=11 mode=2 wins=5 hp=0:288
+f=143024 slot=11 mode=1 wins=5 hp=400:400
+f=150631 slot=11 mode=2 wins=5 hp=0:146
+f=150692 slot=11 mode=1 wins=5 hp=400:400
+f=156334 slot=11 mode=2 wins=5 hp=0:163
+f=156395 slot=11 mode=1 wins=5 hp=400:400
+f=164322 slot=12 mode=0 wins=6 hp=scene
+f=165944 slot=13 mode=1 wins=6 hp=400:400
+f=172918 slot=13 mode=2 wins=6 hp=0:256
+f=172979 slot=13 mode=1 wins=6 hp=400:400
+f=181488 slot=14 mode=0 wins=7 hp=scene
+f=183110 slot=15 mode=1 wins=7 hp=400:400
+f=195644 slot=16 mode=0 wins=8 hp=scene
+f=197266 slot=17 mode=1 wins=8 hp=400:400
+f=208720 slot=18 mode=1 wins=9 hp=400:1000
+f=214356 slot=19 mode=0 wins=9 hp=scene
+f=215978 slot=20 mode=0 wins=9 hp=scene
+f=217600 slot=21 mode=3 wins=9 hp=scene
+ROUTE with per-frame history snapshots, frames=217600 slot=21 mode=3 wins=9 fights=10 hash=99d01a21bdee45b171cf5df51e652ea1f4cd639e472a5f3a551d8333d6936ce0
+PASS full route replay 0 checkpoints=271 99d01a21bdee45b171cf5df51e652ea1f4cd639e472a5f3a551d8333d6936ce0
+PASS full route replay 1 checkpoints=271 99d01a21bdee45b171cf5df51e652ea1f4cd639e472a5f3a551d8333d6936ce0
+PASS full route replay 2 checkpoints=271 99d01a21bdee45b171cf5df51e652ea1f4cd639e472a5f3a551d8333d6936ce0

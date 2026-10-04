@@ -1,0 +1,9 @@
+variant=4 frame=1 slot=0 mode=0 hp=scene
+variant=4 frame=332 slot=1 mode=1 hp=400:400
+variant=4 frame=8062 slot=1 mode=2 hp=0:335
+variant=4 frame=8123 slot=1 mode=1 hp=400:400
+variant=4 frame=17907 slot=1 mode=2 hp=0:281
+variant=4 frame=17968 slot=1 mode=1 hp=400:400
+variant=4 frame=28555 slot=1 mode=2 hp=0:208
+variant=4 frame=28616 slot=1 mode=1 hp=400:400
+PILOT variant=4 complete=false wins=0 slot=1 hash=b6b1125ef1a0a7362fe67f73611ce81ee07a5aeafa1659451021b93fd0121076

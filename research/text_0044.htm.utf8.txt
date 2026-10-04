@@ -1,0 +1,25 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=x-sjis">
+<META name="GENERATOR" content="NEC ホームページデザイナー">
+<TITLE></TITLE>
+</HEAD>
+<BODY>
+<BASEFONT size="3">
+<P align="center"><FONT size="5" color="#000000" face="ＭＳ ゴシック">コマンド表,マニュアルは個別に別ウィンドウで開きます。</FONT></P>
+<P align="center"><FONT size="5" color="#000000" face="ＭＳ ゴシック">キャラか文字をクリックしてください</FONT></P>
+<P align="center"><A href="sousa2.jpg" target="_blank"><FONT size="4" color="#FF0000"><B>基本操作はこちら</B></FONT></A></P>
+<P align="center"><A href="combosinan.jpg" target="_blank"><FONT size="4" color="#FF00FF"><B>コンボとキャンセルについて</B></FONT></A></P>
+<P align="center"><A href="combonana.jpg" target="_blank"><FONT size="4" color="#008080"><B>コンボ指南ナナ編</B></FONT></A></P>
+<P align="center"><A href="hosoku.jpg" target="_blank"><FONT size="4" color="#000080"><B>補足説明</B></FONT></A></P>
+<P align="center"><A href="urananacom.jpg" target="_blank"><IMG src="nanaicon2.gif" alt="nanaicon2.gif" width="69" height="162">ナナコマンド表 </A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A href="comnyu.jpg" target="_blank"><IMG src="newaicon.gif" alt="newaicon.gif" width="66" height="139">にゅうコマンド表</A></P>
+<P align="center"><A href="commariko.jpg" target="_blank"><IMG src="maricoaicon.gif" alt="maricoaicon.gif" width="73" height="134">マリココマンド表</A><A href="marikocom.htm" target="_blank"> </A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A href="commayu2.jpg" target="_blank"><IMG src="mayu.gif" alt="mayu.gif" width="51" height="111">マユコマンド表</A></P>
+<P align="center"></P>
+<P align="center"><A href="comlucy.jpg" target="_blank"><IMG src="yourucy.gif" alt="yourucy.gif" width="43" height="121">るーしーコマンド表</A> &nbsp;&nbsp;&nbsp;<A href="comanna.jpg"><IMG src="anna2.gif" alt="anna2.gif" width="67" height="134">アンナコマンド表</A></P>
+<P align="center"></P>
+<P align="center"><A href="comlucy2.jpg" target="_parent"><IMG src="rucy2aicon.gif" alt="rucy2aicon.gif" width="103" height="152">ルーシーコマンド表</A> &nbsp;&nbsp;<A href="comdiana.jpg" target="_blank"><IMG src="sinsia.gif" alt="sinsia.gif" width="74" height="144">クローンコマンド表</A></P>
+<P align="center"><A href="lostcom.jpg" target="_blank"><IMG src="lost.gif" alt="lost.gif" width="70" height="160">ロストナンバーコマンド表</A>　　<A href="misakicom.jpg" target="_blank"><IMG src="misakiicon.jpg" alt="misakiicon.jpg" width="89" height="154">ミサキコマンド表</A></P>
+<P align="center"><A href="http://www.ob2.aitai.ne.jp/~touhou/"><FONT size="7" color="#FF00FF" face="HG創英角ﾎﾟｯﾌﾟ体"><IMG src="kure.jpg"></FONT></A></P>
+<P align="center"><A href="http://www.ob2.aitai.ne.jp/~touhou/"><FONT size="7" color="#FF00FF" face="HG創英角ﾎﾟｯﾌﾟ体">もどります</FONT></A></P>
+</BODY>
+</HTML>

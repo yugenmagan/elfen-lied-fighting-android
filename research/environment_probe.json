@@ -1,0 +1,35 @@
+{
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "tools": {
+    "java": "/usr/bin/java",
+    "javac": null,
+    "gradle": null,
+    "adb": null,
+    "emulator": null,
+    "sdkmanager": null,
+    "wine": null,
+    "cmake": null,
+    "ninja": null
+  },
+  "kvm_available": false,
+  "tcp_loopback": {
+    "status": "ok"
+  },
+  "unix_domain": {
+    "status": "failed",
+    "errno": 1,
+    "message": "[Errno 1] Operation not permitted"
+  },
+  "wine_probe": {
+    "executable": "/workspace/scratch/033a2b108d46/deps/wine-11.18-amd64-wow64/bin/wine",
+    "command": [
+      "wine",
+      "cmd",
+      "/c",
+      "ver"
+    ],
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "wine: created the configuration directory '/tmp/tmpjaqtdkai/prefix'\nwineserver: socket: Operation not permitted\n"
+  }
+}

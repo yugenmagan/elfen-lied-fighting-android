@@ -1,0 +1,12 @@
+CPU100 boss attempt 0110 ticks=10189 mode=2 wins=0 score=0:2
+CPU100 boss attempt 0170 ticks=11887 mode=2 wins=0 score=0:2
+CPU100 boss attempt 0104 ticks=14440 mode=2 wins=0 score=0:2
+CPU100 boss attempt 0136 ticks=14673 mode=2 wins=0 score=0:2
+CPU100 boss attempt 0114 ticks=11662 mode=2 wins=0 score=0:2
+CPU100 boss attempt 0168 ticks=12244 mode=2 wins=0 score=0:2
+CPU100 boss attempt 0108 ticks=10162 mode=2 wins=0 score=0:2
+CPU100 boss attempt 0122 ticks=9824 mode=2 wins=0 score=0:2
+CPU100 boss attempt 0128 ticks=8218 mode=2 wins=0 score=0:2
+CPU100 boss attempt 0156 ticks=90000 mode=1 wins=0 score=0:0
+Exception in thread "main" java.lang.AssertionError: No natural victory by these bounded original CPU pilots; not proof of impossibility
+	at org.elfen.engine.FinalBossNaturalWin008Test.main(FinalBossNaturalWin008Test.java:18)

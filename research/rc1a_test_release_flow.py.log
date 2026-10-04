@@ -1,0 +1,2 @@
+PASS 749 lifecycle/navigation assertions; real VS/Story snapshots and next-frame hashes; 40 pause/moves/settings cycles; 8 Home/pending-dismiss orderings; title touch at 4 aspect ratios
+PASS cold-start/no-disk-save/debug-overlay source gates; 22 production Activity/touch methods executed with lifecycle/dialog fakes

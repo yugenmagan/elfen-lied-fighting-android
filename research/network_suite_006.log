@@ -1,0 +1,18 @@
+PASS paired rollback delayTicks=3 jitter=4 final=false frames=3000 schedulerTicks=3007 rollbacks=224:223 hash=341d226b24a1c04b9e5258ba750ce3e68e56bad0d7e35556ae89b1b64a255907
+PASS paired rollback delayTicks=6 jitter=4 final=false frames=3000 schedulerTicks=3017 rollbacks=222:228 hash=341d226b24a1c04b9e5258ba750ce3e68e56bad0d7e35556ae89b1b64a255907
+PASS paired rollback delayTicks=9 jitter=4 final=false frames=3000 schedulerTicks=3098 rollbacks=237:227 hash=341d226b24a1c04b9e5258ba750ce3e68e56bad0d7e35556ae89b1b64a255907
+PASS paired rollback delayTicks=12 jitter=4 final=false frames=3000 schedulerTicks=3212 rollbacks=232:233 hash=341d226b24a1c04b9e5258ba750ce3e68e56bad0d7e35556ae89b1b64a255907
+PASS paired rollback delayTicks=9 jitter=5 final=true frames=904 schedulerTicks=949 rollbacks=57:54 hash=b5e9a764e09fb41f6cf05e88b5f3f246aa0a6e991019d15936dffa53f78085b2
+PASS RollbackPeerTest checks=54088
+
+PASS TLS Create/Join + READY/hash + rollback frames=1800 finished=false hashes=620f25aad48df7fcb95429df000e95edc39147ca53087270059f6457044178ab rollbacks=110:98
+PASS disconnect stops peer explicitly
+PASS TLS Create/Join + READY/hash + rollback frames=904 finished=true hashes=92b61df23d3fcff29a5dc94164fc6a8a83913e447c14c4f5b4ff86e47a1e94e2 rollbacks=50:45
+PASS confirmed result survives peer departure
+PASS rejected different content build
+PASS rejected missing room
+PASS rejected input before room
+PASS TLS rejects wrong hostname
+PASS TLS rejects untrusted certificate
+PASS NetworkTest checks=5443 (real loopback TLS; no public server, no internet-device test)
+
