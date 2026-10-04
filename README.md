@@ -41,7 +41,7 @@ Control-layout preview:
 
 ## Credits
 
-- **Original fan-made PC game:** **ねくぱっち**, confirmed by `製作 ねくぱっち` in the game's credits.
+- **Original fan-made PC game:** **ねくぱっち**.
 - **Elfen Lied:** **Lynn Okamoto / 岡本倫**, published by **Shueisha / 集英社**. Original material belongs to its respective rights holders.
 - **Android port:** runtime, touch controls, conversion and localization work; no authorship claim over the original game or assets.
 
@@ -50,7 +50,6 @@ See [CREDITS.md](CREDITS.md) for full attribution and provenance.
 ## Known issues
 
 - RC build: feedback and [bug reports](https://github.com/yugenmagan/elfen-lied-fighting-android/issues) are welcome.
-- Online play is not publicly available yet.
 - Exact frame-perfect equivalence with the old Windows runtime is not guaranteed.
 - Control comfort, vibration and audio can vary between phones.
 
