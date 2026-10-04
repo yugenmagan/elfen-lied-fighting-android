@@ -31,8 +31,6 @@ Touch controls support multitouch. Control size, opacity, position and gamepad m
 
 ## Screenshots
 
-Android 10 emulator capture:
-
 ![Fight with original HUD and touch controls](docs/android-smoke/battle.png)
 
 Control-layout preview:
