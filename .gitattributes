@@ -1,0 +1,10 @@
+# Exclude game data and historical research from language statistics.
+app/src/main/assets/** linguist-vendored
+app/src/main/res/** linguist-generated
+research/** linguist-vendored
+docs/** linguist-documentation
+localization/** linguist-documentation
+gradle/** linguist-vendored
+gradlew linguist-generated
+gradlew.bat linguist-generated
+*.java linguist-language=Java
