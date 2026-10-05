@@ -14,8 +14,6 @@ An unofficial, non-commercial Android port of the old **Elfen Lied Fighting** fa
 2. Allow installation from your browser or file manager when Android asks, then install it.
 3. Launch **Elfen Lied Fighting**, choose a language, and start **Story** or **Versus**.
 
-All game data are included. Offline play needs no Windows, emulator, root, or companion app.
-
 ## Features
 
 - Original characters, stages, music, sounds and story content.
@@ -23,7 +21,7 @@ All game data are included. Offline play needs no Windows, emulator, root, or co
 - Touch and multitouch controls; experimental gamepad support.
 - English, Japanese and Russian text options.
 - Original combat HUD and character portraits.
-- Android 10 or newer.
+- **Android 10** or newer.
 
 ## Controls
 
